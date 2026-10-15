@@ -1,0 +1,62 @@
+{
+  "generated_utc": "2026-08-27T05:57:22.743219+00:00",
+  "purpose": "Estimate the between-training-seed SD of the paired difference on the primary endpoint, to supply protocol section 8.4's TBD power analysis before the sweep.",
+  "pilot": {
+    "methods": [
+      "ppo_uq",
+      "ppo_point"
+    ],
+    "train_seeds": [
+      901,
+      902,
+      903,
+      904
+    ],
+    "eval_seeds_per_seed": 10,
+    "n_pairs": 4,
+    "missing_cells": 0,
+    "seed_means": {
+      "ppo_uq": [
+        0.04961212148121845,
+        0.034318202232941575,
+        0.0491565551621252,
+        0.06247300376734782
+      ],
+      "ppo_point": [
+        0.04385704797148322,
+        0.026211920539296368,
+        0.04050799035240458,
+        0.044675529593446575
+      ]
+    },
+    "isolation": "pilot policies use training seeds 901-904 and evaluation seeds 41-50, both disjoint from the registered pools; the policies are discarded and no pilot observation enters a confirmatory result"
+  },
+  "primary_endpoint": "left_behind_fraction",
+  "scenario": "surge",
+  "observed_effect_size": 0.010076848546750575,
+  "between_seed_sd": 0.005298079139373898,
+  "endpoint_sd": {
+    "ppo_uq": 0.011509818889285843,
+    "ppo_point": 0.00859208684357735
+  },
+  "episode_level_sd": {
+    "ppo_uq": 0.026220725486020037,
+    "ppo_point": 0.026295992981080075
+  },
+  "alpha_per_test": 0.025,
+  "alpha_family_wise": 0.05,
+  "multiplicity": "Holm over the two confirmatory tests (protocol section 7.3)",
+  "target_power": 0.8,
+  "sesoi": 0.002,
+  "sesoi_frozen_in": "docs/experimental_protocol.md amendment A-04, before the pilot ran",
+  "registered_train_seeds": 10,
+  "registered_eval_seeds": 30,
+  "required_n_for_sesoi": 69,
+  "required_n_for_observed_effect": 5,
+  "minimum_detectable_effect_at_registered_n": 0.005908518436791166,
+  "registered_n_adequate_for_sesoi": false,
+  "registered_n_adequate_for_observed_effect": true,
+  "decision": "PROCEED with the registered n and report as potentially underpowered",
+  "rationale": "detecting the SESOI would need S = 69, which is beyond the compute available. Protocol section 8.4's honest option is taken: run the registered design and state the minimum detectable effect in the paper. Lowering the SESOI is not an option.",
+  "amended_train_seeds": 10
+}

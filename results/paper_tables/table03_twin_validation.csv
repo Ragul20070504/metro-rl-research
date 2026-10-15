@@ -1,0 +1,15 @@
+quantity,verdict,real_value,simulated_value,units,relative_error
+End-to-end running time (one direction),validated,37.11,37.0,minutes,0.0029641606036108713
+Weekday round trips per day,validated,277.0,251.2,trips,0.09314079422382676
+Minimum headway,validated,150.0,150.0,seconds,0.0
+Weekday boardings per day,validated,285004.3816949879,280935.8,passengers,0.014275505768687078
+Mean passenger platform wait,partially validated,1.0834278802921369,1.3818959001792208,minutes,0.275484898733273
+Fraction of dispatched trains completing their trip,partially validated,0.9651760997719416,0.9101449275362319,fraction,0.057016716689019635
+Train failures per operating day,partially validated,0.3314154483386581,1.0,failures/day,2.017360853312264
+Train capacity / peak occupancy,not validatable,,,-,
+Station dwell-time distribution,not validatable,,,-,
+"Passenger waiting behaviour (balking, patience)",not validatable,,,-,
+Origin-destination distribution,not validatable,,,-,
+Per-train trajectories and delays,not validatable,,,-,
+Energy consumption in physical units,not validatable,,,-,
+Operating cost in currency,not validatable,,,-,

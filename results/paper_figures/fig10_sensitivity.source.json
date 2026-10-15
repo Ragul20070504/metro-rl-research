@@ -1,0 +1,14 @@
+{
+  "figure": "fig10_sensitivity",
+  "generated_utc": "2026-08-28T07:07:13.613919+00:00",
+  "generated_by": "scripts/make_paper_assets.py",
+  "source_files": [
+    "results/sensitivity_analysis.json"
+  ],
+  "detail": {
+    "n_conditions": 6,
+    "reference": 0.013741634018242386,
+    "conditions_where_ppo_uq_worse": 12
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

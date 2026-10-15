@@ -1,0 +1,37 @@
+{
+  "figure": "fig09_forecasting",
+  "generated_utc": "2026-08-28T00:52:36.867722+00:00",
+  "source_files": [
+    "results/forecasting_metrics.json"
+  ],
+  "detail": {
+    "models": [
+      "naive_seasonal",
+      "xgb_point",
+      "xgb_quantile"
+    ],
+    "mase": [
+      1.0,
+      0.6509876328006572,
+      0.6380732196148166
+    ],
+    "picp_80": [
+      NaN,
+      NaN,
+      0.8162020016339869
+    ],
+    "gate": {
+      "beats_naive_on_pinball": true,
+      "naive_pinball_val": 47.95776643990929,
+      "quantile_pinball_val": 15.29314043160161,
+      "picp_80_val": 0.8017487087427564,
+      "coverage_band": [
+        0.76,
+        0.84
+      ],
+      "coverage_within_band": true,
+      "passed": true
+    }
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

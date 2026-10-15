@@ -1,0 +1,42 @@
+# Direct dependencies. INTENTIONALLY UNPINNED.
+#
+# Pinned versions belong in requirements.txt, which is generated at M2 by
+#   pip-compile --generate-hashes requirements.in
+# (or `uv pip compile requirements.in -o requirements.txt --generate-hashes`)
+# run inside the target Python 3.11 environment. Writing version numbers here by hand,
+# before an install has actually resolved them, would be fabricated provenance.
+#
+# Justification for each entry: docs/dependency_plan.md
+# Target interpreter: Python 3.11 (fallback 3.12). NOT 3.14 — see docs/dependency_plan.md.
+
+# --- numerics / data ---
+numpy
+pandas
+pyarrow                 # parquet engine for forecast.parquet and episode logs
+scipy                   # Shapiro-Wilk, Wilcoxon signed-rank, paired t, bootstrap
+scikit-learn            # ROC-AUC / PR-AUC / Brier, calibration curves, preprocessing
+statsmodels             # mixed-effects secondary analysis, Holm / Benjamini-Hochberg
+
+# --- forecasting / train health ---
+xgboost                 # point and quantile (pinball) forecasters; train-health model
+
+# --- RL ---
+torch                   # SB3 backend
+gymnasium               # environment API
+stable-baselines3       # PPO
+sb3-contrib             # MaskablePPO — action masking is REQUIRED by the manuscript (§3.4)
+
+# --- optimisation ---
+ortools                 # MILP baselines (static and rolling horizon)
+
+# --- explainability ---
+shap
+
+# --- figures ---
+matplotlib
+
+# --- config / tooling ---
+pyyaml
+pytest
+tqdm
+pip-tools               # produces the hash-pinned requirements.txt lockfile

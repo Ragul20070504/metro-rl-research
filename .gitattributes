@@ -1,0 +1,10 @@
+# Normalise line endings so a fresh clone on Linux/macOS reproduces byte-identical files.
+# This matters: config and manifest hashes are part of the traceability chain.
+* text=auto eol=lf
+
+*.png binary
+*.pdf binary
+*.parquet binary
+*.zip binary
+*.pkl binary
+*.pth binary

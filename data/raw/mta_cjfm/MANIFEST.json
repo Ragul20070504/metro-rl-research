@@ -1,0 +1,45 @@
+{
+  "attribution": "Metropolitan Transportation Authority",
+  "columns": [
+    "additional_platform_time",
+    "additional_train_time",
+    "customer_journey_time",
+    "division",
+    "line",
+    "month",
+    "num_passengers",
+    "over_five_mins",
+    "over_five_mins_perc",
+    "period",
+    "total_apt",
+    "total_att"
+  ],
+  "dataset_id": "mta_cjfm",
+  "download_utc": "2026-08-26T15:35:34.432428+00:00",
+  "files": [
+    {
+      "bytes": 36436,
+      "path": "mta_cjfm/data.parquet",
+      "sha256": "a4bc44f74db287b5ab6d7212b5621b4c27c2c4b02c1d01b9d73b8f11a5bf1a55"
+    }
+  ],
+  "kind": "socrata_table",
+  "license": null,
+  "limitations": [
+    "aggregated to month x line x period"
+  ],
+  "role": "validation: Additional Platform Time and Additional Train Time, peak vs offpeak",
+  "row_count": 224,
+  "socrata_id": "r7qk-6tcy",
+  "source_url": "https://data.ny.gov/d/r7qk-6tcy",
+  "title": "MTA Subway Customer Journey-Focused Metrics: Beginning 2015",
+  "upstream_metadata": {
+    "attribution": "Metropolitan Transportation Authority",
+    "data_updated_at": null,
+    "license": null,
+    "license_url": null,
+    "name": "MTA Subway Customer Journey-Focused Metrics: Beginning 2015",
+    "rows_updated_at": 1784907427,
+    "socrata_id": "r7qk-6tcy"
+  }
+}

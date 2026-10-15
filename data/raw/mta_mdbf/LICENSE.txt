@@ -1,0 +1,15 @@
+Data attribution
+================
+
+Metropolitan Transportation Authority
+
+Dataset : MTA Subway Mean Distance Between Failures: Beginning 2015
+Source  : https://data.ny.gov/d/e2qc-xgxs
+Licence : not stated by the publisher at retrieval time
+
+
+Retrieved: 2026-08-26T15:35:27.762684+00:00
+
+This project redistributes no raw data. Raw files are git-ignored; only manifests, hashes
+and this attribution file are committed, so a fresh clone can verify it re-downloaded
+identical bytes and fail loudly if upstream has changed.

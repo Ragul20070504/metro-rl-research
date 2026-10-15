@@ -1,0 +1,382 @@
+{
+  "validated_utc": "2026-08-26T21:44:55.450995+00:00",
+  "checks": [
+    {
+      "item": "1. run completed successfully",
+      "passed": true,
+      "blocking": true,
+      "detail": "metrics manifest present with a gate verdict and a metric block",
+      "evidence": {
+        "generated_utc": "2026-08-26T21:08:02.440550+00:00"
+      }
+    },
+    {
+      "item": "1b. run was NOT in quick mode",
+      "passed": true,
+      "blocking": true,
+      "detail": "quick mode truncates the splits; a quick-mode result is not reportable",
+      "evidence": {
+        "quick_mode": false
+      }
+    },
+    {
+      "item": "1c. full splits were used",
+      "passed": true,
+      "blocking": true,
+      "detail": "run used {'train': 1126584, 'val': 254016, 'test': 235008}, split manifest declares {'train': 1126584, 'val': 254016, 'test': 235008}",
+      "evidence": {
+        "run_rows": {
+          "train": 1126584,
+          "val": 254016,
+          "test": 235008
+        },
+        "split_manifest_rows": {
+          "train": 1126584,
+          "val": 254016,
+          "test": 235008
+        }
+      }
+    },
+    {
+      "item": "2. no NaN or Inf silently produced",
+      "passed": true,
+      "blocking": true,
+      "detail": "0 non-finite values across 6 numeric columns of 1,615,608 rows",
+      "evidence": {
+        "non_finite_by_column": {
+          "actual": 0,
+          "mean": 0,
+          "p10": 0,
+          "p50": 0,
+          "p90": 0,
+          "sigma": 0
+        },
+        "rows": 1615608
+      }
+    },
+    {
+      "item": "3. all expected forecast quantiles generated",
+      "passed": true,
+      "blocking": true,
+      "detail": "stored quantile columns: ['p10', 'p50', 'p90']",
+      "evidence": {
+        "present": [
+          "p10",
+          "p50",
+          "p90"
+        ]
+      }
+    },
+    {
+      "item": "3b. all three horizons present",
+      "passed": true,
+      "blocking": true,
+      "detail": "horizons present: [1, 2, 3]",
+      "evidence": {
+        "horizons": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "item": "3c. quantiles are monotone (p10 <= p50 <= p90)",
+      "passed": true,
+      "blocking": false,
+      "detail": "0 crossings in 1,615,608 rows (0.0000%); independent quantile regressions may cross, but a high rate would invalidate the sigma derived from the interval",
+      "evidence": {
+        "crossings": 0,
+        "rate": 0.0,
+        "run_reported_rate": 0.08476661787400146
+      }
+    },
+    {
+      "item": "3d. stored forecast schema matches protocol section 4.6",
+      "passed": true,
+      "blocking": false,
+      "detail": "all required columns present",
+      "evidence": {
+        "missing": [],
+        "present": [
+          "station_complex_id",
+          "issue_time",
+          "horizon_h",
+          "target_time",
+          "split",
+          "actual",
+          "mean",
+          "p10",
+          "p50",
+          "p90",
+          "sigma",
+          "model_id",
+          "model_version",
+          "calibrated"
+        ]
+      }
+    },
+    {
+      "item": "4. sigma is non-negative and finite",
+      "passed": "True",
+      "blocking": true,
+      "detail": "0 negative, 277 exactly zero, median 26.569, p99 404.410",
+      "evidence": {
+        "negative": 0,
+        "zero": 277,
+        "median": 26.56866030518708,
+        "p99": 404.4097267492871
+      }
+    },
+    {
+      "item": "4b. sigma matches the frozen definition (q90 - q10) / (2 * 1.2816)",
+      "passed": true,
+      "blocking": true,
+      "detail": "maximum absolute deviation 0.000e+00",
+      "evidence": {
+        "max_abs_deviation": 0.0
+      }
+    },
+    {
+      "item": "4c. empirical 80% coverage on val lies in the pre-registered band",
+      "passed": true,
+      "blocking": true,
+      "detail": "recomputed PICP80 = 0.8017, band [0.76, 0.84]; run reported 0.8017487087427564",
+      "evidence": {
+        "recomputed_picp_80": 0.8017487087427564,
+        "run_reported": 0.8017487087427564,
+        "band": [
+          0.76,
+          0.84
+        ]
+      }
+    },
+    {
+      "item": "5. temporal train/val/test separation holds in the stored forecasts",
+      "passed": true,
+      "blocking": true,
+      "detail": "target-time ranges: {'train': ('2024-01-08 00:00:00', '2025-10-20 23:00:00'), 'val': ('2025-10-28 00:00:00', '2026-03-23 23:00:00'), 'test': ('2026-03-31 00:00:00', '2026-08-13 23:00:00')}",
+      "evidence": {
+        "ranges": {
+          "train": [
+            "2024-01-08 00:00:00",
+            "2025-10-20 23:00:00"
+          ],
+          "val": [
+            "2025-10-28 00:00:00",
+            "2026-03-23 23:00:00"
+          ],
+          "test": [
+            "2026-03-31 00:00:00",
+            "2026-08-13 23:00:00"
+          ]
+        }
+      }
+    },
+    {
+      "item": "6. the embargo gap is present between consecutive splits",
+      "passed": true,
+      "blocking": true,
+      "detail": "observed gaps in days: {'train->val': 7, 'val->test': 7}; configured embargo: 7 days",
+      "evidence": {
+        "gaps_days": {
+          "train->val": 7,
+          "val->test": 7
+        },
+        "embargo_days": 7,
+        "split_manifest": {
+          "train_start": "2024-01-01",
+          "train_end": "2025-10-20",
+          "val_start": "2025-10-28",
+          "val_end": "2026-03-23",
+          "test_start": "2026-03-31",
+          "test_end": "2026-08-13",
+          "embargo_days": 7
+        }
+      }
+    },
+    {
+      "item": "7. no future information entered the features",
+      "passed": true,
+      "blocking": true,
+      "detail": "tests/test_leakage.py re-executed against this checkout; it injects a future spike and requires every feature to be unchanged, with a positive control that a past change does move them",
+      "evidence": {
+        "pytest_exit_code": 0
+      }
+    },
+    {
+      "item": "9. exact git commit recorded",
+      "passed": true,
+      "blocking": true,
+      "detail": "commit dd656e58335fdc69a7581872f788f0215109281b, dirty=False",
+      "evidence": {
+        "git_commit": "dd656e58335fdc69a7581872f788f0215109281b",
+        "git_dirty": false
+      }
+    },
+    {
+      "item": "9b. no forecasting code changed while the run was in flight",
+      "passed": false,
+      "blocking": false,
+      "detail": "HEAD moved 4d605e562a35 -> dd656e58335f during the run; 2 file(s) on the forecasting code path changed: ['configs/forecasting.yaml', 'src/data/splits.py']. A commit-level difference is not by itself proof the run read different bytes -- an uncommitted change present at launch and committed later shows up here too. Check 9c settles the configuration case; anything else needs an explicit written verification.",
+      "evidence": {
+        "launch_commit": "4d605e562a35cc5e4b0c209c39d6e3664bb5d354",
+        "completion_commit": "dd656e58335fdc69a7581872f788f0215109281b",
+        "changed_on_code_path": [
+          "configs/forecasting.yaml",
+          "src/data/splits.py"
+        ],
+        "evidence_source": "commit-diff",
+        "code_path_digest_at_launch": null,
+        "code_path_digest_at_completion": null
+      }
+    },
+    {
+      "item": "9c. the configuration on disk still hashes to what the run recorded",
+      "passed": true,
+      "blocking": false,
+      "detail": "recorded a976a2d6a212, recomputed from configs/forecasting.yaml a976a2d6a212",
+      "evidence": {
+        "recorded": "a976a2d6a212b935b2ba3f714b3e07848fed3d3643fb7796067b537253fc89dd",
+        "recomputed": "a976a2d6a212b935b2ba3f714b3e07848fed3d3643fb7796067b537253fc89dd"
+      }
+    },
+    {
+      "item": "10. random seed recorded",
+      "passed": true,
+      "blocking": true,
+      "detail": "random_state = 0 (configs/forecasting.yaml); XGBoost is seeded from it and the run is otherwise deterministic given the frozen splits",
+      "evidence": {
+        "random_state": 0
+      }
+    },
+    {
+      "item": "11. runtime and hardware recorded",
+      "passed": true,
+      "blocking": true,
+      "detail": "wall clock 4.92 h (2026-08-26T21:42:44+05:30 -> 2026-08-27T02:38:02+05:30) on Windows-10-10.0.26200-SP0",
+      "evidence": {
+        "runtime": {
+          "start": "2026-08-26T21:42:44+05:30",
+          "end": "2026-08-27T02:38:02+05:30",
+          "wall_clock_s": 17718.0
+        },
+        "platform": "Windows-10-10.0.26200-SP0",
+        "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+        "python": "3.11.9",
+        "packages": {
+          "numpy": "2.4.6",
+          "pandas": "3.0.5",
+          "pyarrow": "25.0.1",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.0",
+          "statsmodels": "0.14.6",
+          "xgboost": "3.2.0",
+          "torch": "2.13.0",
+          "gymnasium": "1.3.0",
+          "stable-baselines3": "2.9.0",
+          "sb3-contrib": "2.9.0",
+          "ortools": "9.15.6755",
+          "shap": "0.51.0",
+          "matplotlib": "3.11.1"
+        }
+      }
+    },
+    {
+      "item": "8. model configuration and metadata saved",
+      "passed": true,
+      "blocking": true,
+      "detail": "selected hyperparameters, 24 search trials across 2 searches, config hash a976a2d6a212, calibration record, 19 feature columns",
+      "evidence": {
+        "selected_hyperparameters": {
+          "xgb_point": {
+            "n_estimators": 400,
+            "subsample": 0.8,
+            "colsample_bytree": 0.8,
+            "reg_lambda": 1.0,
+            "tree_method": "hist",
+            "n_jobs": 10,
+            "random_state": 0,
+            "learning_rate": 0.1,
+            "max_depth": 8,
+            "min_child_weight": 20
+          },
+          "xgb_quantile": {
+            "n_estimators": 400,
+            "subsample": 0.8,
+            "colsample_bytree": 0.8,
+            "reg_lambda": 1.0,
+            "tree_method": "hist",
+            "n_jobs": 10,
+            "random_state": 0,
+            "learning_rate": 0.1,
+            "max_depth": 8,
+            "min_child_weight": 20
+          }
+        },
+        "config_hash": "a976a2d6a212b935b2ba3f714b3e07848fed3d3643fb7796067b537253fc89dd",
+        "calibration": {
+          "factor": 1.1547819846894583,
+          "coverage_before": 0.7415989543965734,
+          "coverage_after": 0.8017487087427564,
+          "target": 0.8,
+          "n_candidates": 193,
+          "improved": true,
+          "at_search_boundary": false
+        },
+        "n_search_trials": 24,
+        "trials_per_search": {
+          "xgb_point": 12,
+          "xgb_quantile": 12
+        }
+      }
+    }
+  ],
+  "n_passed": 19,
+  "n_checks": 20,
+  "blocking_failures": [],
+  "gate": {
+    "beats_naive_on_pinball": true,
+    "naive_pinball_val": 47.95776643990929,
+    "quantile_pinball_val": 15.29314043160161,
+    "picp_80_val": 0.8017487087427564,
+    "coverage_band": [
+      0.76,
+      0.84
+    ],
+    "coverage_within_band": true,
+    "passed": true
+  },
+  "reference_artifact": {
+    "purpose": "Immutable reference copy of the M4 full-data fit. Any later forecasting run -- including one accelerated by subsampling the hyperparameter search -- is compared against this, and never replaces it.",
+    "preserved_utc": "2026-08-26T21:44:55.450995+00:00",
+    "run_git_commit": "dd656e58335fdc69a7581872f788f0215109281b",
+    "files": {
+      "forecasting_metrics.json": {
+        "sha256": "c0722454446808ec92e08b8541d7b2bb4968dbe24e0fa47213e41d30b1fc07d5",
+        "bytes": 17210,
+        "copied_from": "results\\forecasting_metrics.json"
+      },
+      "forecasting_report.md": {
+        "sha256": "2a9b9dc6959ee92ff46421341f7f4c0a445f1cb0f0db52f63bd1cd615f056f49",
+        "bytes": 2254,
+        "copied_from": "results\\forecasting_report.md"
+      },
+      "forecast.parquet": {
+        "sha256": "c3037949e55a866a61dfe1f097014e5636db1f2e9a6085f7ed05297b17df2aa6",
+        "bytes": 62364247,
+        "copied_from": "data\\processed\\forecasts\\forecast.parquet"
+      },
+      "forecast_point.parquet": {
+        "sha256": "200d0d68b47809902956d517ccb3fe761673b9a74d1895178dba71db81060c1e",
+        "bytes": 22054325,
+        "copied_from": "data\\processed\\forecasts\\forecast_point.parquet"
+      },
+      "split_manifest.json": {
+        "sha256": "18460e9d7edecabb2793ed929fe9c0e67ea71a54b692fdba3db40b3cd12bcee8",
+        "bytes": 3979,
+        "copied_from": "data\\processed\\split_manifest.json"
+      }
+    }
+  }
+}

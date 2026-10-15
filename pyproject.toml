@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metro-rl-research"
+version = "0.2.0"
+description = "Reproducible research prototype: uncertainty-aware multi-objective RL for metro train induction"
+requires-python = ">=3.11,<3.13"
+readme = "README.md"
+
+# Runtime dependencies are managed through requirements.in / requirements.txt so that the
+# lockfile carries hashes. This file exists for packaging metadata and tool configuration.
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+# `product/tests` holds the prototype's own suite. Kept separate from `tests/` so research
+# and product tests never share fixtures, but discovered here so both run in one command.
+testpaths = ["tests", "product/tests"]
+pythonpath = ["."]
+addopts = "-q --strict-markers"
+markers = [
+    "slow: takes more than a few seconds; excluded from the pre-commit gate",
+    "requires_data: needs data/raw to be populated by src.data.download",
+    "requires_training: needs a trained policy checkpoint under models/",
+]
+filterwarnings = ["error::DeprecationWarning:src.*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "A", "C4", "SIM", "ARG", "PTH", "RUF"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ARG"]

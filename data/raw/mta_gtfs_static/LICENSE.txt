@@ -1,0 +1,15 @@
+Data attribution
+================
+
+Metropolitan Transportation Authority, published via NY State Open Data. See https://www.mta.info/open-data
+
+Dataset : MTA subway GTFS static feed
+Source  : https://rrgtfsfeeds.s3.amazonaws.com/gtfs_subway.zip
+Licence : not stated by the publisher at retrieval time
+
+
+Retrieved: 2026-08-26T15:35:19.269241+00:00
+
+This project redistributes no raw data. Raw files are git-ignored; only manifests, hashes
+and this attribution file are committed, so a fresh clone can verify it re-downloaded
+identical bytes and fail loudly if upstream has changed.

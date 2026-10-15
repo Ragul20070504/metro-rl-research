@@ -1,0 +1,137 @@
+{
+  "generated_utc": "2026-08-26T16:12:20.802761+00:00",
+  "regime_screen": {
+    "start_date": "2024-01-01",
+    "used_fallback": true,
+    "stable_run_days": 278,
+    "max_abs_yoy_in_run": NaN,
+    "detail": "no run of >= 365 days with |YoY growth| <= 0.1; longest qualifying run was 278 days. Fell back to the configured start 2024-01-01. This is a finding, not a silent default: conclusions inherit whatever regime instability remains."
+  },
+  "regime_diagnostics": {
+    "by_year": {
+      "2021": {
+        "median_yoy": 1.025972220733192,
+        "p10_yoy": -0.66709108648749,
+        "p90_yoy": 3.7777621870739853,
+        "fraction_within_10pct": 0.0058997050147492625
+      },
+      "2022": {
+        "median_yoy": 0.3175020053001383,
+        "p10_yoy": 0.1266793702164625,
+        "p90_yoy": 0.7641112383896774,
+        "fraction_within_10pct": 0.06301369863013699
+      },
+      "2023": {
+        "median_yoy": 0.14747291821596087,
+        "p10_yoy": 0.08897292781078514,
+        "p90_yoy": 0.30589289713495943,
+        "fraction_within_10pct": 0.18082191780821918
+      },
+      "2024": {
+        "median_yoy": 0.03980164014335774,
+        "p10_yoy": -0.007714976542969931,
+        "p90_yoy": 0.08643749177434579,
+        "fraction_within_10pct": 0.9699453551912568
+      },
+      "2025": {
+        "median_yoy": 0.1113127101881084,
+        "p10_yoy": 0.07387976553149782,
+        "p90_yoy": 0.15916972083527248,
+        "fraction_within_10pct": 0.40273972602739727
+      },
+      "2026": {
+        "median_yoy": 0.051577731588069886,
+        "p10_yoy": 0.005491771346932817,
+        "p90_yoy": 0.07551787230936284,
+        "fraction_within_10pct": 1.0
+      }
+    },
+    "study_window": {
+      "median_yoy": 0.07081407918339322,
+      "max_abs_yoy": 0.2167788320492834,
+      "fraction_within_10pct": 0.7604602510460251,
+      "fraction_within_15pct": 0.9330543933054394,
+      "fraction_within_20pct": 0.9916317991631799
+    },
+    "longest_run_by_tolerance": {
+      "0.10": 278,
+      "0.12": 337,
+      "0.15": 635,
+      "0.20": 743,
+      "0.25": 1184
+    },
+    "mean_daily_by_year": {
+      "2020": 118686.543715847,
+      "2021": 157377.23561643835,
+      "2022": 209901.98630136985,
+      "2023": 244270.10136986303,
+      "2024": 253415.78142076504,
+      "2025": 282514.3506849315,
+      "2026": 289783.9066666667
+    }
+  },
+  "split": {
+    "train_start": "2024-01-01",
+    "train_end": "2025-10-20",
+    "val_start": "2025-10-28",
+    "val_end": "2026-03-23",
+    "test_start": "2026-03-31",
+    "test_end": "2026-08-13",
+    "embargo_days": 7
+  },
+  "study_window": {
+    "first": "2024-01-01",
+    "last": "2026-08-13",
+    "days": 956
+  },
+  "rows": {
+    "raw_station_hours": 1338779,
+    "excluded_by_quality": 5749,
+    "study_station_hours": 538557,
+    "supervised_total": 1615608,
+    "supervised_train": 1126584,
+    "supervised_val": 254016,
+    "supervised_test": 235008
+  },
+  "hourly_split_counts": {
+    "train": 371500,
+    "val": 81569,
+    "test": 77776,
+    "embargo": 7712
+  },
+  "distribution_shift": {
+    "psi_train_vs_val": 0.005006672205277176,
+    "psi_train_vs_test": 0.025016120642563512
+  },
+  "feature_names": [
+    "y_tminus_0",
+    "y_tminus_1",
+    "y_tminus_2",
+    "y_tminus_3",
+    "y_tminus_4",
+    "y_tminus_5",
+    "y_seasonal_24",
+    "y_seasonal_48",
+    "y_seasonal_168",
+    "y_roll_mean_3",
+    "y_roll_mean_24",
+    "y_roll_mean_168",
+    "y_roll_std_24",
+    "hour_sin",
+    "hour_cos",
+    "dow",
+    "is_weekend",
+    "is_holiday",
+    "station_index"
+  ],
+  "horizons_h": [
+    1,
+    2,
+    3
+  ],
+  "n_stations": 24,
+  "pre_regime_period_reserved": {
+    "note": "Data before the regime start is NOT used for training or evaluation. It is reserved for the out-of-regime robustness check EXP-ROBUST-004 (decision D-11).",
+    "available_before": "2024-01-01"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "attribution": "Metropolitan Transportation Authority",
+  "columns": [
+    "ada",
+    "ada_northbound",
+    "ada_notes",
+    "ada_southbound",
+    "borough",
+    "cbd",
+    "complex_id",
+    "daytime_routes",
+    "division",
+    "georeference",
+    "gtfs_latitude",
+    "gtfs_longitude",
+    "gtfs_stop_id",
+    "line",
+    "north_direction_label",
+    "south_direction_label",
+    "station_id",
+    "stop_name",
+    "structure"
+  ],
+  "dataset_id": "mta_subway_stations",
+  "download_utc": "2026-08-26T15:34:25.310145+00:00",
+  "files": [
+    {
+      "bytes": 43407,
+      "path": "mta_subway_stations/data.parquet",
+      "sha256": "37af4819d0de23828fce2c4babb9670db48745c3054f170e5eb9550ac6412dbe"
+    }
+  ],
+  "kind": "socrata_table",
+  "license": null,
+  "limitations": [],
+  "role": "complex/stop join, line membership, station ordering, coordinates",
+  "row_count": 496,
+  "socrata_id": "39hk-dx4f",
+  "source_url": "https://data.ny.gov/d/39hk-dx4f",
+  "title": "MTA Subway Stations",
+  "upstream_metadata": {
+    "attribution": "Metropolitan Transportation Authority",
+    "data_updated_at": null,
+    "license": null,
+    "license_url": null,
+    "name": "MTA Subway Stations",
+    "rows_updated_at": 1787717907,
+    "socrata_id": "39hk-dx4f"
+  }
+}

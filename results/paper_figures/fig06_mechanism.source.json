@@ -1,0 +1,42 @@
+{
+  "figure": "fig06_mechanism",
+  "generated_utc": "2026-08-28T07:07:12.050730+00:00",
+  "generated_by": "scripts/make_paper_assets.py",
+  "source_files": [
+    "results/mechanism_analysis.json"
+  ],
+  "detail": {
+    "dispatch_volume": [
+      -26.276666666666664,
+      -24.716666666666665,
+      -14.926666666666668,
+      -14.090000000000003
+    ],
+    "placebo": [
+      1.7899999999999978,
+      1.9266666666666707,
+      1.8766666666666652,
+      1.9366666666666645
+    ],
+    "matched": {
+      "note": "`fixed_timetable` is deterministic and has no training seed, so this is a descriptive comparison, not a paired test. It is included because it is the only method in the study that dispatches essentially the same number of trains as `ppo_uq`, which lets timing be compared with volume held roughly constant.",
+      "ppo_uq": {
+        "inductions": 204.30333333333334,
+        "idle_epochs": 84.42333333333333,
+        "dispatch_sd": 0.7838009748553839,
+        "max_queue": 1195.0816041899475,
+        "left_behind": 9304.654448369423,
+        "headway_violations": 0.0
+      },
+      "fixed_timetable": {
+        "inductions": 203.9,
+        "idle_epochs": 54.1,
+        "dispatch_sd": 0.5993613694667551,
+        "max_queue": 980.5872742629482,
+        "left_behind": 7494.533835978561,
+        "headway_violations": 0.0
+      }
+    }
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

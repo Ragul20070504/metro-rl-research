@@ -1,0 +1,171 @@
+{
+  "generated_utc": "2026-08-28T07:07:14.241990+00:00",
+  "generated_by": "scripts/make_paper_assets.py",
+  "figures": [
+    {
+      "kind": "figure",
+      "name": "fig01_research_framework",
+      "sources": []
+    },
+    {
+      "kind": "figure",
+      "name": "fig02_twin_architecture",
+      "sources": [
+        "results/simulator_validation.json"
+      ]
+    },
+    {
+      "kind": "figure",
+      "name": "fig03_forecasting",
+      "sources": [
+        "results/forecasting_metrics.json"
+      ]
+    },
+    {
+      "kind": "figure",
+      "name": "fig04_primary_uq_vs_point",
+      "sources": [
+        "results/seed_level.parquet",
+        "results/statistical_analysis.json"
+      ]
+    },
+    {
+      "kind": "figure",
+      "name": "fig05_placebo",
+      "sources": [
+        "results/seed_level.parquet"
+      ]
+    },
+    {
+      "kind": "figure",
+      "name": "fig06_mechanism",
+      "sources": [
+        "results/mechanism_analysis.json"
+      ]
+    },
+    {
+      "kind": "figure",
+      "name": "fig07_convex_service_loss",
+      "sources": [
+        "results/runs/main/surge/**/epochs.parquet"
+      ]
+    },
+    {
+      "kind": "figure",
+      "name": "fig08_scenario_robustness",
+      "sources": [
+        "results/seed_level.parquet"
+      ]
+    },
+    {
+      "kind": "figure",
+      "name": "fig09_baselines",
+      "sources": [
+        "results/seed_level.parquet"
+      ]
+    },
+    {
+      "kind": "figure",
+      "name": "fig10_sensitivity",
+      "sources": [
+        "results/sensitivity_analysis.json"
+      ]
+    },
+    {
+      "kind": "figure",
+      "name": "fig11_shap",
+      "sources": [
+        "results/shap_analysis.json"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "name": "table01_dataset",
+      "caption": "Dataset characteristics, splits and provenance",
+      "sources": [
+        "results/reproducibility_audit.json"
+      ]
+    },
+    {
+      "kind": "table",
+      "name": "table02_forecasting",
+      "caption": "Forecasting performance",
+      "sources": [
+        "results/forecasting_metrics.json"
+      ]
+    },
+    {
+      "kind": "table",
+      "name": "table03_twin_validation",
+      "caption": "Digital twin validation against published statistics",
+      "sources": [
+        "results/simulator_validation.json"
+      ]
+    },
+    {
+      "kind": "table",
+      "name": "table04_protocol",
+      "caption": "Registered experimental protocol",
+      "sources": [
+        "results/statistical_analysis.json",
+        "results/power_analysis.json"
+      ]
+    },
+    {
+      "kind": "table",
+      "name": "table05_primary_statistics",
+      "caption": "Confirmatory results (Holm-corrected, alpha 0.05)",
+      "sources": [
+        "results/statistical_analysis.json"
+      ]
+    },
+    {
+      "kind": "table",
+      "name": "table06_baselines",
+      "caption": "All methods, all scenarios. Baselines are deterministic (n=1); no paired test against them is defined under the seed-level unit of analysis",
+      "sources": [
+        "results/seed_level.parquet"
+      ]
+    },
+    {
+      "kind": "table",
+      "name": "table07_sensitivity",
+      "caption": "Sensitivity conditions (exploratory, Benjamini-Hochberg q = 0.10)",
+      "sources": [
+        "results/sensitivity_analysis.json"
+      ]
+    },
+    {
+      "kind": "table",
+      "name": "table08_ablations",
+      "caption": "Registered arm ablations (exploratory)",
+      "sources": [
+        "results/statistical_analysis.json"
+      ]
+    },
+    {
+      "kind": "table",
+      "name": "table09_robustness",
+      "caption": "Robustness of the primary result",
+      "sources": [
+        "results/seed_level.parquet",
+        "results/power_analysis.json",
+        "results/sensitivity_analysis.json"
+      ]
+    },
+    {
+      "kind": "table",
+      "name": "table10_limitations",
+      "caption": "Limitations and practical implications",
+      "sources": [
+        "results/power_analysis.json",
+        "results/simulator_validation.json",
+        "results/seed_level.parquet",
+        "docs/followup_status.md"
+      ]
+    }
+  ],
+  "policy": "every figure and table is generated from stored result files; no experimental number is hand-entered. Figures 1 and 2 are schematics and contain no experimental values."
+}

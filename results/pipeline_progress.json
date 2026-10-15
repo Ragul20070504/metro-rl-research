@@ -1,0 +1,130 @@
+{
+  "history": [
+    {
+      "step": "wait_for_m4",
+      "status": "START",
+      "detail": "",
+      "utc": "2026-08-26T19:39:58.403925+00:00"
+    },
+    {
+      "step": "wait_for_m4",
+      "status": "START",
+      "detail": "",
+      "utc": "2026-08-26T20:21:17.674597+00:00"
+    },
+    {
+      "step": "wait_for_m4",
+      "status": "OK",
+      "detail": "full-fit manifest present",
+      "utc": "2026-08-26T21:09:17.746817+00:00"
+    },
+    {
+      "step": "validate_forecasting_run.py",
+      "status": "OK",
+      "detail": "exit 0, 8s, log validate_forecasting_run.log",
+      "utc": "2026-08-26T21:09:25.739524+00:00"
+    },
+    {
+      "step": "persist_forecast_models.py",
+      "status": "FAILED",
+      "detail": "exit 1, 1964s, log persist_forecast_models.log",
+      "utc": "2026-08-26T21:42:10.034227+00:00"
+    },
+    {
+      "step": "fit_scalers.py --what obs --days 10",
+      "status": "OK",
+      "detail": "exit 0, 172s, log fit_scalers_what_obs_days_10.log",
+      "utc": "2026-08-26T21:48:04.990261+00:00"
+    },
+    {
+      "step": "run_experiments.py --stage prepare",
+      "status": "OK",
+      "detail": "exit 0, 14861s, log run_experiments_stage_prepare.log",
+      "utc": "2026-08-27T01:55:43.768275+00:00"
+    },
+    {
+      "step": "run_experiments.py --stage pilot",
+      "status": "OK",
+      "detail": "exit 0, 4642s, log run_experiments_stage_pilot.log",
+      "utc": "2026-08-27T05:57:22.836657+00:00"
+    },
+    {
+      "step": "power_gate",
+      "status": "OK",
+      "detail": "PROCEED with the registered n and report as potentially underpowered; S = 10",
+      "utc": "2026-08-27T05:57:22.836657+00:00"
+    },
+    {
+      "step": "freeze_registry.py",
+      "status": "OK",
+      "detail": "exit 0, 2s, log freeze_registry.log",
+      "utc": "2026-08-27T05:57:25.116127+00:00"
+    },
+    {
+      "step": "power_gate",
+      "status": "OK",
+      "detail": "PROCEED with the registered n and report as potentially underpowered; S = 10",
+      "utc": "2026-08-27T17:56:01.714688+00:00"
+    },
+    {
+      "step": "power_gate",
+      "status": "OK",
+      "detail": "PROCEED with the registered n and report as potentially underpowered; S = 10",
+      "utc": "2026-08-27T20:41:16.481245+00:00"
+    },
+    {
+      "step": "run_experiments.py --stage sweep --train-seeds 10",
+      "status": "OK",
+      "detail": "exit 0, 12115s, log run_experiments_stage_sweep_train-seeds_10.log",
+      "utc": "2026-08-28T00:03:11.115276+00:00"
+    },
+    {
+      "step": "run_experiments.py --stage ablations --train-seeds 10",
+      "status": "OK",
+      "detail": "exit 0, 993s, log run_experiments_stage_ablations_train-seeds_10.log",
+      "utc": "2026-08-28T00:19:44.040292+00:00"
+    },
+    {
+      "step": "run_shap.py",
+      "status": "OK",
+      "detail": "exit 0, 319s, log run_shap.log",
+      "utc": "2026-08-28T00:25:03.447104+00:00"
+    },
+    {
+      "step": "analyse.py",
+      "status": "OK",
+      "detail": "exit 0, 33s, log analyse.log",
+      "utc": "2026-08-28T00:25:36.059524+00:00"
+    },
+    {
+      "step": "make_figures.py",
+      "status": "OK",
+      "detail": "exit 0, 6s, log make_figures.log",
+      "utc": "2026-08-28T00:25:41.649210+00:00"
+    },
+    {
+      "step": "traceability.py",
+      "status": "OK",
+      "detail": "exit 0, 0s, log traceability.log",
+      "utc": "2026-08-28T00:25:41.745770+00:00"
+    },
+    {
+      "step": "reproducibility_audit.py",
+      "status": "OK",
+      "detail": "exit 0, 67s, log reproducibility_audit.log",
+      "utc": "2026-08-28T00:26:48.651153+00:00"
+    },
+    {
+      "step": "peer_review.py",
+      "status": "OK",
+      "detail": "exit 0, 0s, log peer_review.log",
+      "utc": "2026-08-28T00:26:48.792995+00:00"
+    },
+    {
+      "step": "pipeline",
+      "status": "COMPLETE",
+      "detail": "",
+      "utc": "2026-08-28T00:26:48.795015+00:00"
+    }
+  ]
+}

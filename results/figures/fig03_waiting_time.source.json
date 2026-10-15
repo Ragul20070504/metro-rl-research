@@ -1,0 +1,28 @@
+{
+  "figure": "fig03_waiting_time",
+  "generated_utc": "2026-08-28T00:52:34.899280+00:00",
+  "source_files": [
+    "results/seed_level.parquet"
+  ],
+  "detail": {
+    "metric": "waiting_accrued_passenger_hours",
+    "methods": [
+      "fixed_timetable",
+      "heuristic_threshold",
+      "milp_static",
+      "milp_rolling",
+      "ppo_point",
+      "ppo_placebo",
+      "ppo_uq",
+      "ppo_uq_single_obj",
+      "ppo_uq_noavail"
+    ],
+    "scenarios": [
+      "normal",
+      "surge",
+      "disruption",
+      "combined"
+    ]
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

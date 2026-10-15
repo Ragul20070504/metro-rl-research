@@ -1,0 +1,59 @@
+# Conda equivalent of requirements.txt, for users who prefer conda.
+#
+# PROVENANCE: the pip versions below are those of the environment that passed
+#   scripts/check_environment.py  (10/10 functional checks)
+#   python -m pytest              (38 passed)
+# on 2026-08-26 under CPython 3.11.9 (Windows AMD64).
+#
+# Dependencies are installed through pip rather than conda channels deliberately: the pinned
+# set was verified as a pip resolution, and mixing conda-forge builds of the same packages
+# would produce a different, unverified environment. Conda is used here only to provide the
+# interpreter. Justification for each package: docs/dependency_plan.md
+#
+# Usage:
+#   conda env create -f environment.yml
+#   conda activate metrorl
+#   python scripts/check_environment.py
+
+name: metrorl
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11.9
+  - pip
+  - pip:
+      # numerics / data
+      - numpy==2.4.6
+      - pandas==3.0.5
+      - pyarrow==25.0.1
+      - scipy==1.17.1
+      - scikit-learn==1.9.0
+      - statsmodels==0.14.6
+
+      # forecasting / train health
+      - xgboost==3.2.0
+
+      # reinforcement learning
+      # torch is the CPU build; evaluation runs on CPU so that results do not depend on
+      # GPU non-determinism (docs/dependency_plan.md, determinism configuration).
+      - torch==2.13.0
+      - gymnasium==1.3.0
+      - stable-baselines3==2.9.0
+      - sb3-contrib==2.9.0          # MaskablePPO: action masking is mandated by the manuscript
+
+      # optimisation
+      - ortools==9.15.6755
+
+      # explainability
+      - shap==0.51.0
+
+      # figures
+      - matplotlib==3.11.1
+
+      # config / tooling
+      - PyYAML==6.0.3
+      - pytest==9.1.1
+      - tqdm==4.70.0
+      - pip-tools==7.6.1

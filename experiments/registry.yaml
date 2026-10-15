@@ -1,0 +1,199 @@
+# Experiment registry / pre-registration (brief §28).
+#
+# STATUS: FROZEN. Entries below are the pre-registered design and are never edited.
+# This file MUST be set `frozen: true` and committed BEFORE the first run of M11.
+# After freezing, entries are never edited; deviations are appended to
+# docs/experimental_protocol.md §12 and superseded experiments keep `status: superseded`.
+#
+# status values: registered | running | complete | failed | superseded
+# A failed experiment STAYS HERE with a failure_note. Nothing is deleted.
+
+meta:
+  frozen: true
+  protocol: docs/experimental_protocol.md
+  audit: docs/research_audit.md
+  frozen_at_commit: 03990ba7d2bf9411ef8299f0a88aa5b89f9a2d42        # working tree dirty at freeze time
+  frozen_utc: 2026-08-27T05:57:25.084346+00:00
+  train_seed_count: 10
+  train_seed_source: R-1 power gate, results/power_analysis.json
+  train_seed_decision: "PROCEED with the registered n and report as potentially underpowered"
+
+defaults:
+  dataset: mta_hourly_ridership + mta_gtfs_static + mta_subway_stations
+  network_config: configs/network_l_full.yaml
+  simulator_config: configs/simulator.yaml
+  env_config: configs/env.yaml
+  eval_seeds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+  train_seeds: [101, 102, 103, 104, 105, 106, 107, 108, 109, 110]   # fixed by the R-1 power gate; see results/power_analysis.json
+  reward_weights: w_balanced
+  # Stored for every cell. These are the names the code actually emits
+  # (`src/evaluation/aggregate.py::METRICS_OF_INTEREST`), not aspirational ones: the brief's
+  # original list named `waiting_time_mean`, `trains_dispatched`, `energy_kwh` and
+  # `dispatch_cost`, which are the same quantities under the names used before amendment A-01
+  # renamed the endpoint and A15/A16 left energy and cost in equivalent rather than physical
+  # units. `degradation_ratio` and `recovery_time` are *derived* in analysis from the stored
+  # per-scenario metrics rather than recorded per cell.
+  metrics: [left_behind_fraction, waiting_accrued_passenger_hours, waiting_time_mean_s,
+            waiting_time_p95_s, energy_units, cost_units, unmet_demand_fraction, service_level,
+            denial_rate_per_passenger, inductions, headway_violations, total_reward]
+
+# ---------------------------------------------------------------------------
+# CONFIRMATORY FAMILY — exactly two tests, Holm-corrected at family-wise alpha = 0.05.
+# Primary endpoint: unmet_demand_fraction under `surge` at w_balanced.
+# ---------------------------------------------------------------------------
+
+experiments:
+
+  - experiment_id: EXP-UQ-001
+    hypothesis: >
+      H1 (PRIMARY). Adding a calibrated demand-forecast uncertainty channel to the RL
+      observation reduces unmet demand under demand surge, relative to an otherwise
+      identical point-forecast policy.
+    family: confirmatory
+    primary_endpoint: left_behind_fraction   # see protocol section 12, amendment A-01
+    scenario: surge
+    methods: [ppo_uq, ppo_point]
+    seeds: {train: default, eval: default}
+    configuration: configs/ppo.yaml + reward_weights=w_balanced
+    expected_output: results/surge/{ppo_uq,ppo_point}/<train_seed>/<eval_seed>/metrics.json
+    analysis: paired (CRN), training seed as unit of analysis, Wilcoxon signed-rank or paired t per protocol §8.3
+    status: registered
+
+  - experiment_id: EXP-UQ-002
+    hypothesis: >
+      H1c (CO-PRIMARY, placebo control). The benefit of the uncertainty channel exceeds
+      that of a dimensionally identical but uninformative (shuffled) uncertainty channel.
+      If this fails, the mechanism claim fails regardless of EXP-UQ-001.
+    family: confirmatory
+    primary_endpoint: left_behind_fraction   # see protocol section 12, amendment A-01
+    scenario: surge
+    methods: [ppo_uq, ppo_placebo]
+    seeds: {train: default, eval: default}
+    configuration: configs/ppo.yaml + reward_weights=w_balanced
+    expected_output: results/surge/{ppo_uq,ppo_placebo}/<train_seed>/<eval_seed>/metrics.json
+    status: registered
+
+# ---------------------------------------------------------------------------
+# EXPLORATORY — Benjamini-Hochberg FDR at q = 0.10. Labelled exploratory in every table.
+# ---------------------------------------------------------------------------
+
+  - experiment_id: EXP-UQ-003
+    hypothesis: H2. Uncertainty-aware PPO >= point-forecast PPO across all four scenarios.
+    family: exploratory
+    scenario: [normal, surge, disruption, combined]
+    methods: [ppo_uq, ppo_point, ppo_placebo]
+    status: registered
+
+  - experiment_id: EXP-UQ-004
+    hypothesis: >
+      H1b (MECHANISM). The uncertainty-aware policy's dispatch rate increases with forecast
+      dispersion sigma after conditioning on forecast mean mu; the point-forecast policy's
+      does not. Tested on stored decision logs, not on aggregate outcomes.
+    family: exploratory
+    scenario: [normal, surge, disruption, combined]
+    methods: [ppo_uq, ppo_point]
+    analysis: partial rank correlation of dispatch count with sigma given mu
+    status: registered
+
+  - experiment_id: EXP-MO-001
+    hypothesis: H3. Multi-objective reward yields better joint outcomes than a waiting-time-only reward, at the cost of waiting time alone.
+    family: exploratory
+    scenario: [normal, surge, disruption, combined]
+    methods: [ppo_uq, ppo_uq_single_obj]
+    configuration: identical training budget; reward_weights w_balanced vs w_wait_only
+    status: registered
+
+  - experiment_id: EXP-BASE-001
+    hypothesis: H4, H5, H6. Adaptive RL outperforms fixed timetable, tuned heuristic, and static MILP.
+    family: exploratory
+    scenario: [normal, surge, disruption, combined]
+    methods: [ppo_uq, fixed_timetable, heuristic_threshold, milp_static]
+    status: registered
+
+  - experiment_id: EXP-BASE-005
+    hypothesis: >
+      H6b. The advantage of adaptive RL shrinks or disappears against a rolling-horizon MILP
+      re-solved on exactly the same forecasts. This is the fair strong optimisation baseline
+      and it is registered in advance so a negative outcome cannot be quietly dropped.
+    family: exploratory
+    scenario: [normal, surge, disruption, combined]
+    methods: [ppo_uq, milp_rolling]
+    status: registered
+
+  - experiment_id: EXP-AVAIL-001
+    hypothesis: H7. Predicted train-availability information improves outcomes under train disruption.
+    family: exploratory
+    scenario: [disruption, combined]
+    methods: [ppo_uq, ppo_uq_noavail]
+    status: registered    # scope depends on decision item 4
+
+  - experiment_id: EXP-ROBUST-001
+    hypothesis: H8. The relative advantage of adaptive policies increases under demand surge (method x scenario interaction).
+    family: exploratory
+    scenario: [normal, surge]
+    methods: all
+    status: registered
+
+  - experiment_id: EXP-ROBUST-002
+    hypothesis: H9. The relative advantage of adaptive policies increases under train failure.
+    family: exploratory
+    scenario: [normal, disruption]
+    methods: all
+    status: registered
+
+  - experiment_id: EXP-ROBUST-003
+    hypothesis: H10. Under combined events, degradation is sub-additive for adaptive policies and additive-or-worse for pre-computed plans.
+    family: exploratory
+    scenario: [normal, surge, disruption, combined]
+    methods: all
+    status: registered
+
+  - experiment_id: EXP-ROBUST-004
+    hypothesis: >
+      Out-of-regime transfer. Conclusions drawn in the post-recovery demand regime may not hold
+      in the pre-pandemic regime (2017-01-13 to 2019-12-31). Registered separately, in advance,
+      so this period cannot quietly become an extra test set (decision D-11).
+    family: exploratory
+    scenario: [normal, surge]
+    methods: [ppo_uq, ppo_point, fixed_timetable]
+    dataset: mta_hourly_ridership_2017 (t69i-h2me)
+    configuration: forecaster and policies trained in-regime; evaluated out-of-regime
+    status: registered
+
+  - experiment_id: EXP-SENS-001
+    hypothesis: Reward-weight sensitivity. Method ranking is reported per weight configuration; the resulting surface is a convex-hull approximation by scalarisation, NOT a Pareto front.
+    family: sensitivity
+    scenario: [normal, surge, disruption, combined]
+    methods: [ppo_uq, ppo_point]
+    configuration: reward_weights in [w_balanced, w_service, w_cost, w_unmet_heavy]
+    status: registered
+
+  - experiment_id: EXP-SENS-002
+    hypothesis: >
+      OD-model sensitivity. The primary conclusion must hold under all three synthetic OD
+      variants, or be reported as OD-dependent. Assumption A03 is synthetic and drives the
+      primary endpoint.
+    family: sensitivity
+    scenario: surge
+    methods: [ppo_uq, ppo_point, ppo_placebo]
+    configuration: od_model in [uniform_downstream, distance_decay, cbd_attracted]
+    status: registered
+
+  - experiment_id: EXP-XAI-001
+    hypothesis: H11. SHAP global attributions concentrate on decision-relevant features.
+    family: descriptive
+    scenario: [normal, surge, disruption, combined]
+    methods: [ppo_uq]
+    status: registered
+
+  - experiment_id: EXP-XAI-002
+    hypothesis: Attribution stability across training seeds and background resamples (Spearman rank correlation).
+    family: descriptive
+    methods: [ppo_uq]
+    status: registered
+
+  - experiment_id: EXP-XAI-003
+    hypothesis: Local explanations for a frozen instance set (highest-dispatch epochs, post-failure epochs).
+    family: descriptive
+    methods: [ppo_uq]
+    status: registered

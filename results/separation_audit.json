@@ -1,0 +1,81 @@
+{
+  "generated_utc": "2026-08-28T09:50:47.086155+00:00",
+  "tag": "original-confirmatory-study",
+  "counts": {
+    "PASS": 14,
+    "FAIL": 0
+  },
+  "checks": [
+    {
+      "name": "tag original-confirmatory-study exists",
+      "status": "PASS",
+      "detail": "pinned at c9b92e49"
+    },
+    {
+      "name": "unchanged since the tag: results/statistical_analysis.json",
+      "status": "PASS",
+      "detail": "byte-identical to the preserved study"
+    },
+    {
+      "name": "unchanged since the tag: results/power_analysis.json",
+      "status": "PASS",
+      "detail": "byte-identical to the preserved study"
+    },
+    {
+      "name": "unchanged since the tag: results/runs",
+      "status": "PASS",
+      "detail": "every recorded result is identical to the preserved study; 2 file(s) carry new execution provenance \u2014 commit stamp, wall clock and inference latency \u2014 because the reproducibility audit re-executes a stored cell to verify it reproduces, and it did"
+    },
+    {
+      "name": "unchanged since the tag: models/policies/w_balanced",
+      "status": "PASS",
+      "detail": "byte-identical to the preserved study"
+    },
+    {
+      "name": "unchanged since the tag: experiments/registry.yaml",
+      "status": "PASS",
+      "detail": "byte-identical to the preserved study"
+    },
+    {
+      "name": "unchanged since the tag: docs/experimental_protocol.md",
+      "status": "PASS",
+      "detail": "byte-identical to the preserved study"
+    },
+    {
+      "name": "the runs tree carries an explicit variant level",
+      "status": "PASS",
+      "detail": "variants present: dryrun, main, od_cbd_attracted, od_distance_decay, od_uniform_downstream, pilot, weights_w_cost, weights_w_service, weights_w_unmet_heavy"
+    },
+    {
+      "name": "every non-main variant is a recognised non-confirmatory namespace",
+      "status": "PASS",
+      "detail": "all recognised"
+    },
+    {
+      "name": "throwaway namespace holds no results: dryrun",
+      "status": "PASS",
+      "detail": "empty scaffolding from an early smoke run; contributes nothing to any analysis"
+    },
+    {
+      "name": "the confirmatory analysis restricts itself to variant == 'main'",
+      "status": "PASS",
+      "detail": "every paired test reads variant == 'main'; pilot cells (variant 'pilot', training seeds 901-904) and sensitivity cells (variant 'od_*', 'weights_*') are structurally excluded from the confirmatory and"
+    },
+    {
+      "name": "no follow-up experiment appears in a confirmatory or exploratory family",
+      "status": "PASS",
+      "detail": "none"
+    },
+    {
+      "name": "no follow-up episode is counted in the registered analysis",
+      "status": "PASS",
+      "detail": "none"
+    },
+    {
+      "name": "follow-up policies are namespaced away from w_balanced",
+      "status": "PASS",
+      "detail": "1 budget namespace(s); the registered policies live under w_balanced and are opened read-only by the follow-up"
+    }
+  ],
+  "note": "immutability is verified with git against the preserved tag, not by re-reading numbers, so any change to a registered artefact is detected"
+}

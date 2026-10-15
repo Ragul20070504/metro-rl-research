@@ -1,0 +1,80 @@
+# --- secrets ---
+.env
+*.key
+*.pem
+
+# --- python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+
+# --- data: bytes are ignored, PROVENANCE IS COMMITTED ---
+# Raw data is re-downloadable and immutable; manifests + hashes + licences are tracked so a
+# fresh clone can verify it fetched identical bytes.
+#
+# NOTE the `!data/**/` line in each block. Without it git never descends into the ignored
+# directories, so the negations below it can never match and the manifests silently go
+# untracked. This is the standard gitignore directory-exclusion trap and it cost us a commit.
+data/raw/**
+!data/raw/**/
+!data/raw/**/MANIFEST.json
+!data/raw/**/LICENSE.txt
+
+data/interim/**
+!data/interim/**/
+!data/interim/excluded_station_days.csv
+
+data/processed/**
+!data/processed/**/
+!data/processed/**/MANIFEST.json
+!data/processed/split_manifest.json
+!data/processed/network/station_order.json
+
+data/external/**
+!data/external/**/
+!data/external/**/MANIFEST.json
+!data/external/**/LICENSE.txt
+
+# keep the directory placeholders themselves
+!data/**/.gitkeep
+
+# --- models: large binaries not tracked; small metadata is ---
+models/**
+!models/**/
+!models/**/*.json
+!models/.gitkeep
+
+# --- results: machine-readable results ARE tracked (they are the evidence);
+#     bulky per-step logs are not ---
+results/**/episode_log.parquet
+results/**/*.parquet
+logs/**
+!logs/.gitkeep
+
+# --- os / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Fitted boosters are large binaries, not metadata. They are excluded by the rule above's intent
+# and reproducible exactly: scripts/persist_forecast_models.py refits them from the tracked
+# results/forecasting_metrics.json on the frozen splits and VERIFIES the result against the
+# stored forecasts (max absolute difference 0.0 on p50 and sigma, 2026-08-27). The metadata that
+# records which model these are stays tracked.
+models/forecasting/*.json
+!models/forecasting/metadata.json
+
+# --- M17 demonstration: outputs are illustrative, never evidence ---
+# Demonstration runs are one draw each and support no claim. Tracking them would put files that
+# look like results next to files that are results, which is exactly the confusion the
+# demo/confirmatory separation exists to prevent.
+results/demo/
+constraints.txt

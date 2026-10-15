@@ -1,0 +1,404 @@
+{
+  "audited_utc": "2026-08-27T04:36:39.843562+00:00",
+  "n_checks": 19,
+  "n_passed": 19,
+  "blocking_failures": [],
+  "checks": [
+    {
+      "item": "C1. every method faces the same network, horizon, fleet, action bound and reward scales",
+      "passed": true,
+      "blocking": true,
+      "detail": "4 methods compared on 11 environment properties; all identical",
+      "evidence": {
+        "fingerprints": {
+          "fixed_timetable": {
+            "n_stations": 24,
+            "n_decision_epochs": 228,
+            "fleet_size": 36,
+            "k_max": 2,
+            "decision_interval_s": 300.0,
+            "observation_size": 123,
+            "ref_W": 3434.8163634976613,
+            "ref_U": 22.013573453678408,
+            "ref_E": 41.262527392210984,
+            "ref_C": 1.6420979532163933,
+            "weight_id": "w_balanced"
+          },
+          "heuristic_threshold": {
+            "n_stations": 24,
+            "n_decision_epochs": 228,
+            "fleet_size": 36,
+            "k_max": 2,
+            "decision_interval_s": 300.0,
+            "observation_size": 123,
+            "ref_W": 3434.8163634976613,
+            "ref_U": 22.013573453678408,
+            "ref_E": 41.262527392210984,
+            "ref_C": 1.6420979532163933,
+            "weight_id": "w_balanced"
+          },
+          "milp_static": {
+            "n_stations": 24,
+            "n_decision_epochs": 228,
+            "fleet_size": 36,
+            "k_max": 2,
+            "decision_interval_s": 300.0,
+            "observation_size": 123,
+            "ref_W": 3434.8163634976613,
+            "ref_U": 22.013573453678408,
+            "ref_E": 41.262527392210984,
+            "ref_C": 1.6420979532163933,
+            "weight_id": "w_balanced"
+          },
+          "ppo_uq": {
+            "n_stations": 24,
+            "n_decision_epochs": 228,
+            "fleet_size": 36,
+            "k_max": 2,
+            "decision_interval_s": 300.0,
+            "observation_size": 123,
+            "ref_W": 3434.8163634976613,
+            "ref_U": 22.013573453678408,
+            "ref_E": 41.262527392210984,
+            "ref_C": 1.6420979532163933,
+            "weight_id": "w_balanced"
+          }
+        }
+      }
+    },
+    {
+      "item": "C2. the environment builder cannot specialise the world to the method",
+      "passed": true,
+      "blocking": false,
+      "detail": "build_env(cell: 'Cell', *, trained_forecaster: 'bool' = True): the cell names the method, but the scenario, seed and frozen configuration determine the world; there is no method-conditional branch in the simulator or the demand process",
+      "evidence": {
+        "signature": "(cell: 'Cell', *, trained_forecaster: 'bool' = True)"
+      }
+    },
+    {
+      "item": "C3. common random numbers are structural: the stream factory has no method argument",
+      "passed": true,
+      "blocking": true,
+      "detail": "environment_streams(scenario: 'str', eval_seed: 'int') -> 'dict[str, np.random.Generator]' -- a method cannot influence the realisation it faces",
+      "evidence": {
+        "parameters": [
+          "eval_seed",
+          "scenario"
+        ]
+      }
+    },
+    {
+      "item": "C3b. the same (scenario, eval_seed) reproduces the same streams",
+      "passed": true,
+      "blocking": true,
+      "detail": "9 named streams drawn twice at ('surge', 7) and compared over 32 draws each",
+      "evidence": {
+        "streams": [
+          "demand",
+          "dwell",
+          "failures",
+          "history",
+          "maintenance",
+          "od",
+          "running_time",
+          "surge",
+          "tiebreak"
+        ]
+      }
+    },
+    {
+      "item": "C3d. swapping the forecast provider does not desynchronise the realised world",
+      "passed": true,
+      "blocking": true,
+      "detail": "three methods stepped through the same 24 actions at ('surge', 11) experienced identical arrivals and queues. fixed_timetable is built with the seasonal-naive provider and the others with the trained one; neither provider consumes randomness, so the worlds coincide",
+      "evidence": {
+        "first_three_epochs": {
+          "fixed_timetable": [
+            [
+              226.0,
+              226.0
+            ],
+            [
+              236.0,
+              432.17561166499127
+            ],
+            [
+              211.0,
+              617.6521545198717
+            ]
+          ],
+          "ppo_uq": [
+            [
+              226.0,
+              226.0
+            ],
+            [
+              236.0,
+              432.17561166499127
+            ],
+            [
+              211.0,
+              617.6521545198717
+            ]
+          ],
+          "milp_rolling": [
+            [
+              226.0,
+              226.0
+            ],
+            [
+              236.0,
+              432.17561166499127
+            ],
+            [
+              211.0,
+              617.6521545198717
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "item": "C3c. scenarios at one eval_seed share a base world (amendment A-03)",
+      "passed": true,
+      "blocking": true,
+      "detail": "the demand stream is identical across scenario families at the same evaluation seed, so a scenario contrast measures the scenario rather than a different draw",
+      "evidence": {
+        "amendment": "A-03"
+      }
+    },
+    {
+      "item": "C4. the heuristic reads the forecast mean but never sigma",
+      "passed": true,
+      "blocking": true,
+      "detail": "resolves `queue_length` and `forecast_mu_h1` only; no reference to any sigma channel",
+      "evidence": {
+        "registered_information_set": "same mu as ppo_point (protocol section 7.1)"
+      }
+    },
+    {
+      "item": "C4b. the rolling MILP reads sigma, as its registration requires",
+      "passed": true,
+      "blocking": true,
+      "detail": "milp_rolling plans against mu + Z*sigma with Z = 1.0. Protocol section 7.1 registers this method as receiving sigma, so withholding it would make the strongest optimisation baseline weaker than the one registered -- an asymmetry favouring the proposed method",
+      "evidence": {
+        "Z_ROBUST": 1.0
+      }
+    },
+    {
+      "item": "C4c. the static MILP sees only the historical average day",
+      "passed": true,
+      "blocking": true,
+      "detail": "milp_static solves once on the fitted demand process's mean for the day type and executes open-loop; it never observes the realised episode",
+      "evidence": {}
+    },
+    {
+      "item": "C4d. the three uncertainty arms are distinct and all registered",
+      "passed": true,
+      "blocking": true,
+      "detail": "{'ppo_point': 'point', 'ppo_placebo': 'placebo', 'ppo_uq': 'uq'} -- point zeroes sigma, placebo replaces it with a draw of the same marginal distribution and no association, uq passes it through. All three keep the same observation dimensionality and parameter count",
+      "evidence": {
+        "arms": {
+          "ppo_point": "point",
+          "ppo_placebo": "placebo",
+          "ppo_uq": "uq"
+        }
+      }
+    },
+    {
+      "item": "C5. reading a forecast feature at or after the issue hour raises",
+      "passed": true,
+      "blocking": true,
+      "detail": "HistoryBuffer.value_at(10, issue_hour=10) raises IndexError; future information cannot enter a feature by accident because the accessor refuses rather than returning it",
+      "evidence": {}
+    },
+    {
+      "item": "C5b. the leakage test suite is present and covers every method's inputs",
+      "passed": true,
+      "blocking": true,
+      "detail": "tests\\test_leakage.py injects a future spike and requires every feature to be unchanged, with a positive control that a past change does move them",
+      "evidence": {}
+    },
+    {
+      "item": "C6. baseline tuning seeds are disjoint from every scored pool",
+      "passed": true,
+      "blocking": true,
+      "detail": "tuning pools {'heuristic_threshold': [2001, 2002, 2003, 2004, 2005, 2006], 'milp_surrogate': [3001, 3002, 3003, 3004]}; scored pools are evaluation 1-30, training 101-110, pilot evaluation 41-50; no overlap",
+      "evidence": {
+        "tuning_pools": {
+          "heuristic_threshold": [
+            2001,
+            2002,
+            2003,
+            2004,
+            2005,
+            2006
+          ],
+          "milp_surrogate": [
+            3001,
+            3002,
+            3003,
+            3004
+          ]
+        },
+        "n_scored_seeds": 50
+      }
+    },
+    {
+      "item": "C6b. the heuristic's selected thresholds are interior to its search grid",
+      "passed": true,
+      "blocking": true,
+      "detail": "queue interior=True, forecast interior=True over 45 grid points (amendment A-10: extend the queue grid until the selection is strictly interior). A selection at a boundary means the optimum probably lies outside the grid, which would understate the baseline",
+      "evidence": {
+        "grid": {
+          "queue": [
+            0.0,
+            50.0,
+            100.0,
+            200.0,
+            400.0,
+            800.0,
+            1600.0,
+            3200.0,
+            6400.0
+          ],
+          "forecast": [
+            0.0,
+            2000.0,
+            4000.0,
+            6000.0,
+            8000.0
+          ]
+        },
+        "extension_history": [
+          {
+            "round": 0,
+            "grid_max": 800.0,
+            "selected_queue_threshold": 800.0,
+            "selected_is_interior": false,
+            "peak_observed_queue": 8425.4362539634,
+            "next_threshold_would_be": 1600.0,
+            "next_threshold_can_never_fire": false
+          },
+          {
+            "round": 1,
+            "grid_max": 1600.0,
+            "selected_queue_threshold": 1600.0,
+            "selected_is_interior": false,
+            "peak_observed_queue": 8425.4362539634,
+            "next_threshold_would_be": 3200.0,
+            "next_threshold_can_never_fire": false
+          },
+          {
+            "round": 2,
+            "grid_max": 3200.0,
+            "selected_queue_threshold": 3200.0,
+            "selected_is_interior": false,
+            "peak_observed_queue": 8425.4362539634,
+            "next_threshold_would_be": 6400.0,
+            "next_threshold_can_never_fire": false
+          },
+          {
+            "round": 3,
+            "grid_max": 6400.0,
+            "selected_queue_threshold": 3200.0,
+            "selected_is_interior": true,
+            "peak_observed_queue": 8425.4362539634,
+            "next_threshold_would_be": 12800.0,
+            "next_threshold_can_never_fire": true
+          }
+        ]
+      }
+    },
+    {
+      "item": "C6c. the RL arms share one frozen hyperparameter configuration",
+      "passed": true,
+      "blocking": true,
+      "detail": "amendment A-05: no PPO hyperparameter search is run, and one documented configuration (src/rl/train.py PPOConfig) is applied unchanged to every arm, so the proposed arm cannot be tuned harder than its ablations",
+      "evidence": {
+        "amendment": "A-05"
+      }
+    },
+    {
+      "item": "C7. every stored method was evaluated on the same evaluation seeds",
+      "passed": true,
+      "blocking": false,
+      "detail": "4 method(s) stored; all use the full registered pool of 30 evaluation seeds in every scenario",
+      "evidence": {
+        "methods": {
+          "fixed_timetable": {
+            "combined": 30,
+            "disruption": 30,
+            "normal": 30,
+            "surge": 30
+          },
+          "heuristic_threshold": {
+            "combined": 30,
+            "disruption": 30,
+            "normal": 30,
+            "surge": 30
+          },
+          "milp_rolling": {
+            "combined": 30,
+            "disruption": 30,
+            "normal": 30,
+            "surge": 30
+          },
+          "milp_static": {
+            "combined": 30,
+            "disruption": 30,
+            "normal": 30,
+            "surge": 30
+          }
+        }
+      }
+    },
+    {
+      "item": "C7a. every stored cell used one frozen reward_scales",
+      "passed": true,
+      "blocking": false,
+      "detail": "1 distinct reward_scales provenance(s) across stored run manifests",
+      "evidence": {
+        "reward_scales": [
+          "{\"U_definition\": \"distinct passengers left behind per epoch (amendment A-01)\", \"W_definition\": \"passenger-minutes accrued per epoch (queue integral, amendment A-02)\", \"episodes\": 10, \"epochs_averaged\": 2280, \"fallbacks\": {}, \"fitted_utc\": \"2026-08-26T18:29:44.544603+00:00\", \"forecaster_independent\": \"the fixed timetable never reads the observation, so these scales do not depend on which forecaster supplies mu and sigma\", \"git_commit\": \"544ca4e9fd1121c13d5a37598b88216ea7631153\", \"note\": \"Fitted from the fixed-timetable baseline, per protocol section 6.4.\", \"provisional\": false, \"scenario\": \"normal\", \"seeds\": \"1001..1010 (disjoint from both frozen seed pools)\", \"source_policy\": \"fixed_timetable\", \"timetable_provenance\": \"real_data:mta_gtfs_static\"}"
+        ]
+      }
+    },
+    {
+      "item": "C7b. every stored cell used one frozen obs_scaler",
+      "passed": true,
+      "blocking": false,
+      "detail": "1 distinct obs_scaler provenance(s) across stored run manifests",
+      "evidence": {
+        "obs_scaler": [
+          "{\"arm_fitted_on\": \"uq\", \"episodes\": 10, \"fitted_utc\": \"2026-08-26T21:48:03.215108+00:00\", \"forecaster\": \"xgb_quantile\", \"git_commit\": \"unknown\", \"n_samples\": 2280, \"note\": \"One frozen scaler for every arm (protocol section 6.1). Fitted on the uq arm so the sigma channels carry their true scale; the identical affine map is then applied to point and placebo. See docs/decisions.md D-15.\", \"seeds\": \"1001..1010 (disjoint from both frozen seed pools)\", \"source_policy\": \"fixed_timetable\"}"
+        ]
+      }
+    },
+    {
+      "item": "C7c. each method used exactly the forecaster its registration gives it",
+      "passed": true,
+      "blocking": false,
+      "detail": "{'fixed_timetable': ['naive_seasonal'], 'heuristic_threshold': ['xgb_quantile'], 'milp_rolling': ['xgb_quantile'], 'milp_static': ['xgb_quantile']}. ['fixed_timetable'] consume no forecast (protocol section 7.1 gives the fixed timetable nothing beyond the clock), so they are built with the seasonal-naive provider; every other method uses the trained M4 model. Check C3d confirms this substitution does not change the world any method faces",
+      "evidence": {
+        "by_method": {
+          "fixed_timetable": [
+            "naive_seasonal"
+          ],
+          "heuristic_threshold": [
+            "xgb_quantile"
+          ],
+          "milp_rolling": [
+            "xgb_quantile"
+          ],
+          "milp_static": [
+            "xgb_quantile"
+          ]
+        },
+        "forecast_free": [
+          "fixed_timetable"
+        ]
+      }
+    }
+  ]
+}

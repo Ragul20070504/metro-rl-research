@@ -1,0 +1,15 @@
+{
+  "figure": "fig11_shap",
+  "generated_utc": "2026-08-28T07:07:14.133142+00:00",
+  "generated_by": "scripts/make_paper_assets.py",
+  "source_files": [
+    "results/shap_analysis.json"
+  ],
+  "detail": {
+    "method": "ppo_uq",
+    "train_seed": 103,
+    "explainer": "shap.PermutationExplainer (model-agnostic)",
+    "caveat": "SHAP provides model attribution and does not establish causality"
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

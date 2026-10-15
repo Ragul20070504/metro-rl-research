@@ -1,0 +1,43 @@
+{
+  "figure": "fig11_simulator_validation",
+  "generated_utc": "2026-08-28T00:52:37.456436+00:00",
+  "source_files": [
+    "results/simulator_validation.json"
+  ],
+  "detail": {
+    "rows": [
+      "End-to-end running time (one direction)",
+      "Weekday round trips per day",
+      "Minimum headway",
+      "Weekday boardings per day",
+      "Mean passenger platform wait",
+      "Fraction of dispatched trains completing their trip",
+      "Train failures per operating day"
+    ],
+    "relative_error_percent": [
+      0.29641606036108714,
+      9.314079422382676,
+      0.0,
+      1.4275505768687078,
+      27.5484898733273,
+      5.701671668901963,
+      201.7360853312264
+    ],
+    "verdicts": [
+      "validated",
+      "validated",
+      "validated",
+      "validated",
+      "partially validated",
+      "partially validated",
+      "partially validated"
+    ],
+    "counts": {
+      "validated": 4,
+      "partially validated": 3,
+      "not validatable": 7,
+      "mismatch": 0
+    }
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

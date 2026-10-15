@@ -1,0 +1,195 @@
+{
+  "served_per_train_epoch": 94.88235294117646,
+  "round_trip_epochs": 20,
+  "energy_per_induction": 46.25408547517225,
+  "cost_per_induction": 1.0,
+  "cost_per_train_epoch": 0.041666666666666664,
+  "fleet_size": 36,
+  "wait_minutes_per_arrival": [
+    1.8616428837492482,
+    0.6330753297038502,
+    0.6800633175486112
+  ],
+  "standing_queue_per_arrival": [
+    2.227545605511509,
+    2.227545605511509,
+    2.227545605511509,
+    2.227545605511509,
+    2.227545605511509,
+    2.227545605511509,
+    2.227545605511509,
+    2.227545605511509,
+    1.8604731291138679,
+    1.8604731291138679,
+    1.023528645482845,
+    1.023528645482845,
+    0.9384222823083559,
+    0.9384222823083559,
+    0.9384222823083559,
+    0.9384222823083559,
+    0.48673885881398626,
+    0.48673885881398626,
+    0.35052662633538245,
+    0.35052662633538245,
+    0.30312044432897756,
+    0.30312044432897756,
+    0.30312044432897756,
+    0.30312044432897756,
+    0.25744979950065433,
+    0.25744979950065433,
+    0.25744979950065433,
+    0.25744979950065433,
+    0.25744979950065433,
+    0.25744979950065433,
+    0.25744979950065433,
+    0.25744979950065433,
+    0.25744979950065433,
+    0.25744979950065433,
+    0.25744979950065433,
+    0.25744979950065433,
+    0.25744979950065433
+  ],
+  "max_inductions_per_window": {
+    "8": 14,
+    "12": 18,
+    "20": 26,
+    "36": 42
+  },
+  "provenance": {
+    "method": "measured by running the fixed-timetable baseline in the simulator; the MILP surrogate is calibrated, not assumed, so that any RL advantage is not an artefact of a strawman optimisation model",
+    "seeds": [
+      3001,
+      3002,
+      3003,
+      3004
+    ],
+    "seed_pool_note": "3001+ is disjoint from the frozen evaluation and training pools",
+    "episodes": 4,
+    "observed_round_trip_epochs": 19.68055153095721,
+    "service_rate_fit": {
+      "objective": "least squares on the simulator's realised queue path",
+      "rms_queue_error_passengers": 294.6160072836531,
+      "note": "kappa is fitted so the fluid recursion q_t = max(0, q_{t-1} + d_t - kappa*n_t) reproduces the queue the simulator actually realises. The obvious alternative -- average realised boardings per trainset per epoch -- is demand-limited, not capacity-limited, on a line with spare capacity: it measured 71 passengers/train/epoch, which told the MILP that service and demand were exactly matched and that extra trainsets bought nothing. The static plan then dispatched 137 trains instead of 228 and left 17.6 % of passengers behind. That would have been a strawman baseline, which protocol section 7.1 forbids."
+    },
+    "wait_coefficient_fit": {
+      "objective": "least squares of accrued passenger-minutes on (arrivals x action-specific coefficient) + (queue at epoch start x epoch length)",
+      "probe_policies": [
+        "fixed_timetable",
+        "constant_0",
+        "constant_1",
+        "constant_2"
+      ],
+      "rms_error_passenger_minutes": 991.3638530418826,
+      "coefficients_minutes_per_arrival": [
+        1.8616428837492482,
+        0.6330753297038502,
+        0.6800633175486112
+      ],
+      "note": "A pure fluid queue prices only capacity. On a line with spare capacity it therefore concludes that frequency is free, dispatches the minimum, and strands a quarter of demand -- which is exactly the strawman baseline protocol section 7.1 forbids. These three coefficients price the wait for the *next train*. Because the action space has only three values the dependence is exact, not approximated."
+    },
+    "dispatch_capacity_fit": {
+      "model": "sum of inductions over any window of W epochs <= observed maximum",
+      "source": "always-request-two probe; the maximum over probe episodes",
+      "windows": {
+        "8": {
+          "cap": 14,
+          "per_epoch": 1.75
+        },
+        "12": {
+          "cap": 18,
+          "per_epoch": 1.5
+        },
+        "20": {
+          "cap": 26,
+          "per_epoch": 1.3
+        },
+        "36": {
+          "cap": 42,
+          "per_epoch": 1.1666666666666667
+        }
+      },
+      "why": "the terminal platform and the minimum headway make max_induct_per_decision unsustainable; a plan that assumes otherwise is infeasible and is clipped, and the clipped result is a bursty schedule rather than the planned one",
+      "note": "this is a feasibility envelope measured from the environment, in the same category as the fleet-size constraint -- not a performance hint. It is the observed maximum, so it cannot bind tighter than what the environment has delivered",
+      "amendment": "A-13"
+    },
+    "standing_queue_fit": {
+      "model": "queue_end >= phi[trains_in_service] * arrivals",
+      "objective": "least squares through the origin within each bucket of trains in service",
+      "rms_error_passengers": 229.85404644023754,
+      "excluded": "epochs with no trainset in service; the queue diverges there",
+      "monotone": "phi is made non-increasing in n, so more service can never predict a larger queue",
+      "rejected_alternative": "phi = c / n was fitted and rejected: it explained R^2 = 0.07 of the variance, so a bucketed table at the resolution the data supports was used instead",
+      "buckets": [
+        {
+          "trains_in_service": "[1,2]",
+          "phi_per_arrival": 2.227545605511509,
+          "epochs": 16
+        },
+        {
+          "trains_in_service": "[2,4]",
+          "phi_per_arrival": 2.227545605511509,
+          "epochs": 36
+        },
+        {
+          "trains_in_service": "[4,6]",
+          "phi_per_arrival": 2.227545605511509,
+          "epochs": 36
+        },
+        {
+          "trains_in_service": "[6,8]",
+          "phi_per_arrival": 2.227545605511509,
+          "epochs": 36
+        },
+        {
+          "trains_in_service": "[8,10]",
+          "phi_per_arrival": 1.8604731291138679,
+          "epochs": 27
+        },
+        {
+          "trains_in_service": "[10,12]",
+          "phi_per_arrival": 1.023528645482845,
+          "epochs": 37
+        },
+        {
+          "trains_in_service": "[12,14]",
+          "phi_per_arrival": 0.9384222823083559,
+          "epochs": 56
+        },
+        {
+          "trains_in_service": "[14,16]",
+          "phi_per_arrival": 0.9384222823083559,
+          "epochs": 44
+        },
+        {
+          "trains_in_service": "[16,18]",
+          "phi_per_arrival": 0.48673885881398626,
+          "epochs": 88
+        },
+        {
+          "trains_in_service": "[18,20]",
+          "phi_per_arrival": 0.35052662633538245,
+          "epochs": 139
+        },
+        {
+          "trains_in_service": "[20,24]",
+          "phi_per_arrival": 0.30312044432897756,
+          "epochs": 2181
+        },
+        {
+          "trains_in_service": "[24,30]",
+          "phi_per_arrival": 0.25744979950065433,
+          "epochs": 36
+        }
+      ],
+      "amendment": "A-11",
+      "probe_policies": [
+        "fixed_timetable",
+        "constant_0",
+        "constant_1",
+        "constant_2"
+      ],
+      "why": "Without this term the surrogate predicted a mean queue of 0.5 passengers under its own plan while the simulator realised 1,018 -- a factor of 1,856. The MILP's objective was then dominated by induction and service cost, so under-dispatching looked nearly free: it planned 164 trains against the fixed timetable's 228 and stranded three times as many passengers. Scoring both schedules under the surrogate and under the simulator ranked them oppositely, which localised the fault to this missing term."
+    },
+    "calibrated_utc": "2026-08-27T03:42:39.343334+00:00"
+  }
+}

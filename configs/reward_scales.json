@@ -1,0 +1,22 @@
+{
+  "ref_W": 3434.8163634976613,
+  "ref_U": 22.013573453678408,
+  "ref_E": 41.262527392210984,
+  "ref_C": 1.6420979532163933,
+  "provenance": {
+    "source_policy": "fixed_timetable",
+    "provisional": false,
+    "note": "Fitted from the fixed-timetable baseline, per protocol section 6.4.",
+    "timetable_provenance": "real_data:mta_gtfs_static",
+    "episodes": 10,
+    "seeds": "1001..1010 (disjoint from both frozen seed pools)",
+    "scenario": "normal",
+    "epochs_averaged": 2280,
+    "W_definition": "passenger-minutes accrued per epoch (queue integral, amendment A-02)",
+    "U_definition": "distinct passengers left behind per epoch (amendment A-01)",
+    "fallbacks": {},
+    "forecaster_independent": "the fixed timetable never reads the observation, so these scales do not depend on which forecaster supplies mu and sigma",
+    "git_commit": "544ca4e9fd1121c13d5a37598b88216ea7631153",
+    "fitted_utc": "2026-08-26T18:29:44.544603+00:00"
+  }
+}

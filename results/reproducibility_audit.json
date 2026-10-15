@@ -1,0 +1,275 @@
+{
+  "generated_utc": "2026-08-28T07:20:04.152329+00:00",
+  "git_commit": "886dc84205a34e7e7e7354db5db6fe0e410a3ec6",
+  "counts": {
+    "PASS": 23,
+    "FAIL": 0,
+    "WARN": 1,
+    "SKIPPED": 0
+  },
+  "checks": [
+    {
+      "name": "dependency reproducibility",
+      "status": "PASS",
+      "detail": "55 pinned packages, 1047 SHA-256 hashes",
+      "evidence": {
+        "pinned": 55,
+        "hashes": 1047
+      }
+    },
+    {
+      "name": "interpreter recorded",
+      "status": "PASS",
+      "detail": "Python 3.11.9 on Windows-10-10.0.26200-SP0",
+      "evidence": {
+        "python": "3.11.9",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "executable": "D:\\Research\\metro-rl-research\\.venv\\Scripts\\python.exe"
+      }
+    },
+    {
+      "name": "git commit recorded",
+      "status": "PASS",
+      "detail": "HEAD = 886dc84205a34e7e7e7354db5db6fe0e410a3ec6",
+      "evidence": {
+        "commit": "886dc84205a34e7e7e7354db5db6fe0e410a3ec6"
+      }
+    },
+    {
+      "name": "working tree clean",
+      "status": "PASS",
+      "detail": "clean",
+      "evidence": {
+        "dirty": false
+      }
+    },
+    {
+      "name": "raw data provenance",
+      "status": "PASS",
+      "detail": "11 dataset manifests, 11 licence files",
+      "evidence": {
+        "manifests": 11,
+        "licences": 11
+      }
+    },
+    {
+      "name": "chronological splits with embargo",
+      "status": "PASS",
+      "detail": "embargo 7 days; rows 1126584 / 254016 / 235008",
+      "evidence": {
+        "split": {
+          "train_start": "2024-01-01",
+          "train_end": "2025-10-20",
+          "val_start": "2025-10-28",
+          "val_end": "2026-03-23",
+          "test_start": "2026-03-31",
+          "test_end": "2026-08-13",
+          "embargo_days": 7
+        },
+        "rows": {
+          "raw_station_hours": 1338779,
+          "excluded_by_quality": 5749,
+          "study_station_hours": 538557,
+          "supervised_total": 1615608,
+          "supervised_train": 1126584,
+          "supervised_val": 254016,
+          "supervised_test": 235008
+        }
+      }
+    },
+    {
+      "name": "regime screen",
+      "status": "WARN",
+      "detail": "the pre-registered regime screen fired its fallback and this is carried into the limitations: no run of >= 365 days with |YoY growth| <= 0.1; longest qualifying run was 278 days. Fell back to the configured start 2024-01-01. This is a finding, not a silent default: conclusions inherit whatever regime instability remains.",
+      "evidence": {
+        "regime_screen": {
+          "start_date": "2024-01-01",
+          "used_fallback": true,
+          "stable_run_days": 278,
+          "max_abs_yoy_in_run": NaN,
+          "detail": "no run of >= 365 days with |YoY growth| <= 0.1; longest qualifying run was 278 days. Fell back to the configured start 2024-01-01. This is a finding, not a silent default: conclusions inherit whatever regime instability remains."
+        }
+      }
+    },
+    {
+      "name": "config provenance: data.yaml",
+      "status": "PASS",
+      "detail": "loads under strict provenance",
+      "evidence": {}
+    },
+    {
+      "name": "config provenance: env.yaml",
+      "status": "PASS",
+      "detail": "refuses to load outside a tagged sensitivity sweep because it contains ungrounded parameters -- which is the intended behaviour",
+      "evidence": {
+        "error": "D:\\Research\\metro-rl-research\\configs\\env.yaml contains parameters with provenance 'unresolved': availability_signal.noise_sd, availability_signal.frailty_log_sd.\nThese have no defensible value yet (see docs/research_audit.md section E), so they may only be used in a tagged sensitivity sweep: load_c"
+      }
+    },
+    {
+      "name": "config provenance: forecasting.yaml",
+      "status": "PASS",
+      "detail": "loads under strict provenance",
+      "evidence": {}
+    },
+    {
+      "name": "config provenance: simulator.yaml",
+      "status": "PASS",
+      "detail": "refuses to load outside a tagged sensitivity sweep because it contains ungrounded parameters -- which is the intended behaviour",
+      "evidence": {
+        "error": "D:\\Research\\metro-rl-research\\configs\\simulator.yaml contains parameters with provenance 'unresolved': dwell.per_boarder_seconds, capacity.passengers_per_train, energy.units_per_train_km, energy.units_per_stop, cost.units_per_induction, cost.units_per_train_hour.\nThese have no defensible value yet ("
+      }
+    },
+    {
+      "name": "seed pools are disjoint",
+      "status": "PASS",
+      "detail": "every tuning, calibration, pilot and training pool is disjoint from the evaluation seeds, so nothing is fitted on a day the comparison is scored on",
+      "evidence": {
+        "pools": {
+          "evaluation": [
+            1,
+            30
+          ],
+          "training": [
+            101,
+            110
+          ],
+          "pilot training": [
+            901,
+            904
+          ],
+          "pilot evaluation": [
+            41,
+            50
+          ],
+          "scaler fitting": [
+            1001,
+            1020
+          ],
+          "heuristic tuning": [
+            2001,
+            2006
+          ],
+          "surrogate calibration": [
+            3001,
+            3004
+          ]
+        },
+        "overlaps": {}
+      }
+    },
+    {
+      "name": "no hard-coded machine paths in code",
+      "status": "PASS",
+      "detail": "all paths derive from src/common/paths.py",
+      "evidence": {
+        "offenders": []
+      }
+    },
+    {
+      "name": "no secrets in code or configs",
+      "status": "PASS",
+      "detail": "no credential-shaped literals found",
+      "evidence": {
+        "offenders": []
+      }
+    },
+    {
+      "name": "forecasting validated",
+      "status": "PASS",
+      "detail": "19/20 independent checks pass",
+      "evidence": {
+        "gate": {
+          "beats_naive_on_pinball": true,
+          "naive_pinball_val": 47.95776643990929,
+          "quantile_pinball_val": 15.29314043160161,
+          "picp_80_val": 0.8017487087427564,
+          "coverage_band": [
+            0.76,
+            0.84
+          ],
+          "coverage_within_band": true,
+          "passed": true
+        },
+        "blocking_failures": []
+      }
+    },
+    {
+      "name": "simulator validated against published statistics",
+      "status": "PASS",
+      "detail": "4 validated, 3 partially validated, 7 not validatable, 0 mismatches",
+      "evidence": {
+        "counts": {
+          "validated": 4,
+          "partially validated": 3,
+          "not validatable": 7,
+          "mismatch": 0
+        }
+      }
+    },
+    {
+      "name": "forecaster loads from disk",
+      "status": "PASS",
+      "detail": "xgb_quantile, calibration factor 1.1548",
+      "evidence": {}
+    },
+    {
+      "name": "trained policies load from disk",
+      "status": "PASS",
+      "detail": "69 checkpoints; loaded 101",
+      "evidence": {
+        "n_policies": 69
+      }
+    },
+    {
+      "name": "experiment reproduction",
+      "status": "PASS",
+      "detail": "re-ran main/combined/fixed_timetable/w_balanced/na/1 and compared 7 metrics; all identical",
+      "evidence": {
+        "cell": "main/combined/fixed_timetable/w_balanced/na/1",
+        "differences": {}
+      }
+    },
+    {
+      "name": "temporal leakage tests",
+      "status": "PASS",
+      "detail": "tests/test_leakage.py re-executed: future-spike injection with positive controls, split ordering, embargo, and observation-level future-information tests",
+      "evidence": {
+        "pytest_exit_code": 0
+      }
+    },
+    {
+      "name": "no hand-entered experimental numbers",
+      "status": "PASS",
+      "detail": "11 figures, each with a provenance companion naming its source files",
+      "evidence": {
+        "missing": []
+      }
+    },
+    {
+      "name": "experiment registry",
+      "status": "PASS",
+      "detail": "17 registered experiments; frozen = True",
+      "evidence": {
+        "n_experiments": 17,
+        "frozen": true
+      }
+    },
+    {
+      "name": "results trace to stored runs",
+      "status": "PASS",
+      "detail": "the analysis reports 7610 episodes; 7610 result directories exist on disk",
+      "evidence": {
+        "analysis_episodes": 7610,
+        "stored_cells": 7610
+      }
+    },
+    {
+      "name": "full test suite",
+      "status": "PASS",
+      "detail": "every test in tests/ re-executed",
+      "evidence": {
+        "pytest_exit_code": 0
+      }
+    }
+  ]
+}

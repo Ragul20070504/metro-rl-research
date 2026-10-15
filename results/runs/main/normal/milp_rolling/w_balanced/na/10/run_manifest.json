@@ -1,0 +1,54 @@
+{
+  "experiment_id": "EXP-BASE-005",
+  "cell": {
+    "method": "milp_rolling",
+    "scenario": "normal",
+    "eval_seed": 10,
+    "train_seed": null,
+    "weight_id": "w_balanced",
+    "variant": "",
+    "experiment_id": "EXP-BASE-005",
+    "od_model": null,
+    "day_type": "weekday"
+  },
+  "git_commit": "unknown",
+  "git_dirty": true,
+  "provisional": true,
+  "reward_scales": {
+    "source_policy": "fixed_timetable",
+    "provisional": false,
+    "note": "Fitted from the fixed-timetable baseline, per protocol section 6.4.",
+    "timetable_provenance": "real_data:mta_gtfs_static",
+    "episodes": 10,
+    "seeds": "1001..1010 (disjoint from both frozen seed pools)",
+    "scenario": "normal",
+    "epochs_averaged": 2280,
+    "W_definition": "passenger-minutes accrued per epoch (queue integral, amendment A-02)",
+    "U_definition": "distinct passengers left behind per epoch (amendment A-01)",
+    "fallbacks": {},
+    "forecaster_independent": "the fixed timetable never reads the observation, so these scales do not depend on which forecaster supplies mu and sigma",
+    "git_commit": "544ca4e9fd1121c13d5a37598b88216ea7631153",
+    "fitted_utc": "2026-08-26T18:29:44.544603+00:00"
+  },
+  "obs_scaler": {
+    "source_policy": "fixed_timetable",
+    "forecaster": "xgb_quantile",
+    "arm_fitted_on": "uq",
+    "episodes": 10,
+    "seeds": "1001..1010 (disjoint from both frozen seed pools)",
+    "n_samples": 2280,
+    "note": "One frozen scaler for every arm (protocol section 6.1). Fitted on the uq arm so the sigma channels carry their true scale; the identical affine map is then applied to point and placebo. See docs/decisions.md D-15.",
+    "git_commit": "unknown",
+    "fitted_utc": "2026-08-26T21:48:03.215108+00:00"
+  },
+  "forecaster": "xgb_quantile",
+  "hardware": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "cpu_count": 12,
+    "python": "3.11.9"
+  },
+  "start_utc": "2026-08-27T03:59:35.776140+00:00",
+  "end_utc": "2026-08-27T04:02:55.000454+00:00",
+  "wall_clock_s": 199.224314
+}

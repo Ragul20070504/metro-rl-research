@@ -1,0 +1,632 @@
+{
+  "generated_utc": "2026-08-26T21:08:02.440550+00:00",
+  "quick_mode": false,
+  "git_commit": "dd656e58335fdc69a7581872f788f0215109281b",
+  "git_dirty": false,
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "pyarrow": "25.0.1",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.0",
+    "statsmodels": "0.14.6",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0",
+    "gymnasium": "1.3.0",
+    "stable-baselines3": "2.9.0",
+    "sb3-contrib": "2.9.0",
+    "ortools": "9.15.6755",
+    "shap": "0.51.0",
+    "matplotlib": "3.11.1"
+  },
+  "config_path": "configs/forecasting.yaml",
+  "config_hash": "a976a2d6a212b935b2ba3f714b3e07848fed3d3643fb7796067b537253fc89dd",
+  "rows": {
+    "train": 1126584,
+    "val": 254016,
+    "test": 235008
+  },
+  "feature_columns": [
+    "y_tminus_0",
+    "y_tminus_1",
+    "y_tminus_2",
+    "y_tminus_3",
+    "y_tminus_4",
+    "y_tminus_5",
+    "y_seasonal_24",
+    "y_seasonal_48",
+    "y_seasonal_168",
+    "y_roll_mean_3",
+    "y_roll_mean_24",
+    "y_roll_mean_168",
+    "y_roll_std_24",
+    "hour_sin",
+    "hour_cos",
+    "dow",
+    "is_weekend",
+    "is_holiday",
+    "station_index"
+  ],
+  "selected_hyperparameters": {
+    "xgb_point": {
+      "n_estimators": 400,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 1.0,
+      "tree_method": "hist",
+      "n_jobs": 10,
+      "random_state": 0,
+      "learning_rate": 0.1,
+      "max_depth": 8,
+      "min_child_weight": 20
+    },
+    "xgb_quantile": {
+      "n_estimators": 400,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 1.0,
+      "tree_method": "hist",
+      "n_jobs": 10,
+      "random_state": 0,
+      "learning_rate": 0.1,
+      "max_depth": 8,
+      "min_child_weight": 20
+    }
+  },
+  "search_trials": {
+    "xgb_point": [
+      {
+        "candidate": {
+          "learning_rate": 0.05,
+          "max_depth": 4,
+          "min_child_weight": 5
+        },
+        "score_metric": "rmse",
+        "score": 160.8146373293544,
+        "fit_seconds": 21.12
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.05,
+          "max_depth": 4,
+          "min_child_weight": 20
+        },
+        "score_metric": "rmse",
+        "score": 161.2123478262107,
+        "fit_seconds": 16.53
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.05,
+          "max_depth": 6,
+          "min_child_weight": 5
+        },
+        "score_metric": "rmse",
+        "score": 138.99265957052964,
+        "fit_seconds": 20.69
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.05,
+          "max_depth": 6,
+          "min_child_weight": 20
+        },
+        "score_metric": "rmse",
+        "score": 139.95040995333719,
+        "fit_seconds": 21.11
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.05,
+          "max_depth": 8,
+          "min_child_weight": 5
+        },
+        "score_metric": "rmse",
+        "score": 128.23965715405956,
+        "fit_seconds": 25.83
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.05,
+          "max_depth": 8,
+          "min_child_weight": 20
+        },
+        "score_metric": "rmse",
+        "score": 128.726417868862,
+        "fit_seconds": 25.75
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.1,
+          "max_depth": 4,
+          "min_child_weight": 5
+        },
+        "score_metric": "rmse",
+        "score": 147.2962087782795,
+        "fit_seconds": 16.22
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.1,
+          "max_depth": 4,
+          "min_child_weight": 20
+        },
+        "score_metric": "rmse",
+        "score": 147.74119914386284,
+        "fit_seconds": 16.34
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.1,
+          "max_depth": 6,
+          "min_child_weight": 5
+        },
+        "score_metric": "rmse",
+        "score": 130.9621565151451,
+        "fit_seconds": 19.93
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.1,
+          "max_depth": 6,
+          "min_child_weight": 20
+        },
+        "score_metric": "rmse",
+        "score": 131.8550056424147,
+        "fit_seconds": 20.06
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.1,
+          "max_depth": 8,
+          "min_child_weight": 5
+        },
+        "score_metric": "rmse",
+        "score": 125.97186945301583,
+        "fit_seconds": 25.58
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.1,
+          "max_depth": 8,
+          "min_child_weight": 20
+        },
+        "score_metric": "rmse",
+        "score": 124.8894180732648,
+        "fit_seconds": 24.92
+      }
+    ],
+    "xgb_quantile": [
+      {
+        "candidate": {
+          "learning_rate": 0.05,
+          "max_depth": 4,
+          "min_child_weight": 5
+        },
+        "score_metric": "pinball_mean",
+        "score": 21.734092770757098,
+        "fit_seconds": 1072.71
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.05,
+          "max_depth": 4,
+          "min_child_weight": 20
+        },
+        "score_metric": "pinball_mean",
+        "score": 21.693047041194024,
+        "fit_seconds": 913.73
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.05,
+          "max_depth": 6,
+          "min_child_weight": 5
+        },
+        "score_metric": "pinball_mean",
+        "score": 18.378072142368527,
+        "fit_seconds": 1629.21
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.05,
+          "max_depth": 6,
+          "min_child_weight": 20
+        },
+        "score_metric": "pinball_mean",
+        "score": 18.37369933204524,
+        "fit_seconds": 809.31
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.05,
+          "max_depth": 8,
+          "min_child_weight": 5
+        },
+        "score_metric": "pinball_mean",
+        "score": 16.352815233907293,
+        "fit_seconds": 816.53
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.05,
+          "max_depth": 8,
+          "min_child_weight": 20
+        },
+        "score_metric": "pinball_mean",
+        "score": 16.324590316433387,
+        "fit_seconds": 872.6
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.1,
+          "max_depth": 4,
+          "min_child_weight": 5
+        },
+        "score_metric": "pinball_mean",
+        "score": 19.877632783302527,
+        "fit_seconds": 1401.04
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.1,
+          "max_depth": 4,
+          "min_child_weight": 20
+        },
+        "score_metric": "pinball_mean",
+        "score": 19.959993390018763,
+        "fit_seconds": 2206.19
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.1,
+          "max_depth": 6,
+          "min_child_weight": 5
+        },
+        "score_metric": "pinball_mean",
+        "score": 16.74411462094197,
+        "fit_seconds": 933.77
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.1,
+          "max_depth": 6,
+          "min_child_weight": 20
+        },
+        "score_metric": "pinball_mean",
+        "score": 16.6945911336088,
+        "fit_seconds": 833.23
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.1,
+          "max_depth": 8,
+          "min_child_weight": 5
+        },
+        "score_metric": "pinball_mean",
+        "score": 15.369391786318564,
+        "fit_seconds": 1326.2
+      },
+      {
+        "candidate": {
+          "learning_rate": 0.1,
+          "max_depth": 8,
+          "min_child_weight": 20
+        },
+        "score_metric": "pinball_mean",
+        "score": 15.338826092406256,
+        "fit_seconds": 1990.82
+      }
+    ]
+  },
+  "calibration": {
+    "factor": 1.1547819846894583,
+    "coverage_before": 0.7415989543965734,
+    "coverage_after": 0.8017487087427564,
+    "target": 0.8,
+    "n_candidates": 193,
+    "improved": true,
+    "at_search_boundary": false
+  },
+  "quantile_crossing_rate": 0.08476661787400146,
+  "gate": {
+    "beats_naive_on_pinball": true,
+    "naive_pinball_val": 47.95776643990929,
+    "quantile_pinball_val": 15.29314043160161,
+    "picp_80_val": 0.8017487087427564,
+    "coverage_band": [
+      0.76,
+      0.84
+    ],
+    "coverage_within_band": true,
+    "passed": true
+  },
+  "metrics": {
+    "naive_seasonal": {
+      "train": {
+        "model_id": "naive_seasonal",
+        "point": {
+          "mae": 65.38190316922662,
+          "rmse": 191.7506248888023,
+          "mase": 1.0,
+          "smape": 23.952667748229167,
+          "mape": 40.896809666625224,
+          "smape_mape_floor": 1.0,
+          "n": 1126584
+        }
+      },
+      "val": {
+        "model_id": "naive_seasonal",
+        "point": {
+          "mae": 95.9155328798186,
+          "rmse": 285.22586998803393,
+          "mase": 1.0,
+          "smape": 31.324559159967503,
+          "mape": 56.08912992133237,
+          "smape_mape_floor": 1.0,
+          "n": 254016
+        }
+      },
+      "test": {
+        "model_id": "naive_seasonal",
+        "point": {
+          "mae": 67.4263556985294,
+          "rmse": 183.22996142215803,
+          "mase": 1.0,
+          "smape": 21.229175271586886,
+          "mape": 27.706168686805142,
+          "smape_mape_floor": 1.0,
+          "n": 235008
+        }
+      }
+    },
+    "xgb_point": {
+      "train": {
+        "model_id": "xgb_point",
+        "point": {
+          "mae": 32.81423829585062,
+          "rmse": 67.5655132894783,
+          "mase": 0.5018856396840914,
+          "smape": 16.313197306709846,
+          "mape": 23.24518492036408,
+          "smape_mape_floor": 1.0,
+          "n": 1126584
+        }
+      },
+      "val": {
+        "model_id": "xgb_point",
+        "point": {
+          "mae": 49.07017809541125,
+          "rmse": 124.8894180732648,
+          "mase": 0.5115978259422881,
+          "smape": 19.41600264943403,
+          "mape": 33.31986522584219,
+          "smape_mape_floor": 1.0,
+          "n": 254016
+        }
+      },
+      "test": {
+        "model_id": "xgb_point",
+        "point": {
+          "mae": 43.89372368456076,
+          "rmse": 102.42964648656678,
+          "mase": 0.6509876328006572,
+          "smape": 15.517653288556673,
+          "mape": 21.17695744145714,
+          "smape_mape_floor": 1.0,
+          "n": 235008
+        }
+      }
+    },
+    "xgb_quantile": {
+      "train": {
+        "model_id": "xgb_quantile",
+        "point": {
+          "mae": 33.93716394359915,
+          "rmse": 90.09250760943914,
+          "mase": 0.5190605090794054,
+          "smape": 13.885079421803809,
+          "mape": 18.080682180218925,
+          "smape_mape_floor": 1.0,
+          "n": 1126584
+        },
+        "probabilistic": {
+          "pinball_by_quantile": {
+            "0.05": 5.133885083923472,
+            "0.1": 8.296128871157663,
+            "0.25": 13.776592449897997,
+            "0.5": 16.968581971799576,
+            "0.75": 14.065677388354592,
+            "0.9": 8.194124204703868,
+            "0.95": 5.423459650906872
+          },
+          "pinball_mean": 10.265492802963436,
+          "picp_80": 0.8668931921632119,
+          "picp_90": 0.9533297117658337,
+          "mpiw_80": 131.0955394328757,
+          "mpiw_80_normalised": 0.2838960402316412,
+          "winkler_80": 164.9025307586153,
+          "crps": 20.530985605926872,
+          "ece": 0.020908237392227937,
+          "reliability": [
+            {
+              "nominal": 0.05,
+              "empirical": 0.044384617569573154,
+              "n": 1126584
+            },
+            {
+              "nominal": 0.1,
+              "empirical": 0.0854956221639931,
+              "n": 1126584
+            },
+            {
+              "nominal": 0.25,
+              "empirical": 0.22787914616220362,
+              "n": 1126584
+            },
+            {
+              "nominal": 0.5,
+              "empirical": 0.5076363591174737,
+              "n": 1126584
+            },
+            {
+              "nominal": 0.75,
+              "empirical": 0.7863674612811827,
+              "n": 1126584
+            },
+            {
+              "nominal": 0.9,
+              "empirical": 0.9328003948218686,
+              "n": 1126584
+            },
+            {
+              "nominal": 0.95,
+              "empirical": 0.9773128324208403,
+              "n": 1126584
+            }
+          ]
+        }
+      },
+      "val": {
+        "model_id": "xgb_quantile",
+        "point": {
+          "mae": 49.1944340346472,
+          "rmse": 138.55286473573432,
+          "mase": 0.5128932984846931,
+          "smape": 17.399929966184022,
+          "mape": 26.173344908568158,
+          "smape_mape_floor": 1.0,
+          "n": 254016
+        },
+        "probabilistic": {
+          "pinball_by_quantile": {
+            "0.05": 7.65469717241602,
+            "0.1": 12.432307739119928,
+            "0.25": 20.367936419649535,
+            "0.5": 24.5972170173236,
+            "0.75": 20.663107008384017,
+            "0.9": 12.882523369033766,
+            "0.95": 8.454194295284415
+          },
+          "pinball_mean": 15.29314043160161,
+          "picp_80": 0.8017487087427564,
+          "picp_90": 0.9086041824137062,
+          "mpiw_80": 151.98270136609338,
+          "mpiw_80_normalised": 0.31331944920505617,
+          "winkler_80": 253.14831108153695,
+          "crps": 30.58628086320322,
+          "ece": 0.0173864188532556,
+          "reliability": [
+            {
+              "nominal": 0.05,
+              "empirical": 0.08271919879062736,
+              "n": 254016
+            },
+            {
+              "nominal": 0.1,
+              "empirical": 0.13134999370118416,
+              "n": 254016
+            },
+            {
+              "nominal": 0.25,
+              "empirical": 0.26994756235827666,
+              "n": 254016
+            },
+            {
+              "nominal": 0.5,
+              "empirical": 0.515373047367095,
+              "n": 254016
+            },
+            {
+              "nominal": 0.75,
+              "empirical": 0.7624283509700176,
+              "n": 254016
+            },
+            {
+              "nominal": 0.9,
+              "empirical": 0.9021203388762913,
+              "n": 254016
+            },
+            {
+              "nominal": 0.95,
+              "empirical": 0.9577664399092971,
+              "n": 254016
+            }
+          ]
+        }
+      },
+      "test": {
+        "model_id": "xgb_quantile",
+        "point": {
+          "mae": 43.022951867454495,
+          "rmse": 106.53629493820823,
+          "mase": 0.6380732196148166,
+          "smape": 14.19274567404801,
+          "mape": 18.26180923716186,
+          "smape_mape_floor": 1.0,
+          "n": 235008
+        },
+        "probabilistic": {
+          "pinball_by_quantile": {
+            "0.05": 6.252221865889307,
+            "0.1": 10.111246639896974,
+            "0.25": 17.193697724647777,
+            "0.5": 21.511475933727247,
+            "0.75": 18.426611347310985,
+            "0.9": 11.43618070979918,
+            "0.95": 7.669363822604181
+          },
+          "pinball_mean": 13.228685434839377,
+          "picp_80": 0.8162020016339869,
+          "picp_90": 0.9205005787037037,
+          "mpiw_80": 142.53828699726589,
+          "mpiw_80_normalised": 0.27358384527056034,
+          "winkler_80": 215.47427349696153,
+          "crps": 26.457370869678755,
+          "ece": 0.009871274898848438,
+          "reliability": [
+            {
+              "nominal": 0.05,
+              "empirical": 0.04207941857298475,
+              "n": 235008
+            },
+            {
+              "nominal": 0.1,
+              "empirical": 0.08847783905228758,
+              "n": 235008
+            },
+            {
+              "nominal": 0.25,
+              "empirical": 0.22740927968409586,
+              "n": 235008
+            },
+            {
+              "nominal": 0.5,
+              "empirical": 0.4828090958605665,
+              "n": 235008
+            },
+            {
+              "nominal": 0.75,
+              "empirical": 0.7475873161764706,
+              "n": 235008
+            },
+            {
+              "nominal": 0.9,
+              "empirical": 0.8994544866557734,
+              "n": 235008
+            },
+            {
+              "nominal": 0.95,
+              "empirical": 0.9569163602941176,
+              "n": 235008
+            }
+          ]
+        }
+      }
+    }
+  },
+  "artifacts": {
+    "forecast_quantile": "D:\\Research\\metro-rl-research\\data\\processed\\forecasts\\forecast.parquet",
+    "forecast_point": "D:\\Research\\metro-rl-research\\data\\processed\\forecasts\\forecast_point.parquet"
+  }
+}

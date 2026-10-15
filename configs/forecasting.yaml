@@ -1,0 +1,61 @@
+# M4 forecasting configuration (protocol section 4).
+#
+# provenance_required is false: these are model hyperparameters, not physical simulation
+# parameters. The grid below is frozen BEFORE fitting and is identical in size for the point
+# and quantile models, so neither receives a tuning advantage (threat G-10).
+
+provenance_required: false
+config_id: forecasting_v1
+description: Seasonal naive -> XGBoost point -> XGBoost quantile, with interval calibration.
+version: 1
+
+target: ridership
+horizons_h: [1, 2, 3]
+
+# Frozen quantile set. The inner pair (0.10, 0.90) defines the uncertainty channel:
+#   sigma_hat = (q90 - q10) / (2 * 1.2816)
+# The outer pair supports 90% coverage diagnostics only.
+quantiles: [0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95]
+
+# --- hyperparameter search (protocol section 4.3) ----------------------------------------
+# Small, explicit, frozen. Deliberately NOT an automated search: automated HPO over the RL
+# arms is precisely how asymmetric tuning creeps in, and the same discipline is applied here.
+# Selection metric: RMSE on validation for the point model, mean pinball loss for the
+# quantile model. Identical candidate count for both.
+search:
+  selection_split: val
+  grid:
+    max_depth: [4, 6, 8]
+    learning_rate: [0.05, 0.10]
+    min_child_weight: [5, 20]
+  fixed:
+    n_estimators: 400
+    subsample: 0.8
+    colsample_bytree: 0.8
+    reg_lambda: 1.0
+    tree_method: hist
+    n_jobs: 10
+    random_state: 0
+
+# --- calibration --------------------------------------------------------------------------
+calibration:
+  target_coverage: 0.80
+  search_min: 0.01
+  search_max: 10.0
+  n_candidates: 193
+  fit_on: val          # never test
+
+# --- blocking gate (protocol section 4.5) -------------------------------------------------
+# RL training may not consume forecasts until BOTH conditions hold on validation.
+# If the gate fails, the failure is recorded and the forecaster is revised BEFORE any RL run,
+# not after seeing RL results.
+gate:
+  must_beat_naive_on: pinball_mean
+  coverage_metric: picp_80
+  coverage_min: 0.76
+  coverage_max: 0.84
+
+# --- reporting ----------------------------------------------------------------------------
+metrics:
+  smape_mape_floor: 1.0   # MAPE/SMAPE reported only above this actual value, and the floor
+                          # is reported with them; overnight station-hours are legitimately 0

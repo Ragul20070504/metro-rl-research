@@ -1,0 +1,53 @@
+{
+  "attribution": "Metropolitan Transportation Authority",
+  "columns": [
+    "_25th_percentile_runtime",
+    "_50th_percentile_runtime",
+    "_75th_percentile_runtime",
+    "actual_trains",
+    "average_actual_runtime",
+    "average_scheduled_runtime",
+    "average_speed",
+    "destination_station_id",
+    "destination_station_name",
+    "direction",
+    "distance",
+    "line",
+    "month",
+    "number_of_stops",
+    "origin_station_id",
+    "origin_station_name",
+    "schedule_day_type",
+    "scheduled_trains",
+    "stop_path_id",
+    "time_period"
+  ],
+  "dataset_id": "mta_running_times",
+  "download_utc": "2026-08-26T15:36:19.063958+00:00",
+  "files": [
+    {
+      "bytes": 137065,
+      "path": "mta_running_times/data.parquet",
+      "sha256": "01fd35eb1efd73e4f754f3c54b3dbc1cfe6c2e9597f062cf79a04eeaa57d3eaf"
+    }
+  ],
+  "kind": "socrata_table",
+  "license": null,
+  "limitations": [
+    "aggregated to month; no per-train trajectories"
+  ],
+  "role": "validation: realised end-to-end runtime distribution (25th/50th/75th percentiles)",
+  "row_count": 5620,
+  "socrata_id": "sp9g-mzjh",
+  "source_url": "https://data.ny.gov/d/sp9g-mzjh",
+  "title": "MTA Subway End-to-End Running Times: Beginning 2019",
+  "upstream_metadata": {
+    "attribution": "Metropolitan Transportation Authority",
+    "data_updated_at": null,
+    "license": null,
+    "license_url": null,
+    "name": "MTA Subway End-to-End Running Times: Beginning 2019",
+    "rows_updated_at": 1784906014,
+    "socrata_id": "sp9g-mzjh"
+  }
+}

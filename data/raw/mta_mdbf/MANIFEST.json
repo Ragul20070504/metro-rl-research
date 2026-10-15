@@ -1,0 +1,42 @@
+{
+  "attribution": "Metropolitan Transportation Authority",
+  "columns": [
+    "_12_month_average_mdbf",
+    "car_class",
+    "division",
+    "mdbf",
+    "month",
+    "number_of_cars",
+    "number_of_failures",
+    "total_miles"
+  ],
+  "dataset_id": "mta_mdbf",
+  "download_utc": "2026-08-26T15:35:27.762684+00:00",
+  "files": [
+    {
+      "bytes": 52254,
+      "path": "mta_mdbf/data.parquet",
+      "sha256": "9ed287b010018a84fbc4345f7782fa152238e178c68425f991803f949031098a"
+    }
+  ],
+  "kind": "socrata_table",
+  "license": null,
+  "limitations": [
+    "monthly and by car class: not per train, not per day, no sensor traces",
+    "constrains the aggregate rate only; within-day timing structure stays synthetic"
+  ],
+  "role": "calibrates the aggregate failure rate of the synthetic availability process (A13)",
+  "row_count": 1802,
+  "socrata_id": "e2qc-xgxs",
+  "source_url": "https://data.ny.gov/d/e2qc-xgxs",
+  "title": "MTA Subway Mean Distance Between Failures: Beginning 2015",
+  "upstream_metadata": {
+    "attribution": "Metropolitan Transportation Authority",
+    "data_updated_at": null,
+    "license": null,
+    "license_url": null,
+    "name": "MTA Subway Mean Distance Between Failures: Beginning 2015",
+    "rows_updated_at": 1785329046,
+    "socrata_id": "e2qc-xgxs"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "method": "ppo_point",
+  "arm": "point",
+  "train_seed": 108,
+  "weight_id": "w_balanced",
+  "requested_weight_id": "w_balanced",
+  "config": {
+    "total_timesteps": 15000,
+    "n_steps": 456,
+    "batch_size": 152,
+    "n_epochs": 10,
+    "learning_rate": 0.0003,
+    "gamma": 0.995,
+    "gae_lambda": 0.95,
+    "clip_range": 0.2,
+    "ent_coef": 0.01,
+    "vf_coef": 0.5,
+    "max_grad_norm": 0.5,
+    "net_arch": [
+      64,
+      64
+    ]
+  },
+  "parameter_count": 24452,
+  "observation_size": 123,
+  "include_availability_channel": true,
+  "training_scenarios": [
+    "normal",
+    "surge",
+    "disruption",
+    "combined"
+  ],
+  "training_day_seed_pool": [
+    15800,
+    15899
+  ],
+  "seed_pool_note": "training days are drawn from a 5000-block disjoint from the frozen evaluation pool (1-30), so no policy is optimised on a day it is later scored on",
+  "forecaster": "xgb_quantile",
+  "obs_scaler": {
+    "source_policy": "fixed_timetable",
+    "forecaster": "xgb_quantile",
+    "arm_fitted_on": "uq",
+    "episodes": 10,
+    "seeds": "1001..1010 (disjoint from both frozen seed pools)",
+    "n_samples": 2280,
+    "note": "One frozen scaler for every arm (protocol section 6.1). Fitted on the uq arm so the sigma channels carry their true scale; the identical affine map is then applied to point and placebo. See docs/decisions.md D-15.",
+    "git_commit": "unknown",
+    "fitted_utc": "2026-08-26T21:48:03.215108+00:00"
+  },
+  "reward_scales": {
+    "source_policy": "fixed_timetable",
+    "provisional": false,
+    "note": "Fitted from the fixed-timetable baseline, per protocol section 6.4.",
+    "timetable_provenance": "real_data:mta_gtfs_static",
+    "episodes": 10,
+    "seeds": "1001..1010 (disjoint from both frozen seed pools)",
+    "scenario": "normal",
+    "epochs_averaged": 2280,
+    "W_definition": "passenger-minutes accrued per epoch (queue integral, amendment A-02)",
+    "U_definition": "distinct passengers left behind per epoch (amendment A-01)",
+    "fallbacks": {},
+    "forecaster_independent": "the fixed timetable never reads the observation, so these scales do not depend on which forecaster supplies mu and sigma",
+    "git_commit": "544ca4e9fd1121c13d5a37598b88216ea7631153",
+    "fitted_utc": "2026-08-26T18:29:44.544603+00:00"
+  },
+  "hyperparameter_search": "NONE. One frozen configuration is applied unchanged to every arm, per the standing constraint in docs/decisions.md. All arms may be jointly suboptimal; the relative comparison is unaffected.",
+  "wall_clock_s": 6542.171637400001,
+  "trained_utc": "2026-08-28T06:51:41.156115+00:00"
+}

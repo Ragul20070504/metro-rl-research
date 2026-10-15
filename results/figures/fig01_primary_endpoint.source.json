@@ -1,0 +1,34 @@
+{
+  "figure": "fig01_primary_endpoint",
+  "generated_utc": "2026-08-28T00:52:34.119846+00:00",
+  "source_files": [
+    "results/seed_level.parquet"
+  ],
+  "detail": {
+    "scenario": "surge",
+    "metric": "left_behind_fraction",
+    "methods": [
+      "fixed_timetable",
+      "heuristic_threshold",
+      "milp_static",
+      "milp_rolling",
+      "ppo_point",
+      "ppo_placebo",
+      "ppo_uq",
+      "ppo_uq_single_obj",
+      "ppo_uq_noavail"
+    ],
+    "n_per_method": {
+      "fixed_timetable": 1,
+      "heuristic_threshold": 1,
+      "milp_static": 1,
+      "milp_rolling": 1,
+      "ppo_point": 10,
+      "ppo_placebo": 10,
+      "ppo_uq": 10,
+      "ppo_uq_single_obj": 10,
+      "ppo_uq_noavail": 10
+    }
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

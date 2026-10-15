@@ -1,0 +1,63 @@
+{
+  "generated_utc": "2026-08-28T07:15:19.321345+00:00",
+  "url": "http://localhost:8501",
+  "checks": [
+    {
+      "name": "application starts",
+      "status": "PASS",
+      "detail": "health endpoint responded in 2.1s"
+    },
+    {
+      "name": "localhost:8501 responds",
+      "status": "PASS",
+      "detail": "HTTP 200, 2048 bytes of shell HTML"
+    },
+    {
+      "name": "demo module imports",
+      "status": "PASS",
+      "detail": "src.demo.session"
+    },
+    {
+      "name": "policies enumerate",
+      "status": "PASS",
+      "detail": "7 of 7 methods selectable: fixed_timetable (0 seeds), heuristic_threshold (0 seeds), milp_static (0 seeds), milp_rolling (0 seeds), ppo_point (10 seeds), ppo_uq (10 seeds), ppo_placebo (10 seeds)"
+    },
+    {
+      "name": "no pilot policy is offered",
+      "status": "PASS",
+      "detail": "pilot seeds 901-904 are discarded and must not be selectable"
+    },
+    {
+      "name": "demo output is isolated",
+      "status": "PASS",
+      "detail": "demo runs write to results\\demo, tagged variant='demo', so no dashboard interaction can enter a variant=='main' paired test"
+    },
+    {
+      "name": "real results available to the app",
+      "status": "PASS",
+      "detail": "results\\statistical_analysis.json present"
+    },
+    {
+      "name": "research panels import",
+      "status": "PASS",
+      "detail": "17 panels: Executive overview, Final verdict, Primary results, Placebo analysis, Scenario explorer, Baseline explorer, Statistics, Mechanism explorer, Robustness, Ablations & sensitivity, SHAP, Data, Forecasting, Digital twin, Follow-up (incomplete), Reproducibility, Downloads"
+    },
+    {
+      "name": "every artefact the research view reads is present",
+      "status": "PASS",
+      "detail": "all present"
+    },
+    {
+      "name": "evidence classes are declared",
+      "status": "PASS",
+      "detail": "panels are badged CONFIRMATORY/DESCRIPTIVE/EXPLORATORY/FOLLOW-UP, so an exploratory number cannot be read as a registered one"
+    },
+    {
+      "name": "follow-up cells are namespaced away from `main`",
+      "status": "PASS",
+      "detail": "0 budget variant directories present; none can satisfy variant == 'main'"
+    }
+  ],
+  "summary": "launches and serves on localhost:8501; 11/11 checks pass",
+  "note": "smoke test only; no experiment is launched from the dashboard"
+}

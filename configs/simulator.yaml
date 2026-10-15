@@ -1,0 +1,205 @@
+# M5 digital-twin configuration.
+#
+# STRICT PROVENANCE. Every scalar must declare where its value comes from, and any parameter
+# marked `unresolved` makes this config refuse to load unless the run is explicitly tagged
+# `sensitivity_sweep`. That is deliberate: six load-bearing assumptions are still ungrounded
+# (docs/research_audit.md section E) and four of them feed the reward, so an ungrounded value
+# must be impossible to use by accident.
+#
+# Provenance vocabulary:
+#   real_data:<dataset_id>   measured from an ingested dataset
+#   literature:<citation>    taken from a citable published source
+#   simulation_assumption    a modelling choice, swept in sensitivity analysis
+#   synthetic                a fabricated data-generating process standing in for absent data
+#   unresolved               no defensible value yet; must be swept and cannot be reported
+
+provenance_required: true
+config_id: simulator_v1
+description: Calibrated digital-twin-style simulator for the modelled metro line.
+version: 1
+
+network:
+  route_short_name:
+    value: L
+    provenance: real_data:mta_gtfs_static
+    note: >
+      Chosen because this service runs alone on unshared trackage with a dedicated fleet, so
+      the single-corridor abstraction is a property of the real system rather than a
+      convenience. See docs/research_audit.md section F.3.
+
+# --- timing ------------------------------------------------------------------------------
+time:
+  internal_step_seconds:
+    value: 30
+    provenance: simulation_assumption
+    note: >
+      Integration step. GTFS segment times are multiples of 30 s, so this resolves every
+      scheduled movement exactly without inventing sub-step dynamics.
+  decision_interval_seconds:
+    value: 300
+    provenance: simulation_assumption
+    note: 5-minute induction decisions, per research brief section 10 and manuscript section 3.
+  day_start_hour:
+    value: 5
+    provenance: simulation_assumption
+  day_end_hour:
+    value: 24
+    provenance: simulation_assumption
+    note: 19-hour operating day = 228 decision epochs.
+
+# --- dwell -------------------------------------------------------------------------------
+# GTFS for this system reports arrival == departure at intermediate stops (the nonzero values
+# are terminal layovers), so it supplies NO usable intermediate dwell time. Confirmed
+# empirically during M3. This is assumption A08 and it stays ungrounded.
+dwell:
+  base_seconds:
+    value: 30.0
+    provenance: simulation_assumption
+    note: Minimum station dwell. Swept; GTFS cannot constrain it.
+  per_boarder_seconds:
+    value: 0.08
+    provenance: unresolved
+    note: >
+      Assumption A08. No citable boarding-rate figure has been sourced and GTFS carries no
+      intermediate dwell. Swept across a documented range; no result may depend on the point
+      value without stating the sweep.
+  max_seconds:
+    value: 120.0
+    provenance: simulation_assumption
+
+# --- capacity ----------------------------------------------------------------------------
+capacity:
+  passengers_per_train:
+    value: 1000.0
+    provenance: unresolved
+    note: >
+      Assumption A09. No citable capacity figure for this fleet has been sourced. Swept.
+      Occupancy and unmet demand both depend on it, so the sweep is mandatory, not optional.
+
+# --- headway and turnaround ---------------------------------------------------------------
+headway:
+  min_seconds:
+    value: 150.0
+    provenance: real_data:mta_gtfs_static
+    note: >
+      Minimum scheduled headway measured at each direction's origin terminus across the
+      published timetable. Derived in M3 (src/data/gtfs.py: scheduled_headways).
+turnaround:
+  seconds:
+    value: 300.0
+    provenance: simulation_assumption
+    note: Assumption A11. Not observable in the public feeds. Swept.
+
+# --- fleet --------------------------------------------------------------------------------
+fleet:
+  size:
+    value: 36
+    provenance: real_data:mta_gtfs_static
+    note: >
+      Assumption A12, now grounded in the published timetable rather than guessed. GTFS shows
+      277 weekday trips per direction on this route. A round trip takes ~84 min (2 x 37 min
+      running plus 2 x 5 min turnaround), so sustaining real service needs ~20 trainsets on
+      average and ~28 at peak; with the 10% start-of-day maintenance hold, 36 leaves ~32
+      available. An earlier value of 30 capped the simulator at 265 round trips per day, below
+      the real 277, which would have made every baseline systematically under-serve the line.
+  initial_maintenance_fraction:
+    value: 0.10
+    provenance: simulation_assumption
+    note: Fraction of the fleet unavailable at day start. Swept.
+  max_induct_per_decision:
+    value: 2
+    provenance: simulation_assumption
+    note: >
+      Action space is Discrete(max_induct_per_decision + 1). With a 300 s decision interval
+      and a 150 s minimum headway, 2 is the largest physically feasible value, so this bounds
+      the action space by a real constraint rather than by taste.
+
+# --- passenger arrival and routing --------------------------------------------------------
+demand:
+  arrival_process:
+    value: nonhomogeneous_poisson
+    provenance: simulation_assumption
+    note: Standard in transit simulation; manuscript section 5 specifies Poisson arrivals.
+  intra_hour_profile:
+    value: uniform
+    provenance: simulation_assumption
+    note: >
+      Assumption A02. The source data is hourly, so the within-hour shape is unobserved.
+      Swept against a smoothed alternative.
+  od_model:
+    value: distance_decay
+    provenance: synthetic
+    note: >
+      Assumption A03 and the DOMINANT sensitivity. The demand source publishes entries only --
+      no exits, no destinations - so the alighting distribution is fabricated. Three variants
+      (uniform_downstream, distance_decay, cbd_attracted) are swept in EXP-SENS-002 and the
+      primary conclusion must hold under all three or be reported as OD-dependent.
+  od_decay_km:
+    value: 4.0
+    provenance: synthetic
+    note: Length scale of the distance-decay OD model. Swept with the OD variant.
+  passenger_patience_seconds:
+    value: null
+    provenance: simulation_assumption
+    note: >
+      Assumption A06. Null means infinite patience: nobody abandons the queue, so unmet demand
+      is a pure capacity/headway measure. A finite-patience variant is swept, because it
+      changes the definition of the primary endpoint.
+
+# --- failures (synthetic process, rate calibrated against real data) ----------------------
+failures:
+  enabled:
+    value: true
+    provenance: simulation_assumption
+  car_class:
+    value: R143
+    provenance: real_data:mta_mdbf
+    note: Car class operating the modelled line; present in MDBF under division B.
+  cars_per_train:
+    value: 8
+    provenance: simulation_assumption
+    note: >
+      Converts the published per-CAR failure rate into a per-TRAIN hazard. Swept; an error
+      here rescales the failure rate linearly.
+  mdbf_lookback_months:
+    value: 24
+    provenance: simulation_assumption
+    note: Averaging window over which the MDBF rate is estimated.
+  hazard_model:
+    value: exponential_per_km
+    provenance: synthetic
+    note: >
+      Assumption A13. Aggregate rate is calibrated to real MDBF, but the within-day timing
+      structure (constant hazard per train-km) is fabricated. MDBF constrains the rate only.
+
+# --- energy and cost ----------------------------------------------------------------------
+# Both terms are linear in a physical quantity, and the reward divides each component by a
+# fixed reference scale taken from the fixed-timetable baseline. The unknown unit constants
+# therefore CANCEL in the reward: only the ratios below affect policy behaviour. The absolute
+# constants affect only the absolute reported figures, which stay embargoed until sourced.
+# tests/test_reward.py asserts this invariance rather than asserting it in prose.
+energy:
+  units_per_train_km:
+    value: 1.0
+    provenance: unresolved
+    note: >
+      Assumption A15. No citable kWh/train-km figure sourced. Set to 1.0 so energy is reported
+      in TRAIN-KM-EQUIVALENT UNITS, never in kWh. The reward is provably invariant to this
+      constant (see tests). No energy claim may be stated in physical units.
+  units_per_stop:
+    value: 0.35
+    provenance: unresolved
+    note: >
+      Ratio of stop/start energy to one train-km. This ratio does NOT cancel and does change
+      behaviour, so it is swept and any energy-related finding must report the sweep.
+cost:
+  units_per_induction:
+    value: 1.0
+    provenance: unresolved
+    note: >
+      Assumption A16. No sourced figure. Reported in INDUCTION-EQUIVALENT UNITS, never in
+      currency. Reward is invariant to this constant.
+  units_per_train_hour:
+    value: 0.5
+    provenance: unresolved
+    note: Ratio of one train-hour in service to one induction. Does not cancel; swept.

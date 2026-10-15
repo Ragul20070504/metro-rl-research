@@ -1,0 +1,19 @@
+{
+  "figure": "fig04_primary_uq_vs_point",
+  "generated_utc": "2026-08-28T07:07:11.442420+00:00",
+  "generated_by": "scripts/make_paper_assets.py",
+  "source_files": [
+    "results/seed_level.parquet",
+    "results/statistical_analysis.json"
+  ],
+  "detail": {
+    "n": 10,
+    "difference": 0.013741634018242386,
+    "ci": [
+      0.006570121532285159,
+      0.018522637805136362
+    ],
+    "p_adjusted": 0.007741143962753072
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

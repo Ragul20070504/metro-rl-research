@@ -1,0 +1,17 @@
+property,value
+train_start,2024-01-01
+train_end,2025-10-20
+val_start,2025-10-28
+val_end,2026-03-23
+test_start,2026-03-31
+test_end,2026-08-13
+embargo_days,7
+raw_station_hours,1338779
+excluded_by_quality,5749
+study_station_hours,538557
+supervised_total,1615608
+supervised_train,1126584
+supervised_val,254016
+supervised_test,235008
+manifests,11
+licences,11

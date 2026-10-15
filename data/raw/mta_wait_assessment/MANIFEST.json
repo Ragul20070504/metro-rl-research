@@ -1,0 +1,41 @@
+{
+  "attribution": "Metropolitan Transportation Authority",
+  "columns": [
+    "day_type",
+    "division",
+    "line",
+    "month",
+    "num_sched_timepoints",
+    "num_timepoints_passing_wait_assessment",
+    "period",
+    "wait_assessment"
+  ],
+  "dataset_id": "mta_wait_assessment",
+  "download_utc": "2026-08-26T15:35:41.802347+00:00",
+  "files": [
+    {
+      "bytes": 21591,
+      "path": "mta_wait_assessment/data.parquet",
+      "sha256": "aae7539c5e1adf3b01ccf2ec20a23ca694a38566b96d7f093c30e281dad4f0b0"
+    }
+  ],
+  "kind": "socrata_table",
+  "license": null,
+  "limitations": [
+    "selected peak timepoints only"
+  ],
+  "role": "validation: headway regularity",
+  "row_count": 552,
+  "socrata_id": "s666-h6b7",
+  "source_url": "https://data.ny.gov/d/s666-h6b7",
+  "title": "MTA Subway Wait Assessment: Beginning 2015",
+  "upstream_metadata": {
+    "attribution": "Metropolitan Transportation Authority",
+    "data_updated_at": null,
+    "license": null,
+    "license_url": null,
+    "name": "MTA Subway Wait Assessment: Beginning 2015",
+    "rows_updated_at": 1784906971,
+    "socrata_id": "s666-h6b7"
+  }
+}

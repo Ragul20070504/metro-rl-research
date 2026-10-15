@@ -1,0 +1,294 @@
+{
+  "probed_utc": "2026-08-26T15:14:44.205370+00:00",
+  "results": [
+    {
+      "dataset_id": "39hk-dx4f",
+      "label": "MTA Subway Stations -- modelled line membership",
+      "role": "complex/stop join, line membership, station ordering",
+      "status": "ok",
+      "detail": "24 station complexes serve the line",
+      "fields": [
+        "118",
+        "119",
+        "120",
+        "122",
+        "123",
+        "124",
+        "125",
+        "126",
+        "127",
+        "129",
+        "130",
+        "131",
+        "133",
+        "134",
+        "135",
+        "136",
+        "137",
+        "138",
+        "601",
+        "602",
+        "618",
+        "621",
+        "629",
+        "630"
+      ],
+      "coverage": {},
+      "line_covered": true
+    },
+    {
+      "dataset_id": "t69i-h2me",
+      "label": "Subway Hourly Ridership 2017-2019",
+      "role": "demand -- pre-pandemic regime",
+      "status": "ok",
+      "detail": "",
+      "fields": [
+        "borough",
+        "fare_class_category",
+        "georeference",
+        "latitude",
+        "longitude",
+        "payment_method",
+        "ridership",
+        "station_complex",
+        "station_complex_id",
+        "transfers",
+        "transit_mode",
+        "transit_timestamp"
+      ],
+      "coverage": {
+        "first": "2017-01-13T00:00:00.000",
+        "last": "2019-12-31T23:00:00.000"
+      },
+      "line_covered": true
+    },
+    {
+      "dataset_id": "wujg-7c2s",
+      "label": "Subway Hourly Ridership 2020-2024",
+      "role": "demand -- primary forecasting target",
+      "status": "ok",
+      "detail": "",
+      "fields": [
+        "borough",
+        "fare_class_category",
+        "georeference",
+        "latitude",
+        "longitude",
+        "payment_method",
+        "ridership",
+        "station_complex",
+        "station_complex_id",
+        "transfers",
+        "transit_mode",
+        "transit_timestamp"
+      ],
+      "coverage": {
+        "first": "2020-01-01T00:00:00.000",
+        "last": "2024-12-31T23:00:00.000"
+      },
+      "line_covered": true
+    },
+    {
+      "dataset_id": "5wq4-mkjj",
+      "label": "Subway Hourly Ridership Beginning 2025",
+      "role": "demand -- most recent regime",
+      "status": "ok",
+      "detail": "",
+      "fields": [
+        "borough",
+        "fare_class_category",
+        "georeference",
+        "latitude",
+        "longitude",
+        "payment_method",
+        "ridership",
+        "station_complex",
+        "station_complex_id",
+        "transfers",
+        "transit_mode",
+        "transit_timestamp"
+      ],
+      "coverage": {
+        "first": "2025-01-01T00:00:00.000",
+        "last": "2026-08-13T23:00:00.000"
+      },
+      "line_covered": true
+    },
+    {
+      "dataset_id": "gtfs_subway.zip",
+      "label": "MTA subway GTFS static feed",
+      "role": "running times, scheduled headways, trip counts, fixed-timetable baseline",
+      "status": "ok",
+      "detail": "5,610,175 bytes from https://rrgtfsfeeds.s3.amazonaws.com/gtfs_subway.zip (no API key required)",
+      "fields": [],
+      "coverage": {},
+      "line_covered": null
+    },
+    {
+      "dataset_id": "e2qc-xgxs",
+      "label": "Subway Mean Distance Between Failures",
+      "role": "failure-rate calibration",
+      "status": "ok",
+      "detail": "",
+      "fields": [
+        "_12_month_average_mdbf",
+        "car_class",
+        "division",
+        "mdbf",
+        "month",
+        "number_of_cars",
+        "number_of_failures",
+        "total_miles"
+      ],
+      "coverage": {
+        "first": "2015-01-01T00:00:00.000",
+        "last": "2026-06-01T00:00:00.000"
+      },
+      "line_covered": true
+    },
+    {
+      "dataset_id": "r7qk-6tcy",
+      "label": "Subway Customer Journey-Focused Metrics",
+      "role": "validation -- excess platform/train time",
+      "status": "ok",
+      "detail": "",
+      "fields": [
+        "additional_platform_time",
+        "additional_train_time",
+        "customer_journey_time",
+        "division",
+        "line",
+        "month",
+        "num_passengers",
+        "over_five_mins",
+        "over_five_mins_perc",
+        "period",
+        "total_apt",
+        "total_att"
+      ],
+      "coverage": {
+        "first": "2015-01-01T00:00:00.000",
+        "last": "2026-06-01T00:00:00.000"
+      },
+      "line_covered": true
+    },
+    {
+      "dataset_id": "s666-h6b7",
+      "label": "Subway Wait Assessment",
+      "role": "validation -- headway regularity",
+      "status": "ok",
+      "detail": "",
+      "fields": [
+        "day_type",
+        "division",
+        "line",
+        "month",
+        "num_sched_timepoints",
+        "num_timepoints_passing_wait_assessment",
+        "period",
+        "wait_assessment"
+      ],
+      "coverage": {
+        "first": "2015-01-01T00:00:00.000",
+        "last": "2026-06-01T00:00:00.000"
+      },
+      "line_covered": true
+    },
+    {
+      "dataset_id": "32ch-sei3",
+      "label": "Subway Service Delivered",
+      "role": "validation -- scheduled vs actual trains",
+      "status": "ok",
+      "detail": "",
+      "fields": [
+        "day_type",
+        "division",
+        "line",
+        "month",
+        "num_actual_trains",
+        "num_sched_trains",
+        "service_delivered"
+      ],
+      "coverage": {
+        "first": "2015-01-01T00:00:00.000",
+        "last": "2026-06-01T00:00:00.000"
+      },
+      "line_covered": true
+    },
+    {
+      "dataset_id": "sp9g-mzjh",
+      "label": "Subway End-to-End Running Times",
+      "role": "validation -- realised running times",
+      "status": "ok",
+      "detail": "",
+      "fields": [
+        "_25th_percentile_runtime",
+        "_50th_percentile_runtime",
+        "_75th_percentile_runtime",
+        "actual_trains",
+        "average_actual_runtime",
+        "average_scheduled_runtime",
+        "average_speed",
+        "destination_station_id",
+        "destination_station_name",
+        "direction",
+        "distance",
+        "line",
+        "month",
+        "number_of_stops",
+        "origin_station_id",
+        "origin_station_name",
+        "schedule_day_type",
+        "scheduled_trains",
+        "stop_path_id",
+        "time_period"
+      ],
+      "coverage": {
+        "first": "2019-01-01T00:00:00.000",
+        "last": "2026-06-01T00:00:00.000"
+      },
+      "line_covered": true
+    },
+    {
+      "dataset_id": "f6rf-2a3t",
+      "label": "Subway Terminal On-Time Performance",
+      "role": "validation -- punctuality",
+      "status": "ok",
+      "detail": "",
+      "fields": [
+        "day_type",
+        "division",
+        "line",
+        "month",
+        "num_on_time_trips",
+        "num_sched_trips",
+        "terminal_on_time_performance"
+      ],
+      "coverage": {
+        "first": "2015-01-01T00:00:00.000",
+        "last": "2026-06-01T00:00:00.000"
+      },
+      "line_covered": true
+    },
+    {
+      "dataset_id": "4apg-4kt9",
+      "label": "Customer Journey-Focused Metrics (id from the M0 audit)",
+      "role": "SUPERSEDED by r7qk-6tcy -- recorded in error",
+      "status": "unreadable",
+      "detail": "HTTP 403 from the tabular API",
+      "fields": [],
+      "coverage": {},
+      "line_covered": null
+    },
+    {
+      "dataset_id": "fgm6-ccue",
+      "label": "GTFS Static portal entry (id from the M0 audit)",
+      "role": "NOT served through the tabular API -- use gtfs_subway.zip",
+      "status": "unreadable",
+      "detail": "HTTP 403 from the tabular API",
+      "fields": [],
+      "coverage": {},
+      "line_covered": null
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "cell": {
+    "method": "ppo_uq",
+    "scenario": "surge",
+    "eval_seed": 10,
+    "train_seed": 103,
+    "weight_id": "w_cost",
+    "variant": "weights_w_cost",
+    "experiment_id": "EXP-SENS-001",
+    "od_model": null,
+    "day_type": "weekday"
+  },
+  "attempt": 1,
+  "error": "FileNotFoundError('no trained policy at D:\\\\Research\\\\metro-rl-research\\\\models\\\\policies\\\\w_cost\\\\ppo_uq\\\\103\\\\policy.zip')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\Research\\metro-rl-research\\src\\evaluation\\runner.py\", line 322, in run_cell\n    policy = build_policy(cell, env)\n             ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Research\\metro-rl-research\\src\\evaluation\\runner.py\", line 254, in build_policy\n    model=_trained_policy(method, cell.train_seed, cell.weight_id),\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Research\\metro-rl-research\\src\\evaluation\\runner.py\", line 182, in _trained_policy\n    raise FileNotFoundError(f\"no trained policy at {path}\")\nFileNotFoundError: no trained policy at D:\\Research\\metro-rl-research\\models\\policies\\w_cost\\ppo_uq\\103\\policy.zip\n",
+  "failed_utc": "2026-08-28T00:19:31.224752+00:00",
+  "git_commit": "73e2daebd55613cece1266ad26e48412b6e58c88"
+}

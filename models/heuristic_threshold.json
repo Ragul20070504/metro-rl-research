@@ -1,0 +1,377 @@
+{
+  "queue_threshold": 3200.0,
+  "forecast_threshold": 4000.0,
+  "provenance": {
+    "selection_criterion": "mean total reward over tuning episodes",
+    "selected_mean_total_reward": -843.0826939569071,
+    "tuning_seeds": [
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006
+    ],
+    "tuning_scenarios": [
+      "normal",
+      "surge"
+    ],
+    "seed_pool_note": "seeds 2001+ are disjoint from the frozen evaluation pool (1-30) and training pool (101-110), so no threshold is tuned on a day the comparison is later scored on",
+    "grid": {
+      "queue": [
+        0.0,
+        50.0,
+        100.0,
+        200.0,
+        400.0,
+        800.0,
+        1600.0,
+        3200.0,
+        6400.0
+      ],
+      "forecast": [
+        0.0,
+        2000.0,
+        4000.0,
+        6000.0,
+        8000.0
+      ]
+    },
+    "starting_grid": {
+      "queue": [
+        0.0,
+        50.0,
+        100.0,
+        200.0,
+        400.0,
+        800.0
+      ],
+      "forecast": [
+        0.0,
+        2000.0,
+        4000.0,
+        6000.0,
+        8000.0
+      ]
+    },
+    "amendment": "A-10: extend the queue grid until the selection is strictly interior",
+    "extension_history": [
+      {
+        "round": 0,
+        "grid_max": 800.0,
+        "selected_queue_threshold": 800.0,
+        "selected_is_interior": false,
+        "peak_observed_queue": 8425.4362539634,
+        "next_threshold_would_be": 1600.0,
+        "next_threshold_can_never_fire": false
+      },
+      {
+        "round": 1,
+        "grid_max": 1600.0,
+        "selected_queue_threshold": 1600.0,
+        "selected_is_interior": false,
+        "peak_observed_queue": 8425.4362539634,
+        "next_threshold_would_be": 3200.0,
+        "next_threshold_can_never_fire": false
+      },
+      {
+        "round": 2,
+        "grid_max": 3200.0,
+        "selected_queue_threshold": 3200.0,
+        "selected_is_interior": false,
+        "peak_observed_queue": 8425.4362539634,
+        "next_threshold_would_be": 6400.0,
+        "next_threshold_can_never_fire": false
+      },
+      {
+        "round": 3,
+        "grid_max": 6400.0,
+        "selected_queue_threshold": 3200.0,
+        "selected_is_interior": true,
+        "peak_observed_queue": 8425.4362539634,
+        "next_threshold_would_be": 12800.0,
+        "next_threshold_can_never_fire": true
+      }
+    ],
+    "selection_is_interior": {
+      "queue": true,
+      "forecast": true,
+      "note": "a selection at a grid boundary means the optimum probably lies outside the grid, which would make this baseline weaker than it should be and bias H4-H6 in favour of the proposed method"
+    },
+    "stopping_rule": "extend by doubling until the selected queue threshold is strictly interior, or until the next threshold exceeds the largest observed queue and therefore can never fire",
+    "trials": [
+      {
+        "queue_threshold": 0.0,
+        "forecast_threshold": 0.0,
+        "mean_total_reward": -1070.7234288385432,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 0.0,
+        "forecast_threshold": 2000.0,
+        "mean_total_reward": -1070.7234288385432,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 0.0,
+        "forecast_threshold": 4000.0,
+        "mean_total_reward": -1068.4259297605324,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 0.0,
+        "forecast_threshold": 6000.0,
+        "mean_total_reward": -1066.2475532108451,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 0.0,
+        "forecast_threshold": 8000.0,
+        "mean_total_reward": -1081.5043647386867,
+        "peak_observed_queue": 8425.4362539634
+      },
+      {
+        "queue_threshold": 50.0,
+        "forecast_threshold": 0.0,
+        "mean_total_reward": -1070.7234288385432,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 50.0,
+        "forecast_threshold": 2000.0,
+        "mean_total_reward": -1070.7234288385432,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 50.0,
+        "forecast_threshold": 4000.0,
+        "mean_total_reward": -1068.4259297605324,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 50.0,
+        "forecast_threshold": 6000.0,
+        "mean_total_reward": -1066.2475532108451,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 50.0,
+        "forecast_threshold": 8000.0,
+        "mean_total_reward": -1081.5043647386867,
+        "peak_observed_queue": 8425.4362539634
+      },
+      {
+        "queue_threshold": 100.0,
+        "forecast_threshold": 0.0,
+        "mean_total_reward": -1070.1659189446316,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 100.0,
+        "forecast_threshold": 2000.0,
+        "mean_total_reward": -1070.1659189446316,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 100.0,
+        "forecast_threshold": 4000.0,
+        "mean_total_reward": -1066.4641311447015,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 100.0,
+        "forecast_threshold": 6000.0,
+        "mean_total_reward": -1064.7695205685202,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 100.0,
+        "forecast_threshold": 8000.0,
+        "mean_total_reward": -1080.0541850752104,
+        "peak_observed_queue": 8425.4362539634
+      },
+      {
+        "queue_threshold": 200.0,
+        "forecast_threshold": 0.0,
+        "mean_total_reward": -1066.398649042936,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 200.0,
+        "forecast_threshold": 2000.0,
+        "mean_total_reward": -1066.398649042936,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 200.0,
+        "forecast_threshold": 4000.0,
+        "mean_total_reward": -1060.738418112781,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 200.0,
+        "forecast_threshold": 6000.0,
+        "mean_total_reward": -1060.521154316187,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 200.0,
+        "forecast_threshold": 8000.0,
+        "mean_total_reward": -1072.9423278539896,
+        "peak_observed_queue": 8425.4362539634
+      },
+      {
+        "queue_threshold": 400.0,
+        "forecast_threshold": 0.0,
+        "mean_total_reward": -1001.424859164942,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 400.0,
+        "forecast_threshold": 2000.0,
+        "mean_total_reward": -1001.424859164942,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 400.0,
+        "forecast_threshold": 4000.0,
+        "mean_total_reward": -994.1302892732729,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 400.0,
+        "forecast_threshold": 6000.0,
+        "mean_total_reward": -1006.5196240106384,
+        "peak_observed_queue": 8095.0498511045935
+      },
+      {
+        "queue_threshold": 400.0,
+        "forecast_threshold": 8000.0,
+        "mean_total_reward": -1053.0978155726282,
+        "peak_observed_queue": 8095.049851104593
+      },
+      {
+        "queue_threshold": 800.0,
+        "forecast_threshold": 0.0,
+        "mean_total_reward": -858.0639523652485,
+        "peak_observed_queue": 7770.317737965795
+      },
+      {
+        "queue_threshold": 800.0,
+        "forecast_threshold": 2000.0,
+        "mean_total_reward": -858.0639523652485,
+        "peak_observed_queue": 7770.317737965795
+      },
+      {
+        "queue_threshold": 800.0,
+        "forecast_threshold": 4000.0,
+        "mean_total_reward": -848.8934620145106,
+        "peak_observed_queue": 7770.317737965795
+      },
+      {
+        "queue_threshold": 800.0,
+        "forecast_threshold": 6000.0,
+        "mean_total_reward": -869.2999627335593,
+        "peak_observed_queue": 7770.317737965795
+      },
+      {
+        "queue_threshold": 800.0,
+        "forecast_threshold": 8000.0,
+        "mean_total_reward": -989.4319213703922,
+        "peak_observed_queue": 7770.317737965795
+      },
+      {
+        "queue_threshold": 1600.0,
+        "forecast_threshold": 0.0,
+        "mean_total_reward": -854.0967021382918,
+        "peak_observed_queue": 7765.038071339792
+      },
+      {
+        "queue_threshold": 1600.0,
+        "forecast_threshold": 2000.0,
+        "mean_total_reward": -854.0967021382918,
+        "peak_observed_queue": 7765.038071339792
+      },
+      {
+        "queue_threshold": 1600.0,
+        "forecast_threshold": 4000.0,
+        "mean_total_reward": -844.5162986303513,
+        "peak_observed_queue": 7765.038071339792
+      },
+      {
+        "queue_threshold": 1600.0,
+        "forecast_threshold": 6000.0,
+        "mean_total_reward": -858.4566035621448,
+        "peak_observed_queue": 7765.038071339792
+      },
+      {
+        "queue_threshold": 1600.0,
+        "forecast_threshold": 8000.0,
+        "mean_total_reward": -966.6332688721259,
+        "peak_observed_queue": 7765.038071339791
+      },
+      {
+        "queue_threshold": 3200.0,
+        "forecast_threshold": 0.0,
+        "mean_total_reward": -852.6864181832889,
+        "peak_observed_queue": 8028.924700595421
+      },
+      {
+        "queue_threshold": 3200.0,
+        "forecast_threshold": 2000.0,
+        "mean_total_reward": -852.6864181832889,
+        "peak_observed_queue": 8028.924700595421
+      },
+      {
+        "queue_threshold": 3200.0,
+        "forecast_threshold": 4000.0,
+        "mean_total_reward": -843.0826939569071,
+        "peak_observed_queue": 8028.924700595421
+      },
+      {
+        "queue_threshold": 3200.0,
+        "forecast_threshold": 6000.0,
+        "mean_total_reward": -852.5743843086548,
+        "peak_observed_queue": 8028.924700595421
+      },
+      {
+        "queue_threshold": 3200.0,
+        "forecast_threshold": 8000.0,
+        "mean_total_reward": -1090.1397361022568,
+        "peak_observed_queue": 8028.92470059542
+      },
+      {
+        "queue_threshold": 6400.0,
+        "forecast_threshold": 0.0,
+        "mean_total_reward": -852.7319490747709,
+        "peak_observed_queue": 7833.355431312041
+      },
+      {
+        "queue_threshold": 6400.0,
+        "forecast_threshold": 2000.0,
+        "mean_total_reward": -852.7319490747709,
+        "peak_observed_queue": 7833.355431312041
+      },
+      {
+        "queue_threshold": 6400.0,
+        "forecast_threshold": 4000.0,
+        "mean_total_reward": -843.1282248483891,
+        "peak_observed_queue": 7833.355431312041
+      },
+      {
+        "queue_threshold": 6400.0,
+        "forecast_threshold": 6000.0,
+        "mean_total_reward": -852.9010585688942,
+        "peak_observed_queue": 7833.355431312041
+      },
+      {
+        "queue_threshold": 6400.0,
+        "forecast_threshold": 8000.0,
+        "mean_total_reward": -1119.059971422979,
+        "peak_observed_queue": 7833.35543131204
+      }
+    ],
+    "information_available": "forecast mean mu and observed queue; never sigma",
+    "tuned_utc": "2026-08-27T02:34:35.854131+00:00"
+  }
+}

@@ -1,0 +1,84 @@
+# M3 data pipeline configuration.
+#
+# provenance_required is false here because this file holds methodology (dataset ids, split
+# rules, quality thresholds), not physical simulation parameters. The simulator and network
+# configs are strict. Every choice below still carries a `note` recording where it comes from.
+
+provenance_required: false
+config_id: data_v1
+description: Ingestion, validation, splitting and feature engineering for the modelled line.
+version: 1
+
+# --- network under study ----------------------------------------------------------------
+# Verified 2026-08-26 by scripts/probe_sources.py from mta_subway_stations (39hk-dx4f):
+# exactly 24 station complexes carry a standalone `L` token in daytime_routes.
+# Independently corroborated by sp9g-mzjh reporting 23 stops end-to-end.
+line:
+  route_id: L
+  n_expected_complexes: 24
+  station_complex_ids:
+    ["118", "119", "120", "122", "123", "124", "125", "126", "127", "129",
+     "130", "131", "133", "134", "135", "136", "137", "138",
+     "601", "602", "618", "621", "629", "630"]
+
+# --- ingestion --------------------------------------------------------------------------
+ingestion:
+  # Month-partitioned so ingestion is resumable and each request stays far below the
+  # Socrata row cap (24 stations x 24 h x 31 d = 17,856 rows maximum per month).
+  partition: month
+  page_limit: 50000
+  request_timeout_s: 180
+  retries: 4
+  # Full available span. The *study window* is a strict subset chosen by the stationarity
+  # screen below; ingesting the whole span is what makes that screen possible.
+  first_month: "2017-01"
+  last_month: "2026-08"
+
+# --- demand regime screen (decision D-11) ------------------------------------------------
+# Pre-registered rule, fitted on the training portion only, never on test.
+# Rationale: a structural regime change inflates forecast dispersion for reasons unrelated to
+# short-horizon demand uncertainty, and that inflated sigma would feed straight into the
+# uncertainty channel and therefore into H1.
+regime_screen:
+  daily_metric: total_ridership          # line-level sum over all complexes
+  short_window_days: 28                  # rolling mean window
+  yoy_lag_days: 365
+  max_abs_yoy_growth: 0.10               # |YoY growth of the 28-day mean| must stay below this
+  min_stable_run_days: 365               # ... continuously, for at least this long
+  fallback_start: "2024-01-01"           # used only if the screen finds no qualifying run;
+                                         # the fallback firing is reported as a finding
+
+# --- chronological split (protocol section 3.1) ------------------------------------------
+split:
+  method: chronological                  # NEVER random for time series
+  train_fraction: 0.70
+  val_fraction: 0.15
+  # test takes the remainder
+  embargo_days: 7                        # discarded gap between splits, both boundaries
+  align_to_weekday: 1                    # snap boundaries to Monday so weekly seasonality
+                                         # is not cut mid-cycle
+
+# --- data quality thresholds (protocol section 3.2) --------------------------------------
+quality:
+  max_missing_hours_per_day: 4           # days above this are excluded and listed
+  outlier_mad_k: 8.0                     # robust flag threshold; flagged and counted, never deleted
+  min_daily_ridership: 1.0               # a served station-day below this is implausible
+  service_delivered_max: 1.05            # guards the known upstream 1/100 mis-scaling in 32ch-sei3
+  operating_day:
+    start_hour: 5
+    end_hour: 24
+
+# --- forecasting feature whitelist (protocol section 4.2) --------------------------------
+# Leakage-safe by construction: every lag is >= the forecast horizon, so no feature can see
+# the target hour or anything after it. tests/test_leakage.py enforces this.
+features:
+  target: ridership
+  resolution: hour
+  horizons_h: [1, 2, 3]
+  target_lags_h: [1, 2, 3, 4, 5, 6]      # offset by the horizon at build time
+  seasonal_lags_h: [24, 48, 168]
+  rolling_windows_h: [3, 24, 168]
+  calendar: [hour_sin, hour_cos, dow, is_weekend, is_holiday]
+  station_features: [station_index]
+  # Weather and events are deliberately excluded (MC-11): they widen the leakage surface and
+  # are not needed to test H1.

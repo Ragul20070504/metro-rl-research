@@ -1,0 +1,12 @@
+{
+  "figure": "fig03_forecasting",
+  "generated_utc": "2026-08-28T07:07:10.970271+00:00",
+  "generated_by": "scripts/make_paper_assets.py",
+  "source_files": [
+    "results/forecasting_metrics.json"
+  ],
+  "detail": {
+    "quantile_crossing_rate": 0.08476661787400146
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

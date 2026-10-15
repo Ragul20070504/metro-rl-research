@@ -1,0 +1,40 @@
+{
+  "attribution": "Metropolitan Transportation Authority",
+  "columns": [
+    "day_type",
+    "division",
+    "line",
+    "month",
+    "num_actual_trains",
+    "num_sched_trains",
+    "service_delivered"
+  ],
+  "dataset_id": "mta_service_delivered",
+  "download_utc": "2026-08-26T15:35:47.021165+00:00",
+  "files": [
+    {
+      "bytes": 11220,
+      "path": "mta_service_delivered/data.parquet",
+      "sha256": "2a4e46e649fd19b2d8b1ba7f2963feb177151d1b69dcad201cfc9405126c9a74"
+    }
+  ],
+  "kind": "socrata_table",
+  "license": null,
+  "limitations": [
+    "the published service_delivered field is mis-scaled by 1/100; the pipeline recomputes the ratio from num_actual_trains / num_sched_trains and asserts the recomputed value lies in [0, 1.05]"
+  ],
+  "role": "validation: scheduled vs actual trains; real reference for dispatch success rate",
+  "row_count": 274,
+  "socrata_id": "32ch-sei3",
+  "source_url": "https://data.ny.gov/d/32ch-sei3",
+  "title": "MTA Subway Service Delivered: Beginning 2015",
+  "upstream_metadata": {
+    "attribution": "Metropolitan Transportation Authority",
+    "data_updated_at": null,
+    "license": null,
+    "license_url": null,
+    "name": "MTA Subway Service Delivered: Beginning 2015",
+    "rows_updated_at": 1784906860,
+    "socrata_id": "32ch-sei3"
+  }
+}

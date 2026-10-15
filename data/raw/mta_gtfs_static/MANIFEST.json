@@ -1,0 +1,25 @@
+{
+  "attribution": "Metropolitan Transportation Authority, published via NY State Open Data. See https://www.mta.info/open-data",
+  "content_type": "application/zip",
+  "dataset_id": "mta_gtfs_static",
+  "download_utc": "2026-08-26T15:35:19.269241+00:00",
+  "files": [
+    {
+      "bytes": 5610175,
+      "path": "mta_gtfs_static/gtfs_subway.zip",
+      "sha256": "056d1fc821f26e859c41ffb227197bdd45dbf4a0c3ef41b3509a5ff6dda4602e"
+    }
+  ],
+  "kind": "zip",
+  "license": null,
+  "limitations": [
+    "scheduled, not realised",
+    "snapshot only: older editions are not archived at this endpoint, so the hash and retrieval date must be pinned"
+  ],
+  "role": "inter-station running times, scheduled headways, trip counts, fixed_timetable baseline",
+  "row_count": null,
+  "socrata_id": null,
+  "source_url": "https://rrgtfsfeeds.s3.amazonaws.com/gtfs_subway.zip",
+  "title": "MTA subway GTFS static feed",
+  "upstream_metadata": {}
+}

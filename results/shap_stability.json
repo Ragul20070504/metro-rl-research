@@ -1,0 +1,28 @@
+{
+  "method": "ppo_uq",
+  "train_seeds": [
+    101,
+    102,
+    103
+  ],
+  "n_features": 123,
+  "pairwise_spearman": [
+    {
+      "seed_a": 101,
+      "seed_b": 102,
+      "spearman_rho": 0.38888315641485344
+    },
+    {
+      "seed_a": 101,
+      "seed_b": 103,
+      "spearman_rho": 0.2544595065199727
+    },
+    {
+      "seed_a": 102,
+      "seed_b": 103,
+      "spearman_rho": 0.23172666417304044
+    }
+  ],
+  "mean_spearman": 0.29168977570262217,
+  "interpretation": "high rank correlation means the attribution describes the method; low correlation means it describes the particular training seed and should not be generalised"
+}

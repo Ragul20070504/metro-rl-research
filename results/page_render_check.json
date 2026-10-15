@@ -1,0 +1,189 @@
+[
+  {
+    "group": "Overview",
+    "page": "Executive overview",
+    "exception": null,
+    "markdown": 7,
+    "dataframe": 0,
+    "metric": 6,
+    "widgets": 0,
+    "error_boxes": 0,
+    "warnings": 0
+  },
+  {
+    "group": "Overview",
+    "page": "Final verdict",
+    "exception": null,
+    "markdown": 11,
+    "dataframe": 0,
+    "metric": 0,
+    "widgets": 0,
+    "error_boxes": 0,
+    "warnings": 0
+  },
+  {
+    "group": "Results",
+    "page": "Primary results",
+    "exception": null,
+    "markdown": 3,
+    "dataframe": 4,
+    "metric": 0,
+    "widgets": 3,
+    "error_boxes": 0,
+    "warnings": 0
+  },
+  {
+    "group": "Results",
+    "page": "Placebo analysis",
+    "exception": null,
+    "markdown": 3,
+    "dataframe": 0,
+    "metric": 3,
+    "widgets": 1,
+    "error_boxes": 0,
+    "warnings": 0
+  },
+  {
+    "group": "Results",
+    "page": "Scenario explorer",
+    "exception": null,
+    "markdown": 3,
+    "dataframe": 2,
+    "metric": 0,
+    "widgets": 3,
+    "error_boxes": 0,
+    "warnings": 0
+  },
+  {
+    "group": "Results",
+    "page": "Baseline explorer",
+    "exception": null,
+    "markdown": 2,
+    "dataframe": 1,
+    "metric": 0,
+    "widgets": 3,
+    "error_boxes": 1,
+    "warnings": 1
+  },
+  {
+    "group": "Results",
+    "page": "Statistics",
+    "exception": null,
+    "markdown": 6,
+    "dataframe": 2,
+    "metric": 8,
+    "widgets": 2,
+    "error_boxes": 0,
+    "warnings": 0
+  },
+  {
+    "group": "Evidence",
+    "page": "Mechanism explorer",
+    "exception": null,
+    "markdown": 4,
+    "dataframe": 2,
+    "metric": 0,
+    "widgets": 3,
+    "error_boxes": 0,
+    "warnings": 0
+  },
+  {
+    "group": "Evidence",
+    "page": "Robustness",
+    "exception": null,
+    "markdown": 2,
+    "dataframe": 1,
+    "metric": 4,
+    "widgets": 1,
+    "error_boxes": 1,
+    "warnings": 0
+  },
+  {
+    "group": "Evidence",
+    "page": "Ablations & sensitivity",
+    "exception": null,
+    "markdown": 5,
+    "dataframe": 2,
+    "metric": 0,
+    "widgets": 2,
+    "error_boxes": 0,
+    "warnings": 1
+  },
+  {
+    "group": "Evidence",
+    "page": "SHAP",
+    "exception": null,
+    "markdown": 2,
+    "dataframe": 0,
+    "metric": 0,
+    "widgets": 1,
+    "error_boxes": 1,
+    "warnings": 0
+  },
+  {
+    "group": "Study inputs",
+    "page": "Data",
+    "exception": null,
+    "markdown": 10,
+    "dataframe": 0,
+    "metric": 0,
+    "widgets": 0,
+    "error_boxes": 0,
+    "warnings": 0
+  },
+  {
+    "group": "Study inputs",
+    "page": "Forecasting",
+    "exception": null,
+    "markdown": 3,
+    "dataframe": 0,
+    "metric": 3,
+    "widgets": 0,
+    "error_boxes": 0,
+    "warnings": 0
+  },
+  {
+    "group": "Study inputs",
+    "page": "Digital twin",
+    "exception": null,
+    "markdown": 2,
+    "dataframe": 1,
+    "metric": 4,
+    "widgets": 1,
+    "error_boxes": 1,
+    "warnings": 0
+  },
+  {
+    "group": "Provenance",
+    "page": "Follow-up (incomplete)",
+    "exception": null,
+    "markdown": 5,
+    "dataframe": 0,
+    "metric": 4,
+    "widgets": 0,
+    "error_boxes": 1,
+    "warnings": 0
+  },
+  {
+    "group": "Provenance",
+    "page": "Reproducibility",
+    "exception": null,
+    "markdown": 2,
+    "dataframe": 2,
+    "metric": 4,
+    "widgets": 0,
+    "error_boxes": 0,
+    "warnings": 1
+  },
+  {
+    "group": "Provenance",
+    "page": "Downloads",
+    "exception": null,
+    "markdown": 3,
+    "dataframe": 0,
+    "metric": 0,
+    "widgets": 0,
+    "error_boxes": 0,
+    "warnings": 0
+  }
+]

@@ -1,0 +1,210 @@
+{
+  "generated_utc": "2026-08-28T02:51:30.012332+00:00",
+  "experiment_id": "EXP-UQ-004",
+  "hypothesis": "H1b (mechanism)",
+  "family": "exploratory",
+  "provenance": "stored artefacts of the original confirmatory study only; nothing re-run",
+  "unit_of_analysis": "training seed (protocol section 8.2)",
+  "what_the_design_licenses": "Channel content is manipulated with everything else held fixed under common random numbers, so behavioural differences between arms are attributable to it. No claim is made about the network's internal representation, and none of this is evidence for or against H1, which is settled by the confirmatory test.",
+  "dispatch_volume": [
+    {
+      "scenario": "normal",
+      "informative_sigma_vs_zero": {
+        "method_a": "ppo_uq",
+        "method_b": "ppo_point",
+        "n": 10,
+        "mean_a": 202.62,
+        "mean_b": 228.8966666666667,
+        "mean_difference": -26.276666666666664,
+        "sd_difference": 9.071853772200999,
+        "t": -9.159551958202579,
+        "p_value": 7.3931352564637365e-06,
+        "wilcoxon_p": 0.001953125,
+        "seeds_favouring_a": 10
+      },
+      "uninformative_sigma_vs_zero": {
+        "method_a": "ppo_placebo",
+        "method_b": "ppo_point",
+        "n": 10,
+        "mean_a": 230.68666666666667,
+        "mean_b": 228.8966666666667,
+        "mean_difference": 1.7899999999999978,
+        "sd_difference": 4.353969382381555,
+        "t": 1.3000727645459915,
+        "p_value": 0.22588248766326274,
+        "wilcoxon_p": 0.275390625,
+        "seeds_favouring_a": 3
+      }
+    },
+    {
+      "scenario": "surge",
+      "informative_sigma_vs_zero": {
+        "method_a": "ppo_uq",
+        "method_b": "ppo_point",
+        "n": 10,
+        "mean_a": 204.30333333333334,
+        "mean_b": 229.01999999999998,
+        "mean_difference": -24.716666666666665,
+        "sd_difference": 8.806314373193027,
+        "t": -8.875559004769952,
+        "p_value": 9.566706153191573e-06,
+        "wilcoxon_p": 0.001953125,
+        "seeds_favouring_a": 10
+      },
+      "uninformative_sigma_vs_zero": {
+        "method_a": "ppo_placebo",
+        "method_b": "ppo_point",
+        "n": 10,
+        "mean_a": 230.94666666666666,
+        "mean_b": 229.01999999999998,
+        "mean_difference": 1.9266666666666707,
+        "sd_difference": 4.400246906652645,
+        "t": 1.384616610804209,
+        "p_value": 0.19953030361996182,
+        "wilcoxon_p": 0.15234375,
+        "seeds_favouring_a": 2
+      }
+    },
+    {
+      "scenario": "disruption",
+      "informative_sigma_vs_zero": {
+        "method_a": "ppo_uq",
+        "method_b": "ppo_point",
+        "n": 10,
+        "mean_a": 214.24666666666667,
+        "mean_b": 229.17333333333332,
+        "mean_difference": -14.926666666666668,
+        "sd_difference": 8.526368685610713,
+        "t": -5.536033718602808,
+        "p_value": 0.0003628990294010784,
+        "wilcoxon_p": 0.001953125,
+        "seeds_favouring_a": 10
+      },
+      "uninformative_sigma_vs_zero": {
+        "method_a": "ppo_placebo",
+        "method_b": "ppo_point",
+        "n": 10,
+        "mean_a": 231.05,
+        "mean_b": 229.17333333333332,
+        "mean_difference": 1.8766666666666652,
+        "sd_difference": 5.390092649058275,
+        "t": 1.1010091035484337,
+        "p_value": 0.2994661954432885,
+        "wilcoxon_p": 0.361328125,
+        "seeds_favouring_a": 4
+      }
+    },
+    {
+      "scenario": "combined",
+      "informative_sigma_vs_zero": {
+        "method_a": "ppo_uq",
+        "method_b": "ppo_point",
+        "n": 10,
+        "mean_a": 215.2133333333333,
+        "mean_b": 229.30333333333334,
+        "mean_difference": -14.090000000000003,
+        "sd_difference": 8.223739349522752,
+        "t": -5.418033128002556,
+        "p_value": 0.0004229228157737841,
+        "wilcoxon_p": 0.001953125,
+        "seeds_favouring_a": 10
+      },
+      "uninformative_sigma_vs_zero": {
+        "method_a": "ppo_placebo",
+        "method_b": "ppo_point",
+        "n": 10,
+        "mean_a": 231.23999999999995,
+        "mean_b": 229.30333333333334,
+        "mean_difference": 1.9366666666666645,
+        "sd_difference": 5.226817127463958,
+        "t": 1.1717030815968577,
+        "p_value": 0.27139971923891865,
+        "wilcoxon_p": 0.30078125,
+        "seeds_favouring_a": 3
+      }
+    }
+  ],
+  "dispatch_volume_reading": "The placebo arm carries a sigma channel of identical marginal distribution with the association to forecast error destroyed. If merely having the channel changed behaviour, the placebo would move with the uncertainty arm. It does not: the placebo dispatches like the point arm, while only the calibrated sigma produces a large reduction. The dispatch collapse is attributable to the sigma being informative, not to the extra inputs.",
+  "volume_matched_comparison": {
+    "surge": {
+      "note": "`fixed_timetable` is deterministic and has no training seed, so this is a descriptive comparison, not a paired test. It is included because it is the only method in the study that dispatches essentially the same number of trains as `ppo_uq`, which lets timing be compared with volume held roughly constant.",
+      "ppo_uq": {
+        "inductions": 204.30333333333334,
+        "idle_epochs": 84.42333333333333,
+        "dispatch_sd": 0.7838009748553839,
+        "max_queue": 1195.0816041899475,
+        "left_behind": 9304.654448369423,
+        "headway_violations": 0.0
+      },
+      "fixed_timetable": {
+        "inductions": 203.9,
+        "idle_epochs": 54.1,
+        "dispatch_sd": 0.5993613694667551,
+        "max_queue": 980.5872742629482,
+        "left_behind": 7494.533835978561,
+        "headway_violations": 0.0
+      }
+    }
+  },
+  "volume_matched_reading": "At almost identical dispatch volume, the uncertainty arm leaves markedly more epochs with no dispatch at all and reaches a larger peak queue than a fixed timetable. So the arm is not only releasing fewer trains: it is also clustering the releases it does make, and a non-adaptive schedule running the same number of trains allocates them better. Under-dispatching and mis-timing are both present.",
+  "volume_versus_outcome": {
+    "pooled_regression": {
+      "slope_per_induction": -0.00034062971760439453,
+      "r_squared": 0.279852066192577,
+      "p_value": 0.0026497724104202866,
+      "n": 30
+    },
+    "caution": "Arm and dispatch volume are near-collinear by construction -- the arm is what changes the volume -- so a regression cannot apportion the outcome gap between 'fewer trains' and 'worse timing'. The volume-matched comparison above is the identification that is actually available, and it indicates both are present.",
+    "not_monotone_across_methods": {
+      "ppo_uq_single_obj": {
+        "inductions": 195.223333,
+        "left_behind_fraction": 0.146942
+      },
+      "fixed_timetable": {
+        "inductions": 203.9,
+        "left_behind_fraction": 0.025501
+      },
+      "ppo_uq": {
+        "inductions": 204.303333,
+        "left_behind_fraction": 0.031681
+      },
+      "ppo_uq_noavail": {
+        "inductions": 209.95,
+        "left_behind_fraction": 0.029053
+      },
+      "heuristic_threshold": {
+        "inductions": 216.0,
+        "left_behind_fraction": 0.011842
+      },
+      "milp_static": {
+        "inductions": 228.0,
+        "left_behind_fraction": 0.011865
+      },
+      "milp_rolling": {
+        "inductions": 228.266667,
+        "left_behind_fraction": 0.029317
+      },
+      "ppo_point": {
+        "inductions": 229.02,
+        "left_behind_fraction": 0.017939
+      },
+      "ppo_placebo": {
+        "inductions": 230.946667,
+        "left_behind_fraction": 0.023156
+      }
+    },
+    "not_monotone_reading": "More dispatch is not simply better: the tuned heuristic achieves the best service in the study while dispatching fewer trains than `ppo_point`, `milp_static` or `milp_rolling`. Timing dominates volume across methods, which is why the uncertainty arm's clustering matters as much as its restraint."
+  },
+  "open_questions": [
+    {
+      "question": "The registered form of H1b -- does dispatch rate rise with forecast dispersion after conditioning on the forecast mean? -- is an epoch-level question.",
+      "status": "NOT ANSWERABLE FROM STORED ARTEFACTS",
+      "reason": "`epochs.parquet` records actions and outcomes but not the forecast mean or sigma the policy saw. Answering it needs the per-epoch forecast re-derived from the frozen forecaster, which is deterministic but is computation this analysis deliberately does not run."
+    },
+    {
+      "question": "Is the dispatch collapse a property of the information or of the budget?",
+      "status": "NOT ANSWERABLE FROM THIS STUDY",
+      "reason": "One frozen configuration at one budget (amendment A-05). No learning curves were stored, so convergence cannot be compared across arms from the artefacts either. This is the question the registered follow-up exists to answer."
+    }
+  ]
+}

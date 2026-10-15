@@ -1,0 +1,21 @@
+{
+  "figure": "fig07_convex_service_loss",
+  "generated_utc": "2026-08-28T07:07:12.614472+00:00",
+  "generated_by": "scripts/make_paper_assets.py",
+  "source_files": [
+    "results/runs/main/surge/**/epochs.parquet"
+  ],
+  "detail": {
+    "bins": 12,
+    "train_seed": 101,
+    "arrivals_range": [
+      344.17894736842106,
+      2343.378947368421
+    ],
+    "left_behind_range": [
+      0.0,
+      231.86204717874955
+    ]
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

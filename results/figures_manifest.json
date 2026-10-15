@@ -1,0 +1,22 @@
+{
+  "generated_utc": "2026-08-28T00:52:37.701392+00:00",
+  "figures": [
+    "D:\\Research\\metro-rl-research\\results\\figures\\fig01_primary_endpoint.png",
+    "D:\\Research\\metro-rl-research\\results\\figures\\fig02_scenario_comparison.png",
+    "D:\\Research\\metro-rl-research\\results\\figures\\fig03_waiting_time.png",
+    "D:\\Research\\metro-rl-research\\results\\figures\\fig04_p95_waiting_time.png",
+    "D:\\Research\\metro-rl-research\\results\\figures\\fig05_energy.png",
+    "D:\\Research\\metro-rl-research\\results\\figures\\fig06_cost.png",
+    "D:\\Research\\metro-rl-research\\results\\figures\\fig07_robustness.png",
+    "D:\\Research\\metro-rl-research\\results\\figures\\fig08_ablations.png",
+    "D:\\Research\\metro-rl-research\\results\\figures\\fig09_forecasting.png",
+    "D:\\Research\\metro-rl-research\\results\\figures\\fig10_shap.png",
+    "D:\\Research\\metro-rl-research\\results\\figures\\fig11_simulator_validation.png"
+  ],
+  "tables": [
+    "table01_main_metrics.csv",
+    "table01_main_metrics.md",
+    "table02_confirmatory.md"
+  ],
+  "policy": "every figure and table is generated from stored result files; no experimental number is hand-entered. Each figure has a .source.json companion naming its inputs."
+}

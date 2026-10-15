@@ -1,0 +1,48 @@
+{
+  "generated_utc": "2026-08-28T07:47:18.398935+00:00",
+  "research_dashboard": "http://localhost:8501",
+  "product": "http://localhost:8502",
+  "checks": [
+    {
+      "name": "both ports are free before launching",
+      "status": "PASS",
+      "detail": "8501 and 8502 are unoccupied"
+    },
+    {
+      "name": "research dashboard serves on :8501",
+      "status": "PASS",
+      "detail": "health endpoint responded in 2.1s from app.py"
+    },
+    {
+      "name": "product prototype serves on :8502",
+      "status": "PASS",
+      "detail": "health endpoint responded in 2.1s from product/app.py"
+    },
+    {
+      "name": "research dashboard returns a page on :8501",
+      "status": "PASS",
+      "detail": "HTTP 200, 4096 bytes"
+    },
+    {
+      "name": "product prototype returns a page on :8502",
+      "status": "PASS",
+      "detail": "HTTP 200, 4096 bytes"
+    },
+    {
+      "name": "both applications run simultaneously",
+      "status": "PASS",
+      "detail": "2 of 2 processes alive and both ports serving"
+    },
+    {
+      "name": "research artefacts unchanged by running the product",
+      "status": "PASS",
+      "detail": "protected artefacts hash identically before and after"
+    },
+    {
+      "name": "stopping the product leaves no stray process",
+      "status": "PASS",
+      "detail": "every process started by this check has exited"
+    }
+  ],
+  "summary": "both applications verified; 8/8 checks pass"
+}

@@ -1,0 +1,25 @@
+{
+  "figure": "fig09_baselines",
+  "generated_utc": "2026-08-28T07:07:13.311577+00:00",
+  "generated_by": "scripts/make_paper_assets.py",
+  "source_files": [
+    "results/seed_level.parquet"
+  ],
+  "detail": {
+    "scenario": "surge",
+    "means": {
+      "heuristic_threshold": 0.01184185492076551,
+      "milp_static": 0.011865020786416703,
+      "ppo_point": 0.01793940108699422,
+      "ppo_placebo": 0.023155915890461252,
+      "fixed_timetable": 0.02550072073545814,
+      "ppo_uq_noavail": 0.029053087256613874,
+      "milp_rolling": 0.02931659161648388,
+      "ppo_uq": 0.03168103510523661
+    },
+    "omitted": [
+      "ppo_uq_single_obj"
+    ]
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

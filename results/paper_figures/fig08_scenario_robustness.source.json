@@ -1,0 +1,23 @@
+{
+  "figure": "fig08_scenario_robustness",
+  "generated_utc": "2026-08-28T07:07:12.930113+00:00",
+  "generated_by": "scripts/make_paper_assets.py",
+  "source_files": [
+    "results/seed_level.parquet"
+  ],
+  "detail": {
+    "scenarios": [
+      "normal",
+      "surge",
+      "disruption",
+      "combined"
+    ],
+    "arms": [
+      "ppo_point",
+      "ppo_placebo",
+      "ppo_uq"
+    ],
+    "error_bars": "standard error over training seeds"
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

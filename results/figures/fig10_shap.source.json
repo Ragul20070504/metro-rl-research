@@ -1,0 +1,11 @@
+{
+  "figure": "fig10_shap",
+  "generated_utc": "2026-08-28T00:52:37.104554+00:00",
+  "source_files": [
+    "results/shap_analysis.json"
+  ],
+  "detail": {
+    "n_features_shown": 20
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

@@ -1,0 +1,19 @@
+{
+  "figure": "fig08_ablations",
+  "generated_utc": "2026-08-28T00:52:36.665920+00:00",
+  "source_files": [
+    "results/statistical_analysis.json"
+  ],
+  "detail": {
+    "n_comparisons": 6,
+    "labels": [
+      "ppo_uq vs ppo_point",
+      "ppo_uq vs ppo_placebo",
+      "ppo_uq vs ppo_point",
+      "ppo_uq vs ppo_placebo",
+      "ppo_uq vs ppo_uq_single_obj",
+      "ppo_uq vs ppo_uq_noavail"
+    ]
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

@@ -1,0 +1,38 @@
+{
+  "attribution": "Metropolitan Transportation Authority",
+  "columns": [
+    "day_type",
+    "division",
+    "line",
+    "month",
+    "num_on_time_trips",
+    "num_sched_trips",
+    "terminal_on_time_performance"
+  ],
+  "dataset_id": "mta_terminal_otp",
+  "download_utc": "2026-08-26T15:36:24.202484+00:00",
+  "files": [
+    {
+      "bytes": 11620,
+      "path": "mta_terminal_otp/data.parquet",
+      "sha256": "98722f2eda8b966ddebe20e7becfe72588f7488e0a0af113c6a209f36b4884ae"
+    }
+  ],
+  "kind": "socrata_table",
+  "license": null,
+  "limitations": [],
+  "role": "validation: punctuality (secondary)",
+  "row_count": 225,
+  "socrata_id": "f6rf-2a3t",
+  "source_url": "https://data.ny.gov/d/f6rf-2a3t",
+  "title": "MTA Subway Terminal On-Time Performance: Beginning 2015",
+  "upstream_metadata": {
+    "attribution": "Metropolitan Transportation Authority",
+    "data_updated_at": null,
+    "license": null,
+    "license_url": null,
+    "name": "MTA Subway Terminal On-Time Performance: Beginning 2015",
+    "rows_updated_at": 1784906927,
+    "socrata_id": "f6rf-2a3t"
+  }
+}

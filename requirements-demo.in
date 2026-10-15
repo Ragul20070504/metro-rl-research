@@ -1,0 +1,18 @@
+# Dependencies of the M17 interactive demonstration (app.py), kept SEPARATE from the research
+# environment on purpose.
+#
+# `requirements.txt` and `requirements.lock.txt` record the environment that produced the
+# experimental results. Adding a visualisation framework to that record would mean the environment
+# named in the paper is not the environment the paper's numbers came from. The demonstration is a
+# viewer over frozen artefacts; it can have its own dependencies without touching theirs.
+#
+# Installed with the research environment pinned as a hard constraint:
+#
+#     .venv/Scripts/python.exe -m pip freeze > constraints.txt
+#     .venv/Scripts/python.exe -m pip install -r requirements-demo.in --constraint constraints.txt
+#
+# The constraint means pip may only ADD packages, never upgrade one the research pipeline depends
+# on. Verified on 2026-08-27: no pre-existing package changed version, and
+# `scripts/check_environment.py` still passes all 10 checks.
+
+streamlit==1.62.0

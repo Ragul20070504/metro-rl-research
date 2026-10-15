@@ -1,0 +1,18 @@
+# Configuration for the M17 demonstration app. Headless so it can be launched from a terminal
+# without a browser being opened for it, and with usage telemetry off: this app reads research
+# artefacts, and nothing about a research session should leave the machine.
+
+[server]
+headless = true
+port = 8501
+fileWatcherType = "none"
+# Bind to the loopback interface only. Streamlit otherwise listens on every interface and prints
+# an external URL, which would put an unauthenticated view of research artefacts on the local
+# network. This is a local demonstration tool; it has no business being reachable from elsewhere.
+address = "localhost"
+
+[browser]
+gatherUsageStats = false
+
+[runner]
+fastReruns = true

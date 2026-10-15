@@ -1,0 +1,56 @@
+{
+  "label": "pre_A10_A11",
+  "status": "SUPERSEDED -- not evidence for any claim",
+  "preserved_utc": "2026-08-27T02:53:15.301967+00:00",
+  "per_cell_artefacts": "NOT RECOVERABLE",
+  "why_not_recoverable": "the affected cells were deleted before results/runs was first committed, so commit add7f26 and every earlier commit hold no copy of them",
+  "amendments": [
+    "A-10",
+    "A-11"
+  ],
+  "reason": "produced under baseline configurations that amendments A-10 and A-11 corrected: the heuristic's tuned threshold sat at its grid boundary, and the MILP surrogate lacked a standing-queue term and therefore ranked schedules opposite to the simulator",
+  "recorded_measurements": {
+    "note": "Per-cell result files are NOT available: they were deleted when the defects were found, before results/runs was first committed, so git holds no copy. These aggregates are the measurements that were recorded at the time and that justified amendments A-10 and A-11.",
+    "metric": "left_behind_fraction, mean over 30 evaluation seeds",
+    "by_method_and_scenario": {
+      "fixed_timetable": {
+        "normal": 0.0188,
+        "surge": 0.0255,
+        "disruption": 0.0221,
+        "combined": 0.0286
+      },
+      "heuristic_threshold": {
+        "normal": 0.0053,
+        "surge": 0.0121,
+        "disruption": 0.0103,
+        "combined": 0.0179
+      },
+      "milp_static": {
+        "normal": 0.0567,
+        "surge": 0.0737,
+        "disruption": 0.0609,
+        "combined": 0.0785
+      },
+      "milp_rolling": {
+        "normal": 0.0224,
+        "surge": 0.0282,
+        "disruption": 0.0258,
+        "combined": "incomplete when the defect was found"
+      }
+    },
+    "heuristic_configuration": {
+      "queue_threshold": 800.0,
+      "forecast_threshold": 4000.0,
+      "defect": "selected value was the maximum of its search grid"
+    },
+    "milp_diagnostic": {
+      "surrogate_mean_predicted_queue": 0.5,
+      "simulator_mean_realised_queue": 1017.9,
+      "surrogate_preferred": "MILP plan",
+      "simulator_preferred": "fixed timetable",
+      "defect": "surrogate and simulator ranked the same two schedules oppositely"
+    },
+    "fixed_timetable_note": "fixed_timetable was unaffected by both amendments; its cells were neither deleted nor re-run, and its numbers above are the same ones in results/runs today"
+  },
+  "warning": "These results were produced under a configuration later found to violate protocol section 7.1's prohibition on strawman baselines. They are recorded so the effect of the correction can be inspected, NOT so they can be reported. Nothing under results/runs/ derives from them, and scripts/analyse.py never reads this tree."
+}

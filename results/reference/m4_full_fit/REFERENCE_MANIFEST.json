@@ -1,0 +1,32 @@
+{
+  "purpose": "Immutable reference copy of the M4 full-data fit. Any later forecasting run -- including one accelerated by subsampling the hyperparameter search -- is compared against this, and never replaces it.",
+  "preserved_utc": "2026-08-26T21:44:55.450995+00:00",
+  "run_git_commit": "dd656e58335fdc69a7581872f788f0215109281b",
+  "files": {
+    "forecasting_metrics.json": {
+      "sha256": "c0722454446808ec92e08b8541d7b2bb4968dbe24e0fa47213e41d30b1fc07d5",
+      "bytes": 17210,
+      "copied_from": "results\\forecasting_metrics.json"
+    },
+    "forecasting_report.md": {
+      "sha256": "2a9b9dc6959ee92ff46421341f7f4c0a445f1cb0f0db52f63bd1cd615f056f49",
+      "bytes": 2254,
+      "copied_from": "results\\forecasting_report.md"
+    },
+    "forecast.parquet": {
+      "sha256": "c3037949e55a866a61dfe1f097014e5636db1f2e9a6085f7ed05297b17df2aa6",
+      "bytes": 62364247,
+      "copied_from": "data\\processed\\forecasts\\forecast.parquet"
+    },
+    "forecast_point.parquet": {
+      "sha256": "200d0d68b47809902956d517ccb3fe761673b9a74d1895178dba71db81060c1e",
+      "bytes": 22054325,
+      "copied_from": "data\\processed\\forecasts\\forecast_point.parquet"
+    },
+    "split_manifest.json": {
+      "sha256": "18460e9d7edecabb2793ed929fe9c0e67ea71a54b692fdba3db40b3cd12bcee8",
+      "bytes": 3979,
+      "copied_from": "data\\processed\\split_manifest.json"
+    }
+  }
+}

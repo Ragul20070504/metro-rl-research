@@ -1,0 +1,11 @@
+check,value
+seeds favouring ppo_point,9/10
+realised SD of paired difference,0.011269
+pilot SD used for planning,0.005298
+ratio realised/pilot,2.127
+Wilcoxon signed-rank p,0.005859
+worst leave-one-seed-out p,0.010214
+"worst leave-one-seed-out, Holm-adjusted",0.020428
+seed dropped in the worst case,107
+scenarios reproducing the direction,4/4
+sensitivity conditions where ppo_uq is worse,12/12

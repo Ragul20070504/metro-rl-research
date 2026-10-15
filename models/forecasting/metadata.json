@@ -1,0 +1,124 @@
+{
+  "source": "existing artefacts on disk, verified against the run's stored forecasts",
+  "source_manifest": "results\\forecasting_metrics.json",
+  "source_run_git_commit": "dd656e58335fdc69a7581872f788f0215109281b",
+  "hyperparameters": {
+    "n_estimators": 400,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "reg_lambda": 1.0,
+    "tree_method": "hist",
+    "n_jobs": 10,
+    "random_state": 0,
+    "learning_rate": 0.1,
+    "max_depth": 8,
+    "min_child_weight": 20
+  },
+  "point_hyperparameters": {
+    "n_estimators": 400,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "reg_lambda": 1.0,
+    "tree_method": "hist",
+    "n_jobs": 10,
+    "random_state": 0,
+    "learning_rate": 0.1,
+    "max_depth": 8,
+    "min_child_weight": 20
+  },
+  "quantiles": [
+    0.05,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    0.9,
+    0.95
+  ],
+  "calibration_factor": 1.1547819846894583,
+  "calibration_record": {
+    "factor": 1.1547819846894583,
+    "coverage_before": 0.7415989543965734,
+    "coverage_after": 0.8017487087427564,
+    "target": 0.8,
+    "n_candidates": 193,
+    "improved": true,
+    "at_search_boundary": false
+  },
+  "feature_columns": [
+    "y_tminus_0",
+    "y_tminus_1",
+    "y_tminus_2",
+    "y_tminus_3",
+    "y_tminus_4",
+    "y_tminus_5",
+    "y_seasonal_24",
+    "y_seasonal_48",
+    "y_seasonal_168",
+    "y_roll_mean_3",
+    "y_roll_mean_24",
+    "y_roll_mean_168",
+    "y_roll_std_24",
+    "hour_sin",
+    "hour_cos",
+    "dow",
+    "is_weekend",
+    "is_holiday",
+    "station_index"
+  ],
+  "feature_spec": {
+    "recent_lags": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "seasonal_lags": [
+      24,
+      48,
+      168
+    ],
+    "rolling_windows": [
+      3,
+      24,
+      168
+    ]
+  },
+  "station_index": {
+    "138": 0,
+    "137": 1,
+    "136": 2,
+    "135": 3,
+    "134": 4,
+    "133": 5,
+    "621": 6,
+    "131": 7,
+    "130": 8,
+    "129": 9,
+    "630": 10,
+    "127": 11,
+    "126": 12,
+    "125": 13,
+    "124": 14,
+    "123": 15,
+    "122": 16,
+    "629": 17,
+    "120": 18,
+    "119": 19,
+    "118": 20,
+    "602": 21,
+    "601": 22,
+    "618": 23
+  },
+  "training_rows": 1126584,
+  "refit_agreement": {
+    "n_compared": 2000,
+    "max_abs_p50_difference": 0.0,
+    "max_abs_sigma_difference": 0.0
+  },
+  "sigma_definition": "(q90 - q10) / (2 * 1.2816), protocol section 4.3",
+  "git_commit": "bfbf7b3bc1f6298853af813fe695b3fc052f4fb1",
+  "persisted_utc": "2026-08-26T21:44:13.313805+00:00"
+}

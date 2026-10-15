@@ -1,0 +1,18 @@
+{
+  "figure": "fig02_twin_architecture",
+  "generated_utc": "2026-08-28T07:07:10.690285+00:00",
+  "generated_by": "scripts/make_paper_assets.py",
+  "source_files": [
+    "results/simulator_validation.json"
+  ],
+  "detail": {
+    "type": "schematic with validation counts",
+    "counts": {
+      "validated": 4,
+      "partially validated": 3,
+      "not validatable": 7,
+      "mismatch": 0
+    }
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

@@ -1,0 +1,13 @@
+label,experiment_id,metric,method_a,method_b,n,mean_difference,p_value,p_adjusted,direction
+EXP-SENS-002 od_cbd_attracted,EXP-SENS-002,left_behind_fraction,ppo_uq,ppo_point,5,0.008559066042493017,0.1151335051224032,0.1727002576836048,ppo_point better
+EXP-SENS-002 od_cbd_attracted,EXP-SENS-002,left_behind_fraction,ppo_uq,ppo_placebo,5,0.0056740706292097935,0.17056426835836025,0.2046771220300323,ppo_placebo better
+EXP-SENS-002 od_distance_decay,EXP-SENS-002,left_behind_fraction,ppo_uq,ppo_point,5,0.014125761039557344,0.08045117203957769,0.1727002576836048,ppo_point better
+EXP-SENS-002 od_distance_decay,EXP-SENS-002,left_behind_fraction,ppo_uq,ppo_placebo,5,0.008374552709669936,0.13801338674894148,0.18401784899858864,ppo_placebo better
+EXP-SENS-002 od_uniform_downstream,EXP-SENS-002,left_behind_fraction,ppo_uq,ppo_point,5,0.023264694429938622,0.028972798941973535,0.1727002576836048,ppo_point better
+EXP-SENS-002 od_uniform_downstream,EXP-SENS-002,left_behind_fraction,ppo_uq,ppo_placebo,5,0.012573629730337627,0.05025187934266053,0.1727002576836048,ppo_placebo better
+EXP-SENS-001 weights_w_cost / normal,EXP-SENS-001,total_reward,ppo_uq,ppo_point,5,-31.852804208952602,0.5685250263528604,0.5685250263528604,ppo_point better
+EXP-SENS-001 weights_w_cost / surge,EXP-SENS-001,total_reward,ppo_uq,ppo_point,5,-30.70856657387294,0.5326693328460017,0.5685250263528604,ppo_point better
+EXP-SENS-001 weights_w_service / normal,EXP-SENS-001,total_reward,ppo_uq,ppo_point,5,-508.9444453454672,0.1002638390565855,0.1727002576836048,ppo_point better
+EXP-SENS-001 weights_w_service / surge,EXP-SENS-001,total_reward,ppo_uq,ppo_point,5,-488.591580860803,0.07558459597740988,0.1727002576836048,ppo_point better
+EXP-SENS-001 weights_w_unmet_heavy / normal,EXP-SENS-001,total_reward,ppo_uq,ppo_point,5,-604.1072518910308,0.11474734739239872,0.1727002576836048,ppo_point better
+EXP-SENS-001 weights_w_unmet_heavy / surge,EXP-SENS-001,total_reward,ppo_uq,ppo_point,5,-581.8693633876217,0.087805166113392,0.1727002576836048,ppo_point better

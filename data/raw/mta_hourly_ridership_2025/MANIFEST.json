@@ -1,0 +1,160 @@
+{
+  "attribution": "Metropolitan Transportation Authority",
+  "dataset_id": "mta_hourly_ridership_2025",
+  "download_utc": "2026-08-26T16:03:42.094958+00:00",
+  "files": [
+    {
+      "bytes": 64190,
+      "path": "mta_hourly_ridership_2025/months/2025-01.parquet",
+      "sha256": "e64358e0bbecb188f14a932906845a5486c6d326fc971d125829e2c3e9c4fd4f"
+    },
+    {
+      "bytes": 59449,
+      "path": "mta_hourly_ridership_2025/months/2025-02.parquet",
+      "sha256": "4428f414fcd8cb260ea03e93f20bdfb7acc71eb5622f77d50a87475e0c42247f"
+    },
+    {
+      "bytes": 65159,
+      "path": "mta_hourly_ridership_2025/months/2025-03.parquet",
+      "sha256": "fd55369eb7c49765f5a94f5469dd722dc93e33eb41afb181065203d18b4f4faa"
+    },
+    {
+      "bytes": 66251,
+      "path": "mta_hourly_ridership_2025/months/2025-04.parquet",
+      "sha256": "8dcdddfa3c377b7bdd0ff84e92d7746bc4eba21ef879c37b9eb0b96981b0e659"
+    },
+    {
+      "bytes": 68274,
+      "path": "mta_hourly_ridership_2025/months/2025-05.parquet",
+      "sha256": "8610eedd25434e7a67526b18a005b84251a50b462d01dad8de11644b8507b02e"
+    },
+    {
+      "bytes": 65978,
+      "path": "mta_hourly_ridership_2025/months/2025-06.parquet",
+      "sha256": "b1b8a5a23a28da6d2249072a57f77ac476a055bf4d0af26be9fffa3fe0e3e633"
+    },
+    {
+      "bytes": 66669,
+      "path": "mta_hourly_ridership_2025/months/2025-07.parquet",
+      "sha256": "df00e7b85f7cc5df4d63a82926be4cf01286feb6a91fecff96e1d58695cb2b68"
+    },
+    {
+      "bytes": 67703,
+      "path": "mta_hourly_ridership_2025/months/2025-08.parquet",
+      "sha256": "aeae679737c04a3ab89a61ac34a317095d5d3af2a53b672e9760fae19b79374b"
+    },
+    {
+      "bytes": 66580,
+      "path": "mta_hourly_ridership_2025/months/2025-09.parquet",
+      "sha256": "c91349b9c69d6808acb9bd16661710d935c870a4ea085ba9c95444da54431bd7"
+    },
+    {
+      "bytes": 67247,
+      "path": "mta_hourly_ridership_2025/months/2025-10.parquet",
+      "sha256": "e5af3c4096fc5051fe834bbc81980eed56f00da97ba3b93a2eee13f20cea2785"
+    },
+    {
+      "bytes": 65531,
+      "path": "mta_hourly_ridership_2025/months/2025-11.parquet",
+      "sha256": "55ff8337a661cfcd238a364bb82359d2d50e82a6b71072c09f5ecde5bdcbed9d"
+    },
+    {
+      "bytes": 67950,
+      "path": "mta_hourly_ridership_2025/months/2025-12.parquet",
+      "sha256": "26b8e2ad2377f0e4ea4b30d9745f399abccb14681b34e931841fe70f51c61775"
+    },
+    {
+      "bytes": 65250,
+      "path": "mta_hourly_ridership_2025/months/2026-01.parquet",
+      "sha256": "b8b8ee9c0c2d5a418747c2550d7d17fe1f94aeb9d0eb2966c9e57eb3932cf88a"
+    },
+    {
+      "bytes": 60943,
+      "path": "mta_hourly_ridership_2025/months/2026-02.parquet",
+      "sha256": "4b40f386b5ad201b2a996409161c1aa1e1e4ca3913208db44c52873c001a55b4"
+    },
+    {
+      "bytes": 68556,
+      "path": "mta_hourly_ridership_2025/months/2026-03.parquet",
+      "sha256": "921bf4f408bc819042343608004783b292b61cd86bc2c20eb01e5733d17dae47"
+    },
+    {
+      "bytes": 66853,
+      "path": "mta_hourly_ridership_2025/months/2026-04.parquet",
+      "sha256": "1f5a4cc278ac226dee3fea481097e1f2e0f1ac37bec674e25661e6f09254dc21"
+    },
+    {
+      "bytes": 68491,
+      "path": "mta_hourly_ridership_2025/months/2026-05.parquet",
+      "sha256": "b4d56afa2888174d8a19fcca1bd44dcc228ed00497a1150348a8066f01652f8a"
+    },
+    {
+      "bytes": 67123,
+      "path": "mta_hourly_ridership_2025/months/2026-06.parquet",
+      "sha256": "403e56772ad068996305b978c06a5a09cfad859488fc148162e52a43a18985d2"
+    },
+    {
+      "bytes": 68502,
+      "path": "mta_hourly_ridership_2025/months/2026-07.parquet",
+      "sha256": "55f8cd779f80d5aa1854d964e2803db20db6d1c58b1f344f731117576d862dcc"
+    },
+    {
+      "bytes": 31819,
+      "path": "mta_hourly_ridership_2025/months/2026-08.parquet",
+      "sha256": "a8bb213c6842bcd581241cb6e5513478c09574c72b92bc89a26d844638df731d"
+    }
+  ],
+  "kind": "socrata_hourly",
+  "license": null,
+  "limitations": [
+    "hourly resolution only; a within-hour disaggregation assumption (A02) is required",
+    "entries and transfers only: no exits, no destinations, no OD matrix (assumption A03)",
+    "station-complex granularity, not platform or direction",
+    "MTA estimates derived from fare transactions, not raw turnstile counts"
+  ],
+  "months_empty": [],
+  "months_requested": 20,
+  "months_with_data": 20,
+  "partition": "month",
+  "role": "demand -- most recent regime",
+  "row_count": 334541,
+  "server_side_aggregation": "transit_timestamp,station_complex_id,sum(ridership) as ridership,sum(transfers) as transfers",
+  "socrata_id": "5wq4-mkjj",
+  "source_url": "https://data.ny.gov/d/5wq4-mkjj",
+  "station_complex_filter": [
+    "118",
+    "119",
+    "120",
+    "122",
+    "123",
+    "124",
+    "125",
+    "126",
+    "127",
+    "129",
+    "130",
+    "131",
+    "133",
+    "134",
+    "135",
+    "136",
+    "137",
+    "138",
+    "601",
+    "602",
+    "618",
+    "621",
+    "629",
+    "630"
+  ],
+  "title": "MTA Subway Hourly Ridership: Beginning 2025",
+  "upstream_metadata": {
+    "attribution": "Metropolitan Transportation Authority",
+    "data_updated_at": null,
+    "license": null,
+    "license_url": null,
+    "name": "MTA Subway Hourly Ridership: Beginning 2025",
+    "rows_updated_at": 1787757107,
+    "socrata_id": "5wq4-mkjj"
+  }
+}

@@ -1,0 +1,1127 @@
+{
+  "generated_utc": "2026-08-28T00:25:02.462608+00:00",
+  "method": "ppo_uq",
+  "train_seed": 103,
+  "weight_id": "w_balanced",
+  "explainer": "shap.PermutationExplainer (model-agnostic)",
+  "explained_quantity": "P(dispatch >= 1 trainset) under the policy",
+  "background_size": 60,
+  "instances_per_scenario": 80,
+  "evaluation_seeds": [
+    61,
+    62,
+    63
+  ],
+  "caveats": [
+    "SHAP attribution is associational, not causal: it decomposes this model's output on this input distribution and says nothing about what changing a channel in the world would do.",
+    "A high attribution to a sigma channel is evidence the policy's action responds to it, not evidence that responding improves outcomes. That question is H1's, and only the confirmatory test answers it.",
+    "Masks are not applied inside the explainer, so infrastructure constraints are not attributed to the policy's reasoning.",
+    "Attributions come from one training seed; EXP-XAI-002 measures their stability across seeds and background resamples."
+  ],
+  "global_importance": [
+    {
+      "feature": "queue_length[618]",
+      "mean_abs_shap": 0.017419319326678916,
+      "mean_shap": 0.0031270554413398094
+    },
+    {
+      "feature": "fleet_counts[2]",
+      "mean_abs_shap": 0.012421568439652524,
+      "mean_shap": -5.683324610194079e-05
+    },
+    {
+      "feature": "queue_length[602]",
+      "mean_abs_shap": 0.0100034139988323,
+      "mean_shap": 0.0006513209330538908
+    },
+    {
+      "feature": "boardings_prev_epoch[602]",
+      "mean_abs_shap": 0.009639875069260607,
+      "mean_shap": -0.0008346336459120106
+    },
+    {
+      "feature": "forecast_mu_h1[118]",
+      "mean_abs_shap": 0.009340785779058934,
+      "mean_shap": -8.536186069250454e-05
+    },
+    {
+      "feature": "boardings_prev_epoch[126]",
+      "mean_abs_shap": 0.009054744187742473,
+      "mean_shap": 9.021702532967455e-05
+    },
+    {
+      "feature": "disruption_flags[0]",
+      "mean_abs_shap": 0.0088262575554351,
+      "mean_shap": -0.00035651506856083784
+    },
+    {
+      "feature": "queue_length[119]",
+      "mean_abs_shap": 0.00838801830386122,
+      "mean_shap": -0.0007586766220629281
+    },
+    {
+      "feature": "forecast_sigma_line_h2h3[1]",
+      "mean_abs_shap": 0.008178765556464584,
+      "mean_shap": -8.724048112829368e-05
+    },
+    {
+      "feature": "trains_per_segment[0]",
+      "mean_abs_shap": 0.008136579232911265,
+      "mean_shap": -0.000281529190639658
+    },
+    {
+      "feature": "forecast_sigma_line_h2h3[0]",
+      "mean_abs_shap": 0.007825216203927985,
+      "mean_shap": -5.443617701536563e-06
+    },
+    {
+      "feature": "queue_length[601]",
+      "mean_abs_shap": 0.007447056230157611,
+      "mean_shap": 0.000408875985691947
+    },
+    {
+      "feature": "forecast_mu_h1[137]",
+      "mean_abs_shap": 0.006825460636367403,
+      "mean_shap": -0.00021124984448154597
+    },
+    {
+      "feature": "forecast_mu_h1[621]",
+      "mean_abs_shap": 0.006525061267117663,
+      "mean_shap": 0.0003551971415678652
+    },
+    {
+      "feature": "trains_per_segment[1]",
+      "mean_abs_shap": 0.006141613802562162,
+      "mean_shap": 0.001311634313315152
+    },
+    {
+      "feature": "forecast_sigma_h1[601]",
+      "mean_abs_shap": 0.006053481940180067,
+      "mean_shap": 0.0005451560206711232
+    },
+    {
+      "feature": "fleet_counts[0]",
+      "mean_abs_shap": 0.006040558175494276,
+      "mean_shap": -0.00011163484926025175
+    },
+    {
+      "feature": "time_index[0]",
+      "mean_abs_shap": 0.005855870066831503,
+      "mean_shap": -9.090501194198921e-05
+    },
+    {
+      "feature": "trains_per_segment[2]",
+      "mean_abs_shap": 0.005852561971793572,
+      "mean_shap": -0.0001524699913958684
+    },
+    {
+      "feature": "queue_length[137]",
+      "mean_abs_shap": 0.00570844727257888,
+      "mean_shap": 0.0005190929522117006
+    },
+    {
+      "feature": "boardings_prev_epoch[118]",
+      "mean_abs_shap": 0.005410730733225734,
+      "mean_shap": 0.0012522971816360967
+    },
+    {
+      "feature": "forecast_mu_line_h2h3[0]",
+      "mean_abs_shap": 0.005256968556592862,
+      "mean_shap": 3.95468312005133e-05
+    },
+    {
+      "feature": "forecast_sigma_h1[135]",
+      "mean_abs_shap": 0.005220885748664543,
+      "mean_shap": 0.00012670981387297026
+    },
+    {
+      "feature": "trains_per_segment[5]",
+      "mean_abs_shap": 0.00517714454481999,
+      "mean_shap": -0.0006231202806035709
+    },
+    {
+      "feature": "boardings_prev_epoch[125]",
+      "mean_abs_shap": 0.0050062675712009294,
+      "mean_shap": 0.00014461812252799454
+    },
+    {
+      "feature": "queue_length[122]",
+      "mean_abs_shap": 0.004979075919836758,
+      "mean_shap": 0.0008973017521202601
+    },
+    {
+      "feature": "trains_per_segment[7]",
+      "mean_abs_shap": 0.004901744121064748,
+      "mean_shap": -0.00032201291993259743
+    },
+    {
+      "feature": "forecast_mu_h1[135]",
+      "mean_abs_shap": 0.004680319794764116,
+      "mean_shap": 0.00019813206667701962
+    },
+    {
+      "feature": "forecast_mu_h1[125]",
+      "mean_abs_shap": 0.004581768674155072,
+      "mean_shap": 0.00014394961297512637
+    },
+    {
+      "feature": "trains_per_segment[4]",
+      "mean_abs_shap": 0.004407793587694562,
+      "mean_shap": 0.00014531563346584787
+    },
+    {
+      "feature": "forecast_sigma_h1[119]",
+      "mean_abs_shap": 0.0043226657435297975,
+      "mean_shap": 1.8855060140272884e-06
+    },
+    {
+      "feature": "forecast_sigma_h1[126]",
+      "mean_abs_shap": 0.004134064788619681,
+      "mean_shap": -0.00015647952755292043
+    },
+    {
+      "feature": "queue_length[118]",
+      "mean_abs_shap": 0.004097404610365632,
+      "mean_shap": -0.0006346403745313492
+    },
+    {
+      "feature": "forecast_mu_h1[130]",
+      "mean_abs_shap": 0.00402801225582759,
+      "mean_shap": -0.0001801344876488073
+    },
+    {
+      "feature": "forecast_sigma_h1[127]",
+      "mean_abs_shap": 0.003983892736335591,
+      "mean_shap": 5.529784907897101e-05
+    },
+    {
+      "feature": "forecast_mu_h1[618]",
+      "mean_abs_shap": 0.003629532636453714,
+      "mean_shap": 0.0001150473020970863
+    },
+    {
+      "feature": "forecast_sigma_h1[136]",
+      "mean_abs_shap": 0.003530252488950887,
+      "mean_shap": -0.00012909906605879372
+    },
+    {
+      "feature": "disruption_flags[1]",
+      "mean_abs_shap": 0.003487097000082336,
+      "mean_shap": -0.0003472020973761855
+    },
+    {
+      "feature": "forecast_sigma_h1[134]",
+      "mean_abs_shap": 0.003413395130385953,
+      "mean_shap": 2.3572581509770376e-06
+    },
+    {
+      "feature": "forecast_mu_h1[127]",
+      "mean_abs_shap": 0.003359686719874537,
+      "mean_shap": 0.00010463900864124547
+    },
+    {
+      "feature": "forecast_sigma_h1[122]",
+      "mean_abs_shap": 0.0033368957974016684,
+      "mean_shap": -1.4919557919108178e-05
+    },
+    {
+      "feature": "boardings_prev_epoch[127]",
+      "mean_abs_shap": 0.003293387411783137,
+      "mean_shap": 6.127553060650548e-05
+    },
+    {
+      "feature": "forecast_mu_h1[133]",
+      "mean_abs_shap": 0.0031954180014630114,
+      "mean_shap": 0.00014300188049674173
+    },
+    {
+      "feature": "boardings_prev_epoch[124]",
+      "mean_abs_shap": 0.003115449578811718,
+      "mean_shap": 0.0002000542543828511
+    },
+    {
+      "feature": "forecast_sigma_h1[120]",
+      "mean_abs_shap": 0.0031064050955077055,
+      "mean_shap": 0.00015305515999595177
+    },
+    {
+      "feature": "forecast_mu_h1[124]",
+      "mean_abs_shap": 0.0030931252675751907,
+      "mean_shap": -0.0003573942370712818
+    },
+    {
+      "feature": "boardings_prev_epoch[601]",
+      "mean_abs_shap": 0.002815167047083375,
+      "mean_shap": -0.0002270767713586433
+    },
+    {
+      "feature": "forecast_mu_h1[136]",
+      "mean_abs_shap": 0.0027911845656732734,
+      "mean_shap": -0.00010361201440293663
+    },
+    {
+      "feature": "boardings_prev_epoch[123]",
+      "mean_abs_shap": 0.0027030399069190004,
+      "mean_shap": 0.0003385562449693687
+    },
+    {
+      "feature": "queue_length[621]",
+      "mean_abs_shap": 0.0026914399117231335,
+      "mean_shap": -0.00015949737280607294
+    },
+    {
+      "feature": "forecast_sigma_h1[621]",
+      "mean_abs_shap": 0.0026845412763456533,
+      "mean_shap": -0.0001439641602337366
+    },
+    {
+      "feature": "queue_length[123]",
+      "mean_abs_shap": 0.0026621088633934586,
+      "mean_shap": 6.577388693889269e-05
+    },
+    {
+      "feature": "forecast_sigma_h1[125]",
+      "mean_abs_shap": 0.0026510795578360545,
+      "mean_shap": 0.00017968003948529848
+    },
+    {
+      "feature": "forecast_mu_h1[602]",
+      "mean_abs_shap": 0.002626457735896111,
+      "mean_shap": -0.00015637300908565854
+    },
+    {
+      "feature": "forecast_sigma_h1[630]",
+      "mean_abs_shap": 0.002573593364407622,
+      "mean_shap": -2.5307157387333828e-05
+    },
+    {
+      "feature": "boardings_prev_epoch[130]",
+      "mean_abs_shap": 0.002545307253797852,
+      "mean_shap": 8.980301519235235e-05
+    },
+    {
+      "feature": "queue_length[127]",
+      "mean_abs_shap": 0.002530581876635552,
+      "mean_shap": -0.00024647049605846583
+    },
+    {
+      "feature": "forecast_mu_h1[129]",
+      "mean_abs_shap": 0.0025305590530236574,
+      "mean_shap": 0.00016061672319968371
+    },
+    {
+      "feature": "boardings_prev_epoch[630]",
+      "mean_abs_shap": 0.002511910485724616,
+      "mean_shap": 0.00045643839985132705
+    },
+    {
+      "feature": "forecast_sigma_h1[629]",
+      "mean_abs_shap": 0.0025042785331606844,
+      "mean_shap": -2.7097252508005016e-05
+    },
+    {
+      "feature": "queue_length[135]",
+      "mean_abs_shap": 0.002456389144063001,
+      "mean_shap": -0.0001458060741424544
+    },
+    {
+      "feature": "time_index[1]",
+      "mean_abs_shap": 0.0024344634450972095,
+      "mean_shap": 0.00012431632106502528
+    },
+    {
+      "feature": "forecast_mu_h1[126]",
+      "mean_abs_shap": 0.0023898344486951773,
+      "mean_shap": -0.00031668764849504397
+    },
+    {
+      "feature": "forecast_sigma_h1[118]",
+      "mean_abs_shap": 0.002321381649623312,
+      "mean_shap": -9.30318422615567e-05
+    },
+    {
+      "feature": "queue_length[125]",
+      "mean_abs_shap": 0.0022879648643235407,
+      "mean_shap": -5.7081288347637235e-05
+    },
+    {
+      "feature": "forecast_mu_h1[131]",
+      "mean_abs_shap": 0.0022232961344222147,
+      "mean_shap": 0.0003945004381239431
+    },
+    {
+      "feature": "boardings_prev_epoch[133]",
+      "mean_abs_shap": 0.002178003614147506,
+      "mean_shap": -0.00040637751420338764
+    },
+    {
+      "feature": "queue_length[131]",
+      "mean_abs_shap": 0.002174644097685815,
+      "mean_shap": -0.0003817333405216554
+    },
+    {
+      "feature": "trains_per_segment[3]",
+      "mean_abs_shap": 0.002172896470874547,
+      "mean_shap": 0.0006116444307069008
+    },
+    {
+      "feature": "boardings_prev_epoch[136]",
+      "mean_abs_shap": 0.0021136657769481324,
+      "mean_shap": -0.0004935816427071853
+    },
+    {
+      "feature": "forecast_sigma_h1[133]",
+      "mean_abs_shap": 0.0020717917320628955,
+      "mean_shap": 0.00012968715901176818
+    },
+    {
+      "feature": "forecast_mu_h1[122]",
+      "mean_abs_shap": 0.002048110831528905,
+      "mean_shap": -7.900601252913628e-05
+    },
+    {
+      "feature": "boardings_prev_epoch[120]",
+      "mean_abs_shap": 0.0019961089516679483,
+      "mean_shap": -0.0001538245379924745
+    },
+    {
+      "feature": "queue_length[120]",
+      "mean_abs_shap": 0.0019819423990945,
+      "mean_shap": -0.00012047663951913131
+    },
+    {
+      "feature": "fleet_counts[1]",
+      "mean_abs_shap": 0.0018836916610598582,
+      "mean_shap": 0.00010203408698241101
+    },
+    {
+      "feature": "trains_per_segment[6]",
+      "mean_abs_shap": 0.0018650680035352737,
+      "mean_shap": -0.0004220389078060757
+    },
+    {
+      "feature": "forecast_mu_h1[123]",
+      "mean_abs_shap": 0.0018528244582315314,
+      "mean_shap": -0.0001662610657513157
+    },
+    {
+      "feature": "boardings_prev_epoch[122]",
+      "mean_abs_shap": 0.001833968423306949,
+      "mean_shap": -0.00015696629881859075
+    },
+    {
+      "feature": "boardings_prev_epoch[629]",
+      "mean_abs_shap": 0.0018236419931054113,
+      "mean_shap": 0.00037054448078076285
+    },
+    {
+      "feature": "boardings_prev_epoch[137]",
+      "mean_abs_shap": 0.0018107096726695678,
+      "mean_shap": 0.000310864076018337
+    },
+    {
+      "feature": "forecast_sigma_h1[124]",
+      "mean_abs_shap": 0.0018032670455674338,
+      "mean_shap": 0.000392631919433669
+    },
+    {
+      "feature": "forecast_mu_h1[601]",
+      "mean_abs_shap": 0.0017856682774921244,
+      "mean_shap": -0.0003227936414380829
+    },
+    {
+      "feature": "forecast_sigma_h1[129]",
+      "mean_abs_shap": 0.0017533766912917297,
+      "mean_shap": -0.0002961748031278459
+    },
+    {
+      "feature": "forecast_mu_h1[120]",
+      "mean_abs_shap": 0.0017336513474583634,
+      "mean_shap": -0.00011011887341737664
+    },
+    {
+      "feature": "forecast_sigma_h1[137]",
+      "mean_abs_shap": 0.0016432664543390215,
+      "mean_shap": -0.00045496784150600363
+    },
+    {
+      "feature": "forecast_sigma_h1[618]",
+      "mean_abs_shap": 0.0015486486069858044,
+      "mean_shap": 0.00024504525586962756
+    },
+    {
+      "feature": "forecast_sigma_h1[602]",
+      "mean_abs_shap": 0.001546319350600247,
+      "mean_shap": 0.00011873201777538104
+    },
+    {
+      "feature": "forecast_sigma_h1[130]",
+      "mean_abs_shap": 0.0015161092455188443,
+      "mean_shap": 2.1885012586909947e-05
+    },
+    {
+      "feature": "boardings_prev_epoch[618]",
+      "mean_abs_shap": 0.001471146245797475,
+      "mean_shap": -1.5762473146120613e-05
+    },
+    {
+      "feature": "queue_length[629]",
+      "mean_abs_shap": 0.0014506659532586709,
+      "mean_shap": 0.0002875913431247122
+    },
+    {
+      "feature": "forecast_mu_h1[119]",
+      "mean_abs_shap": 0.0014237935592730801,
+      "mean_shap": -2.623928089936639e-05
+    },
+    {
+      "feature": "forecast_mu_h1[630]",
+      "mean_abs_shap": 0.0014141924430926677,
+      "mean_shap": -0.0002279702325661957
+    },
+    {
+      "feature": "boardings_prev_epoch[129]",
+      "mean_abs_shap": 0.001306753257910409,
+      "mean_shap": 0.0003065356363852842
+    },
+    {
+      "feature": "boardings_prev_epoch[134]",
+      "mean_abs_shap": 0.0012994739475349632,
+      "mean_shap": 4.7563618669906746e-05
+    },
+    {
+      "feature": "forecast_sigma_h1[123]",
+      "mean_abs_shap": 0.0012784438207745538,
+      "mean_shap": 0.00022336915135383884
+    },
+    {
+      "feature": "forecast_mu_line_h2h3[1]",
+      "mean_abs_shap": 0.001263486780226232,
+      "mean_shap": 1.8007084727282575e-05
+    },
+    {
+      "feature": "forecast_mu_h1[134]",
+      "mean_abs_shap": 0.0012560018276174824,
+      "mean_shap": -0.00022875136385361178
+    },
+    {
+      "feature": "queue_length[136]",
+      "mean_abs_shap": 0.0011885131212572286,
+      "mean_shap": 0.0001687240662674061
+    },
+    {
+      "feature": "queue_length[630]",
+      "mean_abs_shap": 0.001140357181429867,
+      "mean_shap": 0.00015070100625356325
+    },
+    {
+      "feature": "queue_length[138]",
+      "mean_abs_shap": 0.001104313383499779,
+      "mean_shap": -0.00022487667699654795
+    },
+    {
+      "feature": "forecast_mu_h1[629]",
+      "mean_abs_shap": 0.0011016816894213327,
+      "mean_shap": 5.311948557695234e-05
+    },
+    {
+      "feature": "forecast_sigma_h1[138]",
+      "mean_abs_shap": 0.0010883750207722176,
+      "mean_shap": 7.25719518959507e-05
+    },
+    {
+      "feature": "queue_length[124]",
+      "mean_abs_shap": 0.0010848501697182662,
+      "mean_shap": 8.447205026944974e-05
+    },
+    {
+      "feature": "boardings_prev_epoch[119]",
+      "mean_abs_shap": 0.0010445688727001364,
+      "mean_shap": 0.0001135942650337958
+    },
+    {
+      "feature": "boardings_prev_epoch[135]",
+      "mean_abs_shap": 0.0010445299123724313,
+      "mean_shap": 7.213604946930963e-05
+    },
+    {
+      "feature": "boardings_prev_epoch[131]",
+      "mean_abs_shap": 0.0010167393212517119,
+      "mean_shap": 4.240376253923164e-05
+    },
+    {
+      "feature": "queue_length[126]",
+      "mean_abs_shap": 0.0009873342017332767,
+      "mean_shap": 0.0003859041382869091
+    },
+    {
+      "feature": "queue_length[130]",
+      "mean_abs_shap": 0.000983145826806623,
+      "mean_shap": 9.101844703157738e-05
+    },
+    {
+      "feature": "time_index[2]",
+      "mean_abs_shap": 0.0009125089210768516,
+      "mean_shap": -1.1498170594426149e-06
+    },
+    {
+      "feature": "boardings_prev_epoch[138]",
+      "mean_abs_shap": 0.0009063349291682281,
+      "mean_shap": -5.33963367342967e-05
+    },
+    {
+      "feature": "headway_state[1]",
+      "mean_abs_shap": 0.0008706194596986031,
+      "mean_shap": 0.00014168554916978436
+    },
+    {
+      "feature": "headway_state[0]",
+      "mean_abs_shap": 0.000849648329118885,
+      "mean_shap": 6.064334263404247e-05
+    },
+    {
+      "feature": "forecast_sigma_h1[131]",
+      "mean_abs_shap": 0.0008376391232013753,
+      "mean_shap": 0.00022953608383735196
+    },
+    {
+      "feature": "disruption_flags[2]",
+      "mean_abs_shap": 0.0008325245169301824,
+      "mean_shap": 0.00011096392447749945
+    },
+    {
+      "feature": "boardings_prev_epoch[621]",
+      "mean_abs_shap": 0.0008245691098272848,
+      "mean_shap": 0.00021622438604633476
+    },
+    {
+      "feature": "forecast_mu_h1[138]",
+      "mean_abs_shap": 0.0007884350729485346,
+      "mean_shap": -7.011472557982429e-05
+    },
+    {
+      "feature": "queue_length[133]",
+      "mean_abs_shap": 0.0007355535899599447,
+      "mean_shap": -3.8573344548537004e-05
+    },
+    {
+      "feature": "queue_length[134]",
+      "mean_abs_shap": 0.0005607053451240094,
+      "mean_shap": -6.931658213337674e-05
+    },
+    {
+      "feature": "queue_length[129]",
+      "mean_abs_shap": 0.0005498832402129992,
+      "mean_shap": -6.672354415059312e-05
+    },
+    {
+      "feature": "occupancy_summary[1]",
+      "mean_abs_shap": 0.0004918255781133946,
+      "mean_shap": -3.612864762544687e-05
+    },
+    {
+      "feature": "availability_signal[1]",
+      "mean_abs_shap": 0.00021891158074140645,
+      "mean_shap": -2.42384771506135e-06
+    },
+    {
+      "feature": "occupancy_summary[0]",
+      "mean_abs_shap": 0.00012950914601484522,
+      "mean_shap": -4.0787955125139165e-06
+    },
+    {
+      "feature": "availability_signal[0]",
+      "mean_abs_shap": 3.881602858503419e-05,
+      "mean_shap": -8.715006212411946e-07
+    }
+  ],
+  "per_scenario": {
+    "surge": {
+      "n_instances": 80,
+      "top_features": [
+        {
+          "feature": "queue_length[618]",
+          "mean_abs_shap": 0.017419319326678916,
+          "mean_shap": 0.0031270554413398094
+        },
+        {
+          "feature": "fleet_counts[2]",
+          "mean_abs_shap": 0.012421568439652524,
+          "mean_shap": -5.683324610194079e-05
+        },
+        {
+          "feature": "queue_length[602]",
+          "mean_abs_shap": 0.0100034139988323,
+          "mean_shap": 0.0006513209330538908
+        },
+        {
+          "feature": "boardings_prev_epoch[602]",
+          "mean_abs_shap": 0.009639875069260607,
+          "mean_shap": -0.0008346336459120106
+        },
+        {
+          "feature": "forecast_mu_h1[118]",
+          "mean_abs_shap": 0.009340785779058934,
+          "mean_shap": -8.536186069250454e-05
+        },
+        {
+          "feature": "boardings_prev_epoch[126]",
+          "mean_abs_shap": 0.009054744187742473,
+          "mean_shap": 9.021702532967455e-05
+        },
+        {
+          "feature": "disruption_flags[0]",
+          "mean_abs_shap": 0.0088262575554351,
+          "mean_shap": -0.00035651506856083784
+        },
+        {
+          "feature": "queue_length[119]",
+          "mean_abs_shap": 0.00838801830386122,
+          "mean_shap": -0.0007586766220629281
+        },
+        {
+          "feature": "forecast_sigma_line_h2h3[1]",
+          "mean_abs_shap": 0.008178765556464584,
+          "mean_shap": -8.724048112829368e-05
+        },
+        {
+          "feature": "trains_per_segment[0]",
+          "mean_abs_shap": 0.008136579232911265,
+          "mean_shap": -0.000281529190639658
+        },
+        {
+          "feature": "forecast_sigma_line_h2h3[0]",
+          "mean_abs_shap": 0.007825216203927985,
+          "mean_shap": -5.443617701536563e-06
+        },
+        {
+          "feature": "queue_length[601]",
+          "mean_abs_shap": 0.007447056230157611,
+          "mean_shap": 0.000408875985691947
+        },
+        {
+          "feature": "forecast_mu_h1[137]",
+          "mean_abs_shap": 0.006825460636367403,
+          "mean_shap": -0.00021124984448154597
+        },
+        {
+          "feature": "forecast_mu_h1[621]",
+          "mean_abs_shap": 0.006525061267117663,
+          "mean_shap": 0.0003551971415678652
+        },
+        {
+          "feature": "trains_per_segment[1]",
+          "mean_abs_shap": 0.006141613802562162,
+          "mean_shap": 0.001311634313315152
+        },
+        {
+          "feature": "forecast_sigma_h1[601]",
+          "mean_abs_shap": 0.006053481940180067,
+          "mean_shap": 0.0005451560206711232
+        },
+        {
+          "feature": "fleet_counts[0]",
+          "mean_abs_shap": 0.006040558175494276,
+          "mean_shap": -0.00011163484926025175
+        },
+        {
+          "feature": "time_index[0]",
+          "mean_abs_shap": 0.005855870066831503,
+          "mean_shap": -9.090501194198921e-05
+        },
+        {
+          "feature": "trains_per_segment[2]",
+          "mean_abs_shap": 0.005852561971793572,
+          "mean_shap": -0.0001524699913958684
+        },
+        {
+          "feature": "queue_length[137]",
+          "mean_abs_shap": 0.00570844727257888,
+          "mean_shap": 0.0005190929522117006
+        }
+      ]
+    }
+  },
+  "local_explanations": [
+    {
+      "rank": 1,
+      "instance": 79,
+      "top_contributions": [
+        {
+          "feature": "queue_length[119]",
+          "shap": 0.04996285885572438
+        },
+        {
+          "feature": "trains_per_segment[2]",
+          "shap": 0.02245204001665113
+        },
+        {
+          "feature": "forecast_sigma_line_h2h3[1]",
+          "shap": -0.02169074217478434
+        },
+        {
+          "feature": "forecast_mu_h1[118]",
+          "shap": -0.01586956729491551
+        },
+        {
+          "feature": "forecast_mu_h1[124]",
+          "shap": -0.0155872176090876
+        },
+        {
+          "feature": "forecast_sigma_line_h2h3[0]",
+          "shap": -0.014894280334313725
+        },
+        {
+          "feature": "forecast_mu_h1[137]",
+          "shap": -0.014678909381230676
+        },
+        {
+          "feature": "boardings_prev_epoch[126]",
+          "shap": 0.01416722734769188
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "instance": 3,
+      "top_contributions": [
+        {
+          "feature": "queue_length[137]",
+          "shap": 0.03528798421223961
+        },
+        {
+          "feature": "queue_length[131]",
+          "shap": -0.031770914793014526
+        },
+        {
+          "feature": "queue_length[621]",
+          "shap": -0.030447483559449484
+        },
+        {
+          "feature": "forecast_sigma_line_h2h3[0]",
+          "shap": 0.023821974297364545
+        },
+        {
+          "feature": "forecast_sigma_h1[122]",
+          "shap": 0.01799390266338985
+        },
+        {
+          "feature": "forecast_sigma_h1[134]",
+          "shap": 0.01765046169360479
+        },
+        {
+          "feature": "trains_per_segment[4]",
+          "shap": 0.016880996028582285
+        },
+        {
+          "feature": "forecast_mu_h1[137]",
+          "shap": 0.0162158037225405
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "instance": 38,
+      "top_contributions": [
+        {
+          "feature": "queue_length[618]",
+          "shap": 0.13383169521888094
+        },
+        {
+          "feature": "queue_length[602]",
+          "shap": 0.031068112949530324
+        },
+        {
+          "feature": "trains_per_segment[7]",
+          "shap": -0.022382532060146343
+        },
+        {
+          "feature": "queue_length[118]",
+          "shap": 0.0175604104995728
+        },
+        {
+          "feature": "forecast_mu_line_h2h3[0]",
+          "shap": -0.01735041836897533
+        },
+        {
+          "feature": "boardings_prev_epoch[602]",
+          "shap": -0.012475525836149859
+        },
+        {
+          "feature": "queue_length[601]",
+          "shap": 0.01122284730275469
+        },
+        {
+          "feature": "boardings_prev_epoch[126]",
+          "shap": 0.011006743709246314
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "instance": 77,
+      "top_contributions": [
+        {
+          "feature": "queue_length[618]",
+          "shap": 0.045530616740385665
+        },
+        {
+          "feature": "trains_per_segment[1]",
+          "shap": 0.042234504222869895
+        },
+        {
+          "feature": "trains_per_segment[0]",
+          "shap": 0.029860501488049807
+        },
+        {
+          "feature": "forecast_sigma_line_h2h3[0]",
+          "shap": -0.02342107494672141
+        },
+        {
+          "feature": "queue_length[602]",
+          "shap": 0.016341702640056632
+        },
+        {
+          "feature": "boardings_prev_epoch[126]",
+          "shap": 0.015939656893412257
+        },
+        {
+          "feature": "forecast_sigma_line_h2h3[1]",
+          "shap": -0.015407416721185008
+        },
+        {
+          "feature": "queue_length[119]",
+          "shap": 0.014297909537951181
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "instance": 78,
+      "top_contributions": [
+        {
+          "feature": "trains_per_segment[0]",
+          "shap": 0.0327846099932988
+        },
+        {
+          "feature": "forecast_sigma_line_h2h3[0]",
+          "shap": -0.021580514311790422
+        },
+        {
+          "feature": "queue_length[122]",
+          "shap": 0.020756067335605644
+        },
+        {
+          "feature": "forecast_sigma_line_h2h3[1]",
+          "shap": -0.019161190589269017
+        },
+        {
+          "feature": "forecast_mu_h1[621]",
+          "shap": -0.01812188277641935
+        },
+        {
+          "feature": "forecast_mu_line_h2h3[0]",
+          "shap": -0.017719765504201235
+        },
+        {
+          "feature": "forecast_mu_h1[118]",
+          "shap": -0.016610386470953642
+        },
+        {
+          "feature": "queue_length[123]",
+          "shap": 0.01636723379294075
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "instance": 0,
+      "top_contributions": [
+        {
+          "feature": "fleet_counts[0]",
+          "shap": 0.030562508602937022
+        },
+        {
+          "feature": "headway_state[1]",
+          "shap": -0.029074613749980882
+        },
+        {
+          "feature": "headway_state[0]",
+          "shap": -0.028136844933033034
+        },
+        {
+          "feature": "trains_per_segment[2]",
+          "shap": 0.01918311566114428
+        },
+        {
+          "feature": "trains_per_segment[7]",
+          "shap": -0.019147650400797522
+        },
+        {
+          "feature": "trains_per_segment[0]",
+          "shap": 0.01733239491780597
+        },
+        {
+          "feature": "queue_length[119]",
+          "shap": -0.016879145304361964
+        },
+        {
+          "feature": "boardings_prev_epoch[126]",
+          "shap": 0.016579137742519345
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "instance": 41,
+      "top_contributions": [
+        {
+          "feature": "queue_length[618]",
+          "shap": 0.04123665889104211
+        },
+        {
+          "feature": "trains_per_segment[7]",
+          "shap": -0.03026656011740364
+        },
+        {
+          "feature": "trains_per_segment[4]",
+          "shap": 0.019825468957424153
+        },
+        {
+          "feature": "trains_per_segment[5]",
+          "shap": 0.01922488758961355
+        },
+        {
+          "feature": "forecast_sigma_line_h2h3[1]",
+          "shap": 0.01585935801267624
+        },
+        {
+          "feature": "fleet_counts[0]",
+          "shap": 0.014095719655354833
+        },
+        {
+          "feature": "boardings_prev_epoch[126]",
+          "shap": 0.013919190069039689
+        },
+        {
+          "feature": "boardings_prev_epoch[602]",
+          "shap": -0.012661115825176261
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "instance": 39,
+      "top_contributions": [
+        {
+          "feature": "queue_length[618]",
+          "shap": 0.07633493443330136
+        },
+        {
+          "feature": "trains_per_segment[0]",
+          "shap": 0.021878870328267408
+        },
+        {
+          "feature": "forecast_sigma_line_h2h3[1]",
+          "shap": -0.01913685003916421
+        },
+        {
+          "feature": "boardings_prev_epoch[118]",
+          "shap": 0.018107190728187506
+        },
+        {
+          "feature": "trains_per_segment[1]",
+          "shap": -0.015604212383429183
+        },
+        {
+          "feature": "forecast_mu_h1[621]",
+          "shap": -0.01468519717454908
+        },
+        {
+          "feature": "trains_per_segment[5]",
+          "shap": 0.013271905978520737
+        },
+        {
+          "feature": "forecast_sigma_line_h2h3[0]",
+          "shap": -0.01174522986014681
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "instance": 40,
+      "top_contributions": [
+        {
+          "feature": "trains_per_segment[1]",
+          "shap": 0.02140100598335265
+        },
+        {
+          "feature": "boardings_prev_epoch[602]",
+          "shap": -0.021372696757316623
+        },
+        {
+          "feature": "boardings_prev_epoch[126]",
+          "shap": 0.02004044502973562
+        },
+        {
+          "feature": "trains_per_segment[5]",
+          "shap": 0.018254138032595346
+        },
+        {
+          "feature": "fleet_counts[0]",
+          "shap": 0.017791313429673494
+        },
+        {
+          "feature": "forecast_mu_h1[118]",
+          "shap": -0.015334009627501144
+        },
+        {
+          "feature": "forecast_sigma_line_h2h3[1]",
+          "shap": 0.013686158756415046
+        },
+        {
+          "feature": "trains_per_segment[7]",
+          "shap": -0.01350104808807373
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "instance": 45,
+      "top_contributions": [
+        {
+          "feature": "forecast_sigma_h1[135]",
+          "shap": 0.03455453217029575
+        },
+        {
+          "feature": "forecast_sigma_h1[601]",
+          "shap": 0.021530594428380345
+        },
+        {
+          "feature": "forecast_mu_h1[127]",
+          "shap": 0.019031486411889398
+        },
+        {
+          "feature": "forecast_mu_h1[137]",
+          "shap": 0.015688727299372318
+        },
+        {
+          "feature": "forecast_sigma_h1[120]",
+          "shap": 0.015026628971099909
+        },
+        {
+          "feature": "forecast_mu_h1[135]",
+          "shap": 0.014404829839865407
+        },
+        {
+          "feature": "boardings_prev_epoch[630]",
+          "shap": -0.013180970648924484
+        },
+        {
+          "feature": "forecast_sigma_h1[629]",
+          "shap": 0.013157642384370172
+        }
+      ]
+    }
+  ]
+}

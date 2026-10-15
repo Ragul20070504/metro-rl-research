@@ -1,0 +1,131 @@
+{
+  "generated_utc": "2026-08-26T16:09:14.181345+00:00",
+  "rows": 1344528,
+  "coverage": {
+    "first": "2020-01-01 00:00:00",
+    "last": "2026-08-13 23:00:00"
+  },
+  "checks": [
+    {
+      "name": "required_fields_present",
+      "passed": true,
+      "severity": "blocking",
+      "detail": "0 missing values across ['transit_timestamp', 'station_complex_id', 'ridership']",
+      "metrics": {
+        "transit_timestamp": 0,
+        "station_complex_id": 0,
+        "ridership": 0
+      }
+    },
+    {
+      "name": "no_duplicate_station_hours",
+      "passed": true,
+      "severity": "blocking",
+      "detail": "0 duplicated (timestamp, station) rows",
+      "metrics": {
+        "duplicate_rows": 0,
+        "by_dataset": {}
+      }
+    },
+    {
+      "name": "timestamps_valid",
+      "passed": true,
+      "severity": "blocking",
+      "detail": "coverage 2020-01-01 00:00:00 .. 2026-08-13 23:00:00; unparsed=0, not hour-aligned=0, implausible=0",
+      "metrics": {
+        "first": "2020-01-01 00:00:00",
+        "last": "2026-08-13 23:00:00",
+        "unparsed": 0,
+        "not_hour_aligned": 0,
+        "implausible": 0
+      }
+    },
+    {
+      "name": "non_negative_demand",
+      "passed": true,
+      "severity": "blocking",
+      "detail": "ridership: 0 negative (blocking); transfers: 14 negative (upstream defect, min -6) -- recorded, not blocking, because transfers is not used downstream",
+      "metrics": {
+        "ridership_negative": 0,
+        "transfers_negative": 14,
+        "transfers_used_downstream": false
+      }
+    },
+    {
+      "name": "outlier_screen",
+      "passed": true,
+      "severity": "advisory",
+      "detail": "1593 station-hours above median + 8.0*1.4826*MAD; flagged, not removed",
+      "metrics": {
+        "flagged_total": 1593,
+        "flagged_by_station": {
+          "122": 31,
+          "133": 207,
+          "134": 100,
+          "135": 38,
+          "136": 52,
+          "137": 108,
+          "138": 1057
+        }
+      }
+    },
+    {
+      "name": "station_ids_resolve",
+      "passed": true,
+      "severity": "blocking",
+      "detail": "24 complexes observed; unexpected=[]; missing=[]",
+      "metrics": {
+        "observed": 24,
+        "unexpected": [],
+        "missing": []
+      }
+    },
+    {
+      "name": "temporal_continuity",
+      "passed": true,
+      "severity": "advisory",
+      "detail": "874 station-days exceed 4 missing operating hours; 95 station-days entirely absent; both excluded downstream",
+      "metrics": {
+        "expected_operating_hours": 19,
+        "station_days_total": 57913,
+        "station_days_excluded": 874,
+        "station_days_absent": 95
+      }
+    },
+    {
+      "name": "service_delivered_scaling",
+      "passed": true,
+      "severity": "blocking",
+      "detail": "recomputed ratio in range for 274/274 rows; published field is mis-scaled by a median factor of 100.0 (confirmed)",
+      "metrics": {
+        "rows": 274,
+        "out_of_range": 0,
+        "median_scaling_factor": 100.00000000000048,
+        "mis_scaling_confirmed": true
+      }
+    },
+    {
+      "name": "manifests_present",
+      "passed": true,
+      "severity": "blocking",
+      "detail": "88 files hashed; consumed datasets missing a manifest: none; present but not consumed by this pipeline: ['mta_hourly_ridership_2017']",
+      "metrics": {
+        "files_hashed": 88,
+        "missing_manifests_for_consumed_datasets": [],
+        "present_but_unused": [
+          "mta_hourly_ridership_2017"
+        ]
+      }
+    },
+    {
+      "name": "demand_magnitude",
+      "passed": true,
+      "severity": "advisory",
+      "detail": "0 station-days below 1.0 total riders (possible closures)",
+      "metrics": {
+        "low_station_days": 0,
+        "by_station": {}
+      }
+    }
+  ]
+}

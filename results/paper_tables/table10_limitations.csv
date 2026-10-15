@@ -1,0 +1,9 @@
+limitation,evidence,implication
+Underpowered for the registered SESOI,n=10 vs n=69 required; realised SD 0.011269 is 2.13x the pilot estimate,"Every null is inconclusive, never equivalence"
+"One frozen, untuned PPO configuration (A-05)",No learned arm beats the tuned heuristic; one single-objective seed diverged,Cannot separate an information effect from a sample-efficiency effect
+Baselines are not statistically comparable,"Deterministic, no training seed, so n=1 under the registered unit",RL vs baseline comparisons are descriptive only
+Most simulator quantities are not externally validated,"7 of 14 not validatable, including capacity/occupancy, dwell, balking and OD",Magnitudes are simulator-internal; only ordering is meaningful
+Synthetic OD model drives the endpoint,Assumption A03; tested by EXP-SENS-002,Direction survives all three OD variants
+Effort asymmetry between baselines and arms,Four MILP corrections and a heuristic retune; zero RL tuning,Runs against the proposed method
+"Single line, operator and data source","One network, one simulator",No external-validity claim
+Follow-up incomplete,"FOLLOWUP-UQ-TRAINING stopped at 11/80 policies, asymmetric",The budget confound remains open
