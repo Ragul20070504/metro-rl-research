@@ -1,125 +1,122 @@
 # metro-rl-research
 
-Reproducible research prototype for the manuscript *"An Uncertainty-Aware Adaptive Multi-Objective
-Reinforcement Learning Framework for Real-Time Metro Train Induction and Scheduling"*.
+Placebo-controlled evaluation of forecast uncertainty in learned metro train dispatch.
 
-> ## Project status: **M2 — environment and foundation built; no science run yet**
->
-> **This repository currently contains ZERO experimental results.**
->
-> No model has been trained, no simulation has been run, no dataset has been downloaded. Every
-> quantitative statement in `docs/` is an ASSUMPTION or a HYPOTHESIS, never an EXPERIMENTAL RESULT.
-> The manuscript itself states that empirical results are in progress and none are reported.
->
-> Done so far: research audit (M0), frozen pre-registration (M1), all ten open decisions resolved
-> and recorded (M1b), Python 3.11 environment with a functionally verified stack and the
-> `src/common/` foundation (M2). See [docs/progress_log.md](docs/progress_log.md) for what was
-> *actually* completed, including a defect found and fixed.
->
-> The prototype may be called complete only when all thirteen conditions in §37 of the research
-> brief hold — including that a fresh clone reproduces the headline numbers.
+**Current status: revision in progress; not ready for journal submission.**
+The original stored study is complete, but its training-budget follow-up is incomplete. This
+checkout lacks some original data, all recorded policy binaries and historical source commits. See the
+[current evidence audit](docs/SUBMISSION_READINESS.md), which supersedes older milestone reports.
+Author affiliations and declarations remain placeholders by request.
 
-## What this project is trying to find out
+Use the [documentation index](docs/README.md) and [current commands](scripts/README.md) to
+navigate the project. Earlier handovers, completion reports and manuscript versions are
+retained in the [historical archive](docs/archive/README.md).
 
-> Does explicitly representing passenger-demand forecast uncertainty inside an adaptive RL
-> scheduling policy improve robustness and service performance under stochastic demand and
-> disruptions, compared with equivalent policies using point forecasts?
+## What the stored study found
 
-The experiment is designed so that it can **reject** that hypothesis. A null result is a finding and
-will be reported as one, with an equivalence test against a pre-registered smallest effect size of
-interest. The uncertainty-aware arm is not tuned harder than its ablation.
+Uncertainty-aware PPO performed worse than point-forecast PPO under surge: left-behind fractions
+0.031681 versus 0.017939 across 10 training seeds, mean difference +0.013742, Holm-adjusted
+p = 0.007741. The 95% BCa interval [0.006570, 0.018523] estimates the **Hodges–Lehmann paired
+location**, not the mean difference. A tuned threshold heuristic outperformed every learned arm
+in all four scenarios. These are within-simulator findings at one training configuration/budget.
 
-The design includes a **placebo arm** (`ppo_placebo`) whose uncertainty channel is shuffled — same
-dimensionality, same marginal distribution, no information. If the true-σ arm does not beat the
-placebo arm, the apparent benefit of "uncertainty awareness" is an artefact of observation size, and
-that is what the paper will say.
+The repository contains 7,610 stored evaluation cells, including 6,480 main-study episodes.
+Reanalysis of these metrics is possible without trained models; rerunning simulations is a
+separate capability and remains blocked for the historical models. A new isolated replication
+has separate inputs and outputs; see its live execution status. Internal documents describe advance registration,
+but the original Git history and any external timestamped registration are unavailable here.
 
-## Evidence discipline
+## Linux development and stored-results validation
 
-Documentation labels every statement as **FACT**, **OBSERVATION**, **ASSUMPTION**, **HYPOTHESIS**, or
-**EXPERIMENTAL RESULT**. These are never mixed. See `docs/research_audit.md` for the convention.
-
-- `results/` is append-only; writing to an existing run path raises.
-- Every run stores a manifest tying it to a git commit, a config hash, dataset hashes, seeds, package
-  versions and hardware.
-- Every figure and table is regenerated from `results/` by code. No number is ever typed into a plot.
-- `experiments/registry.yaml` is the pre-registration and is frozen before the expensive sweep.
-
-## Read these first
-
-| Document | What it is |
-|---|---|
-| [docs/research_audit.md](docs/research_audit.md) | RQs, hypotheses, novelty audit, assumption audit, data-availability audit, threats to validity, publication risk |
-| [docs/experimental_protocol.md](docs/experimental_protocol.md) | **The pre-registration.** Datasets, splits, forecasting, simulator, RL environment, reward, methods, scenarios, statistics — frozen |
-| [docs/manuscript_corrections.md](docs/manuscript_corrections.md) | Where the manuscript must change, and why. Five items are blocking |
-| [docs/data_sources.md](docs/data_sources.md) | Every dataset, its URL, its role, and what it does **not** contain |
-| [docs/risk_register.md](docs/risk_register.md) | Scientific and engineering risks, with mitigations and owners |
-| [docs/milestone_plan.md](docs/milestone_plan.md) | M0–M16 with exit gates |
-| [docs/dependency_plan.md](docs/dependency_plan.md) | Every dependency justified; what was deliberately left out |
-| [docs/repository_structure.md](docs/repository_structure.md) | Layout, test map, structural rules |
-
-## The five corrections that block implementation
-
-Recorded in full in `docs/manuscript_corrections.md`; summarised here because they change the science:
-
-1. **MC-06 (critical).** The manuscript generates simulated passenger arrivals from the demand
-   *forecast model*. That is circular: the forecaster becomes correct by construction and forecast
-   uncertainty becomes a parameter we chose, so the central hypothesis cannot be tested. Ground truth
-   must come from a process fitted to observed historical ridership instead.
-2. **MC-08.** No public per-train availability data exists for the modelled fleet. A classifier scored
-   on labels from our own synthetic process is a software test, not evidence.
-3. **MC-05.** A static MILP from average demand is close to a straw man; a rolling-horizon MILP with
-   the same forecasts the agent sees is the fair strong baseline.
-4. **MC-09.** With common random numbers the design is *paired*, so Wilcoxon rank-sum is the wrong
-   test; and 30 evaluation episodes from one trained policy are not 30 independent observations.
-5. **MC-01.** "First to jointly address…" is an unverifiable universal negative and weak novelty.
-
-## Planned reproduction commands (not yet implemented)
-
-```
-python -m src.data.prepare                 --config configs/data.yaml
-python -m src.forecasting.train            --config configs/forecasting.yaml
-python -m src.simulator.validate           --config configs/simulator.yaml
-python -m src.rl.train                     --config configs/ppo.yaml --arm uq --seed 101
-python -m experiments.run_all              --config configs/evaluation.yaml
-python -m src.evaluation.analyze           --config configs/evaluation.yaml
-python -m src.explainability.shap_analysis --config configs/evaluation.yaml
-python -m src.visualization.figures        --config configs/evaluation.yaml
-```
-
-## Environment
-
-**Python 3.11** (3.11.9 verified). The system interpreter on the development machine is 3.14, which is
-ahead of assured wheel support for PyTorch / Stable-Baselines3 / SHAP / OR-Tools, so the project uses
-its own 3.11 virtual environment and leaves the system interpreter alone.
+Use Python 3.11 and the separate Linux CPU lock. The original Windows research lock is retained.
+The cloud environment provides uv, Git, Pandoc and XeLaTeX.
 
 ```bash
-# Windows, using the Python Install Manager
-py install 3.11
-%LOCALAPPDATA%\Python\pythoncore-3.11-64\python.exe -m venv .venv
-.venv\Scripts\python.exe -m pip install -r requirements.txt   # hash-pinned lockfile
-
-# any platform, if you already have 3.11
-python3.11 -m venv .venv && .venv/bin/pip install -r requirements.txt
+uv venv --python 3.11 .venv
+uv pip install --python .venv/bin/python --require-hashes --torch-backend cpu -r requirements-linux.lock.txt
+export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONHASHSEED=0
+export MPLBACKEND=Agg
+.venv/bin/python scripts/check_environment.py
+.venv/bin/python scripts/publication_audit.py
+.venv/bin/python -m pytest -ra
 ```
 
-Then verify the stack **functionally** — importing a package proves it installed, not that it works:
+The publication audit exits **1** while blockers remain. The full suite includes tests that
+fail when the original data/policies are absent. Do not disable those assertions or substitute
+synthetic models. Restore ignored summary tables without rewriting original statistics:
 
 ```bash
-.venv/Scripts/python.exe scripts/check_environment.py   # expect: all 10 checks passed
-.venv/Scripts/python.exe -m pytest                      # expect: 38 passed
+.venv/bin/python - <<'PY'
+import json
+from src.common.paths import RESULTS_DIR
+from src.evaluation.runner import discover_cells
+from src.evaluation.aggregate import load_frame, seed_level
+reference = json.loads((RESULTS_DIR / 'statistical_analysis.json').read_text())
+episodes = load_frame(c for c in discover_cells() if not c.variant.startswith('budget_'))
+seeds = seed_level(episodes)
+assert len(episodes) == reference['n_episode_rows']
+assert len(seeds) == reference['n_seed_rows']
+for name, frame in [('episodes.parquet', episodes), ('seed_level.parquet', seeds)]:
+    target = RESULTS_DIR / name
+    if not target.exists():
+        frame.to_parquet(target, index=False)
+PY
 ```
 
-`check_environment.py` asserts, among other things, that MaskablePPO actually refuses a masked
-action and that CP-SAT reports solver status and wall time — two things the protocol depends on and
-that a plain import would not catch.
+## Manuscript and follow-up
+
+The October recovery verified **113 of 124 original raw files byte for byte**. Eleven current
+publisher files differ and are quarantined rather than substituted into the historical study.
+The original train/validation inputs were reconstructed at their frozen boundaries. All
+**18 references** were checked against Crossref or official arXiv metadata; source records and
+corrections are retained in `results/reference_verification.json`.
+
+The [execution report](docs/replication_execution.md) describes the active run, verified
+forecaster/smoke and automatic reporting steps. The
+[independent replication protocol](docs/replication_20261015_protocol.md) specifies 110
+fresh policies and 13,680 evaluations, including new 60k anchors. Its code/input snapshot,
+models, learning curves and cells stay under ignored `replication/20261015/`. It uses the
+explicitly documented updated source snapshot and does not recover the original models.
+
+```bash
+.venv/bin/python scripts/replication_status.py
+# Resume only when no existing replication process is running:
+.venv/bin/python scripts/run_replication.py --stage all --workers 4
+```
+
+The runner verifies frozen input/code hashes, resumes complete checkpoints, retains failures,
+and withholds inference until the entire matrix passes completeness checks. Do not edit
+computational sources after preparation; their archived hashes are part of the experiment.
+
+- [Revision manuscript](docs/paper_final.md): generated by `scripts/build_manuscript.py`, which
+  also creates DOCX, LaTeX and PDF with embedded figures through Pandoc/XeLaTeX. It requires
+  summary tables and the current publication audit.
+- [Original protocol](docs/experimental_protocol.md) and [registry](experiments/registry.yaml):
+  retained unchanged, together with original result cells and statistical analysis.
+- [Budget follow-up protocol](docs/followup_training_budget_protocol.md): fixed five-budget
+  exploratory study. The October amendment corrects implementation defects without changing
+  the grid. Check prerequisites first; analyze only a complete grid.
+- [Revision log](docs/publication_revision_log.md): corrections and remaining work.
+
+```bash
+.venv/bin/python scripts/build_manuscript.py
+.venv/bin/python scripts/run_followup.py --check
+# After recovering exact original inputs and checkpoints:
+.venv/bin/python scripts/run_followup.py
+.venv/bin/python scripts/analyse_followup.py
+```
+
+New budget cells remain under separate variants. Incomplete grids produce status reports
+without interim tests; failures are recorded and stop execution after the protocol's one retry.
+No result may be rewritten to improve the hypothesis.
+
+Both interfaces start locally with `streamlit run app.py --server.port 8501` and
+`streamlit run product/app.py --server.port 8502`. Stored-result pages use summary tables;
+trained-policy operations also require original models and data.
 
 ## Data attribution
 
-Primary data is published by the **Metropolitan Transportation Authority** via NY State Open Data
-(<https://www.mta.info/open-data>). The conditional rolling-stock sensor dataset **MetroPT-3**
-(Metro do Porto, UCI ML Repository #791, DOI 10.24432/C5VW3R) is **CC BY 4.0**. Licence text as
-published at download time is stored alongside each dataset in `data/raw/<dataset_id>/LICENSE.txt`.
-
-Raw data bytes are git-ignored; manifests and hashes are committed, so a fresh clone can verify it
-re-downloaded identical bytes.
+Transit records come from the Metropolitan Transportation Authority via NY State Open Data.
+Original manifests contain retrieval dates and file hashes. Today's mutable GTFS feed cannot
+silently replace the historical snapshot. Verify archive hashes and redistribution rights
+before any deposit.

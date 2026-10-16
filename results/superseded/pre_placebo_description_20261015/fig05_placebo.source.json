@@ -1,0 +1,22 @@
+{
+  "figure": "fig05_placebo",
+  "generated_utc": "2026-08-28T07:07:11.648986+00:00",
+  "generated_by": "scripts/make_paper_assets.py",
+  "source_files": [
+    "results/seed_level.parquet"
+  ],
+  "detail": {
+    "arms": [
+      "ppo_point",
+      "ppo_placebo",
+      "ppo_uq"
+    ],
+    "scenario": "surge",
+    "means": {
+      "ppo_point": 0.017939401086994218,
+      "ppo_placebo": 0.023155915890461256,
+      "ppo_uq": 0.03168103510523661
+    }
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-10-16T13:54:10.681868+00:00",
+  "path": "dist/metro-research-revision.zip",
+  "bytes": 25421961,
+  "sha256": "790bf4bb8ad46aa4adc531423e24c260d3b05d6f7ec75b992972fb9656385836",
+  "repository_files": 16906,
+  "integrity": "ZIP CRC and SHA-256 verified for every included repository file",
+  "purpose": "Local review only; incomplete research revision",
+  "independent_replication_phase": "TRAINING"
+}

@@ -26,7 +26,7 @@ A milestone is not "done" because code runs. It is done when its **exit gate** b
 | **M13** | SHAP: global, scenario-conditional, local, plus stability analysis | Attribution stability reported across seeds and background resamples; non-causality stated in the report itself, not only in the paper | M11 | `feature/shap` |
 | **M14** | Statistical analysis: `src/evaluation/analyze.py` | Assumption checks, paired tests, effect sizes with BCa CIs, Holm on the confirmatory family, BH on exploratory, TOST if the primary does not reject, mixed-effects secondary analysis. **Every number machine-generated** | M11, M12 | `feature/evaluation` |
 | **M15** | Research-quality figures and tables | Every figure regenerated from `results/` by a single command; no number typed by hand anywhere; figure ↔ result-file mapping recorded | M14 | `feature/evaluation` |
-| **M16** | Final reproducibility audit + `docs/paper_traceability.md` + `docs/pre_submission_peer_review.md` | A **fresh clone** reproduces the headline numbers; every manuscript claim classified SUPPORTED / PARTIALLY SUPPORTED / NOT YET TESTED / REFUTED with a pointer to a stored result; the hostile-reviewer document is written and is **not** artificially positive | M15 | `main` |
+| **M16** | Final reproducibility audit + `docs/paper_traceability.md` + `docs/archive/pre_submission_peer_review.md` | A **fresh clone** reproduces the headline numbers; every manuscript claim classified SUPPORTED / PARTIALLY SUPPORTED / NOT YET TESTED / REFUTED with a pointer to a stored result; the hostile-reviewer document is written and is **not** artificially positive | M15 | `main` |
 
 ## Sequencing notes
 

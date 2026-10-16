@@ -1,48 +1,40 @@
 # Verified bibliography
 
-*6 of 18 entries verified in full; 12 require field confirmation before submission.*
+*18 of 18 entries verified in full; 0 require field confirmation before submission.*
 
-**Zero-fabrication policy.** Every entry was located by literature search during manuscript preparation. Entries marked `[REFERENCE VERIFICATION REQUIRED]` had their title and venue verified but not every bibliographic field; those fields must be completed against the publisher record. No author list, year, volume, page range or DOI in this file was reconstructed from memory, and no DOI is stated that was not observed.
+Entries were checked against publisher-deposited Crossref metadata or official arXiv citation metadata. Source records, retrieval dates and corrected fields are retained in `results/reference_verification.json`. Missing fields are omitted; metadata verification does not imply verification of every claim in each paper.
 
 ## capacity
 
-- **[vanmieghem2002]** Van Mieghem, J. A., Rudi, N. (2002). Newsvendor Networks: Inventory Management and Capacity Investment with Discretionary Activities. *Manufacturing & Service Operations Management*, 4(4). https://www.kellogg.northwestern.edu/faculty/vanmieghem/htm/pubs/vanmieghem_rudi_2002_newsnet_msom.pdf  
-  `[REFERENCE VERIFICATION REQUIRED: confirm page range]`
+- Jan A. Van Mieghem, Nils Rudi (2002). Newsvendor Networks: Inventory Management and Capacity Investment with Discretionary Activities. *Manufacturing & Service Operations Management*, 4(4), 313-335. https://doi.org/10.1287/msom.4.4.313.5728
 
 ## convexity
 
-- **[arrow1951]** Arrow, K. J., Harris, T., Marschak, J. (1951). Optimal Inventory Policy. *Econometrica*, 19(3), 250–272. https://www.econometricsociety.org/publications/econometrica/1951/07/01/optimal-inventory-policy
+- Kenneth J. Arrow, Theodore Harris, Jacob Marschak (1951). Optimal Inventory Policy. *Econometrica*, 19(3), 250. https://doi.org/10.2307/1906813
 
 ## digital twin
 
-- **[dt_railway_review]** [REFERENCE VERIFICATION REQUIRED — author list not returned by search] (2025). Digital twin in railway industry: a bibliometric analysis and systematic review. *Digital Transportation and Safety (Taylor & Francis)*. https://www.tandfonline.com/doi/full/10.1080/27525783.2025.2533858  
-  `[REFERENCE VERIFICATION REQUIRED: confirm authors, journal title, volume and pages]`
+- Zi-Yang Zhang, Du Shang, Shuai Su (2025). Digital twin in railway industry: a bibliometric analysis and systematic review. *Digital Twin*, 3(1), 2533858. https://doi.org/10.1080/27525783.2025.2533858
 
 ## disruption
 
-- **[madrl_shortturn]** [REFERENCE VERIFICATION REQUIRED — author list not returned by search] (2024). Adaptive rescheduling of rail transit services with short-turnings under disruptions via a multi-agent deep reinforcement learning approach. *Transportation Research Part B: Methodological*. https://www.sciencedirect.com/science/article/abs/pii/S0191261524001917  
-  `[REFERENCE VERIFICATION REQUIRED: confirm authors, volume and pages]`
+- Chengshuo Ying, Andy H.F. Chow, Yimo Yan, Yong-Hong Kuo, Shouyang Wang (2024). Adaptive rescheduling of rail transit services with short-turnings under disruptions via a multi-agent deep reinforcement learning approach. *Transportation Research Part B: Methodological*, 188, 103067. https://doi.org/10.1016/j.trb.2024.103067
 
 ## forecasting
 
-- **[uq_demand_gnn]** [REFERENCE VERIFICATION REQUIRED — author list not returned by search] (2023). Uncertainty Quantification of Spatiotemporal Travel Demand with Probabilistic Graph Neural Networks. *arXiv preprint*, arXiv:2303.04040. https://arxiv.org/pdf/2303.04040  
-  `[REFERENCE VERIFICATION REQUIRED: confirm authors and any peer-reviewed version]`
-- **[uq_ridesourcing]** [REFERENCE VERIFICATION REQUIRED — author list not returned by search] (2025). Uncertainty quantification for joint demand prediction of multi-modal ride-sourcing services using spatiotemporal Mixture-of-Expert neural network. *Transportation Research Part C: Emerging Technologies*. https://www.sciencedirect.com/science/article/abs/pii/S0968090X2500511X  
-  `[REFERENCE VERIFICATION REQUIRED: confirm authors, volume and pages]`
+- Qingyi Wang, Shenhao Wang, Dingyi Zhuang, Haris Koutsopoulos, Jinhua Zhao (2024). Uncertainty Quantification of Spatiotemporal Travel Demand With Probabilistic Graph Neural Networks. *IEEE Transactions on Intelligent Transportation Systems*, 25(8), 8770-8781. https://doi.org/10.1109/tits.2024.3367779
+- Xiaobing Liu, Yu Duan, Yangli-ao Geng, Yun Wang, Qingyong LI, Xuedong Yan, Ziyou Gao (2026). Uncertainty quantification for joint demand prediction of multi-modal ride-sourcing services using spatiotemporal Mixture-of-Expert neural network. *Transportation Research Part C: Emerging Technologies*, 184, 105507. https://doi.org/10.1016/j.trc.2025.105507
 
 ## methodology
 
-- **[henderson2018]** Henderson, P., et al. (2018). Deep Reinforcement Learning that Matters. *arXiv preprint / AAAI Conference on Artificial Intelligence*, arXiv:1709.06560. https://arxiv.org/abs/1709.06560  
-  `[REFERENCE VERIFICATION REQUIRED: first author and title verified; confirm the full author list and AAAI page range]`
-- **[colas2018]** Colas, C., et al. (2018). How Many Random Seeds? Statistical Power Analysis in Deep Reinforcement Learning Experiments. *arXiv preprint*, arXiv:1806.08295. https://arxiv.org/pdf/1806.08295  
-  `[REFERENCE VERIFICATION REQUIRED: title and identifier verified; confirm the full author list]`
+- Peter Henderson, Riashat Islam, Philip Bachman, Joelle Pineau, Doina Precup, David Meger (2018). Deep Reinforcement Learning That Matters. *Proceedings of the AAAI Conference on Artificial Intelligence*, 32(1). https://doi.org/10.1609/aaai.v32i1.11694
+- Cédric Colas, Olivier Sigaud, Pierre-Yves Oudeyer (2018). How Many Random Seeds? Statistical Power Analysis in Deep Reinforcement Learning Experiments. *arXiv preprint*, arXiv:1806.08295. https://arxiv.org/abs/1806.08295
 
 ## metro
 
-- **[yin2016]** Yin, J., Tang, T., Yang, L., Gao, Z., Ran, B. (2016). Energy-efficient metro train rescheduling with uncertain time-variant passenger demands: An approximate dynamic programming approach. *Transportation Research Part B: Methodological*, 91, 178–210. https://www.sciencedirect.com/science/article/abs/pii/S0191261515302241
-- **[yin2017]** Yin, J., Yang, L., Tang, T., Gao, Z., Ran, B. (2017). Dynamic passenger demand oriented metro train scheduling with energy-efficiency and waiting time minimization: Mixed-integer linear programming approaches. *Transportation Research Part B: Methodological*, 97, 182–213. https://www.sciencedirect.com/science/article/abs/pii/S0191261516305082
-- **[inflow_control]** [REFERENCE VERIFICATION REQUIRED — author list not returned by search] (2018). Reinforcement learning approach for coordinated passenger inflow control of urban rail transit in peak hours. *Transportation Research Part C: Emerging Technologies*. https://www.sciencedirect.com/science/article/pii/S0968090X18300111  
-  `[REFERENCE VERIFICATION REQUIRED: confirm authors, volume and pages]`
+- Jiateng Yin, Tao Tang, Lixing Yang, Ziyou Gao, Bin Ran (2016). Energy-efficient metro train rescheduling with uncertain time-variant passenger demands: An approximate dynamic programming approach. *Transportation Research Part B: Methodological*, 91, 178-210. https://doi.org/10.1016/j.trb.2016.05.009
+- Jiateng Yin, Lixing Yang, Tao Tang, Ziyou Gao, Bin Ran (2017). Dynamic passenger demand oriented metro train scheduling with energy-efficiency and waiting time minimization: Mixed-integer linear programming approaches. *Transportation Research Part B: Methodological*, 97, 182-213. https://doi.org/10.1016/j.trb.2017.01.001
+- Zhibin Jiang, Wei Fan, Wei Liu, Bingqin Zhu, Jinjing Gu (2018). Reinforcement learning approach for coordinated passenger inflow control of urban rail transit in peak hours. *Transportation Research Part C: Emerging Technologies*, 88, 1-16. https://doi.org/10.1016/j.trc.2018.01.008
 
 ## milp
 
@@ -52,29 +44,25 @@
 
 ## optimisation
 
-- **[cacchiani2014]** Cacchiani, V., Huisman, D., Kidd, M., Kroon, L., Toth, P., Veelenturf, L., Wagenaar, J. (2014). An overview of recovery models and algorithms for real-time railway rescheduling. *Transportation Research Part B: Methodological*, 63, 15–37. https://www.sciencedirect.com/science/article/abs/pii/S0191261514000198
-- **[trs_survey]** [REFERENCE VERIFICATION REQUIRED — author list not returned by search] (1998). A Survey of Optimization Models for Train Routing and Scheduling. *Transportation Science*, 32(4), 380. https://pubsonline.informs.org/doi/10.1287/trsc.32.4.380  
-  `[REFERENCE VERIFICATION REQUIRED: confirm authors and year]`
+- Valentina Cacchiani, Dennis Huisman, Martin Kidd, Leo Kroon, Paolo Toth, Lucas Veelenturf, Joris Wagenaar (2014). An overview of recovery models and algorithms for real-time railway rescheduling. *Transportation Research Part B: Methodological*, 63, 15-37. https://doi.org/10.1016/j.trb.2014.01.009
+- Jean-François Cordeau, Paolo Toth, Daniele Vigo (1998). A Survey of Optimization Models for Train Routing and Scheduling. *Transportation Science*, 32(4), 380-404. https://doi.org/10.1287/trsc.32.4.380
 
 ## ppo
 
-- **[schulman2017]** Schulman, J., Wolski, F., Dhariwal, P., Radford, A., Klimov, O. (2017). Proximal Policy Optimization Algorithms. *arXiv preprint*, arXiv:1707.06347. https://arxiv.org/abs/1707.06347
+- John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, Oleg Klimov (2017). Proximal Policy Optimization Algorithms. *arXiv preprint*, arXiv:1707.06347. https://arxiv.org/abs/1707.06347
 
 ## reproducibility
 
 
 ## rescheduling
 
-- **[semrov2016]** Šemrov, D., Marsetič, R., Žura, M., Todorovski, L., Srdic, A. (2016). Reinforcement learning approach for train rescheduling on a single-track railway. *Transportation Research Part B: Methodological*, 86, 250–267. https://www.sciencedirect.com/science/article/abs/pii/S0191261516000084
-- **[multitask_resched]** [REFERENCE VERIFICATION REQUIRED — author list not returned by search] (2024). A multi-task deep reinforcement learning approach to real-time railway train rescheduling. *Transportation Research Part E: Logistics and Transportation Review*. https://www.sciencedirect.com/science/article/abs/pii/S1366554524004915  
-  `[REFERENCE VERIFICATION REQUIRED: confirm authors, volume and pages]`
+- D. Šemrov, R. Marsetič, M. Žura, L. Todorovski, A. Srdic (2016). Reinforcement learning approach for train rescheduling on a single-track railway. *Transportation Research Part B: Methodological*, 86, 250-267. https://doi.org/10.1016/j.trb.2016.01.004
+- Tao Tang, Simin Chai, Wei Wu, Jiateng Yin, Andrea D’Ariano (2025). A multi-task deep reinforcement learning approach to real-time railway train rescheduling. *Transportation Research Part E: Logistics and Transportation Review*, 194, 103900. https://doi.org/10.1016/j.tre.2024.103900
 
 ## rl
 
-- **[uq_review]** [REFERENCE VERIFICATION REQUIRED — author list not returned by search] (2022). A Review of Uncertainty for Deep Reinforcement Learning. *Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment*. https://www.researchgate.net/publication/364395789  
-  `[REFERENCE VERIFICATION REQUIRED: confirm authors, venue and year]`
-- **[clements2019]** [REFERENCE VERIFICATION REQUIRED — author list not returned by search] (2019). Estimating Risk and Uncertainty in Deep Reinforcement Learning. *arXiv preprint*, arXiv:1905.09638. https://arxiv.org/pdf/1905.09638  
-  `[REFERENCE VERIFICATION REQUIRED: confirm authors and any peer-reviewed version]`
+- Owen Lockwood, Mei Si (2022). A Review of Uncertainty for Deep Reinforcement Learning. *Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment*, 18(1), 155-162. https://doi.org/10.1609/aiide.v18i1.21959
+- William R. Clements, Bastien Van Delft, Benoît-Marie Robaglia, Reda Bahi Slaoui, Sébastien Toth (2019). Estimating Risk and Uncertainty in Deep Reinforcement Learning. *arXiv preprint*, arXiv:1905.09638. https://arxiv.org/abs/1905.09638
 
 ## scheduling
 

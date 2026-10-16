@@ -1,5 +1,18 @@
 # FOLLOWUP-UQ-TRAINING — status
 
+## Current update — 2026-10-15
+
+The user authorized continuation. Execution remains **BLOCKED**, before new training: the
+original network, demand process, quantile model and twenty 60k policy binaries are missing
+from this checkout. `scripts/run_followup.py --check` reports the exact missing paths.
+Amendment F-02 repairs implementation defects without changing the grid. The updated analyzer
+reads cells directly and produces no inferential result while any budget is incomplete.
+The historical statement that eleven follow-up policies existed on the original machine does
+not establish that their binaries are available here. No new follow-up result is reported.
+
+The earlier stopping record below is retained as history; its stop instruction is superseded
+by the current authorization, while its incomplete-evidence assessment remains applicable.
+
 ## FOLLOW-UP / INCOMPLETE
 
 **Stopped 2026-08-28 12:27 IST by instruction, before any comparison was possible.**

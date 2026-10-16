@@ -1,0 +1,50 @@
+{
+  "created_utc": "2026-10-15T11:13:14.151233+00:00",
+  "study": "REPLICATION-20261015",
+  "scope": "Provenance clarification only; frozen bytes and numerical computation unchanged",
+  "historical_fields_retained_in_frozen_metadata": {
+    "source_run_git_commit": "dd656e58335fdc69a7581872f788f0215109281b",
+    "git_commit": "bfbf7b3bc1f6298853af813fe695b3fc052f4fb1",
+    "persisted_utc": "2026-08-26T21:44:13.313805+00:00",
+    "refit_agreement": {
+      "n_compared": 2000,
+      "max_abs_p50_difference": 0.0,
+      "max_abs_sigma_difference": 0.0
+    },
+    "calibration_record": {
+      "factor": 1.1547819846894583,
+      "coverage_before": 0.7415989543965734,
+      "coverage_after": 0.8017487087427564,
+      "target": 0.8,
+      "n_candidates": 193,
+      "improved": true,
+      "at_search_boundary": false
+    }
+  },
+  "interpretation": "These copied fields describe the historical reference forecaster, not the new refit. In particular, the old zero-difference refit_agreement and August persistence time are not current verification.",
+  "authoritative_current_refit": {
+    "source": "Independent replication refit; not a recovered original binary",
+    "validation_metrics": {
+      "rmse": 137.60307513264513,
+      "pinball_mean": 15.248581764495237,
+      "picp_80": 0.8007763290501386
+    },
+    "original_validation_metrics": {
+      "rmse": 138.55286473573432,
+      "pinball_mean": 15.29314043160161,
+      "picp_80": 0.8017487087427564
+    },
+    "maximum_metric_disagreement": 0.9497896030891866,
+    "refit_wall_seconds": 1587.4576528569996
+  },
+  "current_computation_identity": "Use results/replication_20261015_inputs.json source archive and computation hashes, not inherited historical git_commit fields.",
+  "policy_training_state_at_clarification": {
+    "study": "REPLICATION-20261015",
+    "stage": "TRAINING",
+    "updated_utc": "2026-10-15T11:12:50.851622+00:00",
+    "pid": 18399,
+    "completed": 0,
+    "total": 110,
+    "workers": 4
+  }
+}

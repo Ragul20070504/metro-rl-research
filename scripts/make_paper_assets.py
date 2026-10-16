@@ -127,30 +127,43 @@ def save_table(frame: pd.DataFrame, stem: str, caption: str, sources: list[str])
 
 
 def figure01_framework() -> None:
-    """Schematic. Carries no experimental number."""
-    fig, ax = plt.subplots(figsize=(9, 3.4))
+    """Schematic separating ground-truth arrivals from policy forecasts; no result values."""
+    fig, ax = plt.subplots(figsize=(11, 4.2))
     ax.axis("off")
     boxes = [
-        (0.03, "Real ridership\ndata", "#e2e8f0"),
-        (0.22, "Quantile demand\nforecaster\n(median + sigma)", "#bee3f8"),
-        (0.42, "Calibrated metro\nsimulator", "#c6f6d5"),
-        (0.62, "Maskable PPO\n3 arms", "#fed7d7"),
-        (0.82, "Registered\nendpoint", "#e9d8fd"),
+        (0.02, 0.45, 0.14, 0.22, "Training ridership\ndata", "#e2e8f0"),
+        (0.24, 0.68, 0.18, 0.22, "Quantile forecaster\n(median + sigma)", "#bee3f8"),
+        (0.24, 0.20, 0.18, 0.22, "Training-fit\ndemand process", "#c6f6d5"),
+        (0.48, 0.20, 0.18, 0.22, "Metro simulation\nenvironment", "#c6f6d5"),
+        (0.48, 0.68, 0.18, 0.22, "Maskable PPO\n3 channel constructions", "#fed7d7"),
+        (0.79, 0.43, 0.18, 0.22, "Primary service\noutcome", "#e9d8fd"),
     ]
-    for x, label, colour in boxes:
-        ax.add_patch(plt.Rectangle((x, 0.42), 0.15, 0.34, facecolor=colour,
-                                   edgecolor="#4a5568", linewidth=0.8))
-        ax.text(x + 0.075, 0.59, label, ha="center", va="center", fontsize=8)
-    for x in (0.185, 0.385, 0.585, 0.785):
-        ax.annotate("", xy=(x + 0.03, 0.59), xytext=(x, 0.59),
-                    arrowprops=dict(arrowstyle="->", color="#4a5568", lw=1.0))
-    ax.text(0.695, 0.30, "sigma channel content is the ONLY difference between arms:\n"
-                         "zero (point)  ·  shuffled (placebo)  ·  calibrated (uncertainty-aware)",
-            ha="center", va="center", fontsize=7.5, style="italic", color="#742a2a")
-    ax.text(0.5, 0.06, "SCHEMATIC — no experimental values are shown in this figure",
-            ha="center", fontsize=7, color="#718096")
-    ax.set_xlim(0, 1); ax.set_ylim(0, 1)
-    save(fig, "fig01_research_framework", [], {"type": "schematic", "contains_data": False})
+    for x, y, width, height, label, colour in boxes:
+        ax.add_patch(plt.Rectangle((x, y), width, height, facecolor=colour,
+                                  edgecolor="#4a5568", linewidth=0.8))
+        ax.text(x + width / 2, y + height / 2, label, ha="center", va="center", fontsize=8)
+    for start, end in [((0.16, 0.61), (0.24, 0.79)), ((0.16, 0.49), (0.24, 0.31)),
+                       ((0.42, 0.31), (0.48, 0.31)), ((0.42, 0.79), (0.48, 0.79)),
+                       ((0.54, 0.42), (0.54, 0.68)), ((0.63, 0.68), (0.63, 0.42)),
+                       ((0.66, 0.31), (0.79, 0.49))]:
+        ax.annotate("", xy=end, xytext=start,
+                    arrowprops=dict(arrowstyle="->", color="#4a5568", lw=1))
+    ax.text(0.45, 0.26, "arrivals", fontsize=7, ha="center")
+    ax.text(0.45, 0.84, "forecast", fontsize=7, ha="center")
+    ax.text(0.51, 0.55, "state", fontsize=7, ha="right")
+    ax.text(0.65, 0.55, "actions", fontsize=7, ha="left")
+    ax.annotate("", xy=(0.40, 0.68), xytext=(0.48, 0.42),
+                arrowprops=dict(arrowstyle="->", color="#718096", lw=0.8, linestyle="--"))
+    ax.text(0.37, 0.52, "past observations\nonly", fontsize=7, ha="center", color="#4a5568")
+    ax.text(0.82, 0.83, "Sigma content:\nzero / resampled / calibrated\nIdentical input width", fontsize=8,
+            ha="center", va="center", color="#742a2a")
+    ax.text(0.5, 0.08, "Ground-truth arrivals come from the demand process; forecasts enter observations.",
+            ha="center", fontsize=8)
+    ax.text(0.5, 0.02, "SCHEMATIC — no experimental values", ha="center", fontsize=7, color="#718096")
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    save(fig, "fig01_research_framework", [], {"type": "schematic", "contains_data": False,
+         "clarification": "Demand generation and policy forecasting are separate; only past observations feed forecasts."})
 
 
 def figure02_twin() -> None:
@@ -185,27 +198,44 @@ def figure02_twin() -> None:
 
 def figure03_forecasting() -> None:
     fc = load("forecasting_metrics.json")
-    metrics = fc.get("metrics", {})
     fig, axes = plt.subplots(1, 2, figsize=(8, 3))
-    flat: dict[str, float] = {}
-    for group, payload in metrics.items():
-        if isinstance(payload, dict):
-            for key, value in payload.items():
-                if isinstance(value, (int, float)):
-                    flat[f"{group}.{key}"] = float(value)
-    top = dict(list(flat.items())[:8])
-    axes[0].barh(list(top), list(top.values()), color="#2b6cb0")
-    axes[0].set_title("Forecast accuracy metrics", fontsize=9)
+    rows = forecasting_rows(fc)
+    held_out = rows[rows.split == "test"]
+    axes[0].barh(held_out.model, held_out.rmse, color="#2b6cb0")
+    axes[0].set_title("Held-out point accuracy", fontsize=9)
+    axes[0].set_xlabel("Test RMSE (passengers per station-hour)")
     axes[0].tick_params(labelsize=6.5)
-    cal = fc.get("calibration", {})
-    numeric = {k: float(v) for k, v in cal.items() if isinstance(v, (int, float))}
-    if numeric:
-        axes[1].bar(list(numeric), list(numeric.values()), color="#2f855a")
-        axes[1].tick_params(axis="x", rotation=35, labelsize=6.5)
-    axes[1].set_title(f"Calibration · quantile crossing "
-                      f"{fc['quantile_crossing_rate']:.4f}", fontsize=9)
+    cal = fc["calibration"]
+    coverage = [cal["coverage_before"], cal["coverage_after"],
+                fc["metrics"]["xgb_quantile"]["test"]["probabilistic"]["picp_80"]]
+    axes[1].bar(["Validation\nbefore", "Validation\nafter", "Test"], coverage, color="#2f855a")
+    axes[1].axhline(cal["target"], color="#2d3748", linestyle="--", label="Nominal 80%")
+    axes[1].set_ylim(0, 1)
+    axes[1].set_ylabel("Empirical coverage of the 80% interval")
+    axes[1].set_title("Calibration and held-out coverage", fontsize=9)
+    axes[1].legend(fontsize=7)
     save(fig, "fig03_forecasting", ["results/forecasting_metrics.json"],
-         {"quantile_crossing_rate": fc["quantile_crossing_rate"]})
+         {"test_rmse": dict(zip(held_out.model, held_out.rmse)), "coverage": coverage,
+          "quantile_crossing_rate": fc["quantile_crossing_rate"]})
+
+
+def forecasting_rows(fc: dict[str, Any]) -> pd.DataFrame:
+    """Read model -> split -> point/probabilistic; never mistake calibration settings for metrics."""
+    rows = []
+    for model, splits in fc["metrics"].items():
+        for split, metrics in splits.items():
+            point = metrics["point"]
+            probabilistic = metrics.get("probabilistic", {})
+            rows.append({"model": model, "split": split,
+                         **{key: point[key] for key in ("mae", "rmse", "mase")},
+                         **{key: probabilistic.get(key) for key in ("pinball_mean", "picp_80")}})
+    return pd.DataFrame(rows)
+
+
+def forecasting_table(fc: dict[str, Any]) -> None:
+    save_table(forecasting_rows(fc), "table02_forecasting",
+               "Forecast performance by model and split; probabilistic metrics apply only to quantile forecasts",
+               ["results/forecasting_metrics.json"])
 
 
 def figure04_primary() -> None:
@@ -254,14 +284,14 @@ def figure05_placebo() -> None:
     # either side of that rename.
     parts = ax.boxplot(data, patch_artist=True, widths=0.55)
     ax.set_xticks([1, 2, 3])
-    ax.set_xticklabels(["point\n(sigma = 0)", "placebo\n(sigma shuffled)",
+    ax.set_xticklabels(["point\n(sigma = 0)", "placebo\n(sigma resampled)",
                         "uncertainty\n(sigma calibrated)"])
     for patch, method in zip(parts["boxes"], ARMS):
         patch.set_facecolor(COLOUR[method]); patch.set_alpha(0.55)
     for i, values in enumerate(data, start=1):
         ax.scatter(np.full(len(values), i), values, s=14, color="#2d3748", zorder=3, alpha=0.7)
     ax.set_ylabel("left_behind_fraction (surge)")
-    ax.set_title("Placebo control separates information from dimensionality", fontsize=9)
+    ax.set_title("Channel constructions at identical input width", fontsize=9)
     save(fig, "fig05_placebo", ["results/seed_level.parquet"],
          {"arms": ARMS, "scenario": "surge",
           "means": {m: float(np.mean(d)) for m, d in zip(ARMS, data)}})
@@ -449,15 +479,7 @@ def build_tables() -> None:
                ["results/reproducibility_audit.json"])
 
     # Table 2 — forecasting
-    frows = [{"quantity": "quantile crossing rate", "value": fc["quantile_crossing_rate"]},
-             {"quantity": "config hash", "value": str(fc.get("config_hash", ""))[:16]}]
-    for group, payload in (fc.get("metrics") or {}).items():
-        if isinstance(payload, dict):
-            for key, value in payload.items():
-                if isinstance(value, (int, float)):
-                    frows.append({"quantity": f"{group}.{key}", "value": value})
-    save_table(pd.DataFrame(frows), "table02_forecasting", "Forecasting performance",
-               ["results/forecasting_metrics.json"])
+    forecasting_table(fc)
 
     # Table 3 — twin validation
     save_table(pd.DataFrame(sim["rows"])[

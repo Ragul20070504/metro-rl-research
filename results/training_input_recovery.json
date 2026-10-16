@@ -1,0 +1,24 @@
+{
+  "generated_utc": "2026-10-15T10:38:53.040143+00:00",
+  "split_boundaries": {
+    "train_start": "2024-01-01",
+    "train_end": "2025-10-20",
+    "val_start": "2025-10-28",
+    "val_end": "2026-03-23",
+    "test_start": "2026-03-31",
+    "test_end": "2026-08-13",
+    "embargo_days": 7
+  },
+  "test_recovered": false,
+  "verified_raw_files": 113,
+  "outputs": {
+    "train": {
+      "rows": 1126584,
+      "sha256": "31f5b79feff094d15009d876dfd3bd89d3056eed6adec6cc252735eabf7e9cc7"
+    },
+    "val": {
+      "rows": 254016,
+      "sha256": "7cc2013bfc214eb76c0241db3d40d91dca66766b033dea0bd9cad2dc6ac8e8a9"
+    }
+  }
+}

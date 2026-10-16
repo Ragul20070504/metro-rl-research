@@ -1,6 +1,6 @@
 {
   "figure": "fig05_placebo",
-  "generated_utc": "2026-08-28T07:07:11.648986+00:00",
+  "generated_utc": "2026-10-15T11:07:26.774036+00:00",
   "generated_by": "scripts/make_paper_assets.py",
   "source_files": [
     "results/seed_level.parquet"

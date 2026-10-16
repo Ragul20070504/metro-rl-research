@@ -1,0 +1,65 @@
+{
+  "checked_utc": "2026-10-16T13:52:05.639900+00:00",
+  "retired_scripts": {
+    "scripts/write_paper.py": "053b28abaed62f0c13484d94abacfb9ff00998544b76473fc78412a98c7bae2c",
+    "scripts/write_manuscript.py": "2edb90d8fc28cc436be14123c2966ad62d72a4cacbf11aa4102033b7bb069af0",
+    "scripts/write_final_documents.py": "a1e5ed700da5c0817e3ff65ba966d94f235317e9303afc2a8880ddeddcff544d",
+    "scripts/write_peer_review.py": "3a9ec5d704a079badddad7ee539e400b9d3d33560e77213dea5d34a1a0e92b65",
+    "scripts/q1_q2_audit.py": "6a70cebf32f6c346c9f0af27fe93bb0615b78418b653e9deb5e06ec8088e0122",
+    "scripts/build_paper_review.py": "947def8fe11e25d6d52531937ec10acb759e908d125c8184ac21f47d8d9fdc11",
+    "scripts/peer_review.py": "6db636ba4f850454cdcbdb55192993bd1362207cde432f1d69b781b17133f247",
+    "scripts/finish_pipeline.py": "9c02455adc584ba6806ed824924894ad5a5d75032cf4491fd78f68c5fdd44607",
+    "scripts/resume_after_train.py": "467622255d14308c3e1ca5e86d41ac3e40c8df4ad7e7ec24cd16cdd8a54939c6"
+  },
+  "retired_script_lines": 4721,
+  "historical_source_commit": "e053dea4180cec859f7241c1ce529e0d7235a8ac",
+  "archived_documents": {
+    "HANDOVER.md": "docs/archive/HANDOVER.md",
+    "RESUME.md": "docs/archive/RESUME.md",
+    "docs/FINAL_STATUS.md": "docs/archive/FINAL_STATUS.md",
+    "docs/execution_status.md": "docs/archive/execution_status.md",
+    "docs/final_completion_directive.md": "docs/archive/final_completion_directive.md",
+    "docs/final_peer_review.md": "docs/archive/final_peer_review.md",
+    "docs/final_results.md": "docs/archive/final_results.md",
+    "docs/manuscript_draft.md": "docs/archive/manuscript_draft.md",
+    "docs/manuscript_revision_plan.md": "docs/archive/manuscript_revision_plan.md",
+    "docs/milestone_status.md": "docs/archive/milestone_status.md",
+    "docs/paper_peer_review.md": "docs/archive/paper_peer_review.md",
+    "docs/paper_journal_fit.md": "docs/archive/paper_journal_fit.md",
+    "docs/pre_submission_peer_review.md": "docs/archive/pre_submission_peer_review.md",
+    "docs/q1_q2_readiness_audit.md": "docs/archive/q1_q2_readiness_audit.md",
+    "docs/reproduction_guide.md": "docs/archive/reproduction_guide.md",
+    "docs/figure_table_traceability.md": "docs/archive/figure_table_traceability.md"
+  },
+  "archive_content_check": "Historical text unchanged except Markdown navigation targets.",
+  "pre_cleanup_backup": "/workspace/research-cleanup/pre-cleanup-20261016.zip",
+  "backup_sha256": "4a1f2a5a7bb45e132c960ba5b6af4d485ccd1ffaa860e0775c023202b40d49c3",
+  "simplifications": [
+    "Removed unused candidate-title list",
+    "Shared Pandoc export for TeX, DOCX and PDF",
+    "Current documentation/script indexes; historical instructions archived"
+  ],
+  "full_suite": {
+    "passed": 527,
+    "failed": 33,
+    "skipped": 2
+  },
+  "new_failures_vs_previous_full_suite": [],
+  "focused_checks": {
+    "passed": 14,
+    "failed": 0,
+    "seconds": 17.41
+  },
+  "document_build": {
+    "pdf_pages": 22,
+    "docx_embedded_images": 10,
+    "docx_zip_integrity": "PASS"
+  },
+  "remaining_imports_of_retired_modules": 0,
+  "frozen_computation_files_verified": 69,
+  "frozen_input_files_verified": 136,
+  "limits": "No scientific algorithm, protocol, dependency lock, original evidence, data or model was removed/refactored. Historical-artifact-dependent test failures remain.",
+  "broken_navigation_links": 0,
+  "navigation_documents_checked": 24,
+  "original_stored_evidence_sha256": "dad56949dd70d39e994f86996e46be146f5fbbc133c87d5b9a28f83a955f7649"
+}

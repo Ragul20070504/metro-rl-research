@@ -1,0 +1,1722 @@
+{
+  "verified_utc": "2026-10-15T10:32:49.427454+00:00",
+  "sources": "Crossref publisher-deposited metadata and arXiv citation metadata",
+  "records": [
+    {
+      "key": "cacchiani2014",
+      "verified_utc": "2026-10-15T10:32:49.425715+00:00",
+      "source_url": "https://api.crossref.org/works/10.1016/j.trb.2014.01.009",
+      "record": {
+        "title": [
+          "An overview of recovery models and algorithms for real-time railway rescheduling"
+        ],
+        "author": [
+          {
+            "given": "Valentina",
+            "family": "Cacchiani",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Dennis",
+            "family": "Huisman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Martin",
+            "family": "Kidd",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Leo",
+            "family": "Kroon",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Paolo",
+            "family": "Toth",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Lucas",
+            "family": "Veelenturf",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Joris",
+            "family": "Wagenaar",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transportation Research Part B: Methodological"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2014,
+              5
+            ]
+          ]
+        },
+        "volume": "63",
+        "issue": null,
+        "page": "15-37",
+        "article-number": null,
+        "DOI": "10.1016/j.trb.2014.01.009",
+        "score": 52.985786
+      },
+      "corrections": {
+        "detail": {
+          "previous": "63, 15–37",
+          "verified": "63, 15-37"
+        },
+        "authors": {
+          "previous": "Cacchiani, V., Huisman, D., Kidd, M., Kroon, L., Toth, P., Veelenturf, L., Wagenaar, J.",
+          "verified": "Valentina Cacchiani, Dennis Huisman, Martin Kidd, Leo Kroon, Paolo Toth, Lucas Veelenturf, Joris Wagenaar"
+        },
+        "url": {
+          "previous": "https://www.sciencedirect.com/science/article/abs/pii/S0191261514000198",
+          "verified": "https://doi.org/10.1016/j.trb.2014.01.009"
+        }
+      }
+    },
+    {
+      "key": "semrov2016",
+      "verified_utc": "2026-10-15T10:32:49.425746+00:00",
+      "source_url": "https://api.crossref.org/works/10.1016/j.trb.2016.01.004",
+      "record": {
+        "title": [
+          "Reinforcement learning approach for train rescheduling on a single-track railway"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-7783-923X",
+            "authenticated-orcid": false,
+            "given": "D.",
+            "family": "Šemrov",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "R.",
+            "family": "Marsetič",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "M.",
+            "family": "Žura",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "L.",
+            "family": "Todorovski",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "A.",
+            "family": "Srdic",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transportation Research Part B: Methodological"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2016,
+              4
+            ]
+          ]
+        },
+        "volume": "86",
+        "issue": null,
+        "page": "250-267",
+        "article-number": null,
+        "DOI": "10.1016/j.trb.2016.01.004",
+        "score": 57.326103
+      },
+      "corrections": {
+        "detail": {
+          "previous": "86, 250–267",
+          "verified": "86, 250-267"
+        },
+        "authors": {
+          "previous": "Šemrov, D., Marsetič, R., Žura, M., Todorovski, L., Srdic, A.",
+          "verified": "D. Šemrov, R. Marsetič, M. Žura, L. Todorovski, A. Srdic"
+        },
+        "url": {
+          "previous": "https://www.sciencedirect.com/science/article/abs/pii/S0191261516000084",
+          "verified": "https://doi.org/10.1016/j.trb.2016.01.004"
+        }
+      }
+    },
+    {
+      "key": "yin2016",
+      "verified_utc": "2026-10-15T10:32:49.425756+00:00",
+      "source_url": "https://api.crossref.org/works/10.1016/j.trb.2016.05.009",
+      "record": {
+        "title": [
+          "Energy-efficient metro train rescheduling with uncertain time-variant passenger demands: An approximate dynamic programming approach"
+        ],
+        "author": [
+          {
+            "given": "Jiateng",
+            "family": "Yin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Tao",
+            "family": "Tang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Lixing",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ziyou",
+            "family": "Gao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Bin",
+            "family": "Ran",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transportation Research Part B: Methodological"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2016,
+              9
+            ]
+          ]
+        },
+        "volume": "91",
+        "issue": null,
+        "page": "178-210",
+        "article-number": null,
+        "DOI": "10.1016/j.trb.2016.05.009",
+        "score": 87.77666
+      },
+      "corrections": {
+        "detail": {
+          "previous": "91, 178–210",
+          "verified": "91, 178-210"
+        },
+        "authors": {
+          "previous": "Yin, J., Tang, T., Yang, L., Gao, Z., Ran, B.",
+          "verified": "Jiateng Yin, Tao Tang, Lixing Yang, Ziyou Gao, Bin Ran"
+        },
+        "url": {
+          "previous": "https://www.sciencedirect.com/science/article/abs/pii/S0191261515302241",
+          "verified": "https://doi.org/10.1016/j.trb.2016.05.009"
+        }
+      }
+    },
+    {
+      "key": "yin2017",
+      "verified_utc": "2026-10-15T10:32:49.425764+00:00",
+      "source_url": "https://api.crossref.org/works/10.1016/j.trb.2017.01.001",
+      "record": {
+        "title": [
+          "Dynamic passenger demand oriented metro train scheduling with energy-efficiency and waiting time minimization: Mixed-integer linear programming approaches"
+        ],
+        "author": [
+          {
+            "given": "Jiateng",
+            "family": "Yin",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Lixing",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Tao",
+            "family": "Tang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ziyou",
+            "family": "Gao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Bin",
+            "family": "Ran",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transportation Research Part B: Methodological"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2017,
+              3
+            ]
+          ]
+        },
+        "volume": "97",
+        "issue": null,
+        "page": "182-213",
+        "article-number": null,
+        "DOI": "10.1016/j.trb.2017.01.001",
+        "score": 94.18449
+      },
+      "corrections": {
+        "detail": {
+          "previous": "97, 182–213",
+          "verified": "97, 182-213"
+        },
+        "authors": {
+          "previous": "Yin, J., Yang, L., Tang, T., Gao, Z., Ran, B.",
+          "verified": "Jiateng Yin, Lixing Yang, Tao Tang, Ziyou Gao, Bin Ran"
+        },
+        "url": {
+          "previous": "https://www.sciencedirect.com/science/article/abs/pii/S0191261516305082",
+          "verified": "https://doi.org/10.1016/j.trb.2017.01.001"
+        }
+      }
+    },
+    {
+      "key": "trs_survey",
+      "verified_utc": "2026-10-15T10:32:49.425772+00:00",
+      "source_url": "https://api.crossref.org/works/10.1287/trsc.32.4.380",
+      "record": {
+        "title": [
+          "A Survey of Optimization Models for Train Routing and Scheduling"
+        ],
+        "author": [
+          {
+            "given": "Jean-François",
+            "family": "Cordeau",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "GERAD and École Polytechnique de Montréal, 3000, chemin de la Côte-Sainte-Catherine, Montréal H3T 2A7, Canada"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Paolo",
+            "family": "Toth",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "DEIS, Università di Bologna, Viale Risorgimento, 2, 40136 Bologna, Italia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Daniele",
+            "family": "Vigo",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "DEIS, Università di Bologna, Viale Risorgimento, 2, 40136 Bologna, Italia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transportation Science"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              1998,
+              11
+            ]
+          ]
+        },
+        "volume": "32",
+        "issue": "4",
+        "page": "380-404",
+        "article-number": null,
+        "DOI": "10.1287/trsc.32.4.380",
+        "score": 40.956413
+      },
+      "corrections": {
+        "detail": {
+          "previous": "32(4), 380",
+          "verified": "32(4), 380-404"
+        },
+        "authors": {
+          "previous": "[REFERENCE VERIFICATION REQUIRED — author list not returned by search]",
+          "verified": "Jean-François Cordeau, Paolo Toth, Daniele Vigo"
+        },
+        "url": {
+          "previous": "https://pubsonline.informs.org/doi/10.1287/trsc.32.4.380",
+          "verified": "https://doi.org/10.1287/trsc.32.4.380"
+        }
+      }
+    },
+    {
+      "key": "inflow_control",
+      "verified_utc": "2026-10-15T10:32:49.425812+00:00",
+      "source_url": "https://api.crossref.org/works/10.1016/j.trc.2018.01.008",
+      "record": {
+        "title": [
+          "Reinforcement learning approach for coordinated passenger inflow control of urban rail transit in peak hours"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-3556-1062",
+            "authenticated-orcid": false,
+            "given": "Zhibin",
+            "family": "Jiang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-9815-710X",
+            "authenticated-orcid": false,
+            "given": "Wei",
+            "family": "Fan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Wei",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Bingqin",
+            "family": "Zhu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jinjing",
+            "family": "Gu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transportation Research Part C: Emerging Technologies"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2018,
+              3
+            ]
+          ]
+        },
+        "volume": "88",
+        "issue": null,
+        "page": "1-16",
+        "article-number": null,
+        "DOI": "10.1016/j.trc.2018.01.008",
+        "score": 76.51176
+      },
+      "corrections": {
+        "detail": {
+          "previous": "",
+          "verified": "88, 1-16"
+        },
+        "authors": {
+          "previous": "[REFERENCE VERIFICATION REQUIRED — author list not returned by search]",
+          "verified": "Zhibin Jiang, Wei Fan, Wei Liu, Bingqin Zhu, Jinjing Gu"
+        },
+        "url": {
+          "previous": "https://www.sciencedirect.com/science/article/pii/S0968090X18300111",
+          "verified": "https://doi.org/10.1016/j.trc.2018.01.008"
+        }
+      }
+    },
+    {
+      "key": "multitask_resched",
+      "verified_utc": "2026-10-15T10:32:49.425820+00:00",
+      "source_url": "https://api.crossref.org/works/10.1016/j.tre.2024.103900",
+      "record": {
+        "title": [
+          "A multi-task deep reinforcement learning approach to real-time railway train rescheduling"
+        ],
+        "author": [
+          {
+            "given": "Tao",
+            "family": "Tang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Simin",
+            "family": "Chai",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Wei",
+            "family": "Wu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jiateng",
+            "family": "Yin",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Andrea",
+            "family": "D’Ariano",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transportation Research Part E: Logistics and Transportation Review"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2025,
+              2
+            ]
+          ]
+        },
+        "volume": "194",
+        "issue": null,
+        "page": "103900",
+        "article-number": "103900",
+        "DOI": "10.1016/j.tre.2024.103900",
+        "score": 67.211006
+      },
+      "corrections": {
+        "year": {
+          "previous": "2024",
+          "verified": "2025"
+        },
+        "detail": {
+          "previous": "",
+          "verified": "194, 103900"
+        },
+        "authors": {
+          "previous": "[REFERENCE VERIFICATION REQUIRED — author list not returned by search]",
+          "verified": "Tao Tang, Simin Chai, Wei Wu, Jiateng Yin, Andrea D’Ariano"
+        },
+        "url": {
+          "previous": "https://www.sciencedirect.com/science/article/abs/pii/S1366554524004915",
+          "verified": "https://doi.org/10.1016/j.tre.2024.103900"
+        }
+      }
+    },
+    {
+      "key": "madrl_shortturn",
+      "verified_utc": "2026-10-15T10:32:49.425828+00:00",
+      "source_url": "https://api.crossref.org/works/10.1016/j.trb.2024.103067",
+      "record": {
+        "title": [
+          "Adaptive rescheduling of rail transit services with short-turnings under disruptions via a multi-agent deep reinforcement learning approach"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-2661-2107",
+            "authenticated-orcid": false,
+            "given": "Chengshuo",
+            "family": "Ying",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2877-357X",
+            "authenticated-orcid": false,
+            "given": "Andy H.F.",
+            "family": "Chow",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yimo",
+            "family": "Yan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6170-324X",
+            "authenticated-orcid": false,
+            "given": "Yong-Hong",
+            "family": "Kuo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Shouyang",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transportation Research Part B: Methodological"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              10
+            ]
+          ]
+        },
+        "volume": "188",
+        "issue": null,
+        "page": "103067",
+        "article-number": "103067",
+        "DOI": "10.1016/j.trb.2024.103067",
+        "score": 88.49659
+      },
+      "corrections": {
+        "detail": {
+          "previous": "",
+          "verified": "188, 103067"
+        },
+        "authors": {
+          "previous": "[REFERENCE VERIFICATION REQUIRED — author list not returned by search]",
+          "verified": "Chengshuo Ying, Andy H.F. Chow, Yimo Yan, Yong-Hong Kuo, Shouyang Wang"
+        },
+        "url": {
+          "previous": "https://www.sciencedirect.com/science/article/abs/pii/S0191261524001917",
+          "verified": "https://doi.org/10.1016/j.trb.2024.103067"
+        }
+      }
+    },
+    {
+      "key": "schulman2017",
+      "verified_utc": "2026-10-15T10:32:49.426372+00:00",
+      "source_url": "https://arxiv.org/abs/1707.06347",
+      "record": {
+        "citation_metadata": [
+          [
+            "title",
+            "Proximal Policy Optimization Algorithms"
+          ],
+          [
+            "author",
+            "Schulman, John"
+          ],
+          [
+            "author",
+            "Wolski, Filip"
+          ],
+          [
+            "author",
+            "Dhariwal, Prafulla"
+          ],
+          [
+            "author",
+            "Radford, Alec"
+          ],
+          [
+            "author",
+            "Klimov, Oleg"
+          ],
+          [
+            "date",
+            "2017/07/20"
+          ]
+        ]
+      },
+      "corrections": {
+        "authors": {
+          "previous": "Schulman, J., Wolski, F., Dhariwal, P., Radford, A., Klimov, O.",
+          "verified": "John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, Oleg Klimov"
+        }
+      }
+    },
+    {
+      "key": "henderson2018",
+      "verified_utc": "2026-10-15T10:32:49.426389+00:00",
+      "source_url": "https://api.crossref.org/works/10.1609/aaai.v32i1.11694",
+      "record": {
+        "title": [
+          "Deep Reinforcement Learning That Matters"
+        ],
+        "author": [
+          {
+            "given": "Peter",
+            "family": "Henderson",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Riashat",
+            "family": "Islam",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Philip",
+            "family": "Bachman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Joelle",
+            "family": "Pineau",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Doina",
+            "family": "Precup",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "David",
+            "family": "Meger",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of the AAAI Conference on Artificial Intelligence"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2018,
+              4,
+              29
+            ]
+          ]
+        },
+        "volume": "32",
+        "issue": "1",
+        "page": null,
+        "article-number": null,
+        "DOI": "10.1609/aaai.v32i1.11694",
+        "score": 31.893261
+      },
+      "corrections": {
+        "title": {
+          "previous": "Deep Reinforcement Learning that Matters",
+          "verified": "Deep Reinforcement Learning That Matters"
+        },
+        "venue": {
+          "previous": "arXiv preprint / AAAI Conference on Artificial Intelligence",
+          "verified": "Proceedings of the AAAI Conference on Artificial Intelligence"
+        },
+        "detail": {
+          "previous": "arXiv:1709.06560",
+          "verified": "32(1)"
+        },
+        "authors": {
+          "previous": "Henderson, P., et al.",
+          "verified": "Peter Henderson, Riashat Islam, Philip Bachman, Joelle Pineau, Doina Precup, David Meger"
+        },
+        "url": {
+          "previous": "https://arxiv.org/abs/1709.06560",
+          "verified": "https://doi.org/10.1609/aaai.v32i1.11694"
+        }
+      }
+    },
+    {
+      "key": "colas2018",
+      "verified_utc": "2026-10-15T10:32:49.426626+00:00",
+      "source_url": "https://arxiv.org/abs/1806.08295",
+      "record": {
+        "citation_metadata": [
+          [
+            "title",
+            "How Many Random Seeds? Statistical Power Analysis in Deep Reinforcement Learning Experiments"
+          ],
+          [
+            "author",
+            "Colas, Cédric"
+          ],
+          [
+            "author",
+            "Sigaud, Olivier"
+          ],
+          [
+            "author",
+            "Oudeyer, Pierre-Yves"
+          ],
+          [
+            "date",
+            "2018/06/21"
+          ]
+        ]
+      },
+      "corrections": {
+        "authors": {
+          "previous": "Colas, C., et al.",
+          "verified": "Cédric Colas, Olivier Sigaud, Pierre-Yves Oudeyer"
+        },
+        "url": {
+          "previous": "https://arxiv.org/pdf/1806.08295",
+          "verified": "https://arxiv.org/abs/1806.08295"
+        }
+      }
+    },
+    {
+      "key": "uq_review",
+      "verified_utc": "2026-10-15T10:32:49.426638+00:00",
+      "source_url": "https://api.crossref.org/works/10.1609/aiide.v18i1.21959",
+      "record": {
+        "title": [
+          "A Review of Uncertainty for Deep Reinforcement Learning"
+        ],
+        "author": [
+          {
+            "given": "Owen",
+            "family": "Lockwood",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Mei",
+            "family": "Si",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2022,
+              10,
+              11
+            ]
+          ]
+        },
+        "volume": "18",
+        "issue": "1",
+        "page": "155-162",
+        "article-number": null,
+        "DOI": "10.1609/aiide.v18i1.21959",
+        "score": 31.370203
+      },
+      "corrections": {
+        "detail": {
+          "previous": "",
+          "verified": "18(1), 155-162"
+        },
+        "authors": {
+          "previous": "[REFERENCE VERIFICATION REQUIRED — author list not returned by search]",
+          "verified": "Owen Lockwood, Mei Si"
+        },
+        "url": {
+          "previous": "https://www.researchgate.net/publication/364395789",
+          "verified": "https://doi.org/10.1609/aiide.v18i1.21959"
+        }
+      }
+    },
+    {
+      "key": "clements2019",
+      "verified_utc": "2026-10-15T10:32:49.426901+00:00",
+      "source_url": "https://arxiv.org/abs/1905.09638",
+      "record": {
+        "citation_metadata": [
+          [
+            "title",
+            "Estimating Risk and Uncertainty in Deep Reinforcement Learning"
+          ],
+          [
+            "author",
+            "Clements, William R."
+          ],
+          [
+            "author",
+            "Van Delft, Bastien"
+          ],
+          [
+            "author",
+            "Robaglia, Benoît-Marie"
+          ],
+          [
+            "author",
+            "Slaoui, Reda Bahi"
+          ],
+          [
+            "author",
+            "Toth, Sébastien"
+          ],
+          [
+            "date",
+            "2019/05/23"
+          ]
+        ]
+      },
+      "corrections": {
+        "authors": {
+          "previous": "[REFERENCE VERIFICATION REQUIRED — author list not returned by search]",
+          "verified": "William R. Clements, Bastien Van Delft, Benoît-Marie Robaglia, Reda Bahi Slaoui, Sébastien Toth"
+        },
+        "url": {
+          "previous": "https://arxiv.org/pdf/1905.09638",
+          "verified": "https://arxiv.org/abs/1905.09638"
+        }
+      }
+    },
+    {
+      "key": "uq_demand_gnn",
+      "verified_utc": "2026-10-15T10:32:49.426914+00:00",
+      "source_url": "https://api.crossref.org/works/10.1109/tits.2024.3367779",
+      "record": {
+        "title": [
+          "Uncertainty Quantification of Spatiotemporal Travel Demand With Probabilistic Graph Neural Networks"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-6891-7267",
+            "authenticated-orcid": false,
+            "given": "Qingyi",
+            "family": "Wang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Civil and Environmental Engineering, Massachusetts Institute of Technology, Cambridge, MA, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4374-8193",
+            "authenticated-orcid": false,
+            "given": "Shenhao",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Urban and Regional Planning, University of Florida, Gainesville, FL, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3208-6016",
+            "authenticated-orcid": false,
+            "given": "Dingyi",
+            "family": "Zhuang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Civil and Environmental Engineering, Massachusetts Institute of Technology, Cambridge, MA, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3830-9794",
+            "authenticated-orcid": false,
+            "given": "Haris",
+            "family": "Koutsopoulos",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Civil and Environmental Engineering, Northeastern University, Boston, MA, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1929-7583",
+            "authenticated-orcid": false,
+            "given": "Jinhua",
+            "family": "Zhao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Urban Studies and Planning, Massachusetts Institute of Technology, Cambridge, MA, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Intelligent Transportation Systems"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              8
+            ]
+          ]
+        },
+        "volume": "25",
+        "issue": "8",
+        "page": "8770-8781",
+        "article-number": null,
+        "DOI": "10.1109/tits.2024.3367779",
+        "score": 62.547993
+      },
+      "corrections": {
+        "year": {
+          "previous": "2023",
+          "verified": "2024"
+        },
+        "title": {
+          "previous": "Uncertainty Quantification of Spatiotemporal Travel Demand with Probabilistic Graph Neural Networks",
+          "verified": "Uncertainty Quantification of Spatiotemporal Travel Demand With Probabilistic Graph Neural Networks"
+        },
+        "venue": {
+          "previous": "arXiv preprint",
+          "verified": "IEEE Transactions on Intelligent Transportation Systems"
+        },
+        "detail": {
+          "previous": "arXiv:2303.04040",
+          "verified": "25(8), 8770-8781"
+        },
+        "authors": {
+          "previous": "[REFERENCE VERIFICATION REQUIRED — author list not returned by search]",
+          "verified": "Qingyi Wang, Shenhao Wang, Dingyi Zhuang, Haris Koutsopoulos, Jinhua Zhao"
+        },
+        "url": {
+          "previous": "https://arxiv.org/pdf/2303.04040",
+          "verified": "https://doi.org/10.1109/tits.2024.3367779"
+        }
+      }
+    },
+    {
+      "key": "uq_ridesourcing",
+      "verified_utc": "2026-10-15T10:32:49.426924+00:00",
+      "source_url": "https://api.crossref.org/works/10.1016/j.trc.2025.105507",
+      "record": {
+        "title": [
+          "Uncertainty quantification for joint demand prediction of multi-modal ride-sourcing services using spatiotemporal Mixture-of-Expert neural network"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-1142-5816",
+            "authenticated-orcid": false,
+            "given": "Xiaobing",
+            "family": "Liu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0008-1268-8371",
+            "authenticated-orcid": false,
+            "given": "Yu",
+            "family": "Duan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0173-4041",
+            "authenticated-orcid": false,
+            "given": "Yangli-ao",
+            "family": "Geng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yun",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Qingyong",
+            "family": "LI",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0120-9183",
+            "authenticated-orcid": false,
+            "given": "Xuedong",
+            "family": "Yan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ziyou",
+            "family": "Gao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Transportation Research Part C: Emerging Technologies"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2026,
+              3
+            ]
+          ]
+        },
+        "volume": "184",
+        "issue": null,
+        "page": "105507",
+        "article-number": "105507",
+        "DOI": "10.1016/j.trc.2025.105507",
+        "score": 84.85132
+      },
+      "corrections": {
+        "year": {
+          "previous": "2025",
+          "verified": "2026"
+        },
+        "detail": {
+          "previous": "",
+          "verified": "184, 105507"
+        },
+        "authors": {
+          "previous": "[REFERENCE VERIFICATION REQUIRED — author list not returned by search]",
+          "verified": "Xiaobing Liu, Yu Duan, Yangli-ao Geng, Yun Wang, Qingyong LI, Xuedong Yan, Ziyou Gao"
+        },
+        "url": {
+          "previous": "https://www.sciencedirect.com/science/article/abs/pii/S0968090X2500511X",
+          "verified": "https://doi.org/10.1016/j.trc.2025.105507"
+        }
+      }
+    },
+    {
+      "key": "arrow1951",
+      "verified_utc": "2026-10-15T10:32:49.426935+00:00",
+      "source_url": "https://api.crossref.org/works/10.2307/1906813",
+      "record": {
+        "title": [
+          "Optimal Inventory Policy"
+        ],
+        "author": [
+          {
+            "given": "Kenneth J.",
+            "family": "Arrow",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Theodore",
+            "family": "Harris",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jacob",
+            "family": "Marschak",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Econometrica"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              1951,
+              7
+            ]
+          ]
+        },
+        "volume": "19",
+        "issue": "3",
+        "page": "250",
+        "article-number": null,
+        "DOI": "10.2307/1906813",
+        "score": 27.591661
+      },
+      "corrections": {
+        "detail": {
+          "previous": "19(3), 250–272",
+          "verified": "19(3), 250"
+        },
+        "authors": {
+          "previous": "Arrow, K. J., Harris, T., Marschak, J.",
+          "verified": "Kenneth J. Arrow, Theodore Harris, Jacob Marschak"
+        },
+        "url": {
+          "previous": "https://www.econometricsociety.org/publications/econometrica/1951/07/01/optimal-inventory-policy",
+          "verified": "https://doi.org/10.2307/1906813"
+        }
+      }
+    },
+    {
+      "key": "vanmieghem2002",
+      "verified_utc": "2026-10-15T10:32:49.426948+00:00",
+      "source_url": "https://api.crossref.org/works/10.1287/msom.4.4.313.5728",
+      "record": {
+        "title": [
+          "Newsvendor Networks: Inventory Management and Capacity Investment with Discretionary Activities"
+        ],
+        "author": [
+          {
+            "given": "Jan A. Van",
+            "family": "Mieghem",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Kellogg School of Management, Northwestern University, Evanston, Illinois 60208-2009"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Nils",
+            "family": "Rudi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Simon Graduate School of Business Administration, University of Rochester, Rochester, New York 14627"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Manufacturing &amp; Service Operations Management"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2002,
+              10
+            ]
+          ]
+        },
+        "volume": "4",
+        "issue": "4",
+        "page": "313-335",
+        "article-number": null,
+        "DOI": "10.1287/msom.4.4.313.5728",
+        "score": 62.9153
+      },
+      "corrections": {
+        "detail": {
+          "previous": "4(4)",
+          "verified": "4(4), 313-335"
+        },
+        "authors": {
+          "previous": "Van Mieghem, J. A., Rudi, N.",
+          "verified": "Jan A. Van Mieghem, Nils Rudi"
+        },
+        "url": {
+          "previous": "https://www.kellogg.northwestern.edu/faculty/vanmieghem/htm/pubs/vanmieghem_rudi_2002_newsnet_msom.pdf",
+          "verified": "https://doi.org/10.1287/msom.4.4.313.5728"
+        }
+      }
+    },
+    {
+      "key": "dt_railway_review",
+      "verified_utc": "2026-10-15T10:32:49.426957+00:00",
+      "source_url": "https://api.crossref.org/works/10.1080/27525783.2025.2533858",
+      "record": {
+        "title": [
+          "Digital twin in railway industry: a bibliometric analysis and systematic review"
+        ],
+        "author": [
+          {
+            "given": "Zi-Yang",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Automation and Intelligence, Beijing Jiaotong University",
+                "place": [
+                  "Beijing, China"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Du",
+            "family": "Shang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Automation and Intelligence, Beijing Jiaotong University",
+                "place": [
+                  "Beijing, China"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Shuai",
+            "family": "Su",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Automation and Intelligence, Beijing Jiaotong University",
+                "place": [
+                  "Beijing, China"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": [
+          "Digital Twin"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2025,
+              9,
+              15
+            ]
+          ]
+        },
+        "volume": "3",
+        "issue": "1",
+        "page": null,
+        "article-number": "2533858",
+        "DOI": "10.1080/27525783.2025.2533858",
+        "score": 48.275192
+      },
+      "corrections": {
+        "venue": {
+          "previous": "Digital Transportation and Safety (Taylor & Francis)",
+          "verified": "Digital Twin"
+        },
+        "detail": {
+          "previous": "",
+          "verified": "3(1), 2533858"
+        },
+        "authors": {
+          "previous": "[REFERENCE VERIFICATION REQUIRED — author list not returned by search]",
+          "verified": "Zi-Yang Zhang, Du Shang, Shuai Su"
+        },
+        "url": {
+          "previous": "https://www.tandfonline.com/doi/full/10.1080/27525783.2025.2533858",
+          "verified": "https://doi.org/10.1080/27525783.2025.2533858"
+        }
+      }
+    }
+  ]
+}

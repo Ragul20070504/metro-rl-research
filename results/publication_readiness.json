@@ -1,0 +1,327 @@
+{
+  "generated_utc": "2026-10-16T13:53:37.732071+00:00",
+  "commit": "e053dea4180cec859f7241c1ce529e0d7235a8ac",
+  "working_tree_dirty": true,
+  "ready_for_submission": false,
+  "counts": {
+    "PASS": 5,
+    "BLOCKED": 8,
+    "LIMITATION": 2
+  },
+  "checks": [
+    {
+      "name": "Stored evidence fingerprint",
+      "status": "PASS",
+      "detail": "Fingerprint of original cell JSON; not proof of historical authenticity.",
+      "evidence": {
+        "cells": 7610,
+        "files": 16420,
+        "sha256": "dad56949dd70d39e994f86996e46be146f5fbbc133c87d5b9a28f83a955f7649"
+      }
+    },
+    {
+      "name": "Original evaluation matrix",
+      "status": "PASS",
+      "detail": "6480/6480 main cells present; 0 missing, 0 unexpected.",
+      "evidence": {}
+    },
+    {
+      "name": "EXP-UQ-001 stored-cell reanalysis",
+      "status": "PASS",
+      "detail": "Recomputed from stored cell metrics; no experiment rerun.",
+      "evidence": {
+        "n": 10,
+        "mean_a": 0.03168103510523661,
+        "mean_b": 0.017939401086994218,
+        "mean_difference": 0.013741634018242386,
+        "p_value": 0.0038705719813765397,
+        "p_adjusted": 0.007741143962753079,
+        "hodges_lehmann": 0.013588229220816076,
+        "ci_low": 0.006570121532285159,
+        "ci_high": 0.018522637805136362
+      }
+    },
+    {
+      "name": "EXP-UQ-002 stored-cell reanalysis",
+      "status": "PASS",
+      "detail": "Recomputed from stored cell metrics; no experiment rerun.",
+      "evidence": {
+        "n": 10,
+        "mean_a": 0.03168103510523661,
+        "mean_b": 0.023155915890461256,
+        "mean_difference": 0.008525119214775351,
+        "p_value": 0.01170683890827089,
+        "p_adjusted": 0.01170683890827089,
+        "hodges_lehmann": 0.007814915211818782,
+        "ci_low": 0.0028131551357576494,
+        "ci_high": 0.014461372007635143
+      }
+    },
+    {
+      "name": "Historical code provenance",
+      "status": "BLOCKED",
+      "detail": "7609 dirty manifests; 559 unknown commits; 2 referenced commits unavailable.",
+      "evidence": {
+        "manifest_count": 7610,
+        "unavailable_commits": [
+          "73e2daebd55613cece1266ad26e48412b6e58c88",
+          "886dc84205a34e7e7e7354db5db6fe0e410a3ec6"
+        ]
+      }
+    },
+    {
+      "name": "Original study tag",
+      "status": "BLOCKED",
+      "detail": "original-confirmatory-study is absent locally and was not advertised by origin.",
+      "evidence": {}
+    },
+    {
+      "name": "Original raw-data bytes",
+      "status": "BLOCKED",
+      "detail": "11 missing files; 0 checksum mismatches.",
+      "evidence": {
+        "missing": [
+          "mta_cjfm/data.parquet",
+          "mta_gtfs_static/gtfs_subway.zip",
+          "mta_hourly_ridership_2025/months/2026-06.parquet",
+          "mta_hourly_ridership_2025/months/2026-07.parquet",
+          "mta_hourly_ridership_2025/months/2026-08.parquet",
+          "mta_mdbf/data.parquet",
+          "mta_running_times/data.parquet",
+          "mta_service_delivered/data.parquet",
+          "mta_subway_stations/data.parquet",
+          "mta_terminal_otp/data.parquet",
+          "mta_wait_assessment/data.parquet"
+        ],
+        "mismatches": []
+      }
+    },
+    {
+      "name": "Frozen follow-up inputs",
+      "status": "BLOCKED",
+      "detail": "23 required input files missing. Do not replace the historical GTFS snapshot with today's feed.",
+      "evidence": {
+        "missing": [
+          "data/processed/network/network.json",
+          "data/processed/network/demand_process.json",
+          "models/forecasting/xgb_quantile.json",
+          "models/policies/w_balanced/ppo_point/101/policy.zip",
+          "models/policies/w_balanced/ppo_point/102/policy.zip",
+          "models/policies/w_balanced/ppo_point/103/policy.zip",
+          "models/policies/w_balanced/ppo_point/104/policy.zip",
+          "models/policies/w_balanced/ppo_point/105/policy.zip",
+          "models/policies/w_balanced/ppo_point/106/policy.zip",
+          "models/policies/w_balanced/ppo_point/107/policy.zip",
+          "models/policies/w_balanced/ppo_point/108/policy.zip",
+          "models/policies/w_balanced/ppo_point/109/policy.zip",
+          "models/policies/w_balanced/ppo_point/110/policy.zip",
+          "models/policies/w_balanced/ppo_uq/101/policy.zip",
+          "models/policies/w_balanced/ppo_uq/102/policy.zip",
+          "models/policies/w_balanced/ppo_uq/103/policy.zip",
+          "models/policies/w_balanced/ppo_uq/104/policy.zip",
+          "models/policies/w_balanced/ppo_uq/105/policy.zip",
+          "models/policies/w_balanced/ppo_uq/106/policy.zip",
+          "models/policies/w_balanced/ppo_uq/107/policy.zip",
+          "models/policies/w_balanced/ppo_uq/108/policy.zip",
+          "models/policies/w_balanced/ppo_uq/109/policy.zip",
+          "models/policies/w_balanced/ppo_uq/110/policy.zip"
+        ]
+      }
+    },
+    {
+      "name": "Recorded trained-policy binaries",
+      "status": "BLOCKED",
+      "detail": "69 metadata records lack their policy.zip.",
+      "evidence": {
+        "missing": [
+          "models/policies/budget_15000/ppo_uq/101/policy.zip",
+          "models/policies/budget_15000/ppo_point/110/policy.zip",
+          "models/policies/budget_15000/ppo_point/107/policy.zip",
+          "models/policies/budget_15000/ppo_point/104/policy.zip",
+          "models/policies/budget_15000/ppo_point/108/policy.zip",
+          "models/policies/budget_15000/ppo_point/102/policy.zip",
+          "models/policies/budget_15000/ppo_point/109/policy.zip",
+          "models/policies/budget_15000/ppo_point/101/policy.zip",
+          "models/policies/budget_15000/ppo_point/103/policy.zip",
+          "models/policies/budget_15000/ppo_point/106/policy.zip",
+          "models/policies/budget_15000/ppo_point/105/policy.zip",
+          "models/policies/w_balanced/ppo_uq_single_obj/110/policy.zip",
+          "models/policies/w_balanced/ppo_uq_single_obj/107/policy.zip",
+          "models/policies/w_balanced/ppo_uq_single_obj/104/policy.zip",
+          "models/policies/w_balanced/ppo_uq_single_obj/108/policy.zip",
+          "models/policies/w_balanced/ppo_uq_single_obj/102/policy.zip",
+          "models/policies/w_balanced/ppo_uq_single_obj/109/policy.zip",
+          "models/policies/w_balanced/ppo_uq_single_obj/101/policy.zip",
+          "models/policies/w_balanced/ppo_uq_single_obj/103/policy.zip",
+          "models/policies/w_balanced/ppo_uq_single_obj/106/policy.zip",
+          "models/policies/w_balanced/ppo_uq_single_obj/105/policy.zip",
+          "models/policies/w_balanced/ppo_placebo/110/policy.zip",
+          "models/policies/w_balanced/ppo_placebo/107/policy.zip",
+          "models/policies/w_balanced/ppo_placebo/104/policy.zip",
+          "models/policies/w_balanced/ppo_placebo/108/policy.zip",
+          "models/policies/w_balanced/ppo_placebo/102/policy.zip",
+          "models/policies/w_balanced/ppo_placebo/109/policy.zip",
+          "models/policies/w_balanced/ppo_placebo/101/policy.zip",
+          "models/policies/w_balanced/ppo_placebo/103/policy.zip",
+          "models/policies/w_balanced/ppo_placebo/106/policy.zip",
+          "models/policies/w_balanced/ppo_placebo/105/policy.zip",
+          "models/policies/w_balanced/ppo_uq/901/policy.zip",
+          "models/policies/w_balanced/ppo_uq/110/policy.zip",
+          "models/policies/w_balanced/ppo_uq/107/policy.zip",
+          "models/policies/w_balanced/ppo_uq/104/policy.zip",
+          "models/policies/w_balanced/ppo_uq/904/policy.zip",
+          "models/policies/w_balanced/ppo_uq/902/policy.zip",
+          "models/policies/w_balanced/ppo_uq/108/policy.zip",
+          "models/policies/w_balanced/ppo_uq/102/policy.zip",
+          "models/policies/w_balanced/ppo_uq/109/policy.zip",
+          "models/policies/w_balanced/ppo_uq/101/policy.zip",
+          "models/policies/w_balanced/ppo_uq/103/policy.zip",
+          "models/policies/w_balanced/ppo_uq/106/policy.zip",
+          "models/policies/w_balanced/ppo_uq/105/policy.zip",
+          "models/policies/w_balanced/ppo_uq/903/policy.zip",
+          "models/policies/w_balanced/ppo_uq_noavail/110/policy.zip",
+          "models/policies/w_balanced/ppo_uq_noavail/107/policy.zip",
+          "models/policies/w_balanced/ppo_uq_noavail/104/policy.zip",
+          "models/policies/w_balanced/ppo_uq_noavail/108/policy.zip",
+          "models/policies/w_balanced/ppo_uq_noavail/102/policy.zip",
+          "models/policies/w_balanced/ppo_uq_noavail/109/policy.zip",
+          "models/policies/w_balanced/ppo_uq_noavail/101/policy.zip",
+          "models/policies/w_balanced/ppo_uq_noavail/103/policy.zip",
+          "models/policies/w_balanced/ppo_uq_noavail/106/policy.zip",
+          "models/policies/w_balanced/ppo_uq_noavail/105/policy.zip",
+          "models/policies/w_balanced/ppo_point/901/policy.zip",
+          "models/policies/w_balanced/ppo_point/110/policy.zip",
+          "models/policies/w_balanced/ppo_point/107/policy.zip",
+          "models/policies/w_balanced/ppo_point/104/policy.zip",
+          "models/policies/w_balanced/ppo_point/904/policy.zip",
+          "models/policies/w_balanced/ppo_point/902/policy.zip",
+          "models/policies/w_balanced/ppo_point/108/policy.zip",
+          "models/policies/w_balanced/ppo_point/102/policy.zip",
+          "models/policies/w_balanced/ppo_point/109/policy.zip",
+          "models/policies/w_balanced/ppo_point/101/policy.zip",
+          "models/policies/w_balanced/ppo_point/103/policy.zip",
+          "models/policies/w_balanced/ppo_point/106/policy.zip",
+          "models/policies/w_balanced/ppo_point/105/policy.zip",
+          "models/policies/w_balanced/ppo_point/903/policy.zip"
+        ]
+      }
+    },
+    {
+      "name": "Follow-up grid",
+      "status": "BLOCKED",
+      "detail": "No new inferential result may be reported until every budget is complete.",
+      "evidence": {
+        "15000": {
+          "expected": 2400,
+          "present": 0,
+          "missing": 2400,
+          "unexpected": 0,
+          "duplicates": 0,
+          "finite": true,
+          "complete": false
+        },
+        "30000": {
+          "expected": 2400,
+          "present": 0,
+          "missing": 2400,
+          "unexpected": 0,
+          "duplicates": 0,
+          "finite": true,
+          "complete": false
+        },
+        "60000": {
+          "expected": 2400,
+          "present": 2400,
+          "missing": 0,
+          "unexpected": 0,
+          "duplicates": 0,
+          "finite": true,
+          "complete": true
+        },
+        "120000": {
+          "expected": 2400,
+          "present": 0,
+          "missing": 2400,
+          "unexpected": 0,
+          "duplicates": 0,
+          "finite": true,
+          "complete": false
+        },
+        "240000": {
+          "expected": 2400,
+          "present": 0,
+          "missing": 2400,
+          "unexpected": 0,
+          "duplicates": 0,
+          "finite": true,
+          "complete": false
+        }
+      }
+    },
+    {
+      "name": "Bibliography",
+      "status": "PASS",
+      "detail": "0 references still require authoritative verification.",
+      "evidence": {
+        "keys": []
+      }
+    },
+    {
+      "name": "Independent registration record",
+      "status": "LIMITATION",
+      "detail": "An internal protocol exists, but its chronology cannot be independently established. The revision removes the externally verifiable pre-registration claim.",
+      "evidence": {}
+    },
+    {
+      "name": "Placebo construction",
+      "status": "LIMITATION",
+      "detail": "The inherited placebo bootstraps a rolling pool with replacement; exact marginal matching and complete information removal are not established. The manuscript now limits attribution accordingly.",
+      "evidence": {}
+    },
+    {
+      "name": "Author declarations",
+      "status": "BLOCKED",
+      "detail": "Affiliations, corresponding-author details, CRediT roles, funding and conflicts remain author-confirmation placeholders.",
+      "evidence": {}
+    },
+    {
+      "name": "Journal requirements and archival deposit",
+      "status": "BLOCKED",
+      "detail": "Current author guidelines and a public artifact archive/DOI have not been verified; no submission was made.",
+      "evidence": {}
+    }
+  ],
+  "independent_replication": {
+    "study": "REPLICATION-20261015",
+    "stage": "TRAINING",
+    "updated_utc": "2026-10-16T13:05:15.965457+00:00",
+    "pid": 18399,
+    "completed": 96,
+    "failures": 0,
+    "total": 110,
+    "workers": 4,
+    "completed_policies": 96,
+    "planned_policies": 110,
+    "active_training": [
+      {
+        "policy": "budget_240000/ppo_uq/107",
+        "completed_episode_steps": 98952
+      },
+      {
+        "policy": "budget_240000/ppo_uq/108",
+        "completed_episode_steps": 98952
+      },
+      {
+        "policy": "budget_240000/ppo_uq/109",
+        "completed_episode_steps": 69084
+      },
+      {
+        "policy": "budget_240000/ppo_uq/110",
+        "completed_episode_steps": 59964
+      }
+    ],
+    "stored_evaluation_cells": 0,
+    "planned_evaluation_cells": 13680,
+    "note": "Progress only; no interim hypothesis comparisons are computed."
+  }
+}

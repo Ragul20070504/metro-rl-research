@@ -1,35 +1,20 @@
 # Data and code availability
 
-## Code
+**Revision draft: complete experiment reproduction is currently blocked.**
 
-All source code, experiment configuration and analysis scripts are version-controlled in the project repository at commit `4dec2d835e8cac46fe39549b074c9622ccacb85a`, with the completed study preserved at the immutable tag `original-confirmatory-study`.
+The current code import is at `e053dea4180cec859f7241c1ce529e0d7235a8ac`. Original experiment commits and the `original-confirmatory-study` tag are absent from this checkout. A public archival deposit and DOI have not been verified. No promise of artifact availability is substituted for an actual deposit.
 
-The repository is **not currently deposited in a public archival repository.** An accurate statement for submission is therefore:
+Stored cell metrics and manifests permit independent reanalysis of the reported two-test family. They do not establish that historical simulations can be rerun.
 
-> Code and computational artefacts will be deposited in an archival repository > (for example Zenodo, with a DOI) upon acceptance, and are available to editors and > reviewers on request during review.
-
-Do not state that materials are already publicly available unless and until a deposit has been made.
-
-## Data
-
-| Category | Availability |
+| Material | Current evidence |
 |---|---|
-| Source ridership records | Public transit ridership data; dataset manifests and licence files are recorded in the repository. Redistribution is governed by the source licence — `[AUTHORS TO CONFIRM LICENCE TERMS BEFORE DEPOSIT]` |
-| Derived features and splits | Reproducible from the source data with the included preparation scripts |
-| Simulated outcomes | Regenerable from the committed code and stored model artefacts |
-| Stored results | 7,610 evaluation cells, statistical analysis, figures and tables are version-controlled |
-| Trained policies | Checkpoint metadata is version-controlled; binary checkpoints are large and would be included in an archival deposit |
+| Historical code provenance | 7609 dirty manifests; 559 unknown commits; 2 referenced commits unavailable. |
+| Original raw-data bytes | 11 missing files; 0 checksum mismatches. |
+| Frozen follow-up inputs | 23 required input files missing. Do not replace the historical GTFS snapshot with today's feed. |
+| Recorded trained-policy binaries | 69 metadata records lack their policy.zip. |
 
-## Reproduction
+Raw-data retrieval must reproduce the SHA-256 hashes in the original manifests. The GTFS endpoint is mutable; a newer feed is not an equivalent historical input. Source redistribution rights remain an author confirmation item.
 
-```bash
-python -m venv .venv
-.venv/bin/python -m pip install --require-hashes -r requirements.lock.txt
-.venv/bin/python scripts/check_environment.py
-.venv/bin/python -m pytest -q
-.venv/bin/python scripts/analyse.py
-```
+On Linux, install with the separate CPU hash lock `requirements-linux.lock.txt` using uv's `--require-hashes --torch-backend cpu` options. The original Windows lock remains unchanged. Run `python scripts/publication_audit.py` to inspect current blockers; it exits nonzero until they are resolved.
 
-The environment is hash-pinned. Reproducibility audit status: PASS = 23, FAIL = 0, WARN = 1, SKIPPED = 0.
-
-**Caveat.** Most stored evaluation cells were produced from a working tree containing uncommitted changes and are marked `provisional` in their manifests; the recorded commit does not fully determine the code that produced them. Re-running from the committed state is required for commit-anchored results.
+The historical reproducibility and separation reports describe a different machine state. Their PASS counts must not be quoted as fresh validation. See `docs/SUBMISSION_READINESS.md` for the current audit.

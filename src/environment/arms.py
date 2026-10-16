@@ -1,14 +1,12 @@
 """The three uncertainty arms (protocol section 6.2) -- the placebo-controlled design.
 
-`PPO-Point` versus `PPO-UQ` alone cannot distinguish *"uncertainty information helps"* from
-*"a wider observation helps"*: the second arm simply has more numbers in it. `PPO-Placebo`
-is the control that separates them. It receives sigma values with the **correct marginal
-distribution** but the association to station and epoch destroyed, so it has the same input
-dimensionality, the same input statistics, and no usable information.
-
-A result in which `PPO-UQ` beats `PPO-Point` but only matches `PPO-Placebo` **refutes** the
-manuscript's mechanism, even though it would look like a win in a two-arm study. That outcome is
-a legitimate finding and the protocol requires it be reported as such.
+The three arms have the same observation width. The placebo resamples dispersion scalars
+with replacement from a rolling pool of observed values across stations and epochs. This
+approximates a past empirical marginal; it is not a permutation and does not preserve a finite
+sample's marginal exactly. Pool composition can convey demand-regime information, so a
+placebo comparison distinguishes channel constructions without perfectly separating useful
+information from temporal/distributional effects. These limitations are disclosed in the
+revision manuscript and independent replication protocol.
 
 All three arms share identical observation dimensionality, architecture, parameter count,
 training budget, seeds and environment. Only the *content* of the sigma channels differs.
@@ -78,13 +76,13 @@ class SigmaArm:
         if self.name == "uq":
             return sigma
 
-        # placebo: correct marginal, destroyed association.
+        # Placebo: bootstrap the changing empirical pool; association is disrupted, not proven absent.
         #
-        # Implemented as a bootstrap draw from the pool of sigma values seen so far rather than
-        # as a literal permutation of one rollout buffer. Both preserve the marginal exactly and
-        # both destroy the (station, epoch) association; the bootstrap is O(1) per element,
-        # whereas permuting a 50k pool on each of 228 epochs per episode would dominate rollout
-        # time. The deviation is recorded in docs/rl_environment.md.
+        # This causal online bootstrap is the inherited implementation, not a literal
+        # permutation of a rollout buffer. Sampling with replacement does not preserve the
+        # finite marginal exactly. Current values are included, so regime information may
+        # remain; the pool also changes temporal dependence. Do not describe it as a proven
+        # information-free control. The algorithm is retained for replication, without retuning.
         flat = np.asarray(sigma, dtype=float).ravel()
         self._pool.extend(float(v) for v in flat)
         assert self._rng is not None

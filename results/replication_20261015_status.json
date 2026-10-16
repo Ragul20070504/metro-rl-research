@@ -1,0 +1,10 @@
+{
+  "study": "REPLICATION-20261015",
+  "stage": "TRAINING",
+  "updated_utc": "2026-10-16T13:05:15.965457+00:00",
+  "pid": 18399,
+  "completed": 96,
+  "failures": 0,
+  "total": 110,
+  "workers": 4
+}

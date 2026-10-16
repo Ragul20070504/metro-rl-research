@@ -4,16 +4,16 @@
 
 ## Short form (≤85 characters)
 
-- Pre-registered placebo-controlled test of forecast uncertainty in metro dispatch
+- Placebo-controlled test of forecast uncertainty in learned metro dispatch
 - Uncertainty-aware PPO left more passengers behind than point-forecast PPO
-- Effect absent under a placebo signal of identical marginal distribution
+- Signal content affected performance with input dimensions held constant
 - Calibrated uncertainty cut dispatch volume by about 11% under demand surge
 - A tuned threshold heuristic outperformed every learned controller tested
 
 ## Expanded form
 
-- In a pre-registered, placebo-controlled evaluation, an uncertainty-aware PPO metro dispatch controller performed **worse** than an otherwise identical point-forecast controller on the registered primary endpoint (+0.013742; Holm-adjusted p = 0.007741).
-- The degradation was also present against a placebo uncertainty channel with matched dimensionality and marginal distribution, so it is not explained by additional inputs.
+- In an internally specified, placebo-controlled evaluation, an uncertainty-aware PPO metro dispatch controller performed **worse** than an otherwise identical point-forecast controller on the registered primary endpoint (+0.013742; Holm-adjusted p = 0.007741).
+- The degradation was also present against a placebo uncertainty channel with matched dimensionality. Its bootstrap construction does not isolate all information and distributional effects.
 - Genuine uncertainty was associated with approximately 11% fewer dispatches; the placebo signal was not.
-- Measured service loss is strongly convex once capacity binds, so uncertainty is decision-relevant and the observed conservatism runs opposite to the direction convex loss motivates.
+- The binned service-loss curve does not identify an optimal dispatch direction.
 - No learned controller outperformed a tuned threshold heuristic in any scenario, which bounds current claims for learned metro dispatch.

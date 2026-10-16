@@ -1,6 +1,6 @@
 # Manuscript number audit
 
-*Generated at 2026-08-28T09:57:27Z. Every decimal number in `docs/paper_final.md` is compared against the stored artefacts.*
+*Generated at 2026-10-16T13:48:06Z. Every decimal number in `docs/paper_final.md` is compared against the stored artefacts.*
 
 ## Method
 
@@ -26,7 +26,7 @@ The manuscript is rendered by a script that reads `results/` directly, so no exp
 | Wilcoxon p | 0.005859 | seed_level.parquet (recomputed) |
 | Worst jackknife Holm p | 0.02043 | recomputed |
 | Evaluation cells | 7,610 | results/runs |
-| Policy checkpoints | 58 | models/policies |
+| Policy checkpoints | 0 | models/policies |
 | Dispatch reduction (surge) | 10.8% | mechanism_analysis.json |
 
 ## Unmatched decimal literals
@@ -35,11 +35,10 @@ Every decimal literal in the manuscript was extracted after removing URLs, arXiv
 
 | Literal | What it is |
 |---|---|
-| `-10.0` | part of the OS version string `Windows-10-10.0.26200` |
 | `8.2` | a cross-reference to protocol section 8.2, not a measurement |
 
 **Unidentified literals: 0.** Every residual literal is accounted for.
 
 ## Result
 
-**PASS.** Every experimental value in the manuscript is rendered directly from a stored artefact. No value was typed by hand, and none conflicts with the stored analysis.
+**NUMERIC SCREEN PASSED.** Checked literals match stored values or documented constants. This lexical screen does not establish source validity, correct interpretation, or submission readiness.
