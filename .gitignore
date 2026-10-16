@@ -16,8 +16,8 @@ build/
 dist/
 
 # --- data: bytes are ignored, PROVENANCE IS COMMITTED ---
-# Raw data is re-downloadable and immutable; manifests + hashes + licences are tracked so a
-# fresh clone can verify it fetched identical bytes.
+# Publisher endpoints are mutable. Manifests + hashes + licences are tracked so a
+# recovered snapshot can be checked; a fresh download may differ from the original.
 #
 # NOTE the `!data/**/` line in each block. Without it git never descends into the ignored
 # directories, so the negations below it can never match and the manifests silently go
@@ -65,9 +65,11 @@ Thumbs.db
 .idea/
 
 # Fitted boosters are large binaries, not metadata. They are excluded by the rule above's intent
-# and reproducible exactly: scripts/persist_forecast_models.py refits them from the tracked
+# and were historically reported as reproducible: scripts/persist_forecast_models.py refits
+# them from the tracked
 # results/forecasting_metrics.json on the frozen splits and VERIFIES the result against the
-# stored forecasts (max absolute difference 0.0 on p50 and sigma, 2026-08-27). The metadata that
+# stored forecasts (historical report: max difference 0.0 on p50 and sigma, 2026-08-27).
+# That claim has not been reproduced with the missing original binaries. The metadata that
 # records which model these are stays tracked.
 models/forecasting/*.json
 !models/forecasting/metadata.json
@@ -78,3 +80,7 @@ models/forecasting/*.json
 # demo/confirmatory separation exists to prevent.
 results/demo/
 constraints.txt
+
+# Independent replication snapshots, binaries and live experiment outputs.
+# Protocol, status and input hashes are retained separately under docs/ and results/.
+/replication/

@@ -18,7 +18,7 @@ separation is structural rather than editorial.
 
 ## 1. Why this study exists
 
-Two findings from the completed study, both documented in `docs/q1_q2_readiness_audit.md`, make
+Two findings from the completed study, both documented in `docs/archive/q1_q2_readiness_audit.md`, make
 the training budget the dominant unresolved confound:
 
 1. **No reinforcement-learning arm beats a tuned threshold heuristic.** In all four scenarios, on
@@ -222,3 +222,28 @@ rewritten.
 
 **Scope.** This amendment changes where artefacts are written. It changes no budget, seed,
 arm, scenario, endpoint, statistical method, stopping rule or interpretation rule in sections 2–6.
+
+## Amendment F-02 — execution and analysis integrity, 2026-10-15
+
+Recorded before any new follow-up training or evaluation in this cloud checkout. The user
+authorized continued research and revisions on 2026-10-15, superseding the earlier stop
+instruction. The fixed design and original conclusion remain unchanged.
+
+The runner swallowed training failures, and the analysis read a potentially stale aggregate
+and accepted as few as three surviving pairs. Its BCa interval bootstrapped the mean although
+§4 specifies a Hodges–Lehmann interval. The correction requires all 2,400 episodes per budget,
+reads stored cells directly, withholds inference until all five budgets are complete, uses the
+shared Hodges–Lehmann BCa implementation, and applies the specified exploratory BH adjustment
+to scenario contrasts. A nonconverged interaction fit must not produce inferential claims.
+
+New budget runs retain episode-return Monitor CSVs and actual-timestep metadata. The original
+n_steps=456 rounds requested budgets up to complete rollouts; requested budgets remain fixed
+and realized counts must be disclosed. Curves are diagnostic only: no early stopping,
+checkpoint selection, tuning or seed exclusion. Missing historical curves are not invented.
+
+The exact data snapshot, demand process, network, forecaster, scaler, reward scales and original
+60k policies must be recovered first. The current checkout lacks those inputs and the original
+Git objects/tag, so its claimed historical registration chronology cannot be independently
+verified here. A newer feed, refitted substitute or newly trained 60k anchor requires a
+separately disclosed replication protocol and must not be called the original held-fixed
+follow-up. No new scientific result has been obtained under F-02.

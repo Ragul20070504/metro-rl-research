@@ -1,157 +1,68 @@
 {
-  "generated_utc": "2026-08-28T06:39:47.069664+00:00",
+  "generated_utc": "2026-10-15T09:54:07.415599+00:00",
   "study": "FOLLOWUP-UQ-TRAINING",
-  "evidence_class": "FOLLOW-UP / EXPLORATORY",
+  "evidence_class": "FOLLOW-UP / INCOMPLETE",
   "protocol": "docs/followup_training_budget_protocol.md",
-  "analysis_prespecified": "this script was written and committed before the follow-up produced any result",
-  "endpoint": "left_behind_fraction",
-  "primary_scenario": "surge",
-  "unit_of_analysis": "training seed",
-  "budgets_planned": [
-    15000,
-    30000,
-    60000,
-    120000,
-    240000
-  ],
-  "budgets_analysed": [
-    60000
-  ],
+  "grid_complete": false,
+  "coverage": {
+    "15000": {
+      "expected": 2400,
+      "present": 0,
+      "missing": 2400,
+      "unexpected": 0,
+      "duplicates": 0,
+      "finite": true,
+      "complete": false
+    },
+    "30000": {
+      "expected": 2400,
+      "present": 0,
+      "missing": 2400,
+      "unexpected": 0,
+      "duplicates": 0,
+      "finite": true,
+      "complete": false
+    },
+    "60000": {
+      "expected": 2400,
+      "present": 2400,
+      "missing": 0,
+      "unexpected": 0,
+      "duplicates": 0,
+      "finite": true,
+      "complete": true
+    },
+    "120000": {
+      "expected": 2400,
+      "present": 0,
+      "missing": 2400,
+      "unexpected": 0,
+      "duplicates": 0,
+      "finite": true,
+      "complete": false
+    },
+    "240000": {
+      "expected": 2400,
+      "present": 0,
+      "missing": 2400,
+      "unexpected": 0,
+      "duplicates": 0,
+      "finite": true,
+      "complete": false
+    }
+  },
   "budgets_missing": [
     15000,
     30000,
     120000,
     240000
   ],
-  "grid_complete": false,
-  "registered_conclusion_unchanged": "Under the registered 60,000-step experiment H1 was NOT SUPPORTED: ppo_uq left more passengers behind than ppo_point, +0.013742, 95% BCa CI [0.006570, 0.018523], Holm-adjusted p = 0.007741. Nothing in this follow-up alters that.",
+  "budgets_analysed": [],
+  "per_budget": [],
+  "scenario_breakdown": [],
   "primary_interaction": {
-    "status": "NOT ESTIMABLE",
-    "reason": "fewer than three budgets have complete data"
+    "status": "NOT RUN",
+    "reason": "Incomplete grid; no interim inference."
   },
-  "per_budget": [
-    {
-      "budget": 60000,
-      "scenario": "surge",
-      "n": 10,
-      "mean_ppo_uq": 0.03168103510523661,
-      "mean_ppo_point": 0.017939401086994218,
-      "median_ppo_uq": 0.029822354588982622,
-      "median_ppo_point": 0.015837996558100316,
-      "sd_ppo_uq": 0.007273270590548147,
-      "sd_ppo_point": 0.006839195122661031,
-      "mean_difference": 0.013741634018242386,
-      "median_difference": 0.014920863922900072,
-      "sd_difference": 0.011269375158458933,
-      "hodges_lehmann": 0.013588229220816076,
-      "ci_low": 0.00785658694143116,
-      "ci_high": 0.021274728575769366,
-      "test": "paired t-test",
-      "normality_p": 0.6026238694928363,
-      "statistic": 3.8560134576299,
-      "p_value": 0.003870571981376536,
-      "direction": "ppo_point better",
-      "p_adjusted": 0.003870571981376536,
-      "adjustment": "Holm (family of 1 per-budget tests)",
-      "rejects_at_0.05": true
-    }
-  ],
-  "scenario_breakdown": [
-    {
-      "budget": 60000,
-      "scenario": "normal",
-      "n": 10,
-      "mean_ppo_uq": 0.024294636939578347,
-      "mean_ppo_point": 0.01119159197370276,
-      "median_ppo_uq": 0.022132456438827507,
-      "median_ppo_point": 0.00904793719708141,
-      "sd_ppo_uq": 0.008495339534481347,
-      "sd_ppo_point": 0.007109747113987134,
-      "mean_difference": 0.013103044965875586,
-      "median_difference": 0.014068645888290298,
-      "sd_difference": 0.012695280114424955,
-      "hodges_lehmann": 0.013112404000855657,
-      "ci_low": 0.0066480260860387564,
-      "ci_high": 0.021880509226055826,
-      "test": "paired t-test",
-      "normality_p": 0.33552904856063476,
-      "statistic": 3.2638481390173695,
-      "p_value": 0.009778392673407391,
-      "direction": "ppo_point better"
-    },
-    {
-      "budget": 60000,
-      "scenario": "surge",
-      "n": 10,
-      "mean_ppo_uq": 0.03168103510523661,
-      "mean_ppo_point": 0.017939401086994218,
-      "median_ppo_uq": 0.029822354588982622,
-      "median_ppo_point": 0.015837996558100316,
-      "sd_ppo_uq": 0.007273270590548147,
-      "sd_ppo_point": 0.006839195122661031,
-      "mean_difference": 0.013741634018242386,
-      "median_difference": 0.014920863922900072,
-      "sd_difference": 0.011269375158458933,
-      "hodges_lehmann": 0.013588229220816076,
-      "ci_low": 0.00785658694143116,
-      "ci_high": 0.021274728575769366,
-      "test": "paired t-test",
-      "normality_p": 0.6026238694928363,
-      "statistic": 3.8560134576299,
-      "p_value": 0.003870571981376536,
-      "direction": "ppo_point better"
-    },
-    {
-      "budget": 60000,
-      "scenario": "disruption",
-      "n": 10,
-      "mean_ppo_uq": 0.025626489518391016,
-      "mean_ppo_point": 0.016345698360562218,
-      "median_ppo_uq": 0.02543325558387589,
-      "median_ppo_point": 0.015376492486106369,
-      "sd_ppo_uq": 0.008006984580493821,
-      "sd_ppo_point": 0.006494782006492802,
-      "mean_difference": 0.009280791157828799,
-      "median_difference": 0.009350438805415928,
-      "sd_difference": 0.010926665046229828,
-      "hodges_lehmann": 0.007357607572631554,
-      "ci_low": 0.004577671906897921,
-      "ci_high": 0.018617556085990514,
-      "test": "Wilcoxon signed-rank",
-      "normality_p": 0.02382622243313604,
-      "statistic": 3.0,
-      "p_value": 0.009765625,
-      "direction": "ppo_point better"
-    },
-    {
-      "budget": 60000,
-      "scenario": "combined",
-      "n": 10,
-      "mean_ppo_uq": 0.0321866912479656,
-      "mean_ppo_point": 0.023236349290996695,
-      "median_ppo_uq": 0.03206620277361058,
-      "median_ppo_point": 0.02216922977581307,
-      "sd_ppo_uq": 0.007311575761606383,
-      "sd_ppo_point": 0.0060141888278841295,
-      "mean_difference": 0.008950341956968916,
-      "median_difference": 0.008576623052285,
-      "sd_difference": 0.009516771579521209,
-      "hodges_lehmann": 0.007692404799222776,
-      "ci_low": 0.004939296636651473,
-      "ci_high": 0.01730120534196266,
-      "test": "Wilcoxon signed-rank",
-      "normality_p": 0.02103819327639039,
-      "statistic": 1.0,
-      "p_value": 0.00390625,
-      "direction": "ppo_point better"
-    }
-  ],
-  "caveats": [
-    "FOLLOW-UP, never confirmatory: the study was designed after the confirmatory result was known, even though its analysis was pre-specified.",
-    "The 60,000-step row reproduces the registered point estimate exactly, because it reads the same stored cells. Its confidence interval will differ slightly from the one in results/statistical_analysis.json: both are BCa bootstraps, drawn with different resampling seeds. The registered interval is the one to quote for H1; the interval here exists only so the 60k row is computed the same way as every other row in this grid.",
-    "Underpowered for per-budget comparisons at SESOI magnitude; the realised between-seed SD in the original study was about twice the pilot estimate. The interaction test borrows strength across budgets and is the primary for that reason.",
-    "Only total_timesteps varies. Nothing here speaks to a tuned configuration.",
-    "The baselines are unchanged and remain descriptively better than every RL arm; this study does not test RL against them."
-  ],
-  "incomplete_grid_notice": "Budgets [15000, 30000, 120000, 240000] have no complete data and are reported as missing, not imputed or dropped. Read the interaction over the reduced range only."
+  "registered_conclusion_unchanged": "Read results/statistical_analysis.json; original evidence is unchanged."
 }

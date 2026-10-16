@@ -1,0 +1,1093 @@
+{
+  "study": "REPLICATION-20261015",
+  "frozen_utc": "2026-10-15T11:12:16.049079+00:00",
+  "protocol_sha256": "4212722bc32d51d8dc142225e8e0c57d1f005e9110a09d2e0414d9b428b58acf",
+  "raw_files": [
+    {
+      "path": "mta_cjfm/data.parquet",
+      "sha256": "eaa3af8c3a1b405497d5669bba3399c30d64eb1d5653e4b399befe306b7b0ab9",
+      "original_sha256": "a4bc44f74db287b5ab6d7212b5621b4c27c2c4b02c1d01b9d73b8f11a5bf1a55",
+      "exact_original": false,
+      "source_url": "https://data.ny.gov/d/r7qk-6tcy"
+    },
+    {
+      "path": "mta_gtfs_static/gtfs_subway.zip",
+      "sha256": "2c9e69b82ac596a2fe660b56656509570cfba3c2e4c50be75eaf624eee1bc6f8",
+      "original_sha256": "056d1fc821f26e859c41ffb227197bdd45dbf4a0c3ef41b3509a5ff6dda4602e",
+      "exact_original": false,
+      "source_url": "https://rrgtfsfeeds.s3.amazonaws.com/gtfs_subway.zip"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2017-01.parquet",
+      "sha256": "e4c4802d08c151e853433bb4dd2c0defff1c8420597dbb57b65ae1f5b77d98b9",
+      "original_sha256": "e4c4802d08c151e853433bb4dd2c0defff1c8420597dbb57b65ae1f5b77d98b9",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2017-02.parquet",
+      "sha256": "fca7181baef2593c07630913133a13653989a6b8e4389d3f189b5d9e22ec4a6d",
+      "original_sha256": "fca7181baef2593c07630913133a13653989a6b8e4389d3f189b5d9e22ec4a6d",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2017-03.parquet",
+      "sha256": "7dc05d42a36ecbc9ccb9d26252aee441afa09aacbbfbf17a371cf8f4ad9d2ed3",
+      "original_sha256": "7dc05d42a36ecbc9ccb9d26252aee441afa09aacbbfbf17a371cf8f4ad9d2ed3",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2017-04.parquet",
+      "sha256": "a853d592c8ad7c5a5f401d5195a9698b6c814da065a1df4eef9d8266c8e088fe",
+      "original_sha256": "a853d592c8ad7c5a5f401d5195a9698b6c814da065a1df4eef9d8266c8e088fe",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2017-05.parquet",
+      "sha256": "577bb7b6fba09a1e8851ea4fcba711567e69fa4ac6b8c9ba0e47d4a79c1d0737",
+      "original_sha256": "577bb7b6fba09a1e8851ea4fcba711567e69fa4ac6b8c9ba0e47d4a79c1d0737",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2017-06.parquet",
+      "sha256": "7f245441df33e73cd7d1d74a79fc4ab7981370583a12f78800eb25824134ca59",
+      "original_sha256": "7f245441df33e73cd7d1d74a79fc4ab7981370583a12f78800eb25824134ca59",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2017-07.parquet",
+      "sha256": "c62065a17fa7a357232f984deab2528067f377e7ca4950b9e0f3f57e57fccb1e",
+      "original_sha256": "c62065a17fa7a357232f984deab2528067f377e7ca4950b9e0f3f57e57fccb1e",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2017-08.parquet",
+      "sha256": "c63dec17c6f776419f7c1bc25d1a2b017729838fdd5bdfe5aeb5d744d8096fe0",
+      "original_sha256": "c63dec17c6f776419f7c1bc25d1a2b017729838fdd5bdfe5aeb5d744d8096fe0",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2017-09.parquet",
+      "sha256": "b05928fe167f51ca3a13dda9550f3f7e88a621c66ca16eb3389c1fba8ea45d87",
+      "original_sha256": "b05928fe167f51ca3a13dda9550f3f7e88a621c66ca16eb3389c1fba8ea45d87",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2017-10.parquet",
+      "sha256": "2d5203886322de59e630007d957b2edae93f0c44bd3acf039920a4d795123d69",
+      "original_sha256": "2d5203886322de59e630007d957b2edae93f0c44bd3acf039920a4d795123d69",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2017-11.parquet",
+      "sha256": "768ee0cc3744f29b5f67a7231a4725d378ec2a61bcd484589cfbc1001becb7d0",
+      "original_sha256": "768ee0cc3744f29b5f67a7231a4725d378ec2a61bcd484589cfbc1001becb7d0",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2017-12.parquet",
+      "sha256": "231eae099ae2e2a4e7a6dd67be533a958cdee8769842edaca7456544c0dd6cdc",
+      "original_sha256": "231eae099ae2e2a4e7a6dd67be533a958cdee8769842edaca7456544c0dd6cdc",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2018-01.parquet",
+      "sha256": "c7bc1a520bb75789dbfed243dbba94ea45bbf724c493619f99e30259ee947402",
+      "original_sha256": "c7bc1a520bb75789dbfed243dbba94ea45bbf724c493619f99e30259ee947402",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2018-02.parquet",
+      "sha256": "213899f81f68b07e768705f20c8c47c5c01871f814614564893a7f1f2d26eeb0",
+      "original_sha256": "213899f81f68b07e768705f20c8c47c5c01871f814614564893a7f1f2d26eeb0",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2018-03.parquet",
+      "sha256": "8a8ca2fe90ec4df8d858b947f22fe24da1bd4355b8b262a441c172de00c8c8a6",
+      "original_sha256": "8a8ca2fe90ec4df8d858b947f22fe24da1bd4355b8b262a441c172de00c8c8a6",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2018-04.parquet",
+      "sha256": "49dee12513fe7d6918b5b560990d384073a8fa2d2626031be835600a07af8a1e",
+      "original_sha256": "49dee12513fe7d6918b5b560990d384073a8fa2d2626031be835600a07af8a1e",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2018-05.parquet",
+      "sha256": "355c6c5c6026dbdb1eec0a13748e692995e6bb799af4be0637429e79315d387b",
+      "original_sha256": "355c6c5c6026dbdb1eec0a13748e692995e6bb799af4be0637429e79315d387b",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2018-06.parquet",
+      "sha256": "7151bd52fc75ef1fc53ef6a1bd863c620ffd67c3776a5db4c50cffd681161103",
+      "original_sha256": "7151bd52fc75ef1fc53ef6a1bd863c620ffd67c3776a5db4c50cffd681161103",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2018-07.parquet",
+      "sha256": "580c90ff42cb307ca0e85005cfd10f8a0481c137ebca9a8096d0b928f7c7b702",
+      "original_sha256": "580c90ff42cb307ca0e85005cfd10f8a0481c137ebca9a8096d0b928f7c7b702",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2018-08.parquet",
+      "sha256": "c0564c146d806e80607c0849f9e664c13f8201a59e66aa83ef6d0bb14b857330",
+      "original_sha256": "c0564c146d806e80607c0849f9e664c13f8201a59e66aa83ef6d0bb14b857330",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2018-09.parquet",
+      "sha256": "e130d0e4d0d65465439d3be9d2df09647ae9699ceb2a946e7c4f04623affe9cf",
+      "original_sha256": "e130d0e4d0d65465439d3be9d2df09647ae9699ceb2a946e7c4f04623affe9cf",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2018-10.parquet",
+      "sha256": "baacb6bcbb1caee1210685b086e5448ab0a309a27b7a7b612ae8d269639d9a45",
+      "original_sha256": "baacb6bcbb1caee1210685b086e5448ab0a309a27b7a7b612ae8d269639d9a45",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2018-11.parquet",
+      "sha256": "6be844d2c3471cfdbf2f692eeb536e30f61aae449b6a932a4d749ae5c939456d",
+      "original_sha256": "6be844d2c3471cfdbf2f692eeb536e30f61aae449b6a932a4d749ae5c939456d",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2018-12.parquet",
+      "sha256": "1e9d2237be8169e08fdcfdc5d64b0549ea2ee364c4131f92f5e86e3151ba505c",
+      "original_sha256": "1e9d2237be8169e08fdcfdc5d64b0549ea2ee364c4131f92f5e86e3151ba505c",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2019-01.parquet",
+      "sha256": "6c6d9fb1105e3320df8a37a9469de06fe79ee93f93a4ead38bf5bc7521595c62",
+      "original_sha256": "6c6d9fb1105e3320df8a37a9469de06fe79ee93f93a4ead38bf5bc7521595c62",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2019-02.parquet",
+      "sha256": "a3893d76a6418f1574dc66800da40b4b1b0118ed6141ff6bda3c2c311feccc2d",
+      "original_sha256": "a3893d76a6418f1574dc66800da40b4b1b0118ed6141ff6bda3c2c311feccc2d",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2019-03.parquet",
+      "sha256": "13b3e1ead76bbf864bb2ef461be2410ccaa42b648dfaae7dc205218f32266f08",
+      "original_sha256": "13b3e1ead76bbf864bb2ef461be2410ccaa42b648dfaae7dc205218f32266f08",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2019-04.parquet",
+      "sha256": "6807a8ecfa6bffa8db1d3632c939aa77c92071541fbb640918a65bb2db93ba64",
+      "original_sha256": "6807a8ecfa6bffa8db1d3632c939aa77c92071541fbb640918a65bb2db93ba64",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2019-05.parquet",
+      "sha256": "0092fe86b879d21b5139cc5d7a636db7ecedbb4f05fd95249f651f53fcd24d5a",
+      "original_sha256": "0092fe86b879d21b5139cc5d7a636db7ecedbb4f05fd95249f651f53fcd24d5a",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2019-06.parquet",
+      "sha256": "093f3eeb95c402fa8a995010f0de96994ae0f7718213ffa4fee42a449bb11f98",
+      "original_sha256": "093f3eeb95c402fa8a995010f0de96994ae0f7718213ffa4fee42a449bb11f98",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2019-07.parquet",
+      "sha256": "0a82473465b5b70425d9b114ed593b9da73c62674274c0142e4c123939a41724",
+      "original_sha256": "0a82473465b5b70425d9b114ed593b9da73c62674274c0142e4c123939a41724",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2019-08.parquet",
+      "sha256": "9b4844b0f5678add32efbbb0a695498e614822612458c0c7ccd9d5a48e2a4c2a",
+      "original_sha256": "9b4844b0f5678add32efbbb0a695498e614822612458c0c7ccd9d5a48e2a4c2a",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2019-09.parquet",
+      "sha256": "f9f2ebbb594377db0a96a9e114ccfeef0d665434a184f5e63a8ac7050f52af5f",
+      "original_sha256": "f9f2ebbb594377db0a96a9e114ccfeef0d665434a184f5e63a8ac7050f52af5f",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2019-10.parquet",
+      "sha256": "6d71b0e2d2795d043070a6dbcf394ac9a80d2dd7539280464e256a325cf1387d",
+      "original_sha256": "6d71b0e2d2795d043070a6dbcf394ac9a80d2dd7539280464e256a325cf1387d",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2019-11.parquet",
+      "sha256": "fde47db2eefe15a9643eb5a368b41bdf7d8eb2cd0883556290c1e4b5f4838f59",
+      "original_sha256": "fde47db2eefe15a9643eb5a368b41bdf7d8eb2cd0883556290c1e4b5f4838f59",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2017/months/2019-12.parquet",
+      "sha256": "342ab90dab4dcfde7fd91053a78cc110a5aa108265188d3580be3459757faf9d",
+      "original_sha256": "342ab90dab4dcfde7fd91053a78cc110a5aa108265188d3580be3459757faf9d",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/t69i-h2me"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2020-01.parquet",
+      "sha256": "9b1fa3f0937a132d05c23d9e9f5452e74b4a00a0c333df9aae96005445ba88a1",
+      "original_sha256": "9b1fa3f0937a132d05c23d9e9f5452e74b4a00a0c333df9aae96005445ba88a1",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2020-02.parquet",
+      "sha256": "5ec15d833e5d4794b7772392bccecc116abc5c46d42b5022acd148c6359390aa",
+      "original_sha256": "5ec15d833e5d4794b7772392bccecc116abc5c46d42b5022acd148c6359390aa",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2020-03.parquet",
+      "sha256": "94ceb05625a153752b99e0a9af4e9b67623c68342764fbbdcbaf8a03ae4b21e9",
+      "original_sha256": "94ceb05625a153752b99e0a9af4e9b67623c68342764fbbdcbaf8a03ae4b21e9",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2020-04.parquet",
+      "sha256": "4ca68b735238228496579e408eb8f9ee4b16e6e0efe7e76ff82d3cf360c668ec",
+      "original_sha256": "4ca68b735238228496579e408eb8f9ee4b16e6e0efe7e76ff82d3cf360c668ec",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2020-05.parquet",
+      "sha256": "e927c8d06e651539e61e8a3ae1bad7793737005766e5a0a89291ff861e4a77d2",
+      "original_sha256": "e927c8d06e651539e61e8a3ae1bad7793737005766e5a0a89291ff861e4a77d2",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2020-06.parquet",
+      "sha256": "5d01f6fabcb01853fc1e211a5091549d575a503a763aed673ee5e8a40edf8691",
+      "original_sha256": "5d01f6fabcb01853fc1e211a5091549d575a503a763aed673ee5e8a40edf8691",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2020-07.parquet",
+      "sha256": "8c4ca6b10a9ef2303980e002fc4a0c7bc5d1c5e409cc8af7d961d3d68262afbe",
+      "original_sha256": "8c4ca6b10a9ef2303980e002fc4a0c7bc5d1c5e409cc8af7d961d3d68262afbe",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2020-08.parquet",
+      "sha256": "66aae02ca07bf444a004ccd46d290e2385bb71254d1af271d91e38abacf4a91a",
+      "original_sha256": "66aae02ca07bf444a004ccd46d290e2385bb71254d1af271d91e38abacf4a91a",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2020-09.parquet",
+      "sha256": "b7004e20befce99cfcc5e5e51dca9946affa10af05bff9349c9b7c06fec45008",
+      "original_sha256": "b7004e20befce99cfcc5e5e51dca9946affa10af05bff9349c9b7c06fec45008",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2020-10.parquet",
+      "sha256": "9fd3c4f44ac5b031c781345bfcceb8755959af0dd804b029bb0c09f3335707e6",
+      "original_sha256": "9fd3c4f44ac5b031c781345bfcceb8755959af0dd804b029bb0c09f3335707e6",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2020-11.parquet",
+      "sha256": "59550cca6707bcff8429aff2dcfc250ceea76d1d8c55bc9d41134eea61a046cc",
+      "original_sha256": "59550cca6707bcff8429aff2dcfc250ceea76d1d8c55bc9d41134eea61a046cc",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2020-12.parquet",
+      "sha256": "cf06f120109ce48bf82876a0834ad52ec040863b8a210b425ca07f4db3ea5f25",
+      "original_sha256": "cf06f120109ce48bf82876a0834ad52ec040863b8a210b425ca07f4db3ea5f25",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2021-01.parquet",
+      "sha256": "887a896128738ad030eb48f5a7bfd452b8ffeb77eb2c7e64e81d3bfdc07e5df5",
+      "original_sha256": "887a896128738ad030eb48f5a7bfd452b8ffeb77eb2c7e64e81d3bfdc07e5df5",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2021-02.parquet",
+      "sha256": "d655590a20800bdce3bf3440905db123962ffd164be394bba86118b9529543fc",
+      "original_sha256": "d655590a20800bdce3bf3440905db123962ffd164be394bba86118b9529543fc",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2021-03.parquet",
+      "sha256": "ad0813f8260e1b3b64f98fd10dcf6f0121646f273e577cb209b5bf80f0118d73",
+      "original_sha256": "ad0813f8260e1b3b64f98fd10dcf6f0121646f273e577cb209b5bf80f0118d73",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2021-04.parquet",
+      "sha256": "885ad69b43f4fa13c0d7fca3a1a07653f60a591bd38a1ea3e946f496f17dbe0b",
+      "original_sha256": "885ad69b43f4fa13c0d7fca3a1a07653f60a591bd38a1ea3e946f496f17dbe0b",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2021-05.parquet",
+      "sha256": "993726399e7695a2dd47a9974ce6534851f7f0be55bb0501442d071b187fdec7",
+      "original_sha256": "993726399e7695a2dd47a9974ce6534851f7f0be55bb0501442d071b187fdec7",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2021-06.parquet",
+      "sha256": "808114ceaa6a476d9109fc51bf649a8b069b4100d7e36c02420d6b44c7cbbcfe",
+      "original_sha256": "808114ceaa6a476d9109fc51bf649a8b069b4100d7e36c02420d6b44c7cbbcfe",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2021-07.parquet",
+      "sha256": "4db9686921bac9509639a43d0a8b511ce3e94cec246163132b438ea015c100b6",
+      "original_sha256": "4db9686921bac9509639a43d0a8b511ce3e94cec246163132b438ea015c100b6",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2021-08.parquet",
+      "sha256": "77b021a0bfdda92101f1f639ea2c5d8e727bea19bf085038e1caa4144db5ac52",
+      "original_sha256": "77b021a0bfdda92101f1f639ea2c5d8e727bea19bf085038e1caa4144db5ac52",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2021-09.parquet",
+      "sha256": "ceb9307dd3f6b711e78bd6001c3b311566e7921ccc582939f0b51452160bf892",
+      "original_sha256": "ceb9307dd3f6b711e78bd6001c3b311566e7921ccc582939f0b51452160bf892",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2021-10.parquet",
+      "sha256": "4a01fc7bfffa277f3d4c06d623fba3525c03463130d47fc7634da013593d82bf",
+      "original_sha256": "4a01fc7bfffa277f3d4c06d623fba3525c03463130d47fc7634da013593d82bf",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2021-11.parquet",
+      "sha256": "1a47de04d6ce878daed4c54dd3910af9417899953e2f62c3a708ee354f17932c",
+      "original_sha256": "1a47de04d6ce878daed4c54dd3910af9417899953e2f62c3a708ee354f17932c",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2021-12.parquet",
+      "sha256": "2cda3c854ca6866d6ea35371a1bbfac7e1a9a542833ca2e04f7e58309e280cb0",
+      "original_sha256": "2cda3c854ca6866d6ea35371a1bbfac7e1a9a542833ca2e04f7e58309e280cb0",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2022-01.parquet",
+      "sha256": "ea70d3f5b6394cc1381a04199ae70d0848b0d25f069fd0cd820d9580b0a0aff1",
+      "original_sha256": "ea70d3f5b6394cc1381a04199ae70d0848b0d25f069fd0cd820d9580b0a0aff1",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2022-02.parquet",
+      "sha256": "cd0767b3c8e506b0541fe524807b21dc4356de9ed2a9e2fd23ca870be19b2188",
+      "original_sha256": "cd0767b3c8e506b0541fe524807b21dc4356de9ed2a9e2fd23ca870be19b2188",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2022-03.parquet",
+      "sha256": "a74e44de061f4ccd1e8e9059c3492577accbdeb37628fe58797650803d5cb9dc",
+      "original_sha256": "a74e44de061f4ccd1e8e9059c3492577accbdeb37628fe58797650803d5cb9dc",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2022-04.parquet",
+      "sha256": "e2e38d01339ed5967b5792cf48e60b2a12db1538795d84045f83e6ffd1a34b8b",
+      "original_sha256": "e2e38d01339ed5967b5792cf48e60b2a12db1538795d84045f83e6ffd1a34b8b",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2022-05.parquet",
+      "sha256": "27bf0b3e7c6a2cafb01149db7462e1fd31784a5a23f11da0938c6ee2c9b7ca8b",
+      "original_sha256": "27bf0b3e7c6a2cafb01149db7462e1fd31784a5a23f11da0938c6ee2c9b7ca8b",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2022-06.parquet",
+      "sha256": "f864c209a143769cebe518721f04e7a65c322937edd15696076d2b0a621f9193",
+      "original_sha256": "f864c209a143769cebe518721f04e7a65c322937edd15696076d2b0a621f9193",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2022-07.parquet",
+      "sha256": "3ac8ff4c11bf027d8881fd503f3d3ccd584709c590d31a9d31abf1b1697783cc",
+      "original_sha256": "3ac8ff4c11bf027d8881fd503f3d3ccd584709c590d31a9d31abf1b1697783cc",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2022-08.parquet",
+      "sha256": "c8b36b6ef239d9a10795df656c2d01bac6f9a15b02e04177bd39303c23626ef3",
+      "original_sha256": "c8b36b6ef239d9a10795df656c2d01bac6f9a15b02e04177bd39303c23626ef3",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2022-09.parquet",
+      "sha256": "9fd819587ad39885e92be1ca01a242395fd14afc4dc4078acfa1d3d5fad661c4",
+      "original_sha256": "9fd819587ad39885e92be1ca01a242395fd14afc4dc4078acfa1d3d5fad661c4",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2022-10.parquet",
+      "sha256": "bd95c6f40a53d0ddbb0d4d584897b7dd096d2d43e2cec264099d397a425ff8b1",
+      "original_sha256": "bd95c6f40a53d0ddbb0d4d584897b7dd096d2d43e2cec264099d397a425ff8b1",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2022-11.parquet",
+      "sha256": "fde5d2344243c3b47248d3d02cc135eb7453ad8174041b4e7f33325a2ca2aa8c",
+      "original_sha256": "fde5d2344243c3b47248d3d02cc135eb7453ad8174041b4e7f33325a2ca2aa8c",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2022-12.parquet",
+      "sha256": "97f0ec290c08a12931b9ba5d58a82f7583b65bb28148630d2205ddf0a3fa7d6f",
+      "original_sha256": "97f0ec290c08a12931b9ba5d58a82f7583b65bb28148630d2205ddf0a3fa7d6f",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2023-01.parquet",
+      "sha256": "2e54bd30961889290b26a4858ac3cd59e08edb172724e2f0ff0efb14958b0c07",
+      "original_sha256": "2e54bd30961889290b26a4858ac3cd59e08edb172724e2f0ff0efb14958b0c07",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2023-02.parquet",
+      "sha256": "ff984d3a023e32d055d21b2688ad4fa16e27ed3cd5863f86922c6f4c902ae9ad",
+      "original_sha256": "ff984d3a023e32d055d21b2688ad4fa16e27ed3cd5863f86922c6f4c902ae9ad",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2023-03.parquet",
+      "sha256": "a2493d853545c4818263d8ccdc6e372ff51f635f0c1f56ee508d8525119c2897",
+      "original_sha256": "a2493d853545c4818263d8ccdc6e372ff51f635f0c1f56ee508d8525119c2897",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2023-04.parquet",
+      "sha256": "9a31754d13397cfc71f37a33737d6e083bafb1d481398a51277ad3763b30b9ea",
+      "original_sha256": "9a31754d13397cfc71f37a33737d6e083bafb1d481398a51277ad3763b30b9ea",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2023-05.parquet",
+      "sha256": "29596ea3623005d7e665e6bcc972e89956b71911803324223e894a20df33e6cd",
+      "original_sha256": "29596ea3623005d7e665e6bcc972e89956b71911803324223e894a20df33e6cd",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2023-06.parquet",
+      "sha256": "4471f96dade2baf578d97630fbca8608b25bd47b038ebe9910c4efa9953c7482",
+      "original_sha256": "4471f96dade2baf578d97630fbca8608b25bd47b038ebe9910c4efa9953c7482",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2023-07.parquet",
+      "sha256": "a6fe7eb579b07391c2b4da597ffbd9ddab8ce4d861b81ec93c89c53485646d2d",
+      "original_sha256": "a6fe7eb579b07391c2b4da597ffbd9ddab8ce4d861b81ec93c89c53485646d2d",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2023-08.parquet",
+      "sha256": "5c9156a0c4f3e1e14297e0735f45bc74eb277d5aa62112fe9673ce74d4fb367b",
+      "original_sha256": "5c9156a0c4f3e1e14297e0735f45bc74eb277d5aa62112fe9673ce74d4fb367b",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2023-09.parquet",
+      "sha256": "72513bac040404e212f0977a60a151d3ecf9b46245d05c44f85e9055247bba8f",
+      "original_sha256": "72513bac040404e212f0977a60a151d3ecf9b46245d05c44f85e9055247bba8f",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2023-10.parquet",
+      "sha256": "c379e927f6fa3d9af3ef6f5f7d2d91294e9e053fca07600dc2da0000c8bf1b76",
+      "original_sha256": "c379e927f6fa3d9af3ef6f5f7d2d91294e9e053fca07600dc2da0000c8bf1b76",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2023-11.parquet",
+      "sha256": "203ace9bc93d11aa4622a677dfa37d50caf125ad694234206c3ab9fd1d054598",
+      "original_sha256": "203ace9bc93d11aa4622a677dfa37d50caf125ad694234206c3ab9fd1d054598",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2023-12.parquet",
+      "sha256": "df137500a15662e8d02e2d78e11b6d76c4c1ef0dde86b49e8734f4aef980b94e",
+      "original_sha256": "df137500a15662e8d02e2d78e11b6d76c4c1ef0dde86b49e8734f4aef980b94e",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2024-01.parquet",
+      "sha256": "8b84c82a7a8db246aaefd233d598875957f7123351f20ff7471c9eee94b64009",
+      "original_sha256": "8b84c82a7a8db246aaefd233d598875957f7123351f20ff7471c9eee94b64009",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2024-02.parquet",
+      "sha256": "b1485452f244fd9f8fefe3a267b4173f59b9160b94c3c2065b54ab5d5dea8b98",
+      "original_sha256": "b1485452f244fd9f8fefe3a267b4173f59b9160b94c3c2065b54ab5d5dea8b98",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2024-03.parquet",
+      "sha256": "47330716b40ca1d754ad86375ca975e126c4e53326de114864517de5c89ffe74",
+      "original_sha256": "47330716b40ca1d754ad86375ca975e126c4e53326de114864517de5c89ffe74",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2024-04.parquet",
+      "sha256": "c7ba744989642d08a2d5354aabc15e5e788233d4f0bda46430421b2f5d89029a",
+      "original_sha256": "c7ba744989642d08a2d5354aabc15e5e788233d4f0bda46430421b2f5d89029a",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2024-05.parquet",
+      "sha256": "ffc898906b36d4a6a19b9bfeff23c93d892afd3116b7bf2af4e4724d2f16aea7",
+      "original_sha256": "ffc898906b36d4a6a19b9bfeff23c93d892afd3116b7bf2af4e4724d2f16aea7",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2024-06.parquet",
+      "sha256": "1197c6d881dc96ccf23351741ca973ea2b3ef09604f9ffcb789d0957a382619e",
+      "original_sha256": "1197c6d881dc96ccf23351741ca973ea2b3ef09604f9ffcb789d0957a382619e",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2024-07.parquet",
+      "sha256": "ea9c233fcb5dc1941c68f18d0141c8b11d226464a2f64bc2433d1bcea4ecda9e",
+      "original_sha256": "ea9c233fcb5dc1941c68f18d0141c8b11d226464a2f64bc2433d1bcea4ecda9e",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2024-08.parquet",
+      "sha256": "18c91526b54e3f014ab260ecc1d4ac8be4baf1bbceba60446ae4bb6e27139a60",
+      "original_sha256": "18c91526b54e3f014ab260ecc1d4ac8be4baf1bbceba60446ae4bb6e27139a60",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2024-09.parquet",
+      "sha256": "b062be775ddde9bc83d63dbc1c49f7ff813a80f04df694ba9dcf2c3b357b2555",
+      "original_sha256": "b062be775ddde9bc83d63dbc1c49f7ff813a80f04df694ba9dcf2c3b357b2555",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2024-10.parquet",
+      "sha256": "f349e72ca503b0ab73bfe3b54f194903962467a8a88841e84dec2cfa7f8db718",
+      "original_sha256": "f349e72ca503b0ab73bfe3b54f194903962467a8a88841e84dec2cfa7f8db718",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2024-11.parquet",
+      "sha256": "f3ba836caae9ce6a33752bc0bc3ddb961dc526d61829f0e42aed20ba0e47bc2d",
+      "original_sha256": "f3ba836caae9ce6a33752bc0bc3ddb961dc526d61829f0e42aed20ba0e47bc2d",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2020/months/2024-12.parquet",
+      "sha256": "5ebb91ae48ab9f1ffbd5dabfa84bdbe4f907311562fa8553b4cbd20e7bc2cac4",
+      "original_sha256": "5ebb91ae48ab9f1ffbd5dabfa84bdbe4f907311562fa8553b4cbd20e7bc2cac4",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/wujg-7c2s"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2025-01.parquet",
+      "sha256": "e64358e0bbecb188f14a932906845a5486c6d326fc971d125829e2c3e9c4fd4f",
+      "original_sha256": "e64358e0bbecb188f14a932906845a5486c6d326fc971d125829e2c3e9c4fd4f",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2025-02.parquet",
+      "sha256": "4428f414fcd8cb260ea03e93f20bdfb7acc71eb5622f77d50a87475e0c42247f",
+      "original_sha256": "4428f414fcd8cb260ea03e93f20bdfb7acc71eb5622f77d50a87475e0c42247f",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2025-03.parquet",
+      "sha256": "fd55369eb7c49765f5a94f5469dd722dc93e33eb41afb181065203d18b4f4faa",
+      "original_sha256": "fd55369eb7c49765f5a94f5469dd722dc93e33eb41afb181065203d18b4f4faa",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2025-04.parquet",
+      "sha256": "8dcdddfa3c377b7bdd0ff84e92d7746bc4eba21ef879c37b9eb0b96981b0e659",
+      "original_sha256": "8dcdddfa3c377b7bdd0ff84e92d7746bc4eba21ef879c37b9eb0b96981b0e659",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2025-05.parquet",
+      "sha256": "8610eedd25434e7a67526b18a005b84251a50b462d01dad8de11644b8507b02e",
+      "original_sha256": "8610eedd25434e7a67526b18a005b84251a50b462d01dad8de11644b8507b02e",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2025-06.parquet",
+      "sha256": "b1b8a5a23a28da6d2249072a57f77ac476a055bf4d0af26be9fffa3fe0e3e633",
+      "original_sha256": "b1b8a5a23a28da6d2249072a57f77ac476a055bf4d0af26be9fffa3fe0e3e633",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2025-07.parquet",
+      "sha256": "df00e7b85f7cc5df4d63a82926be4cf01286feb6a91fecff96e1d58695cb2b68",
+      "original_sha256": "df00e7b85f7cc5df4d63a82926be4cf01286feb6a91fecff96e1d58695cb2b68",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2025-08.parquet",
+      "sha256": "aeae679737c04a3ab89a61ac34a317095d5d3af2a53b672e9760fae19b79374b",
+      "original_sha256": "aeae679737c04a3ab89a61ac34a317095d5d3af2a53b672e9760fae19b79374b",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2025-09.parquet",
+      "sha256": "c91349b9c69d6808acb9bd16661710d935c870a4ea085ba9c95444da54431bd7",
+      "original_sha256": "c91349b9c69d6808acb9bd16661710d935c870a4ea085ba9c95444da54431bd7",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2025-10.parquet",
+      "sha256": "e5af3c4096fc5051fe834bbc81980eed56f00da97ba3b93a2eee13f20cea2785",
+      "original_sha256": "e5af3c4096fc5051fe834bbc81980eed56f00da97ba3b93a2eee13f20cea2785",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2025-11.parquet",
+      "sha256": "55ff8337a661cfcd238a364bb82359d2d50e82a6b71072c09f5ecde5bdcbed9d",
+      "original_sha256": "55ff8337a661cfcd238a364bb82359d2d50e82a6b71072c09f5ecde5bdcbed9d",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2025-12.parquet",
+      "sha256": "26b8e2ad2377f0e4ea4b30d9745f399abccb14681b34e931841fe70f51c61775",
+      "original_sha256": "26b8e2ad2377f0e4ea4b30d9745f399abccb14681b34e931841fe70f51c61775",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2026-01.parquet",
+      "sha256": "b8b8ee9c0c2d5a418747c2550d7d17fe1f94aeb9d0eb2966c9e57eb3932cf88a",
+      "original_sha256": "b8b8ee9c0c2d5a418747c2550d7d17fe1f94aeb9d0eb2966c9e57eb3932cf88a",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2026-02.parquet",
+      "sha256": "4b40f386b5ad201b2a996409161c1aa1e1e4ca3913208db44c52873c001a55b4",
+      "original_sha256": "4b40f386b5ad201b2a996409161c1aa1e1e4ca3913208db44c52873c001a55b4",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2026-03.parquet",
+      "sha256": "921bf4f408bc819042343608004783b292b61cd86bc2c20eb01e5733d17dae47",
+      "original_sha256": "921bf4f408bc819042343608004783b292b61cd86bc2c20eb01e5733d17dae47",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2026-04.parquet",
+      "sha256": "1f5a4cc278ac226dee3fea481097e1f2e0f1ac37bec674e25661e6f09254dc21",
+      "original_sha256": "1f5a4cc278ac226dee3fea481097e1f2e0f1ac37bec674e25661e6f09254dc21",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2026-05.parquet",
+      "sha256": "b4d56afa2888174d8a19fcca1bd44dcc228ed00497a1150348a8066f01652f8a",
+      "original_sha256": "b4d56afa2888174d8a19fcca1bd44dcc228ed00497a1150348a8066f01652f8a",
+      "exact_original": true,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2026-06.parquet",
+      "sha256": "83fba2ce53cd809bf744abba740bdaa3b599732afc43d6433fbdcb39f06c1330",
+      "original_sha256": "403e56772ad068996305b978c06a5a09cfad859488fc148162e52a43a18985d2",
+      "exact_original": false,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2026-07.parquet",
+      "sha256": "6d03835058cdb3cc0e3a0386604d0b7a237d98c70080ea618fe2f1bd7ece4a31",
+      "original_sha256": "55f8cd779f80d5aa1854d964e2803db20db6d1c58b1f344f731117576d862dcc",
+      "exact_original": false,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_hourly_ridership_2025/months/2026-08.parquet",
+      "sha256": "ff727c6287aae9b2d6d5ebe0941c61d6ba8a1dbec437bea9254859dc485cc13d",
+      "original_sha256": "a8bb213c6842bcd581241cb6e5513478c09574c72b92bc89a26d844638df731d",
+      "exact_original": false,
+      "source_url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "path": "mta_mdbf/data.parquet",
+      "sha256": "76ef90cdc1b1189cb16a6aa964bedad005daca41f87a32ecf7eba04f5b5cccec",
+      "original_sha256": "9ed287b010018a84fbc4345f7782fa152238e178c68425f991803f949031098a",
+      "exact_original": false,
+      "source_url": "https://data.ny.gov/d/e2qc-xgxs"
+    },
+    {
+      "path": "mta_running_times/data.parquet",
+      "sha256": "dc2b0c73e530540de78f7dc264279d2e45ef969378ef5ddcea29758c9913f24f",
+      "original_sha256": "01fd35eb1efd73e4f754f3c54b3dbc1cfe6c2e9597f062cf79a04eeaa57d3eaf",
+      "exact_original": false,
+      "source_url": "https://data.ny.gov/d/sp9g-mzjh"
+    },
+    {
+      "path": "mta_service_delivered/data.parquet",
+      "sha256": "fa68f8cc5f0045e5ab44d2ab4e75056145fce17a4f56b3ef7932bca9711e43e5",
+      "original_sha256": "2a4e46e649fd19b2d8b1ba7f2963feb177151d1b69dcad201cfc9405126c9a74",
+      "exact_original": false,
+      "source_url": "https://data.ny.gov/d/32ch-sei3"
+    },
+    {
+      "path": "mta_subway_stations/data.parquet",
+      "sha256": "c13da0abc3d2faa90eefe51e2e032f9b5f9892b38fb0ad193f924e9db289b880",
+      "original_sha256": "37af4819d0de23828fce2c4babb9670db48745c3054f170e5eb9550ac6412dbe",
+      "exact_original": false,
+      "source_url": "https://data.ny.gov/d/39hk-dx4f"
+    },
+    {
+      "path": "mta_terminal_otp/data.parquet",
+      "sha256": "fb20045370fa472b988df0b74e67debad86b6bc2e0030d95411226d0381d675b",
+      "original_sha256": "98722f2eda8b966ddebe20e7becfe72588f7488e0a0af113c6a209f36b4884ae",
+      "exact_original": false,
+      "source_url": "https://data.ny.gov/d/f6rf-2a3t"
+    },
+    {
+      "path": "mta_wait_assessment/data.parquet",
+      "sha256": "5bc8493ada068390912b4e74513feefb2107aa99eaf8410f7fade7ebffa6753f",
+      "original_sha256": "aae7539c5e1adf3b01ccf2ec20a23ca694a38566b96d7f093c30e281dad4f0b0",
+      "exact_original": false,
+      "source_url": "https://data.ny.gov/d/s666-h6b7"
+    }
+  ],
+  "input_hashes": {
+    "data/processed/demand_train.parquet": "6a8766659777ac94dea09a079d79fcf757f85e448f35fbfeea51c5637247b05c",
+    "data/processed/network/demand_process.json": "2eca2a0ee6240f6b97c4cdabcf7a87cbe4046fcc5fb9a3325c51cce437f001dc",
+    "data/processed/network/fixed_timetable.json": "b87a1bb0f689171f4e212724d0a6b66128b9f47b86c26188b12c467134aa28d4",
+    "data/processed/network/network.json": "78b54995528a10bbcfe6bae41e4cee800a5a4dbad6e967fc30cd6107fe74cc01",
+    "data/processed/network/station_order.json": "db042b30c71a38499cdc531b64461bfcc07779dc3b9aed62331741d971093a31",
+    "data/processed/supervised_train.parquet": "31f5b79feff094d15009d876dfd3bd89d3056eed6adec6cc252735eabf7e9cc7",
+    "data/processed/supervised_val.parquet": "7cc2013bfc214eb76c0241db3d40d91dca66766b033dea0bd9cad2dc6ac8e8a9",
+    "data/raw/mta_cjfm/data.parquet": "eaa3af8c3a1b405497d5669bba3399c30d64eb1d5653e4b399befe306b7b0ab9",
+    "data/raw/mta_gtfs_static/gtfs_subway.zip": "2c9e69b82ac596a2fe660b56656509570cfba3c2e4c50be75eaf624eee1bc6f8",
+    "data/raw/mta_hourly_ridership_2017/months/2017-01.parquet": "e4c4802d08c151e853433bb4dd2c0defff1c8420597dbb57b65ae1f5b77d98b9",
+    "data/raw/mta_hourly_ridership_2017/months/2017-02.parquet": "fca7181baef2593c07630913133a13653989a6b8e4389d3f189b5d9e22ec4a6d",
+    "data/raw/mta_hourly_ridership_2017/months/2017-03.parquet": "7dc05d42a36ecbc9ccb9d26252aee441afa09aacbbfbf17a371cf8f4ad9d2ed3",
+    "data/raw/mta_hourly_ridership_2017/months/2017-04.parquet": "a853d592c8ad7c5a5f401d5195a9698b6c814da065a1df4eef9d8266c8e088fe",
+    "data/raw/mta_hourly_ridership_2017/months/2017-05.parquet": "577bb7b6fba09a1e8851ea4fcba711567e69fa4ac6b8c9ba0e47d4a79c1d0737",
+    "data/raw/mta_hourly_ridership_2017/months/2017-06.parquet": "7f245441df33e73cd7d1d74a79fc4ab7981370583a12f78800eb25824134ca59",
+    "data/raw/mta_hourly_ridership_2017/months/2017-07.parquet": "c62065a17fa7a357232f984deab2528067f377e7ca4950b9e0f3f57e57fccb1e",
+    "data/raw/mta_hourly_ridership_2017/months/2017-08.parquet": "c63dec17c6f776419f7c1bc25d1a2b017729838fdd5bdfe5aeb5d744d8096fe0",
+    "data/raw/mta_hourly_ridership_2017/months/2017-09.parquet": "b05928fe167f51ca3a13dda9550f3f7e88a621c66ca16eb3389c1fba8ea45d87",
+    "data/raw/mta_hourly_ridership_2017/months/2017-10.parquet": "2d5203886322de59e630007d957b2edae93f0c44bd3acf039920a4d795123d69",
+    "data/raw/mta_hourly_ridership_2017/months/2017-11.parquet": "768ee0cc3744f29b5f67a7231a4725d378ec2a61bcd484589cfbc1001becb7d0",
+    "data/raw/mta_hourly_ridership_2017/months/2017-12.parquet": "231eae099ae2e2a4e7a6dd67be533a958cdee8769842edaca7456544c0dd6cdc",
+    "data/raw/mta_hourly_ridership_2017/months/2018-01.parquet": "c7bc1a520bb75789dbfed243dbba94ea45bbf724c493619f99e30259ee947402",
+    "data/raw/mta_hourly_ridership_2017/months/2018-02.parquet": "213899f81f68b07e768705f20c8c47c5c01871f814614564893a7f1f2d26eeb0",
+    "data/raw/mta_hourly_ridership_2017/months/2018-03.parquet": "8a8ca2fe90ec4df8d858b947f22fe24da1bd4355b8b262a441c172de00c8c8a6",
+    "data/raw/mta_hourly_ridership_2017/months/2018-04.parquet": "49dee12513fe7d6918b5b560990d384073a8fa2d2626031be835600a07af8a1e",
+    "data/raw/mta_hourly_ridership_2017/months/2018-05.parquet": "355c6c5c6026dbdb1eec0a13748e692995e6bb799af4be0637429e79315d387b",
+    "data/raw/mta_hourly_ridership_2017/months/2018-06.parquet": "7151bd52fc75ef1fc53ef6a1bd863c620ffd67c3776a5db4c50cffd681161103",
+    "data/raw/mta_hourly_ridership_2017/months/2018-07.parquet": "580c90ff42cb307ca0e85005cfd10f8a0481c137ebca9a8096d0b928f7c7b702",
+    "data/raw/mta_hourly_ridership_2017/months/2018-08.parquet": "c0564c146d806e80607c0849f9e664c13f8201a59e66aa83ef6d0bb14b857330",
+    "data/raw/mta_hourly_ridership_2017/months/2018-09.parquet": "e130d0e4d0d65465439d3be9d2df09647ae9699ceb2a946e7c4f04623affe9cf",
+    "data/raw/mta_hourly_ridership_2017/months/2018-10.parquet": "baacb6bcbb1caee1210685b086e5448ab0a309a27b7a7b612ae8d269639d9a45",
+    "data/raw/mta_hourly_ridership_2017/months/2018-11.parquet": "6be844d2c3471cfdbf2f692eeb536e30f61aae449b6a932a4d749ae5c939456d",
+    "data/raw/mta_hourly_ridership_2017/months/2018-12.parquet": "1e9d2237be8169e08fdcfdc5d64b0549ea2ee364c4131f92f5e86e3151ba505c",
+    "data/raw/mta_hourly_ridership_2017/months/2019-01.parquet": "6c6d9fb1105e3320df8a37a9469de06fe79ee93f93a4ead38bf5bc7521595c62",
+    "data/raw/mta_hourly_ridership_2017/months/2019-02.parquet": "a3893d76a6418f1574dc66800da40b4b1b0118ed6141ff6bda3c2c311feccc2d",
+    "data/raw/mta_hourly_ridership_2017/months/2019-03.parquet": "13b3e1ead76bbf864bb2ef461be2410ccaa42b648dfaae7dc205218f32266f08",
+    "data/raw/mta_hourly_ridership_2017/months/2019-04.parquet": "6807a8ecfa6bffa8db1d3632c939aa77c92071541fbb640918a65bb2db93ba64",
+    "data/raw/mta_hourly_ridership_2017/months/2019-05.parquet": "0092fe86b879d21b5139cc5d7a636db7ecedbb4f05fd95249f651f53fcd24d5a",
+    "data/raw/mta_hourly_ridership_2017/months/2019-06.parquet": "093f3eeb95c402fa8a995010f0de96994ae0f7718213ffa4fee42a449bb11f98",
+    "data/raw/mta_hourly_ridership_2017/months/2019-07.parquet": "0a82473465b5b70425d9b114ed593b9da73c62674274c0142e4c123939a41724",
+    "data/raw/mta_hourly_ridership_2017/months/2019-08.parquet": "9b4844b0f5678add32efbbb0a695498e614822612458c0c7ccd9d5a48e2a4c2a",
+    "data/raw/mta_hourly_ridership_2017/months/2019-09.parquet": "f9f2ebbb594377db0a96a9e114ccfeef0d665434a184f5e63a8ac7050f52af5f",
+    "data/raw/mta_hourly_ridership_2017/months/2019-10.parquet": "6d71b0e2d2795d043070a6dbcf394ac9a80d2dd7539280464e256a325cf1387d",
+    "data/raw/mta_hourly_ridership_2017/months/2019-11.parquet": "fde47db2eefe15a9643eb5a368b41bdf7d8eb2cd0883556290c1e4b5f4838f59",
+    "data/raw/mta_hourly_ridership_2017/months/2019-12.parquet": "342ab90dab4dcfde7fd91053a78cc110a5aa108265188d3580be3459757faf9d",
+    "data/raw/mta_hourly_ridership_2020/months/2020-01.parquet": "9b1fa3f0937a132d05c23d9e9f5452e74b4a00a0c333df9aae96005445ba88a1",
+    "data/raw/mta_hourly_ridership_2020/months/2020-02.parquet": "5ec15d833e5d4794b7772392bccecc116abc5c46d42b5022acd148c6359390aa",
+    "data/raw/mta_hourly_ridership_2020/months/2020-03.parquet": "94ceb05625a153752b99e0a9af4e9b67623c68342764fbbdcbaf8a03ae4b21e9",
+    "data/raw/mta_hourly_ridership_2020/months/2020-04.parquet": "4ca68b735238228496579e408eb8f9ee4b16e6e0efe7e76ff82d3cf360c668ec",
+    "data/raw/mta_hourly_ridership_2020/months/2020-05.parquet": "e927c8d06e651539e61e8a3ae1bad7793737005766e5a0a89291ff861e4a77d2",
+    "data/raw/mta_hourly_ridership_2020/months/2020-06.parquet": "5d01f6fabcb01853fc1e211a5091549d575a503a763aed673ee5e8a40edf8691",
+    "data/raw/mta_hourly_ridership_2020/months/2020-07.parquet": "8c4ca6b10a9ef2303980e002fc4a0c7bc5d1c5e409cc8af7d961d3d68262afbe",
+    "data/raw/mta_hourly_ridership_2020/months/2020-08.parquet": "66aae02ca07bf444a004ccd46d290e2385bb71254d1af271d91e38abacf4a91a",
+    "data/raw/mta_hourly_ridership_2020/months/2020-09.parquet": "b7004e20befce99cfcc5e5e51dca9946affa10af05bff9349c9b7c06fec45008",
+    "data/raw/mta_hourly_ridership_2020/months/2020-10.parquet": "9fd3c4f44ac5b031c781345bfcceb8755959af0dd804b029bb0c09f3335707e6",
+    "data/raw/mta_hourly_ridership_2020/months/2020-11.parquet": "59550cca6707bcff8429aff2dcfc250ceea76d1d8c55bc9d41134eea61a046cc",
+    "data/raw/mta_hourly_ridership_2020/months/2020-12.parquet": "cf06f120109ce48bf82876a0834ad52ec040863b8a210b425ca07f4db3ea5f25",
+    "data/raw/mta_hourly_ridership_2020/months/2021-01.parquet": "887a896128738ad030eb48f5a7bfd452b8ffeb77eb2c7e64e81d3bfdc07e5df5",
+    "data/raw/mta_hourly_ridership_2020/months/2021-02.parquet": "d655590a20800bdce3bf3440905db123962ffd164be394bba86118b9529543fc",
+    "data/raw/mta_hourly_ridership_2020/months/2021-03.parquet": "ad0813f8260e1b3b64f98fd10dcf6f0121646f273e577cb209b5bf80f0118d73",
+    "data/raw/mta_hourly_ridership_2020/months/2021-04.parquet": "885ad69b43f4fa13c0d7fca3a1a07653f60a591bd38a1ea3e946f496f17dbe0b",
+    "data/raw/mta_hourly_ridership_2020/months/2021-05.parquet": "993726399e7695a2dd47a9974ce6534851f7f0be55bb0501442d071b187fdec7",
+    "data/raw/mta_hourly_ridership_2020/months/2021-06.parquet": "808114ceaa6a476d9109fc51bf649a8b069b4100d7e36c02420d6b44c7cbbcfe",
+    "data/raw/mta_hourly_ridership_2020/months/2021-07.parquet": "4db9686921bac9509639a43d0a8b511ce3e94cec246163132b438ea015c100b6",
+    "data/raw/mta_hourly_ridership_2020/months/2021-08.parquet": "77b021a0bfdda92101f1f639ea2c5d8e727bea19bf085038e1caa4144db5ac52",
+    "data/raw/mta_hourly_ridership_2020/months/2021-09.parquet": "ceb9307dd3f6b711e78bd6001c3b311566e7921ccc582939f0b51452160bf892",
+    "data/raw/mta_hourly_ridership_2020/months/2021-10.parquet": "4a01fc7bfffa277f3d4c06d623fba3525c03463130d47fc7634da013593d82bf",
+    "data/raw/mta_hourly_ridership_2020/months/2021-11.parquet": "1a47de04d6ce878daed4c54dd3910af9417899953e2f62c3a708ee354f17932c",
+    "data/raw/mta_hourly_ridership_2020/months/2021-12.parquet": "2cda3c854ca6866d6ea35371a1bbfac7e1a9a542833ca2e04f7e58309e280cb0",
+    "data/raw/mta_hourly_ridership_2020/months/2022-01.parquet": "ea70d3f5b6394cc1381a04199ae70d0848b0d25f069fd0cd820d9580b0a0aff1",
+    "data/raw/mta_hourly_ridership_2020/months/2022-02.parquet": "cd0767b3c8e506b0541fe524807b21dc4356de9ed2a9e2fd23ca870be19b2188",
+    "data/raw/mta_hourly_ridership_2020/months/2022-03.parquet": "a74e44de061f4ccd1e8e9059c3492577accbdeb37628fe58797650803d5cb9dc",
+    "data/raw/mta_hourly_ridership_2020/months/2022-04.parquet": "e2e38d01339ed5967b5792cf48e60b2a12db1538795d84045f83e6ffd1a34b8b",
+    "data/raw/mta_hourly_ridership_2020/months/2022-05.parquet": "27bf0b3e7c6a2cafb01149db7462e1fd31784a5a23f11da0938c6ee2c9b7ca8b",
+    "data/raw/mta_hourly_ridership_2020/months/2022-06.parquet": "f864c209a143769cebe518721f04e7a65c322937edd15696076d2b0a621f9193",
+    "data/raw/mta_hourly_ridership_2020/months/2022-07.parquet": "3ac8ff4c11bf027d8881fd503f3d3ccd584709c590d31a9d31abf1b1697783cc",
+    "data/raw/mta_hourly_ridership_2020/months/2022-08.parquet": "c8b36b6ef239d9a10795df656c2d01bac6f9a15b02e04177bd39303c23626ef3",
+    "data/raw/mta_hourly_ridership_2020/months/2022-09.parquet": "9fd819587ad39885e92be1ca01a242395fd14afc4dc4078acfa1d3d5fad661c4",
+    "data/raw/mta_hourly_ridership_2020/months/2022-10.parquet": "bd95c6f40a53d0ddbb0d4d584897b7dd096d2d43e2cec264099d397a425ff8b1",
+    "data/raw/mta_hourly_ridership_2020/months/2022-11.parquet": "fde5d2344243c3b47248d3d02cc135eb7453ad8174041b4e7f33325a2ca2aa8c",
+    "data/raw/mta_hourly_ridership_2020/months/2022-12.parquet": "97f0ec290c08a12931b9ba5d58a82f7583b65bb28148630d2205ddf0a3fa7d6f",
+    "data/raw/mta_hourly_ridership_2020/months/2023-01.parquet": "2e54bd30961889290b26a4858ac3cd59e08edb172724e2f0ff0efb14958b0c07",
+    "data/raw/mta_hourly_ridership_2020/months/2023-02.parquet": "ff984d3a023e32d055d21b2688ad4fa16e27ed3cd5863f86922c6f4c902ae9ad",
+    "data/raw/mta_hourly_ridership_2020/months/2023-03.parquet": "a2493d853545c4818263d8ccdc6e372ff51f635f0c1f56ee508d8525119c2897",
+    "data/raw/mta_hourly_ridership_2020/months/2023-04.parquet": "9a31754d13397cfc71f37a33737d6e083bafb1d481398a51277ad3763b30b9ea",
+    "data/raw/mta_hourly_ridership_2020/months/2023-05.parquet": "29596ea3623005d7e665e6bcc972e89956b71911803324223e894a20df33e6cd",
+    "data/raw/mta_hourly_ridership_2020/months/2023-06.parquet": "4471f96dade2baf578d97630fbca8608b25bd47b038ebe9910c4efa9953c7482",
+    "data/raw/mta_hourly_ridership_2020/months/2023-07.parquet": "a6fe7eb579b07391c2b4da597ffbd9ddab8ce4d861b81ec93c89c53485646d2d",
+    "data/raw/mta_hourly_ridership_2020/months/2023-08.parquet": "5c9156a0c4f3e1e14297e0735f45bc74eb277d5aa62112fe9673ce74d4fb367b",
+    "data/raw/mta_hourly_ridership_2020/months/2023-09.parquet": "72513bac040404e212f0977a60a151d3ecf9b46245d05c44f85e9055247bba8f",
+    "data/raw/mta_hourly_ridership_2020/months/2023-10.parquet": "c379e927f6fa3d9af3ef6f5f7d2d91294e9e053fca07600dc2da0000c8bf1b76",
+    "data/raw/mta_hourly_ridership_2020/months/2023-11.parquet": "203ace9bc93d11aa4622a677dfa37d50caf125ad694234206c3ab9fd1d054598",
+    "data/raw/mta_hourly_ridership_2020/months/2023-12.parquet": "df137500a15662e8d02e2d78e11b6d76c4c1ef0dde86b49e8734f4aef980b94e",
+    "data/raw/mta_hourly_ridership_2020/months/2024-01.parquet": "8b84c82a7a8db246aaefd233d598875957f7123351f20ff7471c9eee94b64009",
+    "data/raw/mta_hourly_ridership_2020/months/2024-02.parquet": "b1485452f244fd9f8fefe3a267b4173f59b9160b94c3c2065b54ab5d5dea8b98",
+    "data/raw/mta_hourly_ridership_2020/months/2024-03.parquet": "47330716b40ca1d754ad86375ca975e126c4e53326de114864517de5c89ffe74",
+    "data/raw/mta_hourly_ridership_2020/months/2024-04.parquet": "c7ba744989642d08a2d5354aabc15e5e788233d4f0bda46430421b2f5d89029a",
+    "data/raw/mta_hourly_ridership_2020/months/2024-05.parquet": "ffc898906b36d4a6a19b9bfeff23c93d892afd3116b7bf2af4e4724d2f16aea7",
+    "data/raw/mta_hourly_ridership_2020/months/2024-06.parquet": "1197c6d881dc96ccf23351741ca973ea2b3ef09604f9ffcb789d0957a382619e",
+    "data/raw/mta_hourly_ridership_2020/months/2024-07.parquet": "ea9c233fcb5dc1941c68f18d0141c8b11d226464a2f64bc2433d1bcea4ecda9e",
+    "data/raw/mta_hourly_ridership_2020/months/2024-08.parquet": "18c91526b54e3f014ab260ecc1d4ac8be4baf1bbceba60446ae4bb6e27139a60",
+    "data/raw/mta_hourly_ridership_2020/months/2024-09.parquet": "b062be775ddde9bc83d63dbc1c49f7ff813a80f04df694ba9dcf2c3b357b2555",
+    "data/raw/mta_hourly_ridership_2020/months/2024-10.parquet": "f349e72ca503b0ab73bfe3b54f194903962467a8a88841e84dec2cfa7f8db718",
+    "data/raw/mta_hourly_ridership_2020/months/2024-11.parquet": "f3ba836caae9ce6a33752bc0bc3ddb961dc526d61829f0e42aed20ba0e47bc2d",
+    "data/raw/mta_hourly_ridership_2020/months/2024-12.parquet": "5ebb91ae48ab9f1ffbd5dabfa84bdbe4f907311562fa8553b4cbd20e7bc2cac4",
+    "data/raw/mta_hourly_ridership_2025/months/2025-01.parquet": "e64358e0bbecb188f14a932906845a5486c6d326fc971d125829e2c3e9c4fd4f",
+    "data/raw/mta_hourly_ridership_2025/months/2025-02.parquet": "4428f414fcd8cb260ea03e93f20bdfb7acc71eb5622f77d50a87475e0c42247f",
+    "data/raw/mta_hourly_ridership_2025/months/2025-03.parquet": "fd55369eb7c49765f5a94f5469dd722dc93e33eb41afb181065203d18b4f4faa",
+    "data/raw/mta_hourly_ridership_2025/months/2025-04.parquet": "8dcdddfa3c377b7bdd0ff84e92d7746bc4eba21ef879c37b9eb0b96981b0e659",
+    "data/raw/mta_hourly_ridership_2025/months/2025-05.parquet": "8610eedd25434e7a67526b18a005b84251a50b462d01dad8de11644b8507b02e",
+    "data/raw/mta_hourly_ridership_2025/months/2025-06.parquet": "b1b8a5a23a28da6d2249072a57f77ac476a055bf4d0af26be9fffa3fe0e3e633",
+    "data/raw/mta_hourly_ridership_2025/months/2025-07.parquet": "df00e7b85f7cc5df4d63a82926be4cf01286feb6a91fecff96e1d58695cb2b68",
+    "data/raw/mta_hourly_ridership_2025/months/2025-08.parquet": "aeae679737c04a3ab89a61ac34a317095d5d3af2a53b672e9760fae19b79374b",
+    "data/raw/mta_hourly_ridership_2025/months/2025-09.parquet": "c91349b9c69d6808acb9bd16661710d935c870a4ea085ba9c95444da54431bd7",
+    "data/raw/mta_hourly_ridership_2025/months/2025-10.parquet": "e5af3c4096fc5051fe834bbc81980eed56f00da97ba3b93a2eee13f20cea2785",
+    "data/raw/mta_hourly_ridership_2025/months/2025-11.parquet": "55ff8337a661cfcd238a364bb82359d2d50e82a6b71072c09f5ecde5bdcbed9d",
+    "data/raw/mta_hourly_ridership_2025/months/2025-12.parquet": "26b8e2ad2377f0e4ea4b30d9745f399abccb14681b34e931841fe70f51c61775",
+    "data/raw/mta_hourly_ridership_2025/months/2026-01.parquet": "b8b8ee9c0c2d5a418747c2550d7d17fe1f94aeb9d0eb2966c9e57eb3932cf88a",
+    "data/raw/mta_hourly_ridership_2025/months/2026-02.parquet": "4b40f386b5ad201b2a996409161c1aa1e1e4ca3913208db44c52873c001a55b4",
+    "data/raw/mta_hourly_ridership_2025/months/2026-03.parquet": "921bf4f408bc819042343608004783b292b61cd86bc2c20eb01e5733d17dae47",
+    "data/raw/mta_hourly_ridership_2025/months/2026-04.parquet": "1f5a4cc278ac226dee3fea481097e1f2e0f1ac37bec674e25661e6f09254dc21",
+    "data/raw/mta_hourly_ridership_2025/months/2026-05.parquet": "b4d56afa2888174d8a19fcca1bd44dcc228ed00497a1150348a8066f01652f8a",
+    "data/raw/mta_hourly_ridership_2025/months/2026-06.parquet": "83fba2ce53cd809bf744abba740bdaa3b599732afc43d6433fbdcb39f06c1330",
+    "data/raw/mta_hourly_ridership_2025/months/2026-07.parquet": "6d03835058cdb3cc0e3a0386604d0b7a237d98c70080ea618fe2f1bd7ece4a31",
+    "data/raw/mta_hourly_ridership_2025/months/2026-08.parquet": "ff727c6287aae9b2d6d5ebe0941c61d6ba8a1dbec437bea9254859dc485cc13d",
+    "data/raw/mta_mdbf/data.parquet": "76ef90cdc1b1189cb16a6aa964bedad005daca41f87a32ecf7eba04f5b5cccec",
+    "data/raw/mta_running_times/data.parquet": "dc2b0c73e530540de78f7dc264279d2e45ef969378ef5ddcea29758c9913f24f",
+    "data/raw/mta_service_delivered/data.parquet": "fa68f8cc5f0045e5ab44d2ab4e75056145fce17a4f56b3ef7932bca9711e43e5",
+    "data/raw/mta_subway_stations/data.parquet": "c13da0abc3d2faa90eefe51e2e032f9b5f9892b38fb0ad193f924e9db289b880",
+    "data/raw/mta_terminal_otp/data.parquet": "fb20045370fa472b988df0b74e67debad86b6bc2e0030d95411226d0381d675b",
+    "data/raw/mta_wait_assessment/data.parquet": "5bc8493ada068390912b4e74513feefb2107aa99eaf8410f7fade7ebffa6753f",
+    "models/forecasting/metadata.json": "2a4e4fbd8bacedd3ee7372a5cde151aedffa8a1d4d9248b7cbacd66f38b95355",
+    "models/forecasting/xgb_quantile.json": "6c4f3144bc0bb08c408e91573b127a5f53d9c2370f80f3adf2f7232a60a0062b",
+    "models/heuristic_threshold.json": "1d6f078b9e8fafa9b2be5f76e0289b9c2f8a5c3ba1c3f51f81b9d5946b008563",
+    "models/milp_surrogate.json": "40a6d4dd5d0bf44e9287b374c0cf3648493f9f85f4de242a791c0e2247213a51",
+    "models/obs_scaler.json": "6c444584d94c103767ec6054b79962364abd3d9fd916e915d5f9e83c99c09d74"
+  },
+  "computation_hashes": {
+    "configs/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configs/data.yaml": "7f3ee707973952a78e4a4f0181c82cd09f0c9b53dcc814746bf356607b210b28",
+    "configs/env.yaml": "8f9a1ad10716a990215d22ead375734abd6b98ddd545a4689655f9d71e31682b",
+    "configs/forecasting.yaml": "deeb0c3965148466ecd7a9f5b151aea18e2efd184d777d28925fc4b1bf0b4b75",
+    "configs/reward_scales.json": "e17d4962d41cc48ab261d51e5e0ae6df2caa05f9dce14343af0e5ae48b1f3d6c",
+    "configs/simulator.yaml": "b1f307b97631c5015d19b417eb7603f85c254fd22a10e2374cf1235447ccca8d",
+    "docs/replication_20261015_protocol.md": "4212722bc32d51d8dc142225e8e0c57d1f005e9110a09d2e0414d9b428b58acf",
+    "requirements-linux.lock.txt": "d0fccda36e9ae48f187f1c7e1f7b7a9d159ad811edc61d749a6c9c5941ad30a9",
+    "scripts/analyse_followup.py": "12a32f2aaee9fad66a212c4b1e8ecade22628afe090dcd9c8a071fc8405dbfef",
+    "scripts/run_experiments.py": "b2c3b8f93513dc18e06be2569d291104b4e0b801e96e486ab4b65b45201799f4",
+    "scripts/run_followup.py": "08424605469245dcd7f21c7cafb49a1191dd047819dfd636906ed16d2fc351f0",
+    "scripts/run_replication.py": "a4becabb4ab76c530d5b87fd53c41013e529e04c6aaed44d7853391018cceaf0",
+    "src/__init__.py": "b66f2d91d376db337864a7308f18a40d9f23a576747816535162837fa5594065",
+    "src/baselines/__init__.py": "c86d161b34c604199d336c28dc5c03c2b589771f57f3725582d3728f658567a0",
+    "src/baselines/fixed_timetable.py": "0d02d8a974fca6bdf513fcb6f3715f037b223ee91fc64eae1f870b496ddfc55c",
+    "src/baselines/heuristic.py": "38ef620a51af8068e2bd2c924f124709ac63b403b4dbf0e55de1fedfc607b30f",
+    "src/baselines/milp.py": "39166f85dbdfc899455eda87028f4222fc32c509f3b42cffc7134290614eae5b",
+    "src/common/__init__.py": "f99cc87183db23528192fe475ed6ef37c13171ddbdf1d813ea61da8f7131df18",
+    "src/common/compute.py": "546c1bf7a54558c8c6f78ed2dbfeff71d0f34deebb6a2306c271aaef2e627a0f",
+    "src/common/config.py": "e5bec5014d53dac60985d1fdc80d11ff8bab825a6a76c4128b3d0a0fa27a5655",
+    "src/common/logging.py": "665f74f2951e11b125a109e2ed4afa92dcb72a2894e73cb989b194d78408dc59",
+    "src/common/manifest.py": "42490199d28c057d010e2598b5b9c45beda1b34618c0622c80a09d6c319a9358",
+    "src/common/paths.py": "fd51528abb2825e457e8ae6c877f5660e92427f6d7a6ef014aec5408b625527d",
+    "src/common/seeding.py": "c96fe63c4564d46b00b0c4ae5033de9dfb22361a70543ea608ba0f4db2b0c692",
+    "src/data/__init__.py": "298b5080766d1116c2138ad77baa6037c72a53321e54a52e15ca70e28591321f",
+    "src/data/download.py": "8150f986019e124d2086e708a6dd5548ed1e49c78bab27c3a1ced5c7a605c5fa",
+    "src/data/features.py": "61b73ade1c5a675bfb2816229f40a19040b5f29e19843bf204be9d909bf630dc",
+    "src/data/gtfs.py": "624197998557fd9b4fb026416cea20dcb974ddac60daa11765b54a41bdfba999",
+    "src/data/prepare.py": "31354aa2976a4be41ce6f355e32644ab37b4b41596fa689cbb8c84e0e67e51a8",
+    "src/data/sources.py": "2d1dccfdc9c864f42e5c2756b58551015ab2b4d0fae8e6b32b38d67f9e8b6a7b",
+    "src/data/splits.py": "2a73b0ec02640d216627f85b81afca7144ff3e1a23def9abffe02a384a62c897",
+    "src/data/validate.py": "57310a8ccd1b751bb0f1579f1b8d476572717bbf7688d4e88e8d31e0a2214400",
+    "src/demo/__init__.py": "d773e636328ed74982fc83b6611493eb481c2224eb3a145476931113f0f06e0d",
+    "src/demo/research_views.py": "f83119821e226e588d32bbeb7fe5cbbb98633765b60495b7d6d44a4b5a1219ef",
+    "src/demo/session.py": "8383905a658d07b582c22be1a23123c86f14cb676783d9542e4f08f3628a64d5",
+    "src/environment/__init__.py": "0876ac46ced35f5efb712949e25d8dd99829dd8c1943e2dc75f1729a0626e12d",
+    "src/environment/action_mask.py": "8f3216044a58326a2ce8889cfe777fe2cff23d1bb3339648ac74c60d92a7609d",
+    "src/environment/arms.py": "1b62cd47ff877b12946cb99e1897fe804f1c687345e4167249a0e903c3196fb3",
+    "src/environment/forecast_provider.py": "720e96a590499512f10efdb1c619e1efa23c49a879bd226cd4c79ae6acc3973d",
+    "src/environment/metro_env.py": "82eb0077acbb6f8425694ca16deb746cfb32d506159653e56e872f2291c84087",
+    "src/environment/observation.py": "0a02d9ed8590733f2f754daf78a0863d214c2b33edc65de543e0071e18ea89ce",
+    "src/environment/reward.py": "3f182cebb2e8a573c0802063853cf49585d2d4147ae642c39f205f17c2ac9fbd",
+    "src/evaluation/__init__.py": "c63442d658c10209eaa47f1f7fac64021c541d9477757daa7133a7a83d7a2572",
+    "src/evaluation/aggregate.py": "7c725b908f03a7febe98d9ad03721eabdb663003c9a83f84aafc3ac4e258365b",
+    "src/evaluation/policies.py": "e692dbcc9defade0b9544de5e29b0792c263b516b1afc9757d861b692424fb29",
+    "src/evaluation/runner.py": "d4c124907ad255cb78c27c5c64f6a0d2d38d821061f537224b27419538368a25",
+    "src/evaluation/statistics.py": "f59cf5100416c1257ff9affbbec2ba48c9da2a25dc185fea85a84d4b57a9ff3b",
+    "src/explainability/__init__.py": "d9a3e7fe0aefde09dd3e2bbe2ccf00d587d0413546eb773fea3b2ea0f14aea1c",
+    "src/explainability/shap_analysis.py": "29c7afeb1484c754a8a3a85005abd36356c532df2af2a70701ff2c9a14d4cb23",
+    "src/forecasting/__init__.py": "068cdee71de78953b4bd006805200d40d8cd59274175302eec57c0f382025d9e",
+    "src/forecasting/calibrate.py": "0d04e82bd1d2324cfc0e3aa94389112b1d0f5249fdf2c453d67486ce40ca61f8",
+    "src/forecasting/metrics.py": "ec6efe7d07eeba737d107274c51c2509ed1e6b96979f5e282af43dc010b12188",
+    "src/forecasting/models.py": "4f237ea3cdfcd12ce2d910fa1e701edc1fff96b58c2e1c50fa2e556b97f926f0",
+    "src/forecasting/train.py": "4b637a20d19dbdd20ee0c166742c4709f3471d79f915a028ed2a3a89986bea68",
+    "src/rl/__init__.py": "438d20b9a78938ddb511c39667c31d58b53b9836f39b3effc9065b3bd8ac079e",
+    "src/rl/policies.py": "7fcbcf069302479d88a9ebc8be7c6a8ccbccfafc2a6b916820085f07efb485e1",
+    "src/rl/train.py": "5dbc0a2b91cc2ee17f830efea75d7c175c61e643429a025d3d702a24a5e154a5",
+    "src/simulator/__init__.py": "61320883deb74447e09cdaeed3d2caee2e5c8e859e55b3b99255280a3c6b87c5",
+    "src/simulator/build_network.py": "02bb31aaa79b6f6b0dd2bbe6fa905190a072e3b54eae8abcc40e9004aabfe30b",
+    "src/simulator/demand.py": "be673e2b63731c51a67a2983c7b5f6889209b5150316907924f38b2db7b3c4db",
+    "src/simulator/disruptions.py": "e9829da6595ce3444b7e19c2af46db89a152e84a6aa3d85fa6cc50d06041c598",
+    "src/simulator/engine.py": "c4cedd5c1e5b640c0f324d6ff9f8ae04b37e022abcefdcefcf21a681b74c5f88",
+    "src/simulator/entities.py": "3c16e4fc2744323e561c231bdb7a7ed420ab0bb66f01205e603d4e1d464c1236",
+    "src/simulator/fit_demand.py": "3cdd571b2c8c03031f64438c652e977fc28f4b317429160fcceba699620f4dd5",
+    "src/simulator/network.py": "c01a295df1932c61a5281e53f8c487b8feaa0a1161cf0afff3be909586356c81",
+    "src/simulator/od.py": "0d18dd7f560778a02132ae94dd4038f64632f3ee7be1b155240aab8b70181e4d",
+    "src/simulator/validate.py": "222e4f2ca5aaebebb4d6a76b3bf20483642891e55be0b845df992678f239760e",
+    "src/visualization/__init__.py": "7e4c8ce106554996e7d1879d630fb78b23a903f18649708e6141f5079b4d6638",
+    "src/visualization/figures.py": "de2737e7c24697ef21abfebc08097a813213c67b77439fb60f32b3ef614313b6"
+  },
+  "source_archive_sha256": "18cc734adbeda0ddfbf4e14060990d7da5428695056e61ffa5eb6e49c6437c75",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "python": "3.11.17",
+  "forecaster_validation": {
+    "rmse": 137.60307513264513,
+    "pinball_mean": 15.248581764495237,
+    "picp_80": 0.8007763290501386
+  },
+  "original_metric_disagreement": 0.9497896030891866
+}

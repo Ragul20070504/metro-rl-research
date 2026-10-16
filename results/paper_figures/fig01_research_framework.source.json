@@ -1,11 +1,12 @@
 {
   "figure": "fig01_research_framework",
-  "generated_utc": "2026-08-28T07:07:10.528688+00:00",
+  "generated_utc": "2026-10-15T11:17:16.561847+00:00",
   "generated_by": "scripts/make_paper_assets.py",
   "source_files": [],
   "detail": {
     "type": "schematic",
-    "contains_data": false
+    "contains_data": false,
+    "clarification": "Demand generation and policy forecasting are separate; only past observations feed forecasts."
   },
   "note": "every value in this figure is read from the listed files; none is hand-entered"
 }

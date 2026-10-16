@@ -134,6 +134,7 @@ def train_policy(
     trained_forecaster: bool = True,
     overwrite: bool = False,
     store_as: str | None = None,
+    record_learning_curve: bool = False,
 ) -> Path:
     """Train one arm at one seed and write the checkpoint. Skips completed work.
 
@@ -168,9 +169,19 @@ def train_policy(
 
     env.reset = rotating_reset  # type: ignore[method-assign]
 
+    # Monitor records diagnostics without changing reward, seeds or checkpoint selection.
+    curve_path = None
+    training_env = env
+    if record_learning_curve or (store_as and store_as.startswith("budget_")):
+        from stable_baselines3.common.monitor import Monitor
+
+        ensure_dir(target.parent)
+        curve_path = target.parent / "learning_curve.monitor.csv"
+        training_env = Monitor(env, filename=str(curve_path))
+
     model = MaskablePPO(
         "MlpPolicy",
-        env,
+        training_env,
         n_steps=config.n_steps,
         batch_size=config.batch_size,
         n_epochs=config.n_epochs,
@@ -219,6 +230,8 @@ def train_policy(
             "comparison is unaffected."
         ),
         "wall_clock_s": elapsed,
+        "actual_timesteps": int(model.num_timesteps),
+        "learning_curve": curve_path.name if curve_path else None,
         "trained_utc": datetime.now(timezone.utc).isoformat(),
     }
     (target.parent / "metadata.json").write_text(

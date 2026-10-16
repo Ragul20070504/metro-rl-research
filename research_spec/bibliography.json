@@ -1,0 +1,272 @@
+[
+  {
+    "key": "cacchiani2014",
+    "authors": "Valentina Cacchiani, Dennis Huisman, Martin Kidd, Leo Kroon, Paolo Toth, Lucas Veelenturf, Joris Wagenaar",
+    "year": "2014",
+    "title": "An overview of recovery models and algorithms for real-time railway rescheduling",
+    "venue": "Transportation Research Part B: Methodological",
+    "detail": "63, 15-37",
+    "url": "https://doi.org/10.1016/j.trb.2014.01.009",
+    "status": "full",
+    "topics": [
+      "rescheduling",
+      "optimisation"
+    ],
+    "citation_author": "Cacchiani et al."
+  },
+  {
+    "key": "semrov2016",
+    "authors": "D. Šemrov, R. Marsetič, M. Žura, L. Todorovski, A. Srdic",
+    "year": "2016",
+    "title": "Reinforcement learning approach for train rescheduling on a single-track railway",
+    "venue": "Transportation Research Part B: Methodological",
+    "detail": "86, 250-267",
+    "url": "https://doi.org/10.1016/j.trb.2016.01.004",
+    "status": "full",
+    "topics": [
+      "rl",
+      "rescheduling"
+    ],
+    "citation_author": "Šemrov et al."
+  },
+  {
+    "key": "yin2016",
+    "authors": "Jiateng Yin, Tao Tang, Lixing Yang, Ziyou Gao, Bin Ran",
+    "year": "2016",
+    "title": "Energy-efficient metro train rescheduling with uncertain time-variant passenger demands: An approximate dynamic programming approach",
+    "venue": "Transportation Research Part B: Methodological",
+    "detail": "91, 178-210",
+    "url": "https://doi.org/10.1016/j.trb.2016.05.009",
+    "status": "full",
+    "topics": [
+      "metro",
+      "uncertainty",
+      "scheduling"
+    ],
+    "citation_author": "Yin et al."
+  },
+  {
+    "key": "yin2017",
+    "authors": "Jiateng Yin, Lixing Yang, Tao Tang, Ziyou Gao, Bin Ran",
+    "year": "2017",
+    "title": "Dynamic passenger demand oriented metro train scheduling with energy-efficiency and waiting time minimization: Mixed-integer linear programming approaches",
+    "venue": "Transportation Research Part B: Methodological",
+    "detail": "97, 182-213",
+    "url": "https://doi.org/10.1016/j.trb.2017.01.001",
+    "status": "full",
+    "topics": [
+      "metro",
+      "milp",
+      "scheduling"
+    ],
+    "citation_author": "Yin et al."
+  },
+  {
+    "key": "trs_survey",
+    "authors": "Jean-François Cordeau, Paolo Toth, Daniele Vigo",
+    "year": "1998",
+    "title": "A Survey of Optimization Models for Train Routing and Scheduling",
+    "venue": "Transportation Science",
+    "detail": "32(4), 380-404",
+    "url": "https://doi.org/10.1287/trsc.32.4.380",
+    "status": "full",
+    "topics": [
+      "optimisation"
+    ],
+    "citation_author": "Cordeau et al."
+  },
+  {
+    "key": "inflow_control",
+    "authors": "Zhibin Jiang, Wei Fan, Wei Liu, Bingqin Zhu, Jinjing Gu",
+    "year": "2018",
+    "title": "Reinforcement learning approach for coordinated passenger inflow control of urban rail transit in peak hours",
+    "venue": "Transportation Research Part C: Emerging Technologies",
+    "detail": "88, 1-16",
+    "url": "https://doi.org/10.1016/j.trc.2018.01.008",
+    "status": "full",
+    "topics": [
+      "rl",
+      "metro"
+    ],
+    "citation_author": "Jiang et al."
+  },
+  {
+    "key": "multitask_resched",
+    "authors": "Tao Tang, Simin Chai, Wei Wu, Jiateng Yin, Andrea D’Ariano",
+    "year": "2025",
+    "title": "A multi-task deep reinforcement learning approach to real-time railway train rescheduling",
+    "venue": "Transportation Research Part E: Logistics and Transportation Review",
+    "detail": "194, 103900",
+    "url": "https://doi.org/10.1016/j.tre.2024.103900",
+    "status": "full",
+    "topics": [
+      "rl",
+      "rescheduling"
+    ],
+    "citation_author": "Tang et al."
+  },
+  {
+    "key": "madrl_shortturn",
+    "authors": "Chengshuo Ying, Andy H.F. Chow, Yimo Yan, Yong-Hong Kuo, Shouyang Wang",
+    "year": "2024",
+    "title": "Adaptive rescheduling of rail transit services with short-turnings under disruptions via a multi-agent deep reinforcement learning approach",
+    "venue": "Transportation Research Part B: Methodological",
+    "detail": "188, 103067",
+    "url": "https://doi.org/10.1016/j.trb.2024.103067",
+    "status": "full",
+    "topics": [
+      "rl",
+      "disruption"
+    ],
+    "citation_author": "Ying et al."
+  },
+  {
+    "key": "schulman2017",
+    "authors": "John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, Oleg Klimov",
+    "year": "2017",
+    "title": "Proximal Policy Optimization Algorithms",
+    "venue": "arXiv preprint",
+    "detail": "arXiv:1707.06347",
+    "url": "https://arxiv.org/abs/1707.06347",
+    "status": "full",
+    "topics": [
+      "rl",
+      "ppo"
+    ],
+    "citation_author": "Schulman et al."
+  },
+  {
+    "key": "henderson2018",
+    "authors": "Peter Henderson, Riashat Islam, Philip Bachman, Joelle Pineau, Doina Precup, David Meger",
+    "year": "2018",
+    "title": "Deep Reinforcement Learning That Matters",
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "detail": "32(1)",
+    "url": "https://doi.org/10.1609/aaai.v32i1.11694",
+    "status": "full",
+    "topics": [
+      "methodology",
+      "reproducibility"
+    ],
+    "citation_author": "Henderson et al."
+  },
+  {
+    "key": "colas2018",
+    "authors": "Cédric Colas, Olivier Sigaud, Pierre-Yves Oudeyer",
+    "year": "2018",
+    "title": "How Many Random Seeds? Statistical Power Analysis in Deep Reinforcement Learning Experiments",
+    "venue": "arXiv preprint",
+    "detail": "arXiv:1806.08295",
+    "url": "https://arxiv.org/abs/1806.08295",
+    "status": "full",
+    "topics": [
+      "methodology",
+      "statistics"
+    ],
+    "citation_author": "Colas et al."
+  },
+  {
+    "key": "uq_review",
+    "authors": "Owen Lockwood, Mei Si",
+    "year": "2022",
+    "title": "A Review of Uncertainty for Deep Reinforcement Learning",
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment",
+    "detail": "18(1), 155-162",
+    "url": "https://doi.org/10.1609/aiide.v18i1.21959",
+    "status": "full",
+    "topics": [
+      "uncertainty",
+      "rl"
+    ],
+    "citation_author": "Lockwood and Si"
+  },
+  {
+    "key": "clements2019",
+    "authors": "William R. Clements, Bastien Van Delft, Benoît-Marie Robaglia, Reda Bahi Slaoui, Sébastien Toth",
+    "year": "2019",
+    "title": "Estimating Risk and Uncertainty in Deep Reinforcement Learning",
+    "venue": "arXiv preprint",
+    "detail": "arXiv:1905.09638",
+    "url": "https://arxiv.org/abs/1905.09638",
+    "status": "full",
+    "topics": [
+      "uncertainty",
+      "rl"
+    ],
+    "citation_author": "Clements et al."
+  },
+  {
+    "key": "uq_demand_gnn",
+    "authors": "Qingyi Wang, Shenhao Wang, Dingyi Zhuang, Haris Koutsopoulos, Jinhua Zhao",
+    "year": "2024",
+    "title": "Uncertainty Quantification of Spatiotemporal Travel Demand With Probabilistic Graph Neural Networks",
+    "venue": "IEEE Transactions on Intelligent Transportation Systems",
+    "detail": "25(8), 8770-8781",
+    "url": "https://doi.org/10.1109/tits.2024.3367779",
+    "status": "full",
+    "topics": [
+      "forecasting",
+      "uncertainty"
+    ],
+    "citation_author": "Wang et al."
+  },
+  {
+    "key": "uq_ridesourcing",
+    "authors": "Xiaobing Liu, Yu Duan, Yangli-ao Geng, Yun Wang, Qingyong LI, Xuedong Yan, Ziyou Gao",
+    "year": "2026",
+    "title": "Uncertainty quantification for joint demand prediction of multi-modal ride-sourcing services using spatiotemporal Mixture-of-Expert neural network",
+    "venue": "Transportation Research Part C: Emerging Technologies",
+    "detail": "184, 105507",
+    "url": "https://doi.org/10.1016/j.trc.2025.105507",
+    "status": "full",
+    "topics": [
+      "forecasting",
+      "uncertainty"
+    ],
+    "citation_author": "Liu et al."
+  },
+  {
+    "key": "arrow1951",
+    "authors": "Kenneth J. Arrow, Theodore Harris, Jacob Marschak",
+    "year": "1951",
+    "title": "Optimal Inventory Policy",
+    "venue": "Econometrica",
+    "detail": "19(3), 250",
+    "url": "https://doi.org/10.2307/1906813",
+    "status": "full",
+    "topics": [
+      "newsvendor",
+      "convexity"
+    ],
+    "citation_author": "Arrow et al."
+  },
+  {
+    "key": "vanmieghem2002",
+    "authors": "Jan A. Van Mieghem, Nils Rudi",
+    "year": "2002",
+    "title": "Newsvendor Networks: Inventory Management and Capacity Investment with Discretionary Activities",
+    "venue": "Manufacturing & Service Operations Management",
+    "detail": "4(4), 313-335",
+    "url": "https://doi.org/10.1287/msom.4.4.313.5728",
+    "status": "full",
+    "topics": [
+      "newsvendor",
+      "capacity"
+    ],
+    "citation_author": "Van Mieghem and Rudi"
+  },
+  {
+    "key": "dt_railway_review",
+    "authors": "Zi-Yang Zhang, Du Shang, Shuai Su",
+    "year": "2025",
+    "title": "Digital twin in railway industry: a bibliometric analysis and systematic review",
+    "venue": "Digital Twin",
+    "detail": "3(1), 2533858",
+    "url": "https://doi.org/10.1080/27525783.2025.2533858",
+    "status": "full",
+    "topics": [
+      "digital twin"
+    ],
+    "citation_author": "Zhang et al."
+  }
+]

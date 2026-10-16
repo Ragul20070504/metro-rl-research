@@ -1,0 +1,11 @@
+{
+  "figure": "fig01_research_framework",
+  "generated_utc": "2026-08-28T07:07:10.528688+00:00",
+  "generated_by": "scripts/make_paper_assets.py",
+  "source_files": [],
+  "detail": {
+    "type": "schematic",
+    "contains_data": false
+  },
+  "note": "every value in this figure is read from the listed files; none is hand-entered"
+}

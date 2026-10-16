@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-10-15T11:14:32.933324+00:00",
+  "path": "dist/replication-20261015-inputs.tar.gz",
+  "bytes": 45221489,
+  "sha256": "1a4160b15535830faad5fe68273ca380051fc04a1a85fa61a18c5f730bdadb04",
+  "frozen_input_files": 136,
+  "verified": "Every archived frozen input hash matches the manifest.",
+  "scope": "Local input/source snapshot only. Training policies and evaluation results are still running and are not included. No public deposit or reuse-rights determination is claimed."
+}

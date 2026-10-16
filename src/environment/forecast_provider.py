@@ -344,10 +344,10 @@ def load_trained_provider(network, *, model_dir=None) -> TrainedForecastProvider
     import json
     from pathlib import Path
 
-    from src.common.paths import REPO_ROOT
+    from src.common.paths import MODELS_DIR
     from src.forecasting.models import XGBQuantileForecaster
 
-    directory = Path(model_dir) if model_dir else REPO_ROOT / FORECAST_MODEL_DIR
+    directory = Path(model_dir) if model_dir else MODELS_DIR / "forecasting"
     metadata_path = directory / "metadata.json"
     booster_path = directory / "xgb_quantile.json"
     if not metadata_path.exists() or not booster_path.exists():

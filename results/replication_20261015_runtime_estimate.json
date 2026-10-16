@@ -1,0 +1,9 @@
+{
+  "generated_utc": "2026-10-15T11:12:50.550614+00:00",
+  "software_smoke_steps": 456,
+  "software_smoke_training_seconds": 18.993782789999386,
+  "planned_actual_training_steps": 9922560,
+  "workers": 4,
+  "training_hours_at_smoke_rate": 28.701716215999074,
+  "limitation": "Approximate training-only extrapolation from a software smoke; excludes evaluation, startup and contention. No scientific outcome is read."
+}

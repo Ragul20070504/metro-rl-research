@@ -35,7 +35,7 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 from datetime import datetime, timezone
 
 from src.common.logging import get_logger, setup_logging
-from src.common.paths import RESULTS_DIR
+from src.common.paths import REPO_ROOT, RESULTS_DIR
 from src.evaluation.runner import Cell, run_cells
 
 from scripts.run_experiments import EVAL_SEEDS, SCENARIOS, workers
@@ -52,6 +52,21 @@ REGISTERED_BUDGET = 60_000
 
 ARMS: tuple[str, ...] = ("ppo_point", "ppo_uq")
 TRAIN_SEEDS: tuple[int, ...] = tuple(range(101, 111))
+
+
+def missing_inputs() -> list[str]:
+    """Frozen inputs must be restored, never silently rebuilt from a newer data feed."""
+    from src.rl.train import policy_path
+
+    required = [REPO_ROOT / name for name in (
+        "data/processed/network/network.json", "data/processed/network/demand_process.json",
+        "models/forecasting/metadata.json", "models/forecasting/xgb_quantile.json",
+        "models/obs_scaler.json", "configs/reward_scales.json",
+    )]
+    required.extend(path for arm in ARMS for seed in TRAIN_SEEDS
+                    for path in (policy_path(arm, seed, "w_balanced"),
+                                 policy_path(arm, seed, "w_balanced").with_name("metadata.json")))
+    return [str(path.relative_to(REPO_ROOT)) for path in required if not path.is_file()]
 
 
 def namespace(budget: int) -> str:
@@ -100,6 +115,7 @@ def stage_train() -> None:
     if not pending:
         return
 
+    failed = []
     with ProcessPoolExecutor(max_workers=workers()) as pool:
         futures = {pool.submit(_train_one, job): job for job in pending}
         for index, future in enumerate(as_completed(futures), 1):
@@ -109,7 +125,18 @@ def stage_train() -> None:
             except Exception as error:  # noqa: BLE001 - recorded, not fatal to the grid
                 logger.error("training %s seed %s at %d steps failed: %r",
                              job[0], job[1], job[2], error)
+                failed.append(job)
             logger.info("follow-up training: %d/%d", index, len(pending))
+    errors = []
+    for job in failed:
+        try:
+            _train_one(job)  # exactly one recorded retry, per protocol section 5
+        except Exception as error:
+            errors.append({"job": job, "error": repr(error)})
+    if errors:
+        (RESULTS_DIR / "followup_training_failures.json").write_text(
+            json.dumps(errors, indent=2), encoding="utf-8")
+        raise RuntimeError(f"{len(errors)} training jobs failed after retry; sweep not started")
 
 
 def followup_cells() -> list[Cell]:
@@ -133,6 +160,10 @@ def stage_sweep() -> None:
     logger.info("follow-up sweep: %d cells across %d budgets", cells and len(cells),
                 len(BUDGETS) - 1)
     run_cells(cells, workers=workers(), label="followup-sweep")
+    from src.evaluation.runner import load_cell_metrics
+    missing = [cell.key() for cell in cells if load_cell_metrics(cell) is None]
+    if missing:
+        raise RuntimeError(f"{len(missing)} evaluation cells still missing; grid is incomplete")
 
 
 def _record(stages: list[str], started: str) -> None:
@@ -154,10 +185,18 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--stage", choices=("train", "sweep"), default=None,
                         help="omit to run training then the sweep, in order")
+    parser.add_argument("--check", action="store_true", help="inspect prerequisites without running experiments")
     args = parser.parse_args()
 
     setup_logging(log_file="run_followup.log")
     started = datetime.now(timezone.utc).isoformat()
+    missing = missing_inputs()
+    if args.check or missing:
+        print(json.dumps({"ready": not missing, "missing_inputs": missing}, indent=2))
+        if missing:
+            return 1
+        if args.check:
+            return 0
 
     stages = [args.stage] if args.stage else ["train", "sweep"]
     logger.info("FOLLOWUP-UQ-TRAINING: budgets %s, arms %s, seeds %d-%d, stages %s",

@@ -1,6 +1,6 @@
 # Supplementary material
 
-*Generated from stored artefacts at commit `4dec2d835e8c`.*
+*Generated from stored artefacts at commit `e053dea4180c`.*
 
 ## S1. Experimental registry
 
@@ -52,29 +52,29 @@ Scenario families share a base world at a given evaluation seed, so a scenario c
 
 ## S5. Baseline details
 
-Baseline fairness audit: 19/19 checks pass, 0 blocking failures.
+Historical baseline fairness report (2026-08-27T04:36:39.843562+00:00): 19/19 checks recorded as passing, 0 recorded blocking failures. This table transcribes that report; it is not a fresh execution of those checks.
 
 | Check | Status |
 |---|---|
-| {'item': 'C1. every method faces the same network, horizon, fleet, action bound and reward | PASS |
-| {'item': 'C2. the environment builder cannot specialise the world to the method', 'passed' | PASS |
-| {'item': 'C3. common random numbers are structural: the stream factory has no method argum | PASS |
-| {'item': 'C3b. the same (scenario, eval_seed) reproduces the same streams', 'passed': True | PASS |
-| {'item': 'C3d. swapping the forecast provider does not desynchronise the realised world',  | PASS |
-| {'item': 'C3c. scenarios at one eval_seed share a base world (amendment A-03)', 'passed':  | PASS |
-| {'item': 'C4. the heuristic reads the forecast mean but never sigma', 'passed': True, 'blo | PASS |
-| {'item': 'C4b. the rolling MILP reads sigma, as its registration requires', 'passed': True | PASS |
-| {'item': 'C4c. the static MILP sees only the historical average day', 'passed': True, 'blo | PASS |
-| {'item': 'C4d. the three uncertainty arms are distinct and all registered', 'passed': True | PASS |
-| {'item': 'C5. reading a forecast feature at or after the issue hour raises', 'passed': Tru | PASS |
-| {'item': "C5b. the leakage test suite is present and covers every method's inputs", 'passe | PASS |
-| {'item': 'C6. baseline tuning seeds are disjoint from every scored pool', 'passed': True,  | PASS |
-| {'item': "C6b. the heuristic's selected thresholds are interior to its search grid", 'pass | PASS |
-| {'item': 'C6c. the RL arms share one frozen hyperparameter configuration', 'passed': True, | PASS |
-| {'item': 'C7. every stored method was evaluated on the same evaluation seeds', 'passed': T | PASS |
-| {'item': 'C7a. every stored cell used one frozen reward_scales', 'passed': True, 'blocking | PASS |
-| {'item': 'C7b. every stored cell used one frozen obs_scaler', 'passed': True, 'blocking':  | PASS |
-| {'item': 'C7c. each method used exactly the forecaster its registration gives it', 'passed | PASS |
+| C1. every method faces the same network, horizon, fleet, action bound and reward scales | PASS |
+| C2. the environment builder cannot specialise the world to the method | PASS |
+| C3. common random numbers are structural: the stream factory has no method argument | PASS |
+| C3b. the same (scenario, eval_seed) reproduces the same streams | PASS |
+| C3d. swapping the forecast provider does not desynchronise the realised world | PASS |
+| C3c. scenarios at one eval_seed share a base world (amendment A-03) | PASS |
+| C4. the heuristic reads the forecast mean but never sigma | PASS |
+| C4b. the rolling MILP reads sigma, as its registration requires | PASS |
+| C4c. the static MILP sees only the historical average day | PASS |
+| C4d. the three uncertainty arms are distinct and all registered | PASS |
+| C5. reading a forecast feature at or after the issue hour raises | PASS |
+| C5b. the leakage test suite is present and covers every method's inputs | PASS |
+| C6. baseline tuning seeds are disjoint from every scored pool | PASS |
+| C6b. the heuristic's selected thresholds are interior to its search grid | PASS |
+| C6c. the RL arms share one frozen hyperparameter configuration | PASS |
+| C7. every stored method was evaluated on the same evaluation seeds | PASS |
+| C7a. every stored cell used one frozen reward_scales | PASS |
+| C7b. every stored cell used one frozen obs_scaler | PASS |
+| C7c. each method used exactly the forecaster its registration gives it | PASS |
 
 ## S6. Statistical procedures
 
@@ -127,16 +127,16 @@ shap.PermutationExplainer (model-agnostic), explaining P(dispatch >= 1 trainset)
 - Masks are not applied inside the explainer, so infrastructure constraints are not attributed to the policy's reasoning.
 - Attributions come from one training seed; EXP-XAI-002 measures their stability across seeds and background resamples.
 
-## S10. Reproduction
+## S10. Stored-results checks and document build
+
+These commands use the Linux CPU lock and recheck stored evidence. They do not rerun historical policies or reconstruct missing original inputs. The audit exits nonzero while submission blockers remain.
 
 ```bash
-python -m venv .venv
-.venv/bin/python -m pip install --require-hashes -r requirements.lock.txt
+uv venv --python 3.11 .venv
+uv pip install --python .venv/bin/python --require-hashes --torch-backend cpu -r requirements-linux.lock.txt
 .venv/bin/python scripts/check_environment.py
-.venv/bin/python -m pytest -q
-.venv/bin/python scripts/analyse.py
-.venv/bin/python scripts/make_paper_assets.py
+.venv/bin/python scripts/publication_audit.py
 .venv/bin/python scripts/build_manuscript.py
 ```
 
-Expected: 7,610 evaluation cells, 58 policy checkpoints, 11 figures, 10 tables.
+Stored: 7,610 historical evaluation cells and 50 main-study learned-policy identities; 0 original binaries available. The historical asset manifest lists 11 figures and 10 tables; Figure 7 is withheld. Asset presence does not prove missing source artifacts can be regenerated. See SUBMISSION_READINESS.md and the separate independent replication protocol.

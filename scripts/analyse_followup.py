@@ -29,6 +29,9 @@ from scipy import stats
 
 from src.common.logging import get_logger, setup_logging
 from src.common.paths import RESULTS_DIR
+from src.evaluation.aggregate import load_frame, seed_level
+from src.evaluation.runner import discover_cells
+from src.evaluation.statistics import bca_bootstrap_ci, benjamini_hochberg
 
 from scripts.run_followup import ARMS, BUDGETS, REGISTERED_BUDGET, TRAIN_SEEDS
 
@@ -37,6 +40,27 @@ logger = get_logger(__name__)
 ENDPOINT = "left_behind_fraction"
 PRIMARY_SCENARIO = "surge"
 SCENARIOS = ("normal", "surge", "disruption", "combined")
+
+
+def budget_coverage(episodes: pd.DataFrame) -> dict[int, dict[str, Any]]:
+    """Require every registered episode, not merely three surviving seed means."""
+    expected = {(arm, seed, scenario, evaluation)
+                for arm in ARMS for seed in TRAIN_SEEDS
+                for scenario in SCENARIOS for evaluation in range(1, 31)}
+    coverage = {}
+    for budget in BUDGETS:
+        frame = _budget_frame(episodes, budget)
+        keys = list(frame[["method", "train_seed", "scenario", "eval_seed"]]
+                    .itertuples(index=False, name=None))
+        actual = set(keys)
+        finite = bool(np.isfinite(frame[ENDPOINT].to_numpy(float)).all())
+        coverage[budget] = {
+            "expected": len(expected), "present": len(actual & expected),
+            "missing": len(expected - actual), "unexpected": len(actual - expected),
+            "duplicates": len(keys) - len(actual), "finite": finite,
+            "complete": actual == expected and len(keys) == len(actual) and finite,
+        }
+    return coverage
 
 
 def _budget_frame(df: pd.DataFrame, budget: int) -> pd.DataFrame:
@@ -67,33 +91,22 @@ def _holm(p_values: list[float]) -> list[float]:
 
 
 def _bca_ci(diff: np.ndarray, n_boot: int = 10_000, seed: int = 20260828) -> tuple[float, float]:
-    """BCa interval for the mean paired difference, as the protocol specifies."""
-    rng = np.random.default_rng(seed)
-    n = diff.size
-    observed = float(diff.mean())
-    boot = np.array([diff[rng.integers(0, n, n)].mean() for _ in range(n_boot)])
-    proportion = float((boot < observed).mean())
-    if proportion <= 0 or proportion >= 1:  # degenerate; fall back to the percentile interval
-        return float(np.percentile(boot, 2.5)), float(np.percentile(boot, 97.5))
-    z0 = stats.norm.ppf(proportion)
-    jack = np.array([np.delete(diff, i).mean() for i in range(n)])
-    centred = jack.mean() - jack
-    denom = 6.0 * (float((centred ** 2).sum()) ** 1.5)
-    a = float((centred ** 3).sum()) / denom if denom else 0.0
-    lo_z, hi_z = stats.norm.ppf(0.025), stats.norm.ppf(0.975)
-    lo = stats.norm.cdf(z0 + (z0 + lo_z) / (1 - a * (z0 + lo_z)))
-    hi = stats.norm.cdf(z0 + (z0 + hi_z) / (1 - a * (z0 + hi_z)))
-    return float(np.percentile(boot, 100 * lo)), float(np.percentile(boot, 100 * hi))
+    """BCa interval for the protocol's Hodges–Lehmann estimator (amendment F-02)."""
+    return bca_bootstrap_ci(diff, resamples=n_boot, seed=seed)
 
 
 def _per_budget(piv: pd.DataFrame, budget: int, scenario: str) -> dict[str, Any]:
     a, b = piv["ppo_uq"].to_numpy(float), piv["ppo_point"].to_numpy(float)
     diff = a - b
-    normal_p = float(stats.shapiro(diff).pvalue)
-    if normal_p >= 0.05:
+    normal_p = None if np.allclose(diff, diff[0]) else float(stats.shapiro(diff).pvalue)
+    if np.all(diff == 0):
+        test, statistic, p_value = "Wilcoxon signed-rank", 0.0, 1.0
+    elif normal_p is not None and normal_p >= 0.05:
         test, result = "paired t-test", stats.ttest_rel(a, b)
+        statistic, p_value = float(result.statistic), float(result.pvalue)
     else:
         test, result = "Wilcoxon signed-rank", stats.wilcoxon(a, b)
+        statistic, p_value = float(result.statistic), float(result.pvalue)
     walsh = [(diff[i] + diff[j]) / 2 for i in range(diff.size) for j in range(i, diff.size)]
     lo, hi = _bca_ci(diff)
     return {
@@ -104,17 +117,35 @@ def _per_budget(piv: pd.DataFrame, budget: int, scenario: str) -> dict[str, Any]
         "mean_difference": float(diff.mean()), "median_difference": float(np.median(diff)),
         "sd_difference": float(diff.std(ddof=1)),
         "hodges_lehmann": float(np.median(walsh)),
-        "ci_low": lo, "ci_high": hi,
+        "ci_low": lo, "ci_high": hi, "ci_estimand": "Hodges-Lehmann paired location",
         "test": test, "normality_p": normal_p,
-        "statistic": float(result.statistic), "p_value": float(result.pvalue),
-        "direction": "ppo_point better" if diff.mean() > 0 else "ppo_uq better",
+        "statistic": statistic, "p_value": p_value,
+        "direction": "no difference" if diff.mean() == 0 else "ppo_point better" if diff.mean() > 0 else "ppo_uq better",
     }
 
 
 def main() -> int:
     setup_logging(log_file="analyse_followup.log")
 
-    df = pd.read_parquet(RESULTS_DIR / "seed_level.parquet")
+    # Read stored cells directly: a retained aggregate can predate resumed evaluations.
+    episodes = load_frame(discover_cells())
+    coverage = budget_coverage(episodes)
+    incomplete = [budget for budget, status in coverage.items() if not status["complete"]]
+    if incomplete:
+        payload = {
+            "generated_utc": datetime.now(timezone.utc).isoformat(),
+            "study": "FOLLOWUP-UQ-TRAINING", "evidence_class": "FOLLOW-UP / INCOMPLETE",
+            "protocol": "docs/followup_training_budget_protocol.md",
+            "grid_complete": False, "coverage": coverage, "budgets_missing": incomplete,
+            "budgets_analysed": [], "per_budget": [], "scenario_breakdown": [],
+            "primary_interaction": {"status": "NOT RUN", "reason": "Incomplete grid; no interim inference."},
+            "registered_conclusion_unchanged": "Read results/statistical_analysis.json; original evidence is unchanged.",
+        }
+        (RESULTS_DIR / "followup_analysis.json").write_text(
+            json.dumps(payload, indent=2, allow_nan=False), encoding="utf-8")
+        print(f"INCOMPLETE: budgets {incomplete}; no follow-up inference performed")
+        return 1
+    df = seed_level(episodes)
 
     available, missing_budgets, long_rows = [], [], []
     per_budget: list[dict[str, Any]] = []
@@ -139,19 +170,20 @@ def main() -> int:
     # --- primary: the budget interaction ----------------------------------------------------
     interaction: dict[str, Any] = {"status": "NOT ESTIMABLE",
                                    "reason": "fewer than three budgets have complete data"}
-    if len(available) >= 3:
+    if len(available) == len(BUDGETS):
         import statsmodels.formula.api as smf
 
         long = pd.DataFrame(long_rows)
         model = smf.mixedlm("diff ~ log2_budget", long, groups=long["seed"]).fit()
+        if not model.converged:
+            raise RuntimeError("Budget interaction model did not converge; inference withheld")
         slope = float(model.params["log2_budget"])
         se = float(model.bse["log2_budget"])
         p = float(model.pvalues["log2_budget"])
         if p >= 0.05:
-            reading = ("No budget dependence detected. Over the range tested the disadvantage is "
-                       "flat in log-budget; the confidence interval below bounds the trend the "
-                       "design could have excluded. This does not establish budget-independence "
-                       "beyond the largest budget run.")
+            reading = ("No budget dependence detected. The confidence interval describes "
+                       "compatible slopes; a nonsignificant test does not establish a flat "
+                       "trend or budget-independence within or beyond the tested range.")
         elif slope < 0:
             reading = ("The disadvantage shrinks as the budget grows. This supports a "
                        "sample-efficiency reading and does NOT by itself establish that the "
@@ -176,6 +208,10 @@ def main() -> int:
         for scenario in SCENARIOS
         if (piv := _paired(_budget_frame(df, budget), scenario)) is not None
     ]
+    for row, adjusted in zip(scenario_breakdown, benjamini_hochberg(
+            [row["p_value"] for row in scenario_breakdown])):
+        row["p_adjusted"] = adjusted
+        row["adjustment"] = "Benjamini-Hochberg, all budget-by-scenario contrasts, exploratory q=0.10"
 
     payload = {
         "generated_utc": datetime.now(timezone.utc).isoformat(),
@@ -203,8 +239,9 @@ def main() -> int:
             "was known, even though its analysis was pre-specified.",
             "The 60,000-step row reproduces the registered point estimate exactly, because it "
             "reads the same stored cells. Its confidence interval will differ slightly from the "
-            "one in results/statistical_analysis.json: both are BCa bootstraps, drawn with "
-            "different resampling seeds. The registered interval is the one to quote for H1; the "
+            "one in results/statistical_analysis.json: both estimate the Hodges-Lehmann paired "
+            "location, using different resampling seeds. The original follow-up implementation "
+            "instead bootstrapped the mean; amendment F-02 corrects that mismatch. The registered interval is the one to quote for H1; the "
             "interval here exists only so the 60k row is computed the same way as every other "
             "row in this grid.",
             "Underpowered for per-budget comparisons at SESOI magnitude; the realised between-"
